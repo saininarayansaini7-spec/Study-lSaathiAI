@@ -1,100 +1,72 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StudSaathi - UP Board OMR + BSc Nursing</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StudSaathi - BSc Nursing Full Notes</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>body{font-family:'Poppins',sans-serif}</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>body{font-family:Poppins}.notes{white-space:pre-line; font-size:13px;}</style>
 </head>
-<body class="bg-[#f0f4ff]">
-<header class="bg-white shadow sticky top-0 z-50 p-4 flex justify-between items-center">
-<h1 class="font-bold text-xl text-blue-700">📚 StudSaathi</h1>
-<button onclick="startOMR()" class="bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-bold animate-pulse">🔴 OMR Test Live</button>
-</header>
-
+<body class="bg-[#f0f7ff]">
+<header class="bg-white p-4 flex justify-between sticky top-0 shadow z-50"><h1 class="font-bold text-blue-700">📚 StudSaathi</h1><button onclick="startOMR('Nursing')" class="bg-red-600 text-white px-3 py-1 rounded-full text-xs animate-pulse">🔴 Nursing OMR LIVE</button></header>
 <div class="p-4">
-<div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6 rounded-3xl text-center">
-<h2 class="text-2xl font-bold">Padhega UP, Badhega UP!</h2>
-<p class="text-sm mt-2 opacity-90">10th, 12th OMR Test + B.A. + LLB + BSc Nursing</p>
-<input id="search" oninput="search()" placeholder="Search - ex: Nursing, History, OMR..." class="w-full mt-4 p-3 rounded-xl text-black outline-none">
+<div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-6 rounded-3xl text-center"><h2 class="text-2xl font-bold">BSc Nursing - All Notes Added!</h2><p class="text-sm">1st to 4th Year + PDF + OMR</p></div>
+
+<div class="grid grid-cols-2 gap-3 mt-5">
+<div onclick="openN('1st')" class="bg-white p-4 rounded-2xl shadow text-center border-l-4 border-pink-500"><b>1st Year</b><p class="text-xs">6 Subjects Notes</p></div>
+<div onclick="openN('2nd')" class="bg-white p-4 rounded-2xl shadow text-center border-l-4 border-purple-500"><b>2nd Year</b><p class="text-xs">7 Subjects Notes</p></div>
+<div onclick="openN('3rd')" class="bg-white p-4 rounded-2xl shadow text-center border-l-4 border-blue-500"><b>3rd Year</b><p class="text-xs">5 Subjects Notes</p></div>
+<div onclick="openN('4th')" class="bg-white p-4 rounded-2xl shadow text-center border-l-4 border-green-500"><b>4th Year</b><p class="text-xs">5 Subjects Notes</p></div>
 </div>
 
-<div class="grid grid-cols-2 gap-4 mt-6">
-<div onclick="openCourse('10th')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer border-l-4 border-blue-600"><div class="text-3xl">🎓</div><h3 class="font-bold">10th UP</h3><p class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full mt-1">OMR + Syllabus</p></div>
-<div onclick="openCourse('12th')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer border-l-4 border-green-600"><div class="text-3xl">📖</div><h3 class="font-bold">12th UP</h3><p class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full mt-1">OMR + Syllabus</p></div>
-<div onclick="openCourse('Nursing')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer border-l-4 border-pink-500"><div class="text-3xl">👩‍⚕️</div><h3 class="font-bold text-pink-600">BSc Nursing</h3><p class="text-xs text-gray-500">1st-4th Year</p></div>
-<div onclick="openCourse('BA')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer"><div class="text-3xl">👨‍🎓</div><h3 class="font-bold">B.A.</h3><p class="text-xs text-gray-500">All Years</p></div>
-<div onclick="openCourse('LLB')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer col-span-2"><div class="text-3xl">⚖️</div><h3 class="font-bold">LLB 5 Year</h3><p class="text-xs text-gray-500">Full Law Notes</p></div>
+<div id="nList" class="mt-6 bg-white rounded-2xl p-4 shadow">
+<h3 id="nTitle" class="font-bold text-lg">👩‍⚕️ BSc Nursing - Sabhi Notes</h3>
+<div id="nItems" class="mt-4 space-y-3"></div>
 </div>
 
-<!-- Syllabus + Notes List -->
-<div id="list" class="mt-6 hidden bg-white rounded-2xl p-4 shadow">
-<div class="flex justify-between"><h3 id="listTitle" class="font-bold text-lg"></h3><button onclick="closeList()" class="bg-gray-200 px-3 py-1 rounded-full">X</button></div>
-<div id="listItems" class="mt-4 space-y-3"></div>
-</div>
+<div id="noteModal" class="fixed inset-0 bg-black/80 hidden z-[100] p-4 flex items-center justify-center"><div class="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-auto p-5"><div class="flex justify-between"><b id="noteHead" class="font-bold"></b><button onclick="document.getElementById('noteModal').classList.add('hidden')" class="bg-gray-200 px-3 rounded-full">X</button></div><div id="noteBody" class="notes mt-4 bg-gray-50 p-3 rounded-xl"></div><div class="mt-4 flex gap-2"><a id="pdfLink" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm flex-1 text-center">📄 PDF Dekho</a><button onclick="startOMR('Nursing')" class="bg-red-600 text-white px-4 py-2 rounded-full text-sm flex-1">OMR Test Do</button></div></div></div>
 
-<!-- OMR MODAL -->
-<div id="omrModal" class="fixed inset-0 bg-black/70 hidden z-[100] p-4 flex items-center justify-center">
-<div class="bg-white rounded-3xl p-5 w-full max-w-md max-h-[90vh] overflow-auto">
-<div class="flex justify-between items-center"><h3 class="font-bold text-lg">📝 UP Board OMR Test</h3><button onclick="closeOMR()" class="bg-gray-200 px-3 py-1 rounded-full">X</button></div>
-<div id="omrContent" class="mt-4"></div>
-</div>
-</div>
-
-<footer class="text-center mt-10 pb-6 text-gray-500 text-xs">StudSaathi 2026 | UP Students ke Liye</footer>
+<div id="omr" class="fixed inset-0 bg-black/80 hidden z-[100] p-4 flex items-center justify-center"><div class="bg-white rounded-3xl p-5 w-full max-w-md max-h-[90vh] overflow-auto"><div class="flex justify-between"><b>OMR Test</b><button onclick="document.getElementById('omr').classList.add('hidden')" class="bg-gray-200 px-3 rounded-full">X</button></div><div id="omrBox" class="mt-4"></div></div></div>
 </div>
 
 <script>
-const data={
-"10th":["Hindi - Gadya, Padya, Vyakaran [Syllabus]","English - Grammar + Literature","Maths - Full Syllabus + Formula","Science - Physics (Light, Electricity), Chemistry, Bio","Social Science - Itihas, Bhugol, Nagrik Shastra, Arthashastra","Sanskrit - Full Course"],
-"12th":["Hindi - Sahitya + Vyakaran","English - Flamingo + Vistas","History - Bharat, Vishwa","Political Science - Rajniti Vigyan Part 1,2","Geography - Bhautik + Manav","Economics - Micro, Macro","Sociology - Samajshastra"],
-"BA":["BA 1st Year - All Subjects","BA 2nd Year - All Subjects","BA 3rd Year - All Subjects","History - Ancient, Medieval, Modern","Political Science","Geography"],
-"Nursing":["1st Year - Anatomy, Physiology, Nutrition, Nursing Foundation","2nd Year - Pharmacology, Pathology, Genetics, Med-Surg","3rd Year - Child Health, Mental Health, Midwifery","4th Year - Community Health, Research, Management","Anatomy & Physiology - Full Notes","Medical Surgical Nursing - Important Q&A","OBG - Midwifery Notes"],
-"LLB":["LLB 1st Year - Legal Methods, Contract","LLB 2nd Year - Constitution, IPC","LLB 3rd Year - Family Law, Jurisprudence","LLB 4th & 5th Year - CPC, CrPC, Evidence"]
-}
-
-const omrQuestions=[
-{q:"UP Board 10th Hindi me 'Godan' ke lekhak kaun hai?",o:["Premchand","Jaishankar Prasad","Mahadevi Verma","Surdas"],a:0},
-{q:"BSc Nursing me Human Heart me kitne chambers hote hai?",o:["2","3","4","5"],a:2},
-{q:"12th Political Science me Samvidhan Sabha ke adhyaksh kaun the?",o:["Nehru","Dr. Rajendra Prasad","Ambedkar","Gandhi"],a:1},
-{q:"10th Science - Prakash ka apvartan kis niyam par hota hai?",o:["Snell ka niyam","Ohm ka niyam","Newton ka niyam","Kepler ka niyam"],a:0},
-{q:"BSc Nursing - Normal Blood Pressure kitna hota hai?",o:["120/80 mmHg","140/90 mmHg","100/60 mmHg","160/100 mmHg"],a:0}
-];
-let currentQ=0,score=0;
-
-function openCourse(c){
-document.getElementById('list').classList.remove('hidden');
-document.getElementById('listTitle').innerText=c+" - Syllabus + Notes + OMR";
-let html=`<button onclick="startOMR()" class="w-full bg-red-600 text-white p-3 rounded-xl font-bold mb-3">🔴 ${c} ka OMR Test Do</button>`;
-data[c].forEach(s=>{
-html+=`<div class="flex justify-between items-center border p-3 rounded-xl"><div><b class="text-sm">${s}</b><p class="text-[11px] text-gray-500">PDF | Syllabus | PYQ | Video</p></div><button class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">View</button></div>`;
-});
-document.getElementById('listItems').innerHTML=html;
-}
-function closeList(){document.getElementById('list').classList.add('hidden')}
-function search(){let q=document.getElementById('search').value.toLowerCase();if(!q){closeList();return;}let all=[];for(let k in data){data[k].forEach(v=>all.push(k+" - "+v));}let f=all.filter(x=>x.toLowerCase().includes(q));document.getElementById('list').classList.remove('hidden');document.getElementById('listTitle').innerText="Search Result";document.getElementById('listItems').innerHTML=f.map(s=>`<div class="border p-3 rounded-xl text-sm">${s}</div>`).join('');}
-
-function startOMR(){
-document.getElementById('omrModal').classList.remove('hidden');
-currentQ=0;score=0;showQ();
-}
-function closeOMR(){document.getElementById('omrModal').classList.add('hidden')}
-function showQ(){
-let qq=omrQuestions[currentQ];
-let html=`<p class="text-sm text-gray-500">Question ${currentQ+1}/${omrQuestions.length}</p><h4 class="font-bold mt-2">${qq.q}</h4><div class="mt-4 space-y-2">`;
-qq.o.forEach((opt,i)=>{html+=`<button onclick="checkAns(${i})" class="w-full text-left border p-3 rounded-xl hover:bg-blue-50">${String.fromCharCode(65+i)}. ${opt}</button>`});
-html+=`</div>`;
-document.getElementById('omrContent').innerHTML=html;
-}
-function checkAns(i){
-if(i==omrQuestions[currentQ].a)score++;
-currentQ++;
-if(currentQ<omrQuestions.length){showQ()}else{
-document.getElementById('omrContent').innerHTML=`<div class="text-center py-6"><div class="text-5xl">🎉</div><h3 class="font-bold text-xl mt-3">Test Complete!</h3><p class="mt-2">Score: <b class="text-2xl text-blue-600">${score}/${omrQuestions.length}</b></p><p class="text-sm text-gray-500 mt-2">Bahut Badhiya! Aur Practice Karo</p><button onclick="startOMR()" class="mt-5 bg-blue-600 text-white px-6 py-2 rounded-full">Phir Se Test Do</button></div>`;
-}
-}
+const nursingData={
+"1st":[
+{t:"1. Anatomy - शरीर रचना विज्ञान",s:"Cell, Tissue, Skeletal System (206 bones), Muscular System, Cardiovascular (Heart 4 chambers), Respiratory, Digestive, Nervous System, Sense Organs. Heart: Right Atrium, Left Atrium, Right Ventricle, Left Ventricle. Blood Pressure Normal 120/80 mmHg.",pdf:"Anatomy Physiology BSc Nursing pdf"},
+{t:"2. Physiology - शरीर क्रिया",s:"Blood - RBC, WBC, Platelets. Hemoglobin Normal 12-16 g/dl Female, 14-18 Male. Circulation - Systemic & Pulmonary. Respiration - 16-20/min Normal. Digestion - Stomach acid HCl. Kidney - Nephron is functional unit.",pdf:"Physiology BSc Nursing 1st year pdf"},
+{t:"3. Nutrition & Biochemistry",s:"Carbohydrate, Protein, Fat, Vitamins (A,B,C,D,E,K), Minerals. Balanced Diet - 2000-2500 kcal/day. Protein source - Dal, Egg. Kwashiorkor due to protein deficiency. BMI Formula = Weight(kg)/Height(m2).",pdf:"Nutrition Biochemistry BSc Nursing pdf"},
+{t:"4. Nursing Foundation - Most Important",s:"Fundamentals: Hand Washing - 7 steps, Bed Making, Vital Signs - TPR & BP, Nursing Process - ADPIE (Assessment, Diagnosis, Planning, Implementation, Evaluation), Ethics, Florence Nightingale - Founder of Modern Nursing.",pdf:"Nursing Foundation BSc Nursing pdf"},
+{t:"5. Psychology",s:"Definition, Branches, Learning Theories, Memory, Intelligence IQ, Motivation, Personality, Mental Health.",pdf:"Psychology BSc Nursing pdf"},
+{t:"6. Microbiology",s:"Bacteria, Virus, Fungi, Sterilization - Autoclave, Disinfection, Infection Control, Immunity.",pdf:"Microbiology BSc Nursing pdf"}
+],
+"2nd":[
+{t:"1. Pharmacology",s:"Drug - Definition, Sources, Routes - Oral, IV, IM, SC. Drug Calculation, Antibiotics, Analgesics, Emergency Drugs - Adrenaline, Atropine. 5 Rights - Right Patient, Drug, Dose, Route, Time.",pdf:"Pharmacology BSc Nursing pdf"},
+{t:"2. Pathology & Genetics",s:"Inflammation, Edema, Necrosis, Neoplasia - Benign & Malignant, Genetic Disorders - Down Syndrome, Thalassemia, Mendelian Laws.",pdf:"Pathology Genetics BSc Nursing pdf"},
+{t:"3. Medical Surgical Nursing - I",s:"Most Imp for Exam: Hypertension (140/90), Diabetes (Normal Fasting 70-100), Asthma, Pneumonia, Typhoid, Myocardial Infarction, Care Plan of all diseases.",pdf:"Medical Surgical Nursing BSc Nursing pdf"},
+{t:"4. Community Health Nursing - I",s:"Community - PHC, CHC, Sub-centre, Immunization Schedule, Family Planning, Health Education.",pdf:"Community Health Nursing pdf"},
+{t:"5. Communication & Education Tech",s:"Communication Process, Health Education, AV Aids, Counseling.",pdf:"Communication Education Technology nursing pdf"}
+],
+"3rd":[
+{t:"1. Medical Surgical Nursing - II",s:"Neuro - Stroke, Epilepsy. Renal - Renal Failure, Dialysis. Oncology - Cancer Warning Signs. ICU Nursing, OT Nursing.",pdf:"Medical Surgical Nursing II pdf"},
+{t:"2. Child Health Nursing",s:"Growth & Development, Newborn Care, Apgar Score (10), Immunization Chart, Malnutrition, Diarrhea - ORS, Pediatric Drug Dose.",pdf:"Child Health Nursing BSc pdf"},
+{t:"3. Mental Health Nursing",s:"Mental Disorders - Anxiety, Depression, Schizophrenia, Bipolar. ECT, Psychotherapy, Psychiatric Drugs.",pdf:"Mental Health Nursing BSc pdf"},
+{t:"4. Midwifery & OBG - Very Important",s:"Pregnancy - 9 months 40 weeks, Trimesters, Labour Stages (3 Stages), APH, PPH, Abortion, Contraception, Normal Delivery Procedure, Antenatal Care.",pdf:"Midwifery OBG BSc Nursing pdf"},
+],
+"4th":[
+{t:"1. Midwifery & OBG - II + Practical",s:"High Risk Pregnancy, Eclampsia (BP high + Proteinuria), Forceps Delivery, Newborn Resuscitation, Family Planning Methods.",pdf:"OBG Midwifery 4th year pdf"},
+{t:"2. Community Health Nursing - II",s:"Epidemiology, National Health Programs - JSY, JSSK, RCH, RNTCP, National Health Policy, Disaster Management.",pdf:"Community Health Nursing II pdf"},
+{t:"3. Nursing Research & Statistics",s:"Research - Definition, Types, Data Collection, Sampling, Statistics - Mean, Median, Mode, SD, Research Process.",pdf:"Nursing Research Statistics pdf"},
+{t:"4. Management of Nursing Services",s:"Management Principles, Hospital Organization, Ward Management, Leadership Styles, Supervision, Material Management.",pdf:"Nursing Management pdf"}
+]
+};
+const qBank=[{q:"Heart me kitne chambers?",o:["4","2","3","5"],a:0},{q:"Normal BP?",o:["120/80 mmHg","140/90","160/100","90/60"],a:0},{q:"Adult me bones?",o:["206","300","213","106"],a:0},{q:"Universal Donor?",o:["O -ve","AB+","A+","B+"],a:0},{q:"Nursing ki founder?",o:["Florence Nightingale","Mother Teresa","Kalpana Chawla","Sarojini"],a:0},{q:"Apgar Score kitna?",o:["10","5","15","20"],a:0},{q:"Nursing Process ka first step?",o:["Assessment","Diagnosis","Planning","Implementation"],a:0},{q:"Hand washing ke steps?",o:["7 steps","5 steps","10 steps","3 steps"],a:0},{q:"Nephron kiski unit?",o:["Kidney","Heart","Liver","Lungs"],a:0},{q:"Normal Pulse?",o:["72/min","120/min","50/min","100/min"],a:0},{q:"Hb Female normal?",o:["12-16 g/dl","10-12","14-18","8-10"],a:0},{q:"BSc Nursing duration?",o:["4 Years","3 Years","2 Years","5 Years"],a:0}];
+let cur=[],idx=0,sc=0;
+function openN(year){document.getElementById('nTitle').innerText=year+" Year - All Notes";let h="";nursingData[year].forEach((n,i)=>{h+=`<div onclick="openNote('${year}',${i})" class="border p-3 rounded-xl flex justify-between items-center cursor-pointer hover:bg-pink-50"><div><b class="text-sm">${n.t}</b><p class="text-[11px] text-gray-500">Notes + PDF + OMR</p></div><span class="bg-pink-500 text-white px-3 py-1 rounded-full text-xs">View</span></div>`});document.getElementById('nItems').innerHTML=h; if(year=='1st') { let allH="";for(let y in nursingData){allH+=`<h4 class='font-bold mt-4 text-pink-600'>${y} Year</h4>`;nursingData[y].forEach((n,i)=>{allH+=`<div onclick="openNote('${y}',${i})" class="border p-3 rounded-xl flex justify-between items-center mt-2"><div><b class="text-sm">${n.t}</b></div><span class="bg-pink-500 text-white px-2 py-1 rounded-full text-xs">View</span></div>`});} document.getElementById('nItems').innerHTML=allH; } }
+function openNote(y,i){let d=nursingData[y][i];document.getElementById('noteHead').innerText=d.t;document.getElementById('noteBody').innerText=d.s+"\n\n--- Important Points for Exam ---\n"+d.s+"\n\nNote: Isse PYQ + University Exam me bahut help milegi!";document.getElementById('pdfLink').href="https://www.google.com/search?q="+encodeURIComponent(d.pdf);document.getElementById('noteModal').classList.remove('hidden');}
+function startOMR(){cur=[...qBank].sort(()=>0.5-Math.random()).slice(0,10);idx=0;sc=0;document.getElementById('omr').classList.remove('hidden');showQ();}
+function showQ(){if(idx>=cur.length){document.getElementById('omrBox').innerHTML=`<div class='text-center py-6'><div class='text-5xl'>🎉</div><h3 class='font-bold text-xl mt-3'>Score ${sc}/${cur.length}</h3><button onclick='startOMR()' class='mt-4 bg-pink-600 text-white px-6 py-2 rounded-full'>Phir Se</button></div>`;return;}let qq=cur[idx];let h=`<p class='text-xs'>Q ${idx+1}/${cur.length}</p><h4 class='font-bold mt-2'>${qq.q}</h4><div class='mt-3 space-y-2'>`;qq.o.forEach((op,j)=>{h+=`<button onclick='check(${j})' class='w-full text-left border p-3 rounded-xl hover:bg-pink-50'>${String.fromCharCode(65+j)}. ${op}</button>`});h+=`</div>`;document.getElementById('omrBox').innerHTML=h;}
+function check(i){if(i==cur[idx].a)sc++;idx++;showQ();}
+openN('1st');
 </script>
 </body>
 </html>
