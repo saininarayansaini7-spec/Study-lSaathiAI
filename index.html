@@ -2,16 +2,75 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StudSaathi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudSaathi - Padhega UP, Badhega UP</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:'Poppins',sans-serif}</style>
 </head>
-<body style="margin:0;font-family:sans-serif;background:#eef2ff;text-align:center;padding:20px">
-<h1 style="color:#1e40af">📚 StudSaathi</h1>
-<h3>Padhega UP, Badhega UP</h3>
-<div style="background:#3b82f6;color:white;padding:25px;margin:15px 0;border-radius:20px;font-size:20px">10th UP Board</div>
-<div style="background:#a855f7;color:white;padding:25px;margin:15px 0;border-radius:20px;font-size:20px">12th UP Board</div>
-<div style="background:#22c55e;color:white;padding:25px;margin:15px 0;border-radius:20px;font-size:20px">B.A.</div>
-<div style="background:#1e40af;color:white;padding:25px;margin:15px 0;border-radius:20px;font-size:20px">LLB 5 Year</div>
-<p style="color:green;font-weight:bold;margin-top:30px">✅ Website Live Hai Tauu!</p>
+<body class="bg-[#f0f4ff]">
+<header class="bg-white shadow sticky top-0 z-50 p-4 flex justify-between items-center">
+<h1 class="font-bold text-xl text-blue-700">📚 StudSaathi</h1>
+<span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">UP Board & University</span>
+</header>
+
+<div class="p-4">
+<div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6 rounded-3xl text-center">
+<h2 class="text-2xl font-bold">Padhega UP, Badhega UP!</h2>
+<p class="text-sm mt-2 opacity-90">10th, 12th, B.A., LLB - Sab Kuch Ek Jagah</p>
+<input id="search" oninput="search()" placeholder="Search Subject, Notes..." class="w-full mt-4 p-3 rounded-xl text-black outline-none">
+</div>
+
+<div class="grid grid-cols-2 gap-4 mt-6" id="cards">
+<div onclick="openCourse('10th')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer hover:scale-105 duration-200">
+<div class="text-3xl">🎓</div><h3 class="font-bold mt-2">10th UP</h3><p class="text-xs text-gray-500">All Subjects</p>
+</div>
+<div onclick="openCourse('12th')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer hover:scale-105 duration-200">
+<div class="text-3xl">📖</div><h3 class="font-bold mt-2">12th UP</h3><p class="text-xs text-gray-500">Arts / Commerce</p>
+</div>
+<div onclick="openCourse('BA')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer hover:scale-105 duration-200">
+<div class="text-3xl">👨‍🎓</div><h3 class="font-bold mt-2">B.A.</h3><p class="text-xs text-gray-500">1st,2nd,3rd Year</p>
+</div>
+<div onclick="openCourse('LLB')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer hover:scale-105 duration-200">
+<div class="text-3xl">⚖️</div><h3 class="font-bold mt-2">LLB 5 Year</h3><p class="text-xs text-gray-500">Law Notes</p>
+</div>
+</div>
+
+<div id="list" class="mt-6 hidden bg-white rounded-2xl p-4 shadow">
+<div class="flex justify-between items-center"><h3 id="listTitle" class="font-bold text-lg"></h3><button onclick="closeList()" class="bg-gray-200 px-3 py-1 rounded-full text-sm">X</button></div>
+<div id="listItems" class="mt-4 space-y-3"></div>
+</div>
+
+<footer class="text-center mt-10 pb-6 text-gray-500 text-xs">Made with ❤️ for UP Students | StudSaathi 2026</footer>
+</div>
+
+<script>
+const data={
+"10th":["Hindi - Complete Notes","English Grammar","Maths - Formula + PYQ","Science - Physics, Chemistry, Bio","Social Science - History, Geo","Sanskrit"],
+"12th":["Hindi - Gadya Padya","English - Prose & Poetry","History - Medieval & Modern","Political Science - Rajniti Vigyan","Geography","Economics","Sociology","Computer"],
+"BA":["Hindi Sahitya - 1st Year","English Literature","History - Ancient, Medieval","Political Science","Sociology","Geography - Physical","Economics - Micro/Macro","Psychology"],
+"LLB":["Legal Methods & History","Law of Contract","Constitutional Law I & II","IPC - Indian Penal Code","Family Law - Hindu/Muslim","Jurisprudence","Administrative Law","Environmental Law","Civil Procedure Code","CrPC + Evidence"]
+}
+function openCourse(c){
+document.getElementById('list').classList.remove('hidden');
+document.getElementById('listTitle').innerText=c+" - Subjects & Notes";
+let html="";
+data[c].forEach(s=>{
+html+=`<div class="flex justify-between items-center border p-3 rounded-xl"><div><b>${s}</b><p class="text-xs text-gray-500">PDF Notes | PYQ | MCQ</p></div><button onclick="alert('Download Start: ${s}')" class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm">View</button></div>`;
+});
+document.getElementById('listItems').innerHTML=html;
+window.scrollTo(0,400);
+}
+function closeList(){document.getElementById('list').classList.add('hidden')}
+function search(){
+let q=document.getElementById('search').value.toLowerCase();
+if(!q){closeList();return;}
+let all=[];for(let k in data){data[k].forEach(v=>all.push(k+" - "+v));}
+let f=all.filter(x=>x.toLowerCase().includes(q));
+document.getElementById('list').classList.remove('hidden');
+document.getElementById('listTitle').innerText="Search Result";
+document.getElementById('listItems').innerHTML=f.map(s=>`<div class="border p-3 rounded-xl">${s} <span class="float-right text-blue-600 text-sm">Open</span></div>`).join('')||"<p class='text-gray-500 text-sm'>Kuch nahi mila</p>";
+}
+</script>
 </body>
 </html>
