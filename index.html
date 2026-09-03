@@ -2,71 +2,212 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StudSaathi - BSc Nursing Full Notes</title>
+<title>StudSaathi - Own PDF Notes</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-<style>body{font-family:Poppins}.notes{white-space:pre-line; font-size:13px;}</style>
+<style>body{font-family:Poppins}</style>
 </head>
-<body class="bg-[#f0f7ff]">
-<header class="bg-white p-4 flex justify-between sticky top-0 shadow z-50"><h1 class="font-bold text-blue-700">📚 StudSaathi</h1><button onclick="startOMR('Nursing')" class="bg-red-600 text-white px-3 py-1 rounded-full text-xs animate-pulse">🔴 Nursing OMR LIVE</button></header>
+<body class="bg-[#fff0f5]">
+<header class="bg-white p-4 flex justify-between sticky top-0 shadow z-50"><h1 class="font-bold text-pink-600">📚 StudSaathi - My PDF</h1><button onclick="startOMR()" class="bg-red-600 text-white px-3 py-1 rounded-full text-xs animate-pulse">🔴 OMR Test</button></header>
 <div class="p-4">
-<div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-6 rounded-3xl text-center"><h2 class="text-2xl font-bold">BSc Nursing - All Notes Added!</h2><p class="text-sm">1st to 4th Year + PDF + OMR</p></div>
-
-<div class="grid grid-cols-2 gap-3 mt-5">
-<div onclick="openN('1st')" class="bg-white p-4 rounded-2xl shadow text-center border-l-4 border-pink-500"><b>1st Year</b><p class="text-xs">6 Subjects Notes</p></div>
-<div onclick="openN('2nd')" class="bg-white p-4 rounded-2xl shadow text-center border-l-4 border-purple-500"><b>2nd Year</b><p class="text-xs">7 Subjects Notes</p></div>
-<div onclick="openN('3rd')" class="bg-white p-4 rounded-2xl shadow text-center border-l-4 border-blue-500"><b>3rd Year</b><p class="text-xs">5 Subjects Notes</p></div>
-<div onclick="openN('4th')" class="bg-white p-4 rounded-2xl shadow text-center border-l-4 border-green-500"><b>4th Year</b><p class="text-xs">5 Subjects Notes</p></div>
-</div>
-
-<div id="nList" class="mt-6 bg-white rounded-2xl p-4 shadow">
-<h3 id="nTitle" class="font-bold text-lg">👩‍⚕️ BSc Nursing - Sabhi Notes</h3>
-<div id="nItems" class="mt-4 space-y-3"></div>
-</div>
-
-<div id="noteModal" class="fixed inset-0 bg-black/80 hidden z-[100] p-4 flex items-center justify-center"><div class="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-auto p-5"><div class="flex justify-between"><b id="noteHead" class="font-bold"></b><button onclick="document.getElementById('noteModal').classList.add('hidden')" class="bg-gray-200 px-3 rounded-full">X</button></div><div id="noteBody" class="notes mt-4 bg-gray-50 p-3 rounded-xl"></div><div class="mt-4 flex gap-2"><a id="pdfLink" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm flex-1 text-center">📄 PDF Dekho</a><button onclick="startOMR('Nursing')" class="bg-red-600 text-white px-4 py-2 rounded-full text-sm flex-1">OMR Test Do</button></div></div></div>
-
+<div class="bg-gradient-to-r from-pink-600 to-purple-600 text-white p-6 rounded-3xl text-center"><h2 class="text-xl font-bold">BSc Nursing - Hamare Khud Ke Notes PDF!</h2><p class="text-xs mt-1">Ab Koi Bahar Nahi Jayega - App Khud PDF Banayega</p></div>
+<div id="list" class="mt-6 bg-white rounded-2xl p-4 shadow"><h3 class="font-bold">👩‍⚕️ All BSc Nursing Notes (App ke PDF)</h3><div id="items" class="mt-4 space-y-3"></div></div>
+<div id="modal" class="fixed inset-0 bg-black/80 hidden z-[100] p-4 flex items-center justify-center"><div class="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-auto p-5"><div class="flex justify-between"><b id="mHead"></b><button onclick="document.getElementById('modal').classList.add('hidden')" class="bg-gray-200 px-3 rounded-full">X</button></div><div id="mBody" class="text-[13px] mt-4 bg-gray-50 p-3 rounded-xl whitespace-pre-line"></div><div class="grid grid-cols-2 gap-2 mt-4"><button onclick="downloadMyPDF()" class="bg-blue-600 text-white py-3 rounded-full font-bold">📥 PDF Download Karo</button><button onclick="startOMR()" class="bg-red-600 text-white py-3 rounded-full font-bold">OMR Do</button></div><p class="text-[10px] text-center mt-2 text-gray-500">Ye PDF Isi App Ne Banaya Hai</p></div></div>
 <div id="omr" class="fixed inset-0 bg-black/80 hidden z-[100] p-4 flex items-center justify-center"><div class="bg-white rounded-3xl p-5 w-full max-w-md max-h-[90vh] overflow-auto"><div class="flex justify-between"><b>OMR Test</b><button onclick="document.getElementById('omr').classList.add('hidden')" class="bg-gray-200 px-3 rounded-full">X</button></div><div id="omrBox" class="mt-4"></div></div></div>
 </div>
-
 <script>
-const nursingData={
-"1st":[
-{t:"1. Anatomy - शरीर रचना विज्ञान",s:"Cell, Tissue, Skeletal System (206 bones), Muscular System, Cardiovascular (Heart 4 chambers), Respiratory, Digestive, Nervous System, Sense Organs. Heart: Right Atrium, Left Atrium, Right Ventricle, Left Ventricle. Blood Pressure Normal 120/80 mmHg.",pdf:"Anatomy Physiology BSc Nursing pdf"},
-{t:"2. Physiology - शरीर क्रिया",s:"Blood - RBC, WBC, Platelets. Hemoglobin Normal 12-16 g/dl Female, 14-18 Male. Circulation - Systemic & Pulmonary. Respiration - 16-20/min Normal. Digestion - Stomach acid HCl. Kidney - Nephron is functional unit.",pdf:"Physiology BSc Nursing 1st year pdf"},
-{t:"3. Nutrition & Biochemistry",s:"Carbohydrate, Protein, Fat, Vitamins (A,B,C,D,E,K), Minerals. Balanced Diet - 2000-2500 kcal/day. Protein source - Dal, Egg. Kwashiorkor due to protein deficiency. BMI Formula = Weight(kg)/Height(m2).",pdf:"Nutrition Biochemistry BSc Nursing pdf"},
-{t:"4. Nursing Foundation - Most Important",s:"Fundamentals: Hand Washing - 7 steps, Bed Making, Vital Signs - TPR & BP, Nursing Process - ADPIE (Assessment, Diagnosis, Planning, Implementation, Evaluation), Ethics, Florence Nightingale - Founder of Modern Nursing.",pdf:"Nursing Foundation BSc Nursing pdf"},
-{t:"5. Psychology",s:"Definition, Branches, Learning Theories, Memory, Intelligence IQ, Motivation, Personality, Mental Health.",pdf:"Psychology BSc Nursing pdf"},
-{t:"6. Microbiology",s:"Bacteria, Virus, Fungi, Sterilization - Autoclave, Disinfection, Infection Control, Immunity.",pdf:"Microbiology BSc Nursing pdf"}
-],
-"2nd":[
-{t:"1. Pharmacology",s:"Drug - Definition, Sources, Routes - Oral, IV, IM, SC. Drug Calculation, Antibiotics, Analgesics, Emergency Drugs - Adrenaline, Atropine. 5 Rights - Right Patient, Drug, Dose, Route, Time.",pdf:"Pharmacology BSc Nursing pdf"},
-{t:"2. Pathology & Genetics",s:"Inflammation, Edema, Necrosis, Neoplasia - Benign & Malignant, Genetic Disorders - Down Syndrome, Thalassemia, Mendelian Laws.",pdf:"Pathology Genetics BSc Nursing pdf"},
-{t:"3. Medical Surgical Nursing - I",s:"Most Imp for Exam: Hypertension (140/90), Diabetes (Normal Fasting 70-100), Asthma, Pneumonia, Typhoid, Myocardial Infarction, Care Plan of all diseases.",pdf:"Medical Surgical Nursing BSc Nursing pdf"},
-{t:"4. Community Health Nursing - I",s:"Community - PHC, CHC, Sub-centre, Immunization Schedule, Family Planning, Health Education.",pdf:"Community Health Nursing pdf"},
-{t:"5. Communication & Education Tech",s:"Communication Process, Health Education, AV Aids, Counseling.",pdf:"Communication Education Technology nursing pdf"}
-],
-"3rd":[
-{t:"1. Medical Surgical Nursing - II",s:"Neuro - Stroke, Epilepsy. Renal - Renal Failure, Dialysis. Oncology - Cancer Warning Signs. ICU Nursing, OT Nursing.",pdf:"Medical Surgical Nursing II pdf"},
-{t:"2. Child Health Nursing",s:"Growth & Development, Newborn Care, Apgar Score (10), Immunization Chart, Malnutrition, Diarrhea - ORS, Pediatric Drug Dose.",pdf:"Child Health Nursing BSc pdf"},
-{t:"3. Mental Health Nursing",s:"Mental Disorders - Anxiety, Depression, Schizophrenia, Bipolar. ECT, Psychotherapy, Psychiatric Drugs.",pdf:"Mental Health Nursing BSc pdf"},
-{t:"4. Midwifery & OBG - Very Important",s:"Pregnancy - 9 months 40 weeks, Trimesters, Labour Stages (3 Stages), APH, PPH, Abortion, Contraception, Normal Delivery Procedure, Antenatal Care.",pdf:"Midwifery OBG BSc Nursing pdf"},
-],
-"4th":[
-{t:"1. Midwifery & OBG - II + Practical",s:"High Risk Pregnancy, Eclampsia (BP high + Proteinuria), Forceps Delivery, Newborn Resuscitation, Family Planning Methods.",pdf:"OBG Midwifery 4th year pdf"},
-{t:"2. Community Health Nursing - II",s:"Epidemiology, National Health Programs - JSY, JSSK, RCH, RNTCP, National Health Policy, Disaster Management.",pdf:"Community Health Nursing II pdf"},
-{t:"3. Nursing Research & Statistics",s:"Research - Definition, Types, Data Collection, Sampling, Statistics - Mean, Median, Mode, SD, Research Process.",pdf:"Nursing Research Statistics pdf"},
-{t:"4. Management of Nursing Services",s:"Management Principles, Hospital Organization, Ward Management, Leadership Styles, Supervision, Material Management.",pdf:"Nursing Management pdf"}
-]
-};
-const qBank=[{q:"Heart me kitne chambers?",o:["4","2","3","5"],a:0},{q:"Normal BP?",o:["120/80 mmHg","140/90","160/100","90/60"],a:0},{q:"Adult me bones?",o:["206","300","213","106"],a:0},{q:"Universal Donor?",o:["O -ve","AB+","A+","B+"],a:0},{q:"Nursing ki founder?",o:["Florence Nightingale","Mother Teresa","Kalpana Chawla","Sarojini"],a:0},{q:"Apgar Score kitna?",o:["10","5","15","20"],a:0},{q:"Nursing Process ka first step?",o:["Assessment","Diagnosis","Planning","Implementation"],a:0},{q:"Hand washing ke steps?",o:["7 steps","5 steps","10 steps","3 steps"],a:0},{q:"Nephron kiski unit?",o:["Kidney","Heart","Liver","Lungs"],a:0},{q:"Normal Pulse?",o:["72/min","120/min","50/min","100/min"],a:0},{q:"Hb Female normal?",o:["12-16 g/dl","10-12","14-18","8-10"],a:0},{q:"BSc Nursing duration?",o:["4 Years","3 Years","2 Years","5 Years"],a:0}];
-let cur=[],idx=0,sc=0;
-function openN(year){document.getElementById('nTitle').innerText=year+" Year - All Notes";let h="";nursingData[year].forEach((n,i)=>{h+=`<div onclick="openNote('${year}',${i})" class="border p-3 rounded-xl flex justify-between items-center cursor-pointer hover:bg-pink-50"><div><b class="text-sm">${n.t}</b><p class="text-[11px] text-gray-500">Notes + PDF + OMR</p></div><span class="bg-pink-500 text-white px-3 py-1 rounded-full text-xs">View</span></div>`});document.getElementById('nItems').innerHTML=h; if(year=='1st') { let allH="";for(let y in nursingData){allH+=`<h4 class='font-bold mt-4 text-pink-600'>${y} Year</h4>`;nursingData[y].forEach((n,i)=>{allH+=`<div onclick="openNote('${y}',${i})" class="border p-3 rounded-xl flex justify-between items-center mt-2"><div><b class="text-sm">${n.t}</b></div><span class="bg-pink-500 text-white px-2 py-1 rounded-full text-xs">View</span></div>`});} document.getElementById('nItems').innerHTML=allH; } }
-function openNote(y,i){let d=nursingData[y][i];document.getElementById('noteHead').innerText=d.t;document.getElementById('noteBody').innerText=d.s+"\n\n--- Important Points for Exam ---\n"+d.s+"\n\nNote: Isse PYQ + University Exam me bahut help milegi!";document.getElementById('pdfLink').href="https://www.google.com/search?q="+encodeURIComponent(d.pdf);document.getElementById('noteModal').classList.remove('hidden');}
-function startOMR(){cur=[...qBank].sort(()=>0.5-Math.random()).slice(0,10);idx=0;sc=0;document.getElementById('omr').classList.remove('hidden');showQ();}
-function showQ(){if(idx>=cur.length){document.getElementById('omrBox').innerHTML=`<div class='text-center py-6'><div class='text-5xl'>🎉</div><h3 class='font-bold text-xl mt-3'>Score ${sc}/${cur.length}</h3><button onclick='startOMR()' class='mt-4 bg-pink-600 text-white px-6 py-2 rounded-full'>Phir Se</button></div>`;return;}let qq=cur[idx];let h=`<p class='text-xs'>Q ${idx+1}/${cur.length}</p><h4 class='font-bold mt-2'>${qq.q}</h4><div class='mt-3 space-y-2'>`;qq.o.forEach((op,j)=>{h+=`<button onclick='check(${j})' class='w-full text-left border p-3 rounded-xl hover:bg-pink-50'>${String.fromCharCode(65+j)}. ${op}</button>`});h+=`</div>`;document.getElementById('omrBox').innerHTML=h;}
-function check(i){if(i==cur[idx].a)sc++;idx++;showQ();}
-openN('1st');
+let currentNote=null;
+const allNotes=[
+{year:"1st Year", title:"1. Anatomy - Full Notes PDF", content:`BSc Nursing 1st Year - Anatomy (StudSaathi Special Notes)
+
+CHAPTER 1: INTRODUCTION
+Anatomy = Study of body structure.
+Cell = Basic unit of life.
+Tissue = Group of cells (4 types: Epithelial, Connective, Muscular, Nervous)
+
+CHAPTER 2: SKELETAL SYSTEM
+Total Bones = 206
+Axial = 80, Appendicular = 126
+Longest Bone = Femur
+Smallest Bone = Stapes (Ear)
+
+CHAPTER 3: CARDIOVASCULAR SYSTEM
+Heart = 4 Chambers
+Right Atrium, Right Ventricle, Left Atrium, Left Ventricle
+Heart Weight = 250-300 gm
+Normal BP = 120/80 mmHg
+Pulse = 72/min
+Blood = 5-6 Litre
+
+CHAPTER 4: RESPIRATORY SYSTEM
+Lungs = 2, Right 3 lobes, Left 2 lobes
+Normal Respiration = 16-20/min
+Trachea = Wind Pipe
+
+CHAPTER 5: DIGESTIVE SYSTEM
+Liver = Largest Gland
+Small Intestine = 6 meter
+Large Intestine = 1.5 meter
+
+IMPORTANT FOR EXAM - 10 Marks Q:
+- Describe Heart with diagram
+- Function of Liver
+- Types of Bones
+
+By: StudSaathi Team`},
+{year:"1st Year", title:"2. Physiology - Full Notes PDF", content:`BSc Nursing - Physiology Full Notes - StudSaathi
+
+1. BLOOD
+RBC = Red Blood Cell - Carry Oxygen - Life 120 days
+WBC = White Blood Cell - Fight Infection - 4000-11000 /cumm
+Platelet = Help in Clotting - 1.5-4 Lakh
+Hemoglobin: Male 14-18 gm%, Female 12-16 gm%
+Blood Groups: A, B, AB, O
+Universal Donor = O -ve, Universal Recipient = AB +ve
+
+2. CIRCULATION
+Systemic Circulation: Left Ventricle -> Body -> Right Atrium
+Pulmonary Circulation: Right Ventricle -> Lungs -> Left Atrium
+ECG Normal: P-QRS-T Wave
+
+3. KIDNEY
+Functional Unit = Nephron (1-1.2 Million in each kidney)
+Function: Filter Blood, Make Urine
+Normal Urine = 1-1.5 Litre / day
+
+4. NORMAL VALUES FOR EXAM:
+BP 120/80, Pulse 72, Respiration 16-20, Temp 98.6 F (37 C)
+
+By: StudSaathi`},
+{year:"1st Year", title:"3. Nursing Foundation - Most Imp PDF", content:`Nursing Foundation - BSc Nursing - 20 Marks Pakka
+
+1. NURSING DEFINITIONS
+Florence Nightingale = Founder of Modern Nursing - Lady with Lamp
+Virginia Henderson = Definition of Nursing
+
+2. NURSING PROCESS (ADPIE) - 5 Steps:
+A - Assessment (Data Collection)
+D - Diagnosis (NANDA List)
+P - Planning
+I - Implementation
+E - Evaluation
+
+3. VITAL SIGNS (TPR + BP)
+Temperature: Normal 98.6 F, Site: Oral, Axilla, Rectal
+Pulse: Radial Pulse 72/min
+Respiration: 16-20/min
+BP: Systolic/Diastolic 120/80
+
+4. HAND WASHING - 7 STEPS (Most Imp for Practical)
+5. BED MAKING - Types: Open, Closed, Occupied, Operation Bed
+6. ETHICS - 4 Principles: Autonomy, Beneficence, Non-maleficence, Justice
+
+7. BIOMEDICAL WASTE: 4 Colors - Yellow, Red, Blue, Black
+
+By: StudSaathi Team - Ye Notes Exam Me Direct Aayega`},
+{year:"2nd Year", title:"4. Pharmacology - Full PDF", content:`Pharmacology - BSc Nursing 2nd Year - StudSaathi Notes
+
+1. 5 RIGHTS OF DRUG ADMINISTRATION:
+Right Patient, Right Drug, Right Dose, Right Route, Right Time
+
+2. ROUTES:
+Oral, Sublingual, IV (Intravenous), IM (Intramuscular), SC (Subcutaneous), IV most fast
+
+3. IMPORTANT DRUGS:
+Antibiotics: Penicillin, Amoxicillin
+Analgesics: Paracetamol, Diclofenac
+Emergency: Adrenaline (1:1000), Atropine, Dopamine, Deriphyllin
+Antihypertensive: Amlodipine
+
+4. DRUG CALCULATION:
+1 gm = 1000 mg, 1 mg = 1000 mcg
+1 Litre = 1000 ml
+
+5. SIDE EFFECTS: Watch for Allergy, Anaphylaxis
+
+By StudSaathi`},
+{year:"3rd Year", title:"5. Child Health Nursing - Full PDF", content:`Child Health Nursing - StudSaathi Notes
+
+1. GROWTH & DEVELOPMENT
+Infant: 0-1 Year, Toddler: 1-3 Year, Preschool: 3-6 Year
+
+2. APGAR SCORE - 10 Marks Imp:
+Appearance, Pulse, Grimace, Activity, Respiration - Each 0-2 = Total 10
+7-10 Normal, 4-6 Mild Asphyxia, 0-3 Severe
+
+3. IMMUNIZATION SCHEDULE (New):
+At Birth: BCG, OPV 0, Hep B
+6 Weeks: OPV1, DPT1, Hep B1
+10 Weeks: OPV2, DPT2, Hep B2
+14 Weeks: OPV3, DPT3, Hep B3
+9 Months: Measles, Vitamin A
+
+4. NEWBORN CARE:
+Normal Weight: 2.5-3.5 kg
+Temp Maintenance: Kangaroo Care
+Breast Feeding: Within 30 min of birth - Colostrum is imp
+
+5. DIARRHEA: Give ORS, Zinc
+
+By StudSaathi`},
+{year:"3rd Year", title:"6. Midwifery OBG - Full PDF - Most Imp", content:`Midwifery & OBG - StudSaathi Super Notes - 30 Marks
+
+1. PREGNANCY:
+Duration: 40 Weeks, 9 Months, 280 Days
+Trimester: 1st (0-12 wk), 2nd (13-28 wk), 3rd (29-40 wk)
+Signs: Amenorrhea, Morning Sickness, Urine Pregnancy Test +ve
+
+2. ANTENATAL CARE:
+Minimum 4 Visits, TT Injection 2 doses, IFA Tablets 180 days
+Weight Gain in Pregnancy: 10-12 kg
+Hb should be >11 gm%
+
+3. LABOUR - 3 STAGES:
+1st Stage: Cervix Dilatation 0-10 cm (Longest - 12-14 hrs in Primigravida)
+2nd Stage: Birth of Baby
+3rd Stage: Delivery of Placenta
+Placenta Weight: 500 gm
+
+4. HIGH RISK:
+APH = Antepartum Hemorrhage, PPH = Postpartum Hemorrhage (>500 ml blood loss)
+Eclampsia: BP >140/90 + Proteinuria + Fits
+
+5. FAMILY PLANNING:
+Temporary: Condom, Mala-D, Copper-T
+Permanent: Tubectomy, Vasectomy
+
+6. NORMAL DELIVERY: Episiotomy, Cord Clamping after 1-3 min
+
+By StudSaathi - Ye Pura Rat Lo`},
+{year:"4th Year", title:"7. Community Health & Management PDF", content:`Community Health + Management - 4th Year - StudSaathi
+
+NATIONAL PROGRAMS:
+JSY: Janani Suraksha Yojana - Institutional Delivery
+JSSK: Free Delivery & Care for Mother & Newborn
+RNTCP: TB Control - DOTS
+RCH: Reproductive & Child Health
+Mission Indradhanush: Immunization
+
+PHC: 30,000 Population - 1 Medical Officer
+CHC: 1,20,000 Population - 4 Specialists
+Sub-Centre: 5000 Population - 1 ANM
+
+MANAGEMENT:
+Leadership Styles: Autocratic, Democratic, Laissez-faire
+Material Management, Staffing, Supervision
+
+RESEARCH:
+Mean = Average, Median = Middle Value, Mode = Most Frequent
+
+By StudSaathi Team`},
+];
+
+function render(){let h="";allNotes.forEach((n,i)=>{h+=`<div onclick="openMyNote(${i})" class="border p-3 rounded-xl flex justify-between items-center cursor-pointer hover:bg-pink-50"><div><p class="text-[10px] bg-pink-100 text-pink-600 px-2 py-0.5 rounded-full w-fit">${n.year}</p><b class="text-sm mt-1 block">${n.title}</b><p class="text-[11px] text-gray-500">App ka Original PDF | Download Karo</p></div><span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">📥 PDF</span></div>`});document.getElementById('items').innerHTML=h;}
+function openMyNote(i){currentNote=allNotes[i];document.getElementById('mHead').innerText=currentNote.title;document.getElementById('mBody').innerText=currentNote.content;document.getElementById('modal').classList.remove('hidden');}
+async function downloadMyPDF(){const {jsPDF}=window.jspdf;const doc=new jsPDF();doc.setFontSize(16);doc.text(currentNote.title,10,15);doc.setFontSize(11);let lines=doc.splitTextToSize(currentNote.content,180);doc.text(lines,10,25);doc.setFontSize(8);doc.text("Generated by StudSaathi App - BSc Nursing Special | 2026",10,285);doc.save(currentNote.title+".pdf");}
+const qBank=[{q:"Heart me kitne chambers?",o:["4","2","3","5"],a:0},{q:"Nursing Founder?",o:["Florence Nightingale","Mother Teresa","Laxmi Bai","Sarojini"],a:0},{q:"Normal BP?",o:["120/80","140/90","160/100","90/60"],a:0}]; let cur=[],idx=0,sc=0; function startOMR(){cur=[...qBank].sort(()=>0.5-Math.random());idx=0;sc=0;document.getElementById('omr').classList.remove('hidden');showQ();} function showQ(){if(idx>=cur.length){document.getElementById('omrBox').innerHTML=`<div class='text-center py-6'><b>Score ${sc}/${cur.length}</b><br><button onclick='startOMR()' class='mt-4 bg-pink-600 text-white px-6 py-2 rounded-full'>Phir Se</button></div>`;return;}let qq=cur[idx];let h=`<p>Q ${idx+1}</p><b>${qq.q}</b><div class='mt-3 space-y-2'>`;qq.o.forEach((op,j)=>{h+=`<button onclick='check(${j})' class='w-full text-left border p-3 rounded-xl'>${op}</button>`});h+=`</div>`;document.getElementById('omrBox').innerHTML=h;} function check(i){if(i==cur[idx].a)sc++;idx++;showQ();}
+render();
 </script>
 </body>
 </html>
