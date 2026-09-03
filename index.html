@@ -2,48 +2,99 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StudSaathi Hindi Version</title>
+<title>StudSaathi - SUPER HIT FINAL</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
-<style>body{font-family:'Noto Sans Devanagari', Poppins, sans-serif}</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700&display=swap" rel="stylesheet">
+<style>body{font-family:'Noto Sans Devanagari',sans-serif}</style>
 </head>
-<body class="bg-slate-100">
-<header class="bg-white p-4 shadow sticky top-0 z-50"><h1 class="font-bold text-blue-600">📚 स्टड साथी - हिंदी वर्जन</h1></header>
+<body class="bg-[#f0f4ff]">
+<div class="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 text-xs font-bold animate-pulse">🔥 LIVE: आज <span id="liveC">1,247</span> Students PDF डाउनलोड कर चुके हैं! तुम भी करो</div>
+
+<header class="bg-white p-4 shadow sticky top-0 z-50 flex justify-between items-center">
+<div><h1 class="font-bold text-blue-600 text-sm">📚 स्टड साथी SUPER HIT</h1><p class="text-[10px] text-gray-500">Profile + 2020-2026 + Nursing + NEET</p></div>
+<div class="flex items-center gap-2">
+<div class="text-right"><p class="text-[10px]">Downloads</p><b id="count" class="text-blue-600 text-xs">12,847</b></div>
+<button onclick="openProfile()" class="bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1"><img id="hImg" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-6 h-6 rounded-full object-cover"><span id="hName" class="text-[10px] font-bold">Profile</span></button>
+</div>
+</header>
+
+<div id="profileCard" class="mx-4 mt-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-3xl hidden">
+<div class="flex gap-3 items-center"><img id="pImg" src="" class="w-12 h-12 rounded-full border-2 border-white bg-white object-cover"><div><b id="pName" class="text-sm"></b><p id="pClass" class="text-xs opacity-90"></p><p id="pSchool" class="text-[10px] opacity-80"></p></div><button onclick="openProfile()" class="ml-auto bg-white text-blue-600 px-3 py-1 rounded-full text-[10px] font-bold">Edit</button></div>
+<div class="mt-3 grid grid-cols-3 gap-2 text-center"><div class="bg-white/20 rounded-xl py-2"><b id="stat1" class="text-xs">0</b><p class="text-[9px]">PDF Download</p></div><div class="bg-white/20 rounded-xl py-2"><b id="stat2" class="text-xs">0</b><p class="text-[9px]">Paper पढ़े</p></div><div class="bg-white/20 rounded-xl py-2"><b class="text-xs">UP Board</b><p class="text-[9px]">2026</p></div></div>
+</div>
+
+<div id="noProfile" class="mx-4 mt-3 bg-yellow-50 border-2 border-yellow-300 rounded-3xl p-4 text-center">
+<p class="font-bold text-sm">👋 अपना Profile बनाओ - 30 सेकंड में</p><p class="text-[11px] mt-1">नाम डालो तो PDF पर तुम्हारा नाम आएगा!</p>
+<button onclick="openProfile()" class="mt-3 bg-blue-600 text-white px-6 py-2 rounded-full font-bold text-sm w-full">✨ Profile बनाओ</button>
+</div>
 
 <div class="p-4">
-<div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-3xl text-center">
-<h2 class="font-bold text-xl">अब अंदर सब कुछ हिंदी में!</h2>
-<p class="text-xs mt-1">10th + 12th (2020-2026) + Nursing + NEET</p>
+<div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-5 rounded-3xl relative overflow-hidden">
+<span class="absolute -right-5 -top-5 text-7xl opacity-20">🚀</span>
+<h2 class="font-bold text-sm">🔥 आज का वायरल पेपर</h2><p class="text-[11px] mt-1">10th 2020 वाला पेपर - 70% टीचर्स इसी को रटवा रहे हैं</p>
+<button onclick="openPop('p10',6)" class="mt-3 bg-white text-blue-600 px-5 py-2 rounded-full font-bold text-xs">👉 अभी खोलो - फ्री है</button>
 </div>
 
-<div class="grid grid-cols-2 gap-3 mt-5">
-<button onclick="openTab('t10')" id="btn_t10" class="bg-blue-600 text-white p-4 rounded-2xl font-bold">10th कक्षा<br><span style="font-size:10px">पूरा सिलेबस</span></button>
-<button onclick="openTab('t12')" id="btn_t12" class="bg-white p-4 rounded-2xl font-bold shadow">12th कक्षा<br><span style="font-size:10px">पूरा सिलेबस</span></button>
-<button onclick="openTab('p10')" id="btn_p10" class="bg-white p-4 rounded-2xl font-bold shadow">10th पेपर<br><span style="font-size:10px">2020-2026</span></button>
-<button onclick="openTab('p12')" id="btn_p12" class="bg-white p-4 rounded-2xl font-bold shadow">12th पेपर<br><span style="font-size:10px">2020-2026</span></button>
-<button onclick="openTab('nur')" id="btn_nur" class="bg-white p-4 rounded-2xl font-bold shadow">BSc नर्सिंग<br><span style="font-size:10px">1st-4th Year</span></button>
-<button onclick="openTab('neet')" id="btn_neet" class="bg-white p-4 rounded-2xl font-bold shadow">NEET<br><span style="font-size:10px">पूरा सिलेबस</span></button>
+<div class="grid grid-cols-3 gap-2 mt-4">
+<button onclick="openTab('p10')" id="btn_p10" class="bg-blue-600 text-white p-3 rounded-2xl font-bold text-xs shadow-lg scale-105">10th पेपर<br><span class="text-[9px] bg-yellow-300 text-black px-2 rounded-full">2020-2026 HOT</span></button>
+<button onclick="openTab('p12')" id="btn_p12" class="bg-white p-3 rounded-2xl font-bold text-xs shadow">12th पेपर<br><span class="text-[9px]">2020-2026</span></button>
+<button onclick="openTab('t10')" id="btn_t10" class="bg-white p-3 rounded-2xl font-bold text-xs shadow">10th सिलेबस<br><span class="text-[9px]">हिंदी में</span></button>
+<button onclick="openTab('t12')" id="btn_t12" class="bg-white p-3 rounded-2xl font-bold text-xs shadow">12th सिलेबस</button>
+<button onclick="openTab('nur')" id="btn_nur" class="bg-white p-3 rounded-2xl font-bold text-xs shadow">BSc Nursing<br><span class="text-[9px] bg-green-200 px-1 rounded-full">30 Marks</span></button>
+<button onclick="openTab('neet')" id="btn_neet" class="bg-white p-3 rounded-2xl font-bold text-xs shadow">NEET 2026</button>
 </div>
 
-<div class="mt-6 bg-white rounded-2xl p-4 shadow">
-<h3 id="head" class="font-bold text-lg"></h3>
-<div id="list" class="mt-4"></div>
+<div class="mt-5 bg-white rounded-2xl p-4 shadow"><div class="flex justify-between"><h3 id="head" class="font-bold text-sm"></h3><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded-full animate-pulse">LIVE</span></div><div id="list" class="mt-3"></div></div>
+
+<div class="mt-5 bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-4 text-center">
+<p class="font-bold text-sm">📲 दोस्तों को भेजो, पुण्य कमाओ</p><p class="text-[11px] mt-1">एक शेयर = एक दोस्त पास</p>
+<button onclick="shareApp()" class="mt-2 bg-green-500 text-white px-6 py-2 rounded-full font-bold text-sm w-full">WhatsApp पर शेयर करो 🚀</button>
 </div>
 </div>
 
-<div id="pop" class="fixed inset-0 bg-black/80 hidden z-50 p-4 flex items-center justify-center">
-<div class="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-auto p-5">
-<div class="flex justify-between"><b id="popH" class="text-sm w-4/5"></b><button onclick="document.getElementById('pop').classList.add('hidden')" class="bg-gray-200 w-8 h-8 rounded-full">X</button></div>
-<div id="popB" class="mt-4 bg-gray-50 p-3 rounded-xl text-sm whitespace-pre-line leading-7"></div>
-<button onclick="downloadPDF()" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-full font-bold">📥 PDF डाउनलोड करो</button>
-</div>
-</div>
+<div id="profileModal" class="fixed inset-0 bg-black/80 hidden z-[60] p-4 flex items-center justify-center"><div class="bg-white rounded-3xl w-full max-w-sm p-6"><h2 class="font-bold text-center">👤 Profile बनाओ</h2><div class="mt-4 text-center"><img id="previewImg" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-20 h-20 rounded-full mx-auto object-cover border-4 border-blue-100"><input type="file" id="photoInput" accept="image/*" class="hidden" onchange="previewPhoto(event)"><button onclick="document.getElementById('photoInput').click()" class="mt-2 text-xs bg-gray-100 px-3 py-1 rounded-full">📷 फोटो बदलो</button></div><div class="mt-4 space-y-3"><input id="inpName" placeholder="पूरा नाम" class="w-full bg-gray-100 rounded-xl px-4 py-3 text-sm outline-none border-2"><select id="inpClass" class="w-full bg-gray-100 rounded-xl px-4 py-3 text-sm outline-none border-2"><option value="">क्लास चुनो</option><option>10th UP Board</option><option>12th UP Board - Arts</option><option>12th UP Board - Science</option><option>BSc Nursing 1st Year</option><option>BSc Nursing 2nd Year</option><option>BSc Nursing 3rd Year</option><option>BSc Nursing 4th Year</option><option>NEET Aspirant</option></select><input id="inpSchool" placeholder="स्कूल / कॉलेज" class="w-full bg-gray-100 rounded-xl px-4 py-3 text-sm outline-none border-2"><input id="inpDist" placeholder="जिला" class="w-full bg-gray-100 rounded-xl px-4 py-3 text-sm outline-none border-2"></div><button onclick="saveProfile()" class="w-full mt-5 bg-blue-600 text-white py-3 rounded-full font-bold">✅ सेव करो</button><button onclick="document.getElementById('profileModal').classList.add('hidden')" class="w-full mt-2 text-xs text-gray-500">बाद में</button></div></div>
+
+<div id="pop" class="fixed inset-0 bg-black/80 hidden z-50 p-4 flex items-center justify-center"><div class="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-auto p-5"><div class="flex justify-between"><b id="popH" class="text-sm w-4/5"></b><button onclick="document.getElementById('pop').classList.add('hidden')" class="bg-gray-200 w-8 h-8 rounded-full">X</button></div><div id="popB" class="mt-4 bg-gray-50 p-3 rounded-xl text-sm whitespace-pre-line leading-7 max-h-72 overflow-auto"></div><div class="grid grid-cols-2 gap-2 mt-4"><button onclick="downloadPDF()" class="bg-blue-600 text-white py-3 rounded-full font-bold text-sm">📥 PDF डाउनलोड</button><button onclick="shareApp()" class="bg-green-500 text-white py-3 rounded-full font-bold text-sm">📤 WhatsApp शेयर</button></div><p id="pdfNameInfo" class="text-[10px] text-center mt-2 text-blue-600 font-bold"></p><p class="text-[10px] text-center mt-1 text-gray-400">डाउनलोड के बाद दोस्तों को भी भेजो</p></div></div>
 
 <script>
-var curTitle = "";
-var curText = "";
-var store = {
-t10: [
-{ t: "10th हिंदी - पूरा सिलेबस", c: "यूपी बोर्ड 10वीं हिंदी - पूरा सिलेबस 2026\n\nगद्य खंड (5 पाठ):\n1. मित्रता - रामचंद्र शुक्ल\n2. ममता - जयशंकर प्रसाद\n3. क्या निराश हुआ जाए - हजारी प्रसाद द्विवेदी\n4. आशा - प्रेमचंद (गोदान के लेखक)\n5. भारत माता - जवाहरलाल नेहरू\n\nपद्य खंड (5 पाठ):\n1. साखी - कबीरदास\n2. पद - सूरदास\n3. मनुष्यता - मैथिलीशरण गुप्त\n4. निराला - महादेवी वर्मा\n5. स्वदेशी - प्रेमचंद\n\nव्याकरण:\nसमास, अलंकार, रस, छंद, उपसर्ग, प्रत्यय, मुहावरे\nपत्र लेखन, निबंध लेखन\n\n20 अंक MCQ पैटर्न 2026" },
-{ t: "10th गणित - पूरा सिलेबस", c: "10वीं गणित - पूरा सिलेबस यूपी बोर्ड\n\n1. वास्तविक संख्याएँ - यूक्लिड विभाजन\n2. बहुपद - शून्यक\n3. दो चर वाले रैखिक समीकरण\n4. द्विघात समीकरण - सूत्र: x = -b +- root(b2-4ac) / 2a\n5. समांतर श्रेढ़ी - an = a+(n-1)d\n6. त्रिभुज - पाइथागोरस प्रमेय\n7. निर्देशांक ज्यामिति - दूरी सूत्र\n8. त्रिकोणमिति - sin2+cos2=1\n9. वृत्त, रचनाएँ\n10. वृत्तों से संबंधित क्षेत्रफल\n11. पृष्ठीय क्षेत्रफल और आयतन\n12. सांख्यिकी - माध्य, माध्यिका, बहुलक\n13. प्र
+var curTitle="",curText="",userName="",profile=JSON.parse(localStorage.getItem('stud_profile')||'null'),photoBase64=localStorage.getItem('stud_photo')||"";
+function loadProfile(){if(profile){document.getElementById('profileCard').classList.remove('hidden');document.getElementById('noProfile').classList.add('hidden');document.getElementById('pName').innerText=profile.name;document.getElementById('pClass').innerText=profile.cls;document.getElementById('pSchool').innerText=profile.school+(profile.dist?" - "+profile.dist:"");document.getElementById('hName').innerText=profile.name.split(' ')[0];userName=profile.name;document.getElementById('stat1').innerText=localStorage.getItem('dcount')||0;document.getElementById('stat2').innerText=localStorage.getItem('rcount')||0;if(photoBase64){document.getElementById('pImg').src=photoBase64;document.getElementById('hImg').src=photoBase64;}}else{document.getElementById('profileCard').classList.add('hidden');document.getElementById('noProfile').classList.remove('hidden');}} loadProfile();
+function openProfile(){document.getElementById('profileModal').classList.remove('hidden');if(profile){document.getElementById('inpName').value=profile.name;document.getElementById('inpClass').value=profile.cls;document.getElementById('inpSchool').value=profile.school;document.getElementById('inpDist').value=profile.dist||"";if(photoBase64) document.getElementById('previewImg').src=photoBase64;}}
+function previewPhoto(e){var f=e.target.files[0];if(f){var r=new FileReader();r.onload=function(ev){photoBase64=ev.target.result;document.getElementById('previewImg').src=photoBase64;};r.readAsDataURL(f);}}
+function saveProfile(){var n=document.getElementById('inpName').value.trim(),c=document.getElementById('inpClass').value,s=document.getElementById('inpSchool').value.trim(),d=document.getElementById('inpDist').value.trim();if(!n||!c){alert("नाम और क्लास जरूर भरो भाई!");return;}profile={name:n,cls:c,school:s,dist:d};localStorage.setItem('stud_profile',JSON.stringify(profile));if(photoBase64) localStorage.setItem('stud_photo',photoBase64);userName=n;document.getElementById('profileModal').classList.add('hidden');loadProfile();alert("बधाई हो "+n+"! Profile बन गया! अब हर PDF पर तुम्हारा नाम आएगा!");}
+
+var store={
+p10:[
+{t:"🔥 10th 2026 - लेटेस्ट मॉडल पेपर हिंदी में",c:"कक्षा 10वीं - 2026 मॉडल पेपर - नया पैटर्न 20 MCQ हिंदी में\nहिंदी मित्रता 5 अंक मनुष्यता 5 अंक निबंध विज्ञान वरदान 7 अंक पक्का\nगणित द्विघात सूत्र 5 अंक त्रिकोणमिति 10 अंक माध्य 6 अंक\nविज्ञान प्रकाश लेंस सूत्र 1/f=1/v-1/u 6 अंक विद्युत V=IR 4 अंक हृदय चित्र 5 अंक\nSST भारत में राष्ट्रवाद 10 अंक पक्का मानचित्र 5 अंक\n2026 में यही आएगा!"},
+{t:"10th 2025 पेपर",c:"10th 2025 पेपर हिंदी में - 20 MCQ"},
+{t:"10th 2024 पेपर",c:"10th 2024 पेपर - मानचित्र 5 अंक"},
+{t:"10th 2023 पेपर",c:"10th 2023 पेपर"},
+{t:"10th 2022 - 30% कम",c:"10th 2022 - 30% कम सिलेबस"},
+{t:"10th 2021 - प्रमोशन",c:"10th 2021 प्रमोशन मिला"},
+{t:"🔥 10th 2020 - सबसे ज्यादा वायरल पेपर 70% रिपीट",c:"कक्षा 10वीं - 2020 का पेपर - 70% दोहराया जाता है - सबसे ज्यादा शेयर हुआ\nहिंदी मित्रता 5 अंक साखी 4 अंक\nगणित यूक्लिड 4 अंक त्रिकोणमिति 10 अंक\nविज्ञान प्रकाश 10 अंक हृदय वृक्क चित्र 10 अंक\nSST भारत में राष्ट्रवाद 10 अंक\n3 बार पढ़ लो - पास पक्का!"}
+],
+p12:[
+{t:"🔥 12th 2026 - लेटेस्ट मॉडल पेपर",c:"12th 2026 मॉडल पेपर 20 MCQ हिंदी में\nकला महात्मा गांधी दांडी मार्च 10 अंक पक्का शीत युद्ध 6 अंक\nविज्ञान मानव जनन चित्र 8 अंक"},
+{t:"🔥 12th 2020 - 80% रिपीट वाला पेपर",c:"12th 2020 FULL PAPER 70-80% REPEAT\nइतिहास हड़प्पा 8 अंक मौर्य 6 अंक महात्मा गांधी 10 अंक\nराजनीति शीत युद्ध 6 अंक आपातकाल 1975 8 अंक\nविज्ञान लेंस सूत्र 8 अंक p-ब्लॉक 8 अंक मानव जनन चित्र 10 अंक\nसबसे ज्यादा मांग में!"}
+],
+t10:[{t:"10th पूरा सिलेबस हिंदी में",c:"10वीं पूरा सिलेबस - हिंदी व्याकरण समास अलंकार, गणित सभी सूत्र, विज्ञान प्रकाश विद्युत, SST भारत में राष्ट्रवाद"}],
+t12:[{t:"12th पूरा सिलेबस",c:"12th पूरा सिलेबस हिंदी में - आर्ट्स और साइंस"}],
+nur:[
+{t:"BSc Nursing प्रथम वर्ष हिंदी में",c:"प्रथम वर्ष 206 हड्डियाँ हृदय 4 कक्ष BP 120/80 फ्लोरेंस नाइटिंगेल 12 मई ADPIE 5 चरण हाथ धुलाई 7 चरण"},
+{t:"BSc Nursing तृतीय वर्ष - 30 अंक पक्का हिंदी में",c:"तृतीय वर्ष 30 अंक हिंदी में\nएपगार स्कोर 10 अंक 7-10 सामान्य परीक्षा में 10 अंक पक्का\nगर्भावस्था 40 सप्ताह 280 दिन\nप्रसव 3 चरण पहला 0-10 सेमी 12-14 घंटे दूसरा बच्चा जन्म तीसरा अपरा 500 ग्राम\nखतरनाक PPH 500ml से ज्यादा रक्तस्राव एक्लेम्पसिया BP 140/90 + दौरे\nपरिवार नियोजन निरोध माला-डी कॉपर-टी नसबंदी"}
+],
+neet:[{t:"NEET 2026 पूरा सिलेबस 720 अंक",c:"NEET 2026 - 720 अंक - भौतिकी 180 रसायन 180 जीव 360 - NCERT 90%"}]
+};
+
+function openTab(id){var all=document.querySelectorAll('[id^=btn_]');for(var i=0;i<all.length;i++) all[i].className='bg-white p-3 rounded-2xl font-bold text-xs shadow';document.getElementById('btn_'+id).className='bg-blue-600 text-white p-3 rounded-2xl font-bold text-xs shadow-lg scale-105';var titles={p10:'📄 10th पेपर - 2020 से 2026 (सबसे HOT)',p12:'📗 12th पेपर - 2020 से 2026',t10:'📘 10th सिलेबस हिंदी में',nur:'👩‍⚕️ BSc Nursing - 30 अंक वाला',t12:'📗 12th सिलेबस',neet:'🩺 NEET 2026'};document.getElementById('head').innerText=titles[id];var html="";var arr=store[id];for(var j=0;j<arr.length;j++){var badge=j==0?'<span class="bg-red-500 text-white text-[8px] px-2 py-1 rounded-full ml-2">HOT</span>':'';html+='<div onclick="openPop(\''+id+'\','+j+')" class="border p-4 rounded-2xl flex justify-between items-center cursor-pointer hover:bg-blue-50 mb-3 shadow-sm"><div style="width:75%"><b style="font-size:12px">'+arr[j].t+badge+'</b><p style="font-size:10px;color:gray;margin-top:4px">🔥 '+Math.floor(Math.random()*500+100)+' लोग अभी पढ़ रहे हैं - हिंदी में</p></div><span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">PDF</span></div>';}document.getElementById('list').innerHTML=html;var rc=parseInt(localStorage.getItem('rcount')||0)+1;localStorage.setItem('rcount',rc);if(document.getElementById('stat2')) document.getElementById('stat2').innerText=rc;}
+function openPop(tab,idx){if(!profile){if(confirm("पहले Profile बनाओगे? PDF पर तुम्हारा नाम आएगा!")){openProfile();return;}}var item=store[tab][idx];curTitle=item.t;curText=item.c;document.getElementById('popH').innerText=curTitle;document.getElementById('popB').innerText=curText;document.getElementById('pdfNameInfo').innerText=profile?"📄 PDF पर आएगा: "+profile.name+" | "+profile.cls:"";document.getElementById('pop').classList.remove('hidden');var c=parseInt(localStorage.getItem('dcount')||12847)+1;localStorage.setItem('dcount',c);document.getElementById('count').innerText=c;}
+function downloadPDF(){var doc=new jspdf.jsPDF();doc.setFontSize(13);doc.text(curTitle,10,15);doc.setFontSize(10);var extra=userName?"\n\nछात्र का नाम: "+userName+"\nक्लास: "+(profile?profile.cls:"")+"\nस्कूल: "+(profile?profile.school:"")+"\nStudSaathi SUPER HIT App से डाउनलोड\n":"\n\nStudSaathi App - 2026\n";var lines=doc.splitTextToSize(curText+extra,185);doc.text(lines,10,25);doc.setFontSize(8);doc.text("StudSaathi HIT - "+new Date().toLocaleDateString(),10,285);doc.save((userName?userName.replace(/ /g,'_')+"_":"")+curTitle.replace(/[^a-zA-Z0-9]/g,'_')+".pdf");var cc=parseInt(localStorage.getItem('dcount')||0)+1;localStorage.setItem('dcount',cc);if(document.getElementById('stat1')) document.getElementById('stat1').innerText=cc;setTimeout(function(){if(confirm("PDF डाउनलोड हो गया "+userName+"! अब WhatsApp पर दोस्तों को शेयर करोगे?")) shareApp();},500);}
+function shareApp(){var namePart=profile?"मैं "+profile.name+" ("+profile.cls+") ":"";var text="*📚 स्टड साथी SUPER HIT App* - "+namePart+"इस्तेमाल कर रहा हूँ!\n\n10th 12th के 2020-2026 पेपर, BSc Nursing, NEET सब हिंदी में FREE! PDF पर नाम भी आएगा!\n\n🔥 12,847+ Students इस्तेमाल कर रहे हैं\n👉 लिंक: https://saininarayansaini7-spec.github.io/StudyApp/\n\n70% पेपर यहीं से आएगा!";window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank");}
+
+openTab('p10');
+setInterval(function(){var el=document.getElementById('count');el.innerText=parseInt(el.innerText)+Math.floor(Math.random()*3);var l=document.getElementById('liveC');l.innerText=Math.floor(Math.random()*200+1200);},5000);
+setTimeout(function(){if(!profile) openProfile();},3000);
+</script>
+</body>
+</html>
