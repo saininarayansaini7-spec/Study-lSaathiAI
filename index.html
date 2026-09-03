@@ -2,17 +2,125 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StudSaathi 2027 - HIT</title>
+<title>StudSaathi 2027 - FINAL HIT</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-<body class="bg-[#eef2ff]">
+<body class="bg-gray-100">
 
-<div id="hitBar" class="bg-gradient-to-r from-red-600 to-orange-500 text-white text-center py-2 text-[10px] font-bold sticky top-0 z-50">
-<span id="examCount">⏰ 10th: 45 दिन | 12th: 52 दिन |</span>
-<span id="liveUser">🔥 सहारनपुर के राहुल ने अभी डाउनलोड किया</span>
+<div class="bg-gradient-to-r from-red-600 to-orange-500 text-white text-center py-2 text-xs font-bold">
+⏰ 10th: 45 दिन | 12th: 52 दिन | 🔥 सहारनपुर के राहुल ने अभी डाउनलोड किया
 </div>
 
-<header class="bg-white p-3 shadow flex justify-between items-center">
-<div><h1 class="font-bold text-blue-600 text-sm">📚 स्टड साथी - HIT 2027</h1><p class="text-[8px] text-gray-500">Mastermind Vidya Flight + 10th 12th + B.Ed Nursing - HIT</p></div>
-<button onclick="openProfile()" class="bg
+<div class="bg-white p-3 shadow">
+<h1 class="font-bold text-blue-600 text-base">📚 स्टड साथी - HIT 2027</h1>
+<p class="text-xs text-gray-500">Mastermind Vidya Flight + 10th 12th + B.Ed Nursing - HIT</p>
+</div>
+
+<div class="p-3">
+
+<div class="bg-white rounded-2xl p-3 shadow">
+<p class="text-xs font-bold text-center mb-2">🔥 दुकान वाले 2027 - Click करो</p>
+<div class="grid grid-cols-3 gap-2">
+<button onclick="showData('master')" class="bg-purple-600 text-white p-3 rounded-2xl font-bold text-xs">Mastermind 2027</button>
+<button onclick="showData('vidya')" class="bg-blue-600 text-white p-3 rounded-2xl font-bold text-xs">Vidya 2027</button>
+<button onclick="showData('flight')" class="bg-red-600 text-white p-3 rounded-2xl font-bold text-xs">Flight 2027</button>
+</div>
+</div>
+
+<div class="mt-3 bg-white rounded-2xl p-3 shadow">
+<p class="text-xs font-bold text-center mb-2">📖 हर विषय - SARE FUTURE</p>
+<div class="grid grid-cols-4 gap-2">
+<button onclick="showData('m10h')" class="bg-gray-100 border p-2 rounded-xl text-xs font-bold">10th हिंदी</button>
+<button onclick="showData('m10g')" class="bg-gray-100 border p-2 rounded-xl text-xs font-bold">10th गणित</button>
+<button onclick="showData('m10v')" class="bg-gray-100 border p-2 rounded-xl text-xs font-bold">10th विज्ञान</button>
+<button onclick="showData('m10s')" class="bg-gray-100 border p-2 rounded-xl text-xs font-bold">10th SST</button>
+<button onclick="showData('m12h')" class="bg-gray-100 border p-2 rounded-xl text-xs font-bold">12th इतिहास</button>
+<button onclick="showData('m12r')" class="bg-gray-100 border p-2 rounded-xl text-xs font-bold">12th राजनीति</button>
+<button onclick="showData('m12p')" class="bg-gray-100 border p-2 rounded-xl text-xs font-bold">12th भौतिकी</button>
+<button onclick="showData('m12j')" class="bg-gray-100 border p-2 rounded-xl text-xs font-bold">12th जीव</button>
+<button onclick="showData('p10')" class="bg-white border-2 p-2 rounded-xl text-xs font-bold">10th 2020-26</button>
+<button onclick="showData('p12')" class="bg-white border-2 p-2 rounded-xl text-xs font-bold">12th 2020-26</button>
+<button onclick="showData('bed')" class="bg-white border-2 p-2 rounded-xl text-xs font-bold">B.Ed 2027</button>
+<button onclick="showData('nur')" class="bg-white border-2 p-2 rounded-xl text-xs font-bold">Nursing</button>
+</div>
+</div>
+
+<div class="mt-4 bg-white rounded-2xl p-4 shadow border-2 border-blue-200">
+<h3 id="head" class="font-bold text-blue-600">Mastermind 2027 - Click करो नीचे</h3>
+<div id="list" class="mt-3"></div>
+</div>
+
+<div class="mt-4 bg-green-100 border-2 border-green-300 rounded-2xl p-3 text-center">
+<button onclick="shareApp()" class="bg-green-600 text-white px-6 py-3 rounded-full font-bold w-full">📲 WhatsApp पर शेयर करो - App HIT करो</button>
+</div>
+
+</div>
+
+<div id="pop" style="display:none" class="fixed inset-0 bg-black/80 z-50 p-4 flex items-center justify-center">
+<div class="bg-white rounded-3xl w-full max-w-lg p-5">
+<div class="flex justify-between"><b id="popH" class="text-xs w-4/5"></b><button onclick="document.getElementById('pop').style.display='none'" class="bg-gray-200 w-8 h-8 rounded-full">X</button></div>
+<div id="popB" class="mt-3 bg-gray-50 p-3 rounded-xl text-xs whitespace-pre-line leading-6 max-h-64 overflow-auto border"></div>
+<button onclick="downloadPDF()" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-full font-bold text-xs">📥 PDF डाउनलोड</button>
+</div>
+</div>
+
+<script>
+var curTitle="",curText="";
+var allData={
+master:[{t:"Mastermind 2027 - सभी विषय - 70% Exact - किताब से",c:"MASTERMIND 2027 दुकान वाला - 70% Exact\n10th हिंदी मित्रता 5 अंक मनुष्यता 6 अंक साखी 4 अंक व्याकरण 10 अंक निबंध 7 अंक\nगणित द्विघात 5 अंक त्रिकोणमिति 10 अंक माध्य 6 अंक\nविज्ञान प्रकाश लेंस 6 अंक विद्युत 6 अंक हृदय 5 अंक\nSST भारत राष्ट्रवाद 10 अंक मानचित्र 5 अंक\n12th इतिहास हड़प्पा 8 अंक 1857 8 अंक गांधी 10 अंक\nराजनीति शीत युद्ध 6 अंक आपातकाल 1975 8 अंक हाल के विकास 6 अंक नया\nभौतिकी लेंस 8 अंक जीव मानव जनन 10 अंक - किताब से!"}],
+vidya:[{t:"Vidya 2027 - Detailed Diagram",c:"VIDYA 2027 - सार 10 लाइन चित्र रंगीन प्रमाण सहित - किताब से!"}],
+flight:[{t:"Flight 2027 - Trick One Liner",c:"FLIGHT 2027 Trick - द्वंद्व=दोनों बाप-बेटा बटा 2a 1/F-1/V=1/U 20-30-42 64-28-280 - किताब से!"}],
+m10h:[{t:"10th हिंदी - 70% Exact",c:"10th हिंदी - मित्रता मनुष्यता साखी - किताब से!"}],
+m10g:[{t:"10th गणित - 70% Exact",c:"10th गणित - द्विघात त्रिकोणमिति माध्य - किताब से!"}],
+m10v:[{t:"10th विज्ञान - 70% Exact",c:"10th विज्ञान - प्रकाश विद्युत हृदय - किताब से!"}],
+m10s:[{t:"10th SST - 70% Exact",c:"10th SST - भारत राष्ट्रवाद मानचित्र - किताब से!"}],
+m12h:[{t:"12th इतिहास - 70% Exact",c:"12th इतिहास - हड़प्पा 1857 गांधी - किताब से!"}],
+m12r:[{t:"12th राजनीति - 70% Exact",c:"12th राजनीति - शीत युद्ध आपातकाल हाल के विकास - किताब से!"}],
+m12p:[{t:"12th भौतिकी - 70% Exact",c:"12th भौतिकी - कूलाम लेंस - किताब से!"}],
+m12j:[{t:"12th जीव - 70% Exact",c:"12th जीव - मानव जनन मेंडल DNA - किताब से!"}],
+p10:[{t:"10th पेपर 2020-26 - 70% रिपीट",c:"10th 2020-26 - 70% रिपीट - 2020 सबसे वायरल - किताब से!"}],
+p12:[{t:"12th पेपर 2020-26 - 80% रिपीट",c:"12th 2020-26 - 80% रिपीट - किताब से!"}],
+bed:[{t:"B.Ed 2027 पूरी किताबें",c:"B.Ed 2027 - पियाजे RTE NEP 2020 - किताब से!"}],
+nur:[{t:"Nursing + NEET 720",c:"Nursing - 206 हड्डियाँ हृदय एपगार 10 अंक गर्भावस्था 280 दिन NEET 720 NCERT - किताब से!"}]
+};
+
+function showData(id){
+var head=document.getElementById('head');
+var list=document.getElementById('list');
+head.innerText=id+" - 2027 - किताब से - Click करो नीचे";
+var arr=allData[id];
+if(!arr){list.innerHTML="Data नहीं मिला";return;}
+var html="";
+for(var i=0;i<arr.length;i++){
+html+="<div onclick=\"openPop('"+id+"',"+i+")\" class=\"border-2 border-blue-100 bg-white p-3 rounded-2xl flex justify-between items-center mb-2\"><div style='width:75%'><b class='text-xs'>"+arr[i].t+"</b><p class='text-[10px] text-gray-500'>✅ Click करो तो खुलेगा</p></div><span class='bg-blue-600 text-white px-3 py-1 rounded-full text-xs'>खोलो</span></div>";
+}
+list.innerHTML=html;
+}
+
+function openPop(tab,idx){
+var item=allData[tab][idx];
+curTitle=item.t;curText=item.c;
+document.getElementById('popH').innerText=curTitle;
+document.getElementById('popB').innerText=curText;
+document.getElementById('pop').style.display='flex';
+}
+
+function downloadPDF(){
+var doc=new jspdf.jsPDF();
+doc.setFontSize(11);doc.text(curTitle,10,15);
+doc.setFontSize(9);
+var lines=doc.splitTextToSize(curText,180);
+doc.text(lines,10,25);
+doc.save(curTitle.replace(/[^a-zA-Z0-9]/g,'_')+".pdf");
+}
+
+function shareApp(){
+var t="📚 स्टड साथी HIT 2027\nMastermind Vidya Flight + 10th 12th Paper + B.Ed Nursing\n👉 https://saininarayansaini7-spec.github.io/StudyApp/";
+window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank");
+}
+
+showData('master');
+</script>
+</body>
+</html>
