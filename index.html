@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StudSaathi - Padhega UP, Badhega UP</title>
+<title>StudSaathi - UP Board OMR + BSc Nursing</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>body{font-family:'Poppins',sans-serif}</style>
@@ -11,65 +11,89 @@
 <body class="bg-[#f0f4ff]">
 <header class="bg-white shadow sticky top-0 z-50 p-4 flex justify-between items-center">
 <h1 class="font-bold text-xl text-blue-700">📚 StudSaathi</h1>
-<span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">UP Board & University</span>
+<button onclick="startOMR()" class="bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-bold animate-pulse">🔴 OMR Test Live</button>
 </header>
 
 <div class="p-4">
 <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6 rounded-3xl text-center">
 <h2 class="text-2xl font-bold">Padhega UP, Badhega UP!</h2>
-<p class="text-sm mt-2 opacity-90">10th, 12th, B.A., LLB - Sab Kuch Ek Jagah</p>
-<input id="search" oninput="search()" placeholder="Search Subject, Notes..." class="w-full mt-4 p-3 rounded-xl text-black outline-none">
+<p class="text-sm mt-2 opacity-90">10th, 12th OMR Test + B.A. + LLB + BSc Nursing</p>
+<input id="search" oninput="search()" placeholder="Search - ex: Nursing, History, OMR..." class="w-full mt-4 p-3 rounded-xl text-black outline-none">
 </div>
 
-<div class="grid grid-cols-2 gap-4 mt-6" id="cards">
-<div onclick="openCourse('10th')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer hover:scale-105 duration-200">
-<div class="text-3xl">🎓</div><h3 class="font-bold mt-2">10th UP</h3><p class="text-xs text-gray-500">All Subjects</p>
-</div>
-<div onclick="openCourse('12th')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer hover:scale-105 duration-200">
-<div class="text-3xl">📖</div><h3 class="font-bold mt-2">12th UP</h3><p class="text-xs text-gray-500">Arts / Commerce</p>
-</div>
-<div onclick="openCourse('BA')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer hover:scale-105 duration-200">
-<div class="text-3xl">👨‍🎓</div><h3 class="font-bold mt-2">B.A.</h3><p class="text-xs text-gray-500">1st,2nd,3rd Year</p>
-</div>
-<div onclick="openCourse('LLB')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer hover:scale-105 duration-200">
-<div class="text-3xl">⚖️</div><h3 class="font-bold mt-2">LLB 5 Year</h3><p class="text-xs text-gray-500">Law Notes</p>
-</div>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div onclick="openCourse('10th')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer border-l-4 border-blue-600"><div class="text-3xl">🎓</div><h3 class="font-bold">10th UP</h3><p class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full mt-1">OMR + Syllabus</p></div>
+<div onclick="openCourse('12th')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer border-l-4 border-green-600"><div class="text-3xl">📖</div><h3 class="font-bold">12th UP</h3><p class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full mt-1">OMR + Syllabus</p></div>
+<div onclick="openCourse('Nursing')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer border-l-4 border-pink-500"><div class="text-3xl">👩‍⚕️</div><h3 class="font-bold text-pink-600">BSc Nursing</h3><p class="text-xs text-gray-500">1st-4th Year</p></div>
+<div onclick="openCourse('BA')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer"><div class="text-3xl">👨‍🎓</div><h3 class="font-bold">B.A.</h3><p class="text-xs text-gray-500">All Years</p></div>
+<div onclick="openCourse('LLB')" class="bg-white p-5 rounded-2xl shadow text-center cursor-pointer col-span-2"><div class="text-3xl">⚖️</div><h3 class="font-bold">LLB 5 Year</h3><p class="text-xs text-gray-500">Full Law Notes</p></div>
 </div>
 
+<!-- Syllabus + Notes List -->
 <div id="list" class="mt-6 hidden bg-white rounded-2xl p-4 shadow">
-<div class="flex justify-between items-center"><h3 id="listTitle" class="font-bold text-lg"></h3><button onclick="closeList()" class="bg-gray-200 px-3 py-1 rounded-full text-sm">X</button></div>
+<div class="flex justify-between"><h3 id="listTitle" class="font-bold text-lg"></h3><button onclick="closeList()" class="bg-gray-200 px-3 py-1 rounded-full">X</button></div>
 <div id="listItems" class="mt-4 space-y-3"></div>
 </div>
 
-<footer class="text-center mt-10 pb-6 text-gray-500 text-xs">Made with ❤️ for UP Students | StudSaathi 2026</footer>
+<!-- OMR MODAL -->
+<div id="omrModal" class="fixed inset-0 bg-black/70 hidden z-[100] p-4 flex items-center justify-center">
+<div class="bg-white rounded-3xl p-5 w-full max-w-md max-h-[90vh] overflow-auto">
+<div class="flex justify-between items-center"><h3 class="font-bold text-lg">📝 UP Board OMR Test</h3><button onclick="closeOMR()" class="bg-gray-200 px-3 py-1 rounded-full">X</button></div>
+<div id="omrContent" class="mt-4"></div>
+</div>
+</div>
+
+<footer class="text-center mt-10 pb-6 text-gray-500 text-xs">StudSaathi 2026 | UP Students ke Liye</footer>
 </div>
 
 <script>
 const data={
-"10th":["Hindi - Complete Notes","English Grammar","Maths - Formula + PYQ","Science - Physics, Chemistry, Bio","Social Science - History, Geo","Sanskrit"],
-"12th":["Hindi - Gadya Padya","English - Prose & Poetry","History - Medieval & Modern","Political Science - Rajniti Vigyan","Geography","Economics","Sociology","Computer"],
-"BA":["Hindi Sahitya - 1st Year","English Literature","History - Ancient, Medieval","Political Science","Sociology","Geography - Physical","Economics - Micro/Macro","Psychology"],
-"LLB":["Legal Methods & History","Law of Contract","Constitutional Law I & II","IPC - Indian Penal Code","Family Law - Hindu/Muslim","Jurisprudence","Administrative Law","Environmental Law","Civil Procedure Code","CrPC + Evidence"]
+"10th":["Hindi - Gadya, Padya, Vyakaran [Syllabus]","English - Grammar + Literature","Maths - Full Syllabus + Formula","Science - Physics (Light, Electricity), Chemistry, Bio","Social Science - Itihas, Bhugol, Nagrik Shastra, Arthashastra","Sanskrit - Full Course"],
+"12th":["Hindi - Sahitya + Vyakaran","English - Flamingo + Vistas","History - Bharat, Vishwa","Political Science - Rajniti Vigyan Part 1,2","Geography - Bhautik + Manav","Economics - Micro, Macro","Sociology - Samajshastra"],
+"BA":["BA 1st Year - All Subjects","BA 2nd Year - All Subjects","BA 3rd Year - All Subjects","History - Ancient, Medieval, Modern","Political Science","Geography"],
+"Nursing":["1st Year - Anatomy, Physiology, Nutrition, Nursing Foundation","2nd Year - Pharmacology, Pathology, Genetics, Med-Surg","3rd Year - Child Health, Mental Health, Midwifery","4th Year - Community Health, Research, Management","Anatomy & Physiology - Full Notes","Medical Surgical Nursing - Important Q&A","OBG - Midwifery Notes"],
+"LLB":["LLB 1st Year - Legal Methods, Contract","LLB 2nd Year - Constitution, IPC","LLB 3rd Year - Family Law, Jurisprudence","LLB 4th & 5th Year - CPC, CrPC, Evidence"]
 }
+
+const omrQuestions=[
+{q:"UP Board 10th Hindi me 'Godan' ke lekhak kaun hai?",o:["Premchand","Jaishankar Prasad","Mahadevi Verma","Surdas"],a:0},
+{q:"BSc Nursing me Human Heart me kitne chambers hote hai?",o:["2","3","4","5"],a:2},
+{q:"12th Political Science me Samvidhan Sabha ke adhyaksh kaun the?",o:["Nehru","Dr. Rajendra Prasad","Ambedkar","Gandhi"],a:1},
+{q:"10th Science - Prakash ka apvartan kis niyam par hota hai?",o:["Snell ka niyam","Ohm ka niyam","Newton ka niyam","Kepler ka niyam"],a:0},
+{q:"BSc Nursing - Normal Blood Pressure kitna hota hai?",o:["120/80 mmHg","140/90 mmHg","100/60 mmHg","160/100 mmHg"],a:0}
+];
+let currentQ=0,score=0;
+
 function openCourse(c){
 document.getElementById('list').classList.remove('hidden');
-document.getElementById('listTitle').innerText=c+" - Subjects & Notes";
-let html="";
+document.getElementById('listTitle').innerText=c+" - Syllabus + Notes + OMR";
+let html=`<button onclick="startOMR()" class="w-full bg-red-600 text-white p-3 rounded-xl font-bold mb-3">🔴 ${c} ka OMR Test Do</button>`;
 data[c].forEach(s=>{
-html+=`<div class="flex justify-between items-center border p-3 rounded-xl"><div><b>${s}</b><p class="text-xs text-gray-500">PDF Notes | PYQ | MCQ</p></div><button onclick="alert('Download Start: ${s}')" class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm">View</button></div>`;
+html+=`<div class="flex justify-between items-center border p-3 rounded-xl"><div><b class="text-sm">${s}</b><p class="text-[11px] text-gray-500">PDF | Syllabus | PYQ | Video</p></div><button class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">View</button></div>`;
 });
 document.getElementById('listItems').innerHTML=html;
-window.scrollTo(0,400);
 }
 function closeList(){document.getElementById('list').classList.add('hidden')}
-function search(){
-let q=document.getElementById('search').value.toLowerCase();
-if(!q){closeList();return;}
-let all=[];for(let k in data){data[k].forEach(v=>all.push(k+" - "+v));}
-let f=all.filter(x=>x.toLowerCase().includes(q));
-document.getElementById('list').classList.remove('hidden');
-document.getElementById('listTitle').innerText="Search Result";
-document.getElementById('listItems').innerHTML=f.map(s=>`<div class="border p-3 rounded-xl">${s} <span class="float-right text-blue-600 text-sm">Open</span></div>`).join('')||"<p class='text-gray-500 text-sm'>Kuch nahi mila</p>";
+function search(){let q=document.getElementById('search').value.toLowerCase();if(!q){closeList();return;}let all=[];for(let k in data){data[k].forEach(v=>all.push(k+" - "+v));}let f=all.filter(x=>x.toLowerCase().includes(q));document.getElementById('list').classList.remove('hidden');document.getElementById('listTitle').innerText="Search Result";document.getElementById('listItems').innerHTML=f.map(s=>`<div class="border p-3 rounded-xl text-sm">${s}</div>`).join('');}
+
+function startOMR(){
+document.getElementById('omrModal').classList.remove('hidden');
+currentQ=0;score=0;showQ();
+}
+function closeOMR(){document.getElementById('omrModal').classList.add('hidden')}
+function showQ(){
+let qq=omrQuestions[currentQ];
+let html=`<p class="text-sm text-gray-500">Question ${currentQ+1}/${omrQuestions.length}</p><h4 class="font-bold mt-2">${qq.q}</h4><div class="mt-4 space-y-2">`;
+qq.o.forEach((opt,i)=>{html+=`<button onclick="checkAns(${i})" class="w-full text-left border p-3 rounded-xl hover:bg-blue-50">${String.fromCharCode(65+i)}. ${opt}</button>`});
+html+=`</div>`;
+document.getElementById('omrContent').innerHTML=html;
+}
+function checkAns(i){
+if(i==omrQuestions[currentQ].a)score++;
+currentQ++;
+if(currentQ<omrQuestions.length){showQ()}else{
+document.getElementById('omrContent').innerHTML=`<div class="text-center py-6"><div class="text-5xl">🎉</div><h3 class="font-bold text-xl mt-3">Test Complete!</h3><p class="mt-2">Score: <b class="text-2xl text-blue-600">${score}/${omrQuestions.length}</b></p><p class="text-sm text-gray-500 mt-2">Bahut Badhiya! Aur Practice Karo</p><button onclick="startOMR()" class="mt-5 bg-blue-600 text-white px-6 py-2 rounded-full">Phir Se Test Do</button></div>`;
+}
 }
 </script>
 </body>
