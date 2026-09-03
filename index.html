@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StudSaathi MEGA Fixed</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StudSaathi Hindi Version</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-<style>body{font-family:Poppins,sans-serif}</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+<style>body{font-family:'Noto Sans Devanagari', Poppins, sans-serif}</style>
 </head>
 <body class="bg-slate-100">
-<header class="bg-white p-4 shadow sticky top-0 z-50"><h1 class="font-bold text-blue-600">📚 StudSaathi - FIXED VERSION</h1></header>
+<header class="bg-white p-4 shadow sticky top-0 z-50"><h1 class="font-bold text-blue-600">📚 स्टड साथी - हिंदी वर्जन</h1></header>
 
 <div class="p-4">
 <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-3xl text-center">
-<h2 class="font-bold text-xl">10th + 12th (2020-2026 Papers) + Nursing + NEET</h2>
-<p class="text-xs mt-1">Ab code nahi fatega - 100% working</p>
+<h2 class="font-bold text-xl">अब अंदर सब कुछ हिंदी में!</h2>
+<p class="text-xs mt-1">10th + 12th (2020-2026) + Nursing + NEET</p>
 </div>
 
 <div class="grid grid-cols-2 gap-3 mt-5">
-<button onclick="openTab('t10')" id="btn_t10" class="bg-blue-600 text-white p-4 rounded-2xl font-bold">10th<br><span style="font-size:10px">Full Syllabus</span></button>
-<button onclick="openTab('t12')" id="btn_t12" class="bg-white p-4 rounded-2xl font-bold shadow">12th<br><span style="font-size:10px">Full Syllabus</span></button>
-<button onclick="openTab('p10')" id="btn_p10" class="bg-white p-4 rounded-2xl font-bold shadow">10th Papers<br><span style="font-size:10px">2020-2026</span></button>
-<button onclick="openTab('p12')" id="btn_p12" class="bg-white p-4 rounded-2xl font-bold shadow">12th Papers<br><span style="font-size:10px">2020-2026</span></button>
-<button onclick="openTab('nur')" id="btn_nur" class="bg-white p-4 rounded-2xl font-bold shadow">BSc Nursing<br><span style="font-size:10px">1st-4th Year</span></button>
-<button onclick="openTab('neet')" id="btn_neet" class="bg-white p-4 rounded-2xl font-bold shadow">NEET<br><span style="font-size:10px">Full Syllabus</span></button>
+<button onclick="openTab('t10')" id="btn_t10" class="bg-blue-600 text-white p-4 rounded-2xl font-bold">10th कक्षा<br><span style="font-size:10px">पूरा सिलेबस</span></button>
+<button onclick="openTab('t12')" id="btn_t12" class="bg-white p-4 rounded-2xl font-bold shadow">12th कक्षा<br><span style="font-size:10px">पूरा सिलेबस</span></button>
+<button onclick="openTab('p10')" id="btn_p10" class="bg-white p-4 rounded-2xl font-bold shadow">10th पेपर<br><span style="font-size:10px">2020-2026</span></button>
+<button onclick="openTab('p12')" id="btn_p12" class="bg-white p-4 rounded-2xl font-bold shadow">12th पेपर<br><span style="font-size:10px">2020-2026</span></button>
+<button onclick="openTab('nur')" id="btn_nur" class="bg-white p-4 rounded-2xl font-bold shadow">BSc नर्सिंग<br><span style="font-size:10px">1st-4th Year</span></button>
+<button onclick="openTab('neet')" id="btn_neet" class="bg-white p-4 rounded-2xl font-bold shadow">NEET<br><span style="font-size:10px">पूरा सिलेबस</span></button>
 </div>
 
 <div class="mt-6 bg-white rounded-2xl p-4 shadow">
@@ -36,8 +35,8 @@
 <div id="pop" class="fixed inset-0 bg-black/80 hidden z-50 p-4 flex items-center justify-center">
 <div class="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-auto p-5">
 <div class="flex justify-between"><b id="popH" class="text-sm w-4/5"></b><button onclick="document.getElementById('pop').classList.add('hidden')" class="bg-gray-200 w-8 h-8 rounded-full">X</button></div>
-<div id="popB" class="mt-4 bg-gray-50 p-3 rounded-xl text-xs whitespace-pre-line leading-6"></div>
-<button onclick="downloadPDF()" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-full font-bold">📥 PDF Download Karo</button>
+<div id="popB" class="mt-4 bg-gray-50 p-3 rounded-xl text-sm whitespace-pre-line leading-7"></div>
+<button onclick="downloadPDF()" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-full font-bold">📥 PDF डाउनलोड करो</button>
 </div>
 </div>
 
@@ -46,79 +45,5 @@ var curTitle = "";
 var curText = "";
 var store = {
 t10: [
-{ t: "10th Hindi - Full Book Syllabus", c: "UP BOARD 10th HINDI 2026\n\nGADYA:\n1. Mitrata - Ramchandra Shukla\n2. Mamta - Jaishankar Prasad\n3. Kya Nirash Hua Jaye\n4. Aasha - Premchand (Godan)\n5. Bharat Mata - Nehru\n\nPADYA:\nKabir Sakhi, Surdas Pad, Manushyata, Nirala, Mahadevi\n\nVyakaran: Samas, Alankar, Ras, Chhand, Upasarg, Pratyay, Muhavare\nNibandh, Patra Lekhan\n20 Marks MCQ" },
-{ t: "10th Maths - Full Syllabus", c: "10th MATHS FULL\n\nReal Numbers, Polynomials, Linear Equations Pair, Quadratic Formula x = -b plus minus root b square minus 4ac / 2a, AP an = a+(n-1)d, Triangles Pythagoras, Coordinate Distance, Trigonometry sin square + cos square = 1, Circles, Area, Surface Volumes, Statistics Mean Median Mode, Probability\nAll Formulas" },
-{ t: "10th Science - Full Syllabus", c: "10th SCIENCE FULL\n\nPhysics: Light Reflection Refraction Lens Formula 1/f=1/v-1/u Power, Human Eye Defects, Electricity V=IR P=VI, Magnetic Effects\nChemistry: Chemical Reactions, Acids Bases Salts pH, Metals Non-metals, Carbon Compounds, Periodic\nBiology: Life Processes Heart Diagram, Control Coordination Brain, Reproduction, Heredity, Environment" },
-{ t: "10th SST - Full Book", c: "10th SST FULL\n\nHistory: Nationalism Europe, Nationalism India Non-Cooperation Civil Disobedience Dandi March, Global World, Print Culture\nGeography: Resources, Forest, Water, Agriculture, Minerals, Manufacturing, Lifelines\nCivics: Power Sharing, Federalism, Gender Caste, Parties, Democracy\nEconomics: Development, Sectors, Money Credit, Globalisation\nMap Work 5 Marks" }
-],
-t12: [
-{ t: "12th English - Flamingo + Vistas", c: "12th ENGLISH FULL\nFlamingo: Last Lesson, Lost Spring, Deep Water, Rattrap, Indigo, Poets Pancakes, Interview, Going Places\nPoetry: Mother at Sixty-six, Keeping Quiet, Thing of Beauty, Roadside Stand, Aunt Jennifer\nVistas: Third Level, Tiger King, Journey End Earth, Enemy, On Face It, Memories Childhood" },
-{ t: "12th Physics Chemistry Biology Full", c: "12th PCB FULL\nPhysics: Electrostatics, Current, Magnetic, EMI AC, EM Waves, Optics Ray Wave, Dual Nature E=hf, Atoms Nuclei, Devices\nChemistry: Solid, Solutions, Electrochemistry Nernst, Kinetics, p-Block, d-Block, Coordination, Organic Haloalkanes Alcohols Aldehydes Amines Biomolecules\nBiology: Reproduction Flowering Human Menstrual 28 Days Pregnancy 40 Weeks, Genetics Mendel DNA, Evolution, Health Disease, Biotech, Ecology" },
-{ t: "12th Arts - History Political Geography", c: "12th ARTS FULL\nHistory: Harappan, Mauryan Ashoka, Mahabharata, Buddhism Jainism, Ibn Battuta, Bhakti Sufi, Vijayanagara, Peasants Zamindars, Permanent Settlement, 1857 Revolt, Mahatma Gandhi 10 Marks\nPolitical: Cold War, USSR Fall, US Hegemony, EU ASEAN, SAARC, UN, Security, Environment, Partition, One Party Dominance, Five Year Plans, Emergency 1975, Punjab Kashmir, Recent 2014 onwards\nGeography Full + Map 5 Marks" }
-],
-p10: [
-{ t: "10th 2026 - Latest Model Paper", c: "10th 2026 MODEL PAPER NEW PATTERN 20 MCQ\n\nHindi Mitrata 5M Manushyata 5M Nibandh 7M\nEnglish Letter to God 4M Nelson Mandela 5M Tenses 5M\nMaths Quadratic Formula 5M Trigonometry 10M Statistics Mean 6M\nScience Light Numerical 1/f=1/v-1/u 6M Electricity V=IR 4M Heart Diagram 5M\nSST Nationalism India 10M Pakka Map Dams Crops 5M\n2026 Pattern Isi Se Aayega" },
-{ t: "10th 2025 Paper Original", c: "10th 2025 PAPER\nHindi Aasha 5M\nEnglish Anne Frank 4M Modals 4M\nMaths Linear 5M AP 5M Surface Area 6M\nScience Magnetic 5M Metals 5M Reproduction 6M\nSST Global World 4M Parties 4M\n20 MCQ" },
-{ t: "10th 2024 Paper Original", c: "10th 2024 PAPER\nHindi 20 MCQ 12 Gadya Padya 8 Vyakaran\nMaths AP an=a+(n-1)d 5M Coordinate 4M\nScience Mirror Formula 4M Periodic 3M Heredity 5M\nSST Nationalism Europe 5M" },
-{ t: "10th 2023 Paper", c: "10th 2023 PAPER\nHindi Kya Nirash Hua Jaye Long 5M\nMaths Polynomials Zeroes 4M Area Circles 4M\nScience Human Eye Diagram 4M Acids Bases 5M" },
-{ t: "10th 2022 Paper 30% Kam", c: "10th 2022 PAPER - 30% Kam Tha Covid\nImportant Topics Only" },
-{ t: "10th 2020 Paper MOST IMPORTANT", c: "10th 2020 FULL PAPER - MOST IMPORTANT FOR 2026 - 70% REPEAT\n\nHindi Mitrata 5M Sakhi 4M Samas 2M\nEnglish Letter to God 5M Dust Snow 3M Tenses 5M Letter 5M\nMaths Euclid Lemma Proof 4M Polynomials 3M Linear 5M Triangles Proof 4M Trigonometry 10M Statistics Mean 6M\nScience Light 10M 2 Numericals Diagram Electricity 8M Chemical Balancing 4M Life Processes Heart Kidney Diagrams 10M\nSST Nationalism Europe 8M Nationalism India 10M Map 5M\n3 Baar Padh Lo" }
-],
-p12: [
-{ t: "12th 2026 Latest Model All Streams", c: "12th 2026 MODEL PAPER LATEST 20 MCQ\n\nARTS: History Mahatma Gandhi Dandi March Quit India 10M Pakka Political Cold War 6M Recent 2014 ke baad 6M Geography Map 5M\nSCIENCE: Physics Electrostatics 5M Optics Diagram 5M Dual Nature E=hf 3M 20 MCQ Chemistry p-Block 6M Biology Human Reproduction Diagram 8M Genetics 6M\n2026 Official Pattern" },
-{ t: "12th 2025 Paper", c: "12th 2025 PAPER\nArts Bhakti-Sufi 6M Colonialism 5M US Hegemony 6M\nScience Magnetic Numerical 4M EMI AC 5M Kinetics Numerical 4M Haloalkanes 4M Biotech 5M\n20 MCQ Flamingo se 2 MCQ" },
-{ t: "12th 2024 Paper", c: "12th 2024 PAPER\nArts Vijayanagara 6M Emergency 1975 8M Pakka\nScience Electrostatics 6M Current 5M Wave Optics 5M d-Block 5M Health Disease 5M\n70% Repeat in 2026" },
-{ t: "12th 2020 Paper MOST IMPORTANT", c: "12th 2020 FULL PAPER - VERY IMPORTANT - 70-80% REPEAT\n\nARTS History: Harappan 8M Mauryan Ashoka 6M Buddhism Jainism 6M Ibn Battuta 5M Bhakti Sufi 6M Vijayanagara 6M Permanent Settlement 6M 1857 Revolt 8M Mahatma Gandhi 10M\nPolitical: Cold War 6M USSR Fall 6M US Hegemony 5M EU ASEAN 6M UN 6M Partition 8M One Party 6M Five Year Plans 5M Emergency 1975 8M Punjab Kashmir 6M\nSCIENCE Physics: Coulomb Law 5M Current 6M Biot-Savart 5M EMI AC 6M Ray Optics Numerical 8M Young 5M Photoelectric 4M\nChemistry Solid 4M Solutions Numerical 5M Nernst 5M p-Block 8M d-Block 5M Aldehydes 5M\nBiology Human Reproduction Diagram 10M Inheritance 8M DNA 8M Evolution 5M Biotech 10M\n3 Baar Padh Lo" }
-],
-nur: [
-{ t: "BSc Nursing 1st Year Full Notes", c: "1st YEAR NURSING INC\n\nAnatomy: 206 Bones Longest Femur Smallest Stapes, Heart 4 Chambers RA LA RV LV Weight 250-300gm BP 120/80 Pulse 72, Lungs Right 3 Lobes Left 2, Liver Largest Gland Small 6m Large 1.5m, Kidney Nephron 1 Million Unit\nPhysiology: RBC 120 days WBC 4000-11000 Platelet 1.5-4 Lakh Hb Male 14-18 Female 12-16 Groups A B AB O Donor O-ve Recipient AB+ve, Cardiac Cycle 0.8sec LUB DUB ECG P QRS T Cardiac Output 5L\nNutrition: Carbs 4Kcal Rice, Protein 4Kcal Dal Egg Kwashiorkor, Fat 9Kcal Oil, Vit A Night Blindness Carrot B Beri-Beri C Scurvy Lemon D Rickets Sunlight E Infertility K Bleeding, Balanced Diet 2500Kcal BMI Formula\nFoundation: Florence Nightingale Lady Lamp 12 May Founder, ADPIE 5 Steps Assessment Diagnosis NANDA Planning Implementation Evaluation, Vital Signs Temp 98.6F Pulse 72 Respiration 16-20 BP 120/80, Hand Wash 7 Steps Most Imp, Bed Making Types, Biomedical Waste Yellow Red Blue Black, Ethics 4 Principles" },
-{ t: "BSc Nursing 2nd Year", c: "2nd YEAR\nPharmacology 5 RIGHTS Patient Drug Dose Route Time, Routes Oral Slow IV Fastest IM SC, 1gm=1000mg, Emergency Drugs Adrenaline 1:1000 Atropine, Antibiotics, Side Effects Allergy\nPathology Inflammation 5 Signs Redness Swelling Pain Heat Loss, Cancer Benign Malignant, Down Trisomy 21\nMed-Surg Hypertension more than 140/90 Amlodipine Low Salt, Diabetes Fasting 70-100 Insulin, Asthma Nebulization, MI Chest Pain Aspirin" },
-{ t: "BSc Nursing 3rd Year - Child Mental OBG 30 Marks", c: "3rd YEAR MOST IMPORTANT\n\nChild Health: Milestones 3Month Head Holding 6Month Sitting 12Month Walking, APGAR 10 Score 7-10 Normal 4-6 Mild 0-3 Severe 10 Marks Pakka, Newborn Weight 2.5-3.5kg Kangaroo Care Breast Feeding 30min Colostrum, Immunization Birth BCG OPV HepB 6Week Penta 9Month Measles Vitamin A, ORS Zinc\nMental Health: Anxiety, Depression Suicide Risk, Schizophrenia Hallucination, Bipolar, ECT, Drugs Haloperidol\nOBG: Pregnancy 40 Weeks 280 Days Trimester 1st 0-12 2nd 13-28 3rd 29-40 Amenorrhea Morning Sickness, ANC 4 Visits TT 2 IFA 180 Weight Gain 10-12kg Hb more than 11, Labour 3 Stages 1st 0-10cm Dilatation 12-14 Hours 2nd Birth Baby 3rd Placenta 500gm, High Risk APH PPH more than 500ml Eclampsia BP more than 140/90 Proteinuria Fits, Family Planning Condom Mala-D Copper-T Tubectomy Vasectomy" },
-{ t: "BSc Nursing 4th Year", c: "4th YEAR\nCommunity II: Sub-Centre 5000 ANM PHC 30000 1 MO 6 Beds CHC 120000 4 Specialist 30 Beds, National Programs JSY Institutional Delivery Money JSSK Free Delivery RNTCP TB DOTS RCH Mission Indradhanush\nResearch: Mean Average Median Middle Mode Frequent\nManagement: POSDCORB, Leadership Autocratic Democratic Best Laissez-faire, Ward Management, Material Indent" }
-],
-neet: [
-{ t: "NEET 2026 Full Syllabus 720 Marks", c: "NEET 2026 FULL SYLLABUS NTA\n\nPhysics 45Q 180M 11th Units Motion Laws Work Power Gravitation Thermodynamics Waves 12th Electrostatics Current Magnetic EMI AC EM Waves Optics Dual Nature E=hf Atoms Nuclei Devices\nChemistry 45Q 180M Physical Mole n=m/M pH=-log[H+] Thermodynamics, Organic IUPAC Hydrocarbons Haloalkanes Alcohols Aldehydes Amines Biomolecules, Inorganic Periodic Bonding p-Block d-f Block Coordination\nBiology 90Q 360M 11th Diversity Structural Organisation Cell Cycle Plant Human Physiology, 12th Reproduction Genetics Mendel DNA Evolution Human Welfare Biotech Ecology\nTotal 720 Marks Cutoff 2024 General 137 OBC 107 NCERT 90%" },
-{ t: "NEET Biology 360 Marks Most Important", c: "NEET BIOLOGY MOST IMPORTANT 360M\n\nHuman Physiology 12% Digestion Breathing Circulation Heart 4 Chambers Excretion Nephron Neural Chemical\nGenetics 15% Mendel Incomplete Dominance Linkage Sex Determination DNA Structure Replication\nEcology 14% Organism Population Ecosystem Biodiversity NCERT Line by Line\nReproduction 10% Spermatogenesis Oogenesis Menstrual 28 Days Pregnancy 40 Weeks\nCell Cycle Mitosis Meiosis\nDiagrams: Heart Nephron Brain Reproductive Testis Ovary" },
-{ t: "NEET Physics Chemistry Formula Sheet", c: "NEET FORMULA SHEET\n\nPhysics: v=u+at s=ut+1/2 at2 F=ma Work=Fs cosθ KE=1/2 mv2 PE=mgh, Electrostatics F=kq1q2/r2 E=kq/r2 V=kq/r, Current V=IR P=VI Series Rs=R1+R2 Parallel 1/Rp=1/R1+1/R2, Optics Lens 1/f=1/v-1/u Power P=1/f, Modern E=mc2 E=hf\nChemistry: Mole n=m/M Molarity Moles/Vol pH=-log[H+], Equilibrium Kc Kp, Thermodynamics deltaG=deltaH-TdeltaS\n50% Numericals Inse" }
-]
-};
-
-function openTab(id){
-var allBtns = document.querySelectorAll('[id^=btn_]');
-for(var i=0;i<allBtns.length;i++){ allBtns[i].className='bg-white p-4 rounded-2xl font-bold shadow'; }
-document.getElementById('btn_'+id).className='bg-blue-600 text-white p-4 rounded-2xl font-bold';
-var titles = { t10: '📘 10th UP Board - Full Book Syllabus', t12: '📗 12th UP Board - Full Book Syllabus', p10: '📄 10th Papers - 2020 se 2026 Tak (7 Papers)', p12: '📗 12th Papers - 2020 se 2026 Tak (7 Papers)', nur: '👩‍⚕️ BSc Nursing - 1st to 4th Year Full Notes', neet: '🩺 NEET 2026 Full Syllabus' };
-document.getElementById('head').innerText = titles[id];
-var html = "";
-var arr = store[id];
-for(var j=0;j<arr.length;j++){
-html += '<div onclick="openPop(\''+id+'\','+j+')" class="border p-4 rounded-2xl flex justify-between items-center cursor-pointer hover:bg-blue-50 mb-3 shadow-sm"><div style="width:75%"><b style="font-size:13px">'+arr[j].t+'</b><p style="font-size:10px;color:gray;margin-top:4px">Full PDF + Notes - App ka PDF</p></div><span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">PDF</span></div>';
-}
-document.getElementById('list').innerHTML = html;
-}
-
-function openPop(tab, idx){
-var item = store[tab][idx];
-curTitle = item.t;
-curText = item.c;
-document.getElementById('popH').innerText = curTitle;
-document.getElementById('popB').innerText = curText;
-document.getElementById('pop').classList.remove('hidden');
-}
-
-function downloadPDF(){
-var doc = new jspdf.jsPDF();
-doc.setFontSize(13);
-doc.text(curTitle,10,15);
-doc.setFontSize(10);
-var lines = doc.splitTextToSize(curText,185);
-doc.text(lines,10,25);
-doc.setFontSize(8);
-doc.text("StudSaathi - UP Board 2020-2026 + Nursing + NEET - Generated by App 2026",10,285);
-doc.save(curTitle.replace(/[^a-zA-Z0-9]/g,'_') + ".pdf");
-}
-
-openTab('t10');
-</script>
-</body>
-</html>
+{ t: "10th हिंदी - पूरा सिलेबस", c: "यूपी बोर्ड 10वीं हिंदी - पूरा सिलेबस 2026\n\nगद्य खंड (5 पाठ):\n1. मित्रता - रामचंद्र शुक्ल\n2. ममता - जयशंकर प्रसाद\n3. क्या निराश हुआ जाए - हजारी प्रसाद द्विवेदी\n4. आशा - प्रेमचंद (गोदान के लेखक)\n5. भारत माता - जवाहरलाल नेहरू\n\nपद्य खंड (5 पाठ):\n1. साखी - कबीरदास\n2. पद - सूरदास\n3. मनुष्यता - मैथिलीशरण गुप्त\n4. निराला - महादेवी वर्मा\n5. स्वदेशी - प्रेमचंद\n\nव्याकरण:\nसमास, अलंकार, रस, छंद, उपसर्ग, प्रत्यय, मुहावरे\nपत्र लेखन, निबंध लेखन\n\n20 अंक MCQ पैटर्न 2026" },
+{ t: "10th गणित - पूरा सिलेबस", c: "10वीं गणित - पूरा सिलेबस यूपी बोर्ड\n\n1. वास्तविक संख्याएँ - यूक्लिड विभाजन\n2. बहुपद - शून्यक\n3. दो चर वाले रैखिक समीकरण\n4. द्विघात समीकरण - सूत्र: x = -b +- root(b2-4ac) / 2a\n5. समांतर श्रेढ़ी - an = a+(n-1)d\n6. त्रिभुज - पाइथागोरस प्रमेय\n7. निर्देशांक ज्यामिति - दूरी सूत्र\n8. त्रिकोणमिति - sin2+cos2=1\n9. वृत्त, रचनाएँ\n10. वृत्तों से संबंधित क्षेत्रफल\n11. पृष्ठीय क्षेत्रफल और आयतन\n12. सांख्यिकी - माध्य, माध्यिका, बहुलक\n13. प्र
