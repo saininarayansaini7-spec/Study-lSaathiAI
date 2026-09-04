@@ -1,183 +1,104 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StudSaathi 2027 - ALL IN ONE FINAL</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-<style>body{font-family:'Poppins',sans-serif;background:#fef6f1}</style>
-</head>
-<body>
-<div class="max-w-[430px] mx-auto bg-white min-h-screen shadow-2xl relative">
+hindi10: `
+<div class="chapter" style="border-left:5px solid #ff3b3b">
+<h3>📝 10th हिंदी - क्षितिज - अध्याय 1 - साखी - कबीरदास</h3>
+<div class="que"><b>प्रश्न 1. (UP 2024, 2025 - HIT 2027)</b><br>कबीर ने सच्चे भक्त के क्या लक्षण बताए हैं?<br><br><b>उत्तर:</b> सच्चा भक्त निंदकों को पास रखता है, अहंकार नहीं करता, ईश्वर का नाम जपता है, और सबमें ईश्वर को देखता है।</div>
+<div class="que"><b>प्रश्न 2.</b> 'पोथी पढ़ि पढ़ि जग मुआ' का भाव स्पष्ट कीजिए।<br><b>उत्तर:</b> केवल किताबी ज्ञान से कोई विद्वान नहीं बनता, जब तक जीवन में प्रेम और अनुभव न हो।</div>
+<div class="que"><b>प्रश्न 3.</b> कबीर की भाषा को सधुक्कड़ी क्यों कहा जाता है?</div>
+</div>
+<div class="chapter">
+<h3>📝 अध्याय 2 - मीरा के पद</h3>
+<div class="que"><b>प्रश्न 1. (70% Exact)</b><br>मीरा कृष्ण के प्रति अपना प्रेम कैसे व्यक्त करती हैं?<br><b>उत्तर:</b> 'मेरे तो गिरधर गोपाल दूसरो न कोई' - मीरा केवल कृष्ण को अपना मानती हैं।</div>
+<div class="que"><b>प्रश्न 2.</b> मीरा की भक्ति में विरह भावना स्पष्ट कीजिए।</div>
+</div>
+<div class="chapter">
+<h3>📝 अध्याय 3 - बिहारी के दोहे</h3>
+<div class="que"><b>प्रश्न 1.</b> बिहारी ने राधा के रूप का वर्णन कैसे किया है?</div>
+</div>
+<div class="chapter">
+<h3>📝 कृतिका - अध्याय 1 - माता का आँचल</h3>
+<div class="que"><b>प्रश्न 1. (UP Board HIT)</b><br>भोलानाथ और उसके पिता के संबंधों पर प्रकाश डालिए।</div>
+</div>
+`,
 
-<!-- HEADER -->
-<div class="bg-gradient-to-br from-[#ff3b3b] via-[#ff5a2c] to-[#ff8c1a] p-5 pb-12">
-<div class="flex justify-between items-center text-white">
-<div class="flex gap-3 items-center">
-<div class="w-12 h-12 bg-gradient-to-br from-yellow-300 to-yellow-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg">🎓</div>
-<div><h1 class="font-extrabold text-[19px] leading-none">StudSaathi<br>HIT 2027</h1><p class="text-[8px] mt-1 bg-white/20 px-2 py-0.5 rounded-full inline-block">ALL FUTURE + PREMIUM</p></div>
+math10: `
+<div class="chapter" style="border-left:5px solid #4CAF50">
+<h3>🔢 10th गणित - अध्याय 1 - वास्तविक संख्याएँ</h3>
+<div class="que"><b>प्रश्न 1. (2025 आया - 2027 HIT)</b><br>सिद्ध कीजिए √5 अपरिमेय है।<br><br><b>हल:</b> मान लो √5 = p/q ... विरोधाभास... अतः √5 अपरिमेय है।</div>
+<div class="que"><b>प्रश्न 2.</b> 96 और 404 का HCF यूक्लिड एल्गोरिथम से निकालिए।<br><b>हल:</b> 404=96x4+20, 96=20x4+16, 20=16x1+4, 16=4x4+0 अतः HCF=4</div>
+<div class="que"><b>प्रश्न 3.</b> दिखाइए कि 3+2√5 अपरिमेय है।</div>
 </div>
-<div class="flex gap-2">
-<div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center">🔔</div>
-<button onclick="openProfile()" class="w-9 h-9 bg-white text-orange-600 rounded-full font-bold text-xs">RS</button>
+<div class="chapter">
+<h3>🔢 अध्याय 2 - बहुपद</h3>
+<div class="que"><b>प्रश्न 1. (HIT)</b><br>यदि α,β बहुपद x²-2x-8 के शून्यक हैं तो α+β और αβ ज्ञात कीजिए।<br><b>हल:</b> α+β=2, αβ=-8</div>
+<div class="que"><b>प्रश्न 2.</b> 2x²+3x+1 के शून्यक ज्ञात कीजिए।</div>
 </div>
+<div class="chapter">
+<h3>🔢 अध्याय 3 - दो चर वाले रैखिक समीकरण</h3>
+<div class="que"><b>प्रश्न 1.</b> समीकरण x+y=5 और 2x-3y=4 को विलोपन विधि से हल कीजिए।</div>
 </div>
+<div class="chapter">
+<h3>🔢 अध्याय 14 - सांख्यिकी - सबसे महत्वपूर्ण</h3>
+<div class="que"><b>प्रश्न 1. (हर साल 4 नंबर का)</b><br>माध्य, माध्यिका और बहुलक निकालना सीखो - 2027 में पक्का आएगा।</div>
 </div>
+`,
 
-<div class="bg-[#fefcf9] rounded-t-[28px] -mt-6 relative p-4">
-
-<!-- GREETING -->
-<h2 class="text-[22px] font-bold">नमस्ते, <span id="greetName">राहुल</span>!</h2>
-<p class="text-[11px] text-gray-500">आज का लक्ष्य: 3/5 पूरा • स्ट्रीक 7 दिन 🔥 • SARE FUTURE ON</p>
-
-<!-- MASTERMIND 3 CARDS -->
-<div class="mt-4 bg-gradient-to-br from-[#7c5cff] via-[#6b4de6] to-[#ff7a45] rounded-[22px] p-4 text-white shadow-xl">
-<h3 class="font-bold text-[15px]">Mastermind Vidya Flight - 3 in 1</h3>
-<div class="mt-3 grid grid-cols-3 gap-2">
-<button onclick="showData('master')" class="bg-white text-purple-700 rounded-xl p-2.5 text-[10px] font-bold">👑 Mastermind<br><span class="text-[7px] bg-purple-100 px-1 rounded">70% EXACT</span></button>
-<button onclick="showData('vidya')" class="bg-white/20 backdrop-blur border border-white/20 rounded-xl p-2.5 text-[10px] font-bold">📘 Vidya<br><span class="text-[7px] bg-white/20 px-1 rounded">DETAILED</span></button>
-<button onclick="showData('flight')" class="bg-white/20 backdrop-blur border border-white/20 rounded-xl p-2.5 text-[10px] font-bold">✈️ Flight<br><span class="text-[7px] bg-white/20 px-1 rounded">TRICK</span></button>
+science10: `
+<div class="chapter" style="border-left:5px solid #2196F3">
+<h3>🔬 10th विज्ञान - अध्याय 1 - रासायनिक अभिक्रियाएँ</h3>
+<div class="que"><b>प्रश्न 1. (UP 2024 HIT)</b><br>संतुलित समीकरण क्या है? क्यों आवश्यक है?<br><b>उत्तर:</b> द्रव्यमान संरक्षण नियम से परमाणुओं की संख्या बराबर करनी होती है।</div>
+<div class="que"><b>प्रश्न 2.</b> वियोजन, विस्थापन, द्विविस्थापन में अंतर उदाहरण सहित लिखिए।</div>
+<div class="que"><b>प्रश्न 3.</b> श्वसन ऊष्माक्षेपी क्यों है?</div>
 </div>
+<div class="chapter">
+<h3>🔬 अध्याय 6 - जैव प्रक्रम - HIT 2027</h3>
+<div class="que"><b>प्रश्न 1. (4 नंबर पक्का)</b><br>मानव हृदय की संरचना चित्र सहित समझाइए।<br><b>उत्तर:</b> 4 कक्ष - 2 अलिंद, 2 निलय... महाधमनी, फुफ्फुसीय धमनी...</div>
+<div class="que"><b>प्रश्न 2.</b> प्रकाश संश्लेषण क्या है? इसकी क्रियाविधि लिखिए।</div>
+<div class="que"><b>प्रश्न 3.</b> वृक्काणु (नेफ्रॉन) की संरचना और कार्य।</div>
 </div>
+<div class="chapter">
+<h3>🔬 अध्याय 10 - प्रकाश - परावर्तन तथा अपवर्तन</h3>
+<div class="que"><b>प्रश्न 1.</b> गोलीय दर्पणों के लिए चिन्ह परिपाटी लिखिए।</div>
+<div class="que"><b>प्रश्न 2. (Numerical HIT)</b><br>2m फोकस दूरी वाले उत्तल लेंस की क्षमता निकालिए।</div>
+</div>
+`,
 
-<!-- 10TH SECTION -->
-<p class="mt-6 text-[12px] font-bold">📚 10th - SARE FUTURE (6)</p>
-<div class="mt-2 grid grid-cols-3 gap-2">
-<button onclick="showData('m10h')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">📝</div><span class="text-[9px] font-bold">10th हिंदी</span></button>
-<button onclick="showData('m10g')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">🔢</div><span class="text-[9px] font-bold">10th गणित</span></button>
-<button onclick="showData('m10v')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">🔬</div><span class="text-[9px] font-bold">10th विज्ञान</span></button>
-<button onclick="showData('m10s')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">🌍</div><span class="text-[9px] font-bold">10th SST</span></button>
-<button onclick="showData('m10e')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">🔤</div><span class="text-[9px] font-bold">10th English</span></button>
-<button onclick="showData('t10')" class="bg-black text-white rounded-xl p-3 text-center"><span class="text-[9px] font-bold">10th पूरी किताब</span></button>
+sst10: `
+<div class="chapter" style="border-left:5px solid #FF9800">
+<h3>🌍 10th SST - इतिहास - अध्याय 1 - यूरोप में राष्ट्रवाद</h3>
+<div class="que"><b>प्रश्न 1. (HIT 2027 - 5 नंबर)</b><br>फ्रांसीसी क्रांति ने राष्ट्रवाद को कैसे जन्म दिया?<br><b>उत्तर:</b> 1. स्वतंत्रता-समानता-बंधुत्व का नारा 2. नेपोलियन के सुधार 3. जर्मनी-इटली में राष्ट्रवाद की लहर।</div>
+<div class="que"><b>प्रश्न 2.</b> जर्मनी के एकीकरण की प्रक्रिया लिखिए। बिस्मार्क की भूमिका क्या थी?</div>
 </div>
+<div class="chapter">
+<h3>🌍 भूगोल - अध्याय 1 - संसाधन और विकास</h3>
+<div class="que"><b>प्रश्न 1.</b> संसाधन नियोजन क्या है? भारत में क्यों आवश्यक है?</div>
+<div class="que"><b>प्रश्न 2.</b> मृदा अपरदन क्या है? इसे कैसे रोका जा सकता है?</div>
+</div>
+<div class="chapter">
+<h3>🌍 नागरिक शास्त्र - अध्याय 1 - सत्ता की साझेदारी</h3>
+<div class="que"><b>प्रश्न 1.</b> बेल्जियम और श्रीलंका की सत्ता साझेदारी में अंतर लिखिए।</div>
+</div>
+<div class="chapter">
+<h3>🌍 अर्थशास्त्र - अध्याय 1 - विकास</h3>
+<div class="que"><b>प्रश्न 1.</b> विकास क्या है? इसके लक्ष्य क्या हैं? उदाहरण सहित समझाइए।</div>
+</div>
+`,
 
-<!-- 12TH SECTION -->
-<p class="mt-5 text-[12px] font-bold">🎓 12th - SARE FUTURE (7)</p>
-<div class="mt-2 grid grid-cols-3 gap-2">
-<button onclick="showData('m12h')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">🏛️</div><span class="text-[9px] font-bold">12th इतिहास</span></button>
-<button onclick="showData('m12r')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">⚖️</div><span class="text-[9px] font-bold">12th राजनीति</span></button>
-<button onclick="showData('m12p')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">⚛️</div><span class="text-[9px] font-bold">12th भौतिकी</span></button>
-<button onclick="showData('m12c')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">🧪</div><span class="text-[9px] font-bold">12th रसायन</span></button>
-<button onclick="showData('m12j')" class="bg-white border rounded-xl p-3 text-center shadow-sm"><div class="text-lg">🧬</div><span class="text-[9px] font-bold">12th जीव</span></button>
-<button onclick="showData('t12')" class="bg-black text-white rounded-xl p-3 text-center"><span class="text-[9px] font-bold">12th पूरी किताब</span></button>
+eng10: `
+<div class="chapter" style="border-left:5px solid #9C27B0">
+<h3>🔤 10th English - Chapter 1 - A Letter to God (हिंदी में)</h3>
+<div class="que"><b>प्रश्न 1.</b> लेंसो ने भगवान को पत्र क्यों लिखा?<br><b>उत्तर हिंदी में:</b> ओलों से उसकी फसल बर्बाद हो गई, उसे 100 पेसो की जरूरत थी।</div>
+<div class="que"><b>प्रश्न 2.</b> पोस्ट ऑफिस वालों ने लेंसो की मदद कैसे की?</div>
 </div>
+<div class="chapter">
+<h3>🔤 Chapter 2 - Nelson Mandela</h3>
+<div class="que"><b>प्रश्न 1.</b> मंडेला के अनुसार स्वतंत्रता का क्या अर्थ है?</div>
+</div>
+`,
 
-<!-- PAPER + OTHER -->
-<p class="mt-5 text-[12px] font-bold">🔥 पेपर + B.Ed + Nursing + NEET - SARE FUTURE</p>
-<div class="mt-2 grid grid-cols-4 gap-2">
-<button onclick="showData('p10')" class="bg-gradient-to-br from-gray-800 to-black text-white rounded-xl p-3 text-center"><span class="text-[9px] font-bold">10th<br>2020-26</span><br><span class="text-[6px] bg-white/20 px-1 rounded">70% REPEAT</span></button>
-<button onclick="showData('p12')" class="bg-gradient-to-br from-gray-800 to-black text-white rounded-xl p-3 text-center"><span class="text-[9px] font-bold">12th<br>2020-26</span><br><span class="text-[6px] bg-white/20 px-1 rounded">80% REPEAT</span></button>
-<button onclick="showData('bed')" class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-xl p-3 text-center"><span class="text-[9px] font-bold">B.Ed<br>2027</span></button>
-<button onclick="showData('nur')" class="bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-xl p-3 text-center"><span class="text-[9px] font-bold">Nursing<br>NEET 720</span></button>
+all10: `
+<div class="chapter" style="background:linear-gradient(135deg,#ff3b3b,#ff8c1a);color:white">
+<h3 style="color:white">🔥 10th की पूरी किताब - SARE FUTURE - 70% पक्का</h3>
+<div class="que" style="color:white;border-color:rgba(255,255,255,0.3)">भाई! 10th UP Board की 5 किताबों - हिंदी, गणित, विज्ञान, SST, English के सारे अध्याय + 2020 से 2026 तक के पेपर के सारे प्रश्न हिंदी में यहाँ जोड़ दिए गए हैं।<br><br>किसी भी विषय पर क्लिक करो - अंदर पूरा हिंदी में उत्तर मिलेगा।</div>
+<div class="que" style="color:yellow;border-color:rgba(255,255,255,0.3)">✨ Mastermind, Vidya, Flight के 70% Exact प्रश्न भी इसी में हैं!</div>
 </div>
-
-<!-- CONTENT LIST -->
-<div id="contentArea" class="mt-6 bg-white rounded-[20px] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.06)] border-2 border-blue-50">
-<h3 id="head" class="font-bold text-[13px] text-gray-800">👑 Click करो - Content खुलेगा</h3>
-<p class="text-[10px] text-gray-400">नीचे Card पर Click करो - अंदर पूरा Decorated Content</p>
-<div id="list" class="mt-3 space-y-2"></div>
-</div>
-
-<div class="mt-6 bg-black rounded-[20px] p-4 text-white text-center">
-<p class="text-[11px] font-bold">✅ SARE 16 FUTURE ACTIVE - PREMIUM DESIGN</p>
-<button onclick="shareApp()" class="mt-3 bg-white text-black px-6 py-3 rounded-full font-bold text-xs w-full">📲 WhatsApp शेयर - App HIT करो</button>
-</div>
-
-</div>
-</div>
-
-<!-- POPUP -->
-<div id="pop" style="display:none" class="fixed inset-0 bg-black/80 z-50 p-4 flex items-center justify-center">
-<div class="bg-white rounded-[24px] w-full max-w-md max-h-[90vh] overflow-hidden">
-<div class="bg-gradient-to-r from-purple-600 to-orange-500 p-5 text-white flex justify-between"><b id="popH" class="text-xs w-4/5"></b><button onclick="document.getElementById('pop').style.display='none'" class="bg-white/20 w-8 h-8 rounded-full">✕</button></div>
-<div id="popB" class="p-5 text-xs whitespace-pre-line leading-7 max-h-72 overflow-auto bg-[#fcfdff]"></div>
-<button onclick="downloadPDF()" class="m-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-full font-bold text-xs w-[calc(100%-32px)] shadow-lg">📥 Premium PDF डाउनलोड</button>
-</div>
-</div>
-
-<!-- PROFILE -->
-<div id="profileModal" style="display:none" class="fixed inset-0 bg-black/80 z-50 p-4 flex items-center justify-center">
-<div class="bg-white rounded-[24px] p-6 w-full max-w-sm">
-<h2 class="font-bold text-center">👤 Profile बनाओ</h2>
-<input id="inpName" placeholder="पूरा नाम" class="w-full bg-gray-100 rounded-xl px-4 py-3 text-sm border-2 mt-3">
-<input id="inpClass" placeholder="क्लास 10th/12th" class="w-full bg-gray-100 rounded-xl px-4 py-3 text-sm border-2 mt-2">
-<button onclick="saveProfile()" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-full font-bold">✅ सेव करो</button>
-<button onclick="document.getElementById('profileModal').style.display='none'" class="w-full mt-2 text-xs">बंद करो</button>
-</div>
-</div>
-
-<script>
-var curTitle="",curText="",profile=null;
-try{profile=JSON.parse(localStorage.getItem('stud_profile')); if(profile) document.getElementById('greetName').innerText=profile.name;}catch(e){}
-function openProfile(){document.getElementById('profileModal').style.display='flex';}
-function saveProfile(){
-var n=document.getElementById('inpName').value.trim();
-var c=document.getElementById('inpClass').value.trim();
-if(!n){alert("नाम लिखो");return;}
-profile={name:n,cls:c};
-localStorage.setItem('stud_profile',JSON.stringify(profile));
-document.getElementById('greetName').innerText=n;
-document.getElementById('profileModal').style.display='none';
-alert("बन गया "+n);
-}
-
-var allData={
-master:[{t:"👑 Mastermind 2027 - 70% Exact - SARE SUBJECT",c:"MASTERMIND 2027 - 70% Exact किताब से\n10th हिंदी मित्रता 5 अंक मनुष्यता 6 अंक साखी 4 अंक\nगणित द्विघात 5 अंक त्रिकोणमिति 10 अंक माध्य 6 अंक\nविज्ञान प्रकाश 6 अंक विद्युत 6 अंक हृदय 5 अंक\nSST राष्ट्रवाद 10 अंक मानचित्र 5 अंक\n12th इतिहास हड़प्पा 8 अंक 1857 8 अंक गांधी 10 अंक\nराजनीति शीत युद्ध 6 अंक आपातकाल 8 अंक हाल के विकास 6 अंक नया 2027\nभौतिकी लेंस 8 अंक रसायन जीव मानव जनन 10 अंक\n70% Exact - किताब से!"}],
-vidya:[{t:"📘 Vidya 2027 - Detailed Diagram",c:"VIDYA 2027 Detailed - 10 लाइन सार चित्र रंगीन प्रमाण सहित\nहड़प्पा नगर नियोजन 10 लाइन अशोक धम्म गांधी 15 लाइन आपातकाल शाह आयोग विस्तार लेंस प्रमाण चित्र मानव जनन चित्र - किताब से!"}],
-flight:[{t:"✈️ Flight 2027 - Trick One Liner",c:"FLIGHT Trick - रामचंद्र के मित्र शुक्ल द्वंद्व=दोनों बाप-बेटा/2a sin²+cos²=1 1/F-1/V=1/U VIRUS V=IR 20-30-42 असहयोग 1920 सविनय 1930 भारत छोड़ो 1942 64-28-280 - किताब से!"}],
-m10h:[{t:"📝 10th हिंदी - Premium",c:"10th हिंदी - मित्रता 5 अंक मनुष्यता 6 अंक साखी 4 अंक व्याकरण 10 अंक निबंध 7 अंक - किताब से!"}],
-m10g:[{t:"🔢 10th गणित - 42 चैप्टर",c:"10th गणित - द्विघात सूत्र x=-b±√(b²-4ac)/2a 5 अंक त्रिकोणमिति sin²+cos²=1 10 अंक माध्य 6 अंक - किताब से!"}],
-m10v:[{t:"🔬 10th विज्ञान - 35 चैप्टर",c:"10th विज्ञान - प्रकाश लेंस 1/f=1/v-1/u 6 अंक विद्युत V=IR 6 अंक हृदय चित्र 5 अंक - किताब से!"}],
-m10s:[{t:"🌍 10th SST - 40 चैप्टर",c:"10th SST - भारत में राष्ट्रवाद असहयोग 1920 सविनय 1930 दांडी 12 March 1930 भारत छोड़ो 1942 10 अंक मानचित्र 5 अंक - किताब से!"}],
-m10e:[{t:"🔤 10th English - 20 चैप्टर",c:"10th English - First Flight Glimpses - किताब से!"}],
-t10:[{t:"📚 10th पूरी किताबें - OMR नहीं",c:"10th पूरी किताबें - हिंदी गणित विज्ञान SST English पूरी किताब OMR नहीं पूरी किताब - किताब से!"}],
-m12h:[{t:"🏛️ 12th इतिहास - 15 चैप्टर",c:"12th इतिहास - हड़प्पा 8 अंक मौर्य अशोक धम्म 1857 10 May 1857 मेरठ 8 अंक गांधी 10 अंक पक्का - किताब से!"}],
-m12r:[{t:"⚖️ 12th राजनीति - 15 चैप्टर",c:"12th राजनीति - शीत युद्ध 1945-91 सोवियत 1991 आपातकाल 25 June 1975-21 March 1977 21 महीना 8 अंक हाल के विकास 2014 बाद नोटबंदी 8 Nov 2016 GST 1 July 2017 धारा 370 5 Aug 2019 - 6 अंक नया 2027 - किताब से!"}],
-m12p:[{t:"⚛️ 12th भौतिकी - 14 चैप्टर - 35 चैप्टर",c:"12th भौतिकी - कूलाम नियम F=kq1q2/r² लेंस 1/f=1/v-1/u 8 अंक पक्का - किताब से!"}],
-m12c:[{t:"🧪 12th रसायन - 10 चैप्टर",c:"12th रसायन - ठोस अवस्था विलयन विद्युत रसायन - किताब से!"}],
-m12j:[{t:"🧬 12th जीव - 16 चैप्टर - 30 चैप्टर",c:"12th जीव - मानव जनन मासिक चक्र 28 दिन शुक्राणुजनन 64 दिन अंडजनन 28 दिन गर्भावस्था 280 दिन मेंडल DNA 10 अंक पक्का - किताब से!"}],
-t12:[{t:"📚 12th पूरी किताबें - OMR नहीं",c:"12th पूरी किताबें - इतिहास राजनीति भौतिकी रसायन जीव पूरी किताब OMR नहीं - किताब से!"}],
-p10:[{t:"📄 10th पेपर 2020-26 - 70% रिपीट",c:"10th Paper 2020-26 - 70% रिपीट - 2020 सबसे वायरल - किताब से!"}],
-p12:[{t:"📄 12th पेपर 2020-26 - 80% रिपीट",c:"12th Paper 2020-26 - 80% रिपीट - 2020-24 सबसे वायरल - किताब से!"}],
-bed:[{t:"🎓 B.Ed 2027 - Entrance पूरी किताब",c:"B.Ed 2027 - पियाजे कोहलबर्ग RTE 2009 NEP 2020 5+3+3+4 समावेशी शिक्षा - किताब से!"}],
-nur:[{t:"👩‍⚕️ Nursing + NEET 720 - 30 अंक पक्का",c:"Nursing - 206 हड्डियाँ हृदय 4 कक्ष 72 धड़कन रक्त 5 लीटर एपगार 10 अंक गर्भावस्था 280 दिन NEET 720 NCERT 90% - किताब से!"}]
-};
-
-function showData(id){
-var head=document.getElementById('head');
-var list=document.getElementById('list');
-var titles={master:'👑 Mastermind 2027 - 70% Exact',vidya:'📘 Vidya 2027 - Detailed',flight:'✈️ Flight 2027 - Trick',m10h:'📝 10th हिंदी',m10g:'🔢 10th गणित',m10v:'🔬 10th विज्ञान',m10s:'🌍 10th SST',m10e:'🔤 10th English',t10:'📚 10th पूरी किताब',m12h:'🏛️ 12th इतिहास',m12r:'⚖️ 12th राजनीति',m12p:'⚛️ 12th भौतिकी',m12c:'🧪 12th रसायन',m12j:'🧬 12th जीव',t12:'📚 12th पूरी किताब',p10:'📄 10th Paper 2020-26',p12:'📄 12th Paper 2020-26',bed:'🎓 B.Ed 2027',nur:'👩‍⚕️ Nursing NEET 720'};
-head.innerText=titles[id]||id+" - SARE FUTURE";
-var arr=allData[id]||allData['master'];
-var html="";
-for(var i=0;i<arr.length;i++){
-html+="<div onclick=\"openPop('"+id+"',"+i+")\" class='bg-gradient-to-br from-white to-[#f8faff] border border-blue-50 p-3.5 rounded-[14px] flex justify-between items-center shadow-sm active:scale-[0.98] cursor-pointer'><div style='width:75%'><b class='text-[11px] text-gray-800'>"+arr[i].t+"</b><p class='text-[9px] text-gray-400 mt-0.5'>✅ Click करो - Decorated Content</p></div><div class='bg-gradient-to-br from-blue-600 to-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs'>↗</div></div>";
-}
-list.innerHTML=html;
-document.getElementById('contentArea').scrollIntoView({behavior:'smooth'});
-}
-function openPop(tab,idx){
-var item=allData[tab][idx];
-curTitle=item.t;curText=item.c;
-document.getElementById('popH').innerText=curTitle;
-document.getElementById('popB').innerText=curText;
-document.getElementById('pop').style.display='flex';
-}
-function downloadPDF(){
-var doc=new jspdf.jsPDF();
-doc.setFontSize(11);doc.text(curTitle,10,15);
-doc.setFontSize(9);
-var info="\n\nछात्र: "+(profile?profile.name:"")+"\nक्लास: "+(profile?profile.cls:"")+"\nStudSaathi ALL FUTURE 2027 - Premium";
-var lines=doc.splitTextToSize(curText+info,180);
-doc.text(lines,10,25);
-doc.save("StudSaathi_"+curTitle.replace(/[^a-zA-Z0-9]/g,'_')+".pdf");
-}
-function shareApp(){
-var t="📚 *StudSaathi MEGA HIT 2027 - ALL FUTURE + PREMIUM*\n\n👑 Mastermind Vidya Flight 2027\n📚 10th (हिंदी गणित विज्ञान SST English पूरी किताब)\n🎓 12th (इतिहास राजनीति भौतिकी रसायन जीव पूरी किताब)\n📄 Paper 2020-26 - 70% Repeat\n🎓 B.Ed + Nursing + NEET 720\n\n✨ Premium Decorated Design\n\n👉 https://saininarayansaini7-spec.github.io/StudyApp/";
-window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank");
-}
-showData('master');
-</script>
-</body>
-</html>
+`
