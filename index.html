@@ -2,213 +2,172 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>UP BOARD 37 FUTURE - SEPARATE PAGE - Jani</title>
+<title>UP BOARD - PROFILE + STREAK + DAILY - Jani</title>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI'}body{background:#f6f7fb;overflow-x:hidden}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI'}body{background:#f6f7fb;padding-bottom:20px}
 .bar{background:linear-gradient(90deg,#FF0000,#FFD600);color:#fff;padding:10px 12px;font-weight:900;font-size:12px;display:flex;justify-content:space-between;position:sticky;top:0;z-index:100}
-.card{background:#fff;margin:8px 14px;border-radius:16px;box-shadow:0 6px 16px #0001;overflow:hidden;cursor:pointer;transition:.2s}
-.card:active{transform:scale(.98)}
-.row{padding:12px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #f0f0f0}
-.ico{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px}
-.page{position:fixed;top:0;left:0;width:100%;height:100%;background:#f6f7fb;z-index:200;transform:translateX(100%);transition:transform.35s cubic-bezier(.4,0,.2,1);overflow:auto;padding-bottom:80px}
+.card{background:#fff;margin:8px 14px;border-radius:16px;box-shadow:0 6px 16px #0001;overflow:hidden;cursor:pointer}
+.page{position:fixed;top:0;left:0;width:100%;height:100%;background:#f6f7fb;z-index:200;transform:translateX(100%);transition:.35s;overflow:auto;padding-bottom:80px}
 .page.active{transform:translateX(0)}
-.pageHead{position:sticky;top:0;background:linear-gradient(90deg,#1B5E20,#2E7D32);color:#fff;padding:12px;display:flex;gap:10px;align-items:center;z-index:10}
-.backBtn{background:#fff3;border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer}
-.scanBox{background:linear-gradient(135deg,#0D47A1,#1B5E20);color:#fff;margin:10px;border-radius:18px;padding:14px;border:3px solid #FFD600}
-.ansFull{background:#fff;color:#000;padding:14px;border-radius:12px;margin-top:10px;line-height:23px;font-size:13px;white-space:pre-wrap;border-left:5px solid #4CAF50;box-shadow:0 4px 12px #0001}
-.wheel{width:160px;height:160px;border-radius:50%;border:8px solid #FFD600;background:conic-gradient(#FF0000 0deg 60deg,#4CAF50 60deg 120deg,#2196F3 120deg 180deg,#FF9800 180deg 240deg,#9C27B0 240deg 300deg,#FFEB3B 300deg 360deg);display:flex;align-items:center;justify-content:center;transition:transform 3s cubic-bezier(.17,.67,.2,1);margin:20px auto}
-.reel{height:200px;background:linear-gradient(135deg,#000,#333);border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:20px;cursor:pointer;margin:10px}
-.memeImg{background:#FFF9C4;border:3px solid #FFD600;border-radius:16px;padding:16px;margin:10px;color:#000;font-size:14px;line-height:22px}
-.toast{position:fixed;bottom:90px;left:10px;right:10px;background:#1B5E20;color:#fff;padding:10px;border-radius:12px;z-index:9999;transform:translateY(200px);transition:.4s;display:flex;gap:8px;align-items:center}
-.swipeHint{text-align:center;font-size:10px;color:#888;padding:6px}
+.pageHead{position:sticky;top:0;background:linear-gradient(90deg,#1B5E20,#2E7D32);color:#fff;padding:12px;display:flex;gap:10px;align-items:center}
+.backBtn{background:#fff3;border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px}
+.profileCard{background:linear-gradient(135deg,#1B5E20,#43A047);color:#fff;margin:10px 14px;border-radius:20px;padding:14px;cursor:pointer;box-shadow:0 8px 20px #0002;border:2px solid #FFD600}
+.dailyBox{background:#fff;margin:8px 14px;border-radius:16px;padding:12px;box-shadow:0 4px 12px #0001}
+.streakCal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:8px}
+.day{width:100%;aspect-ratio:1;background:#f0f0f0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
+.day.done{background:#4CAF50;color:#fff}
+.day.today{background:#FFD600;color:#000;border:2px solid #1B5E20}
+.input{width:100%;background:#f6f7fb;border:2px solid #e0e0e0;border-radius:12px;padding:12px;font-size:13px;margin-top:8px;outline:none}
+.input:focus{border-color:#2E7D32}
 </style>
 </head>
 <body>
-<div class="bar"><span>🔥 ULTRA 37 FUTURE - SEPARATE PAGE 🔥</span><span style="background:#000;color:#FFD600;padding:4px 10px;border-radius:10px">LIVE: 11322</span></div>
+<div class="bar"><span>🔥 PROFILE + DAILY TEST + STREAK 🔥</span><span id="liveTop" style="background:#000;color:#FFD600;padding:4px 10px;border-radius:10px">LIVE: 11,322</span></div>
 
-<!-- HOME GRID - HAR FUTURE ALAG CARD -->
-<div style="background:#fff;margin:8px 14px;border-radius:16px;padding:10px;display:flex;gap:10px;align-items:center">
-<img src="https://i.pravatar.cc/100?img=5" style="width:44px;height:44px;border-radius:50%;border:2px solid #FFD600"><div style="flex:1"><b style="font-size:12px">Narayan saini - Jani Topper ⭐</b><br><small>1517 Pts | 🔥 Streak: 8 दिन | Board: 86 दिन</small></div>
+<!-- PROFILE CARD - CLICK KARO TO BADA PAGE KHULEGA -->
+<div id="profileTop" class="profileCard" onclick="openPage('profilePage')">
+<div style="display:flex;gap:12px;align-items:center">
+<img id="topPic" src="https://i.pravatar.cc/100?img=5" style="width:54px;height:54px;border-radius:50%;border:3px solid #FFD600;object-fit:cover">
+<div style="flex:1"><b id="topName" style="font-size:13px">Narayan saini - Jani Topper ⭐</b><br><small style="font-size:11px"><span id="topPts">1517</span> Pts | 🔥 Streak: <span id="topStreak">8</span> दिन | Board: <span id="topBoard">86</span> दिन | ✏️ Edit Profile</small></div>
+<div style="background:#FFEB3B;color:#000;padding:6px 10px;border-radius:20px;font-size:10px;font-weight:900">👤 PROFILE</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px">
+<div style="background:#fff2;border-radius:12px;padding:8px;text-align:center"><b id="tTests" style="font-size:12px">127</b><br><small style="font-size:9px">Total Test</small></div>
+<div style="background:#fff2;border-radius:12px;padding:8px;text-align:center"><b id="tPdf" style="font-size:12px">43</b><br><small style="font-size:9px">PDF Download</small></div>
+<div style="background:#fff2;border-radius:12px;padding:8px;text-align:center"><b id="tRank" style="font-size:12px">#3</b><br><small style="font-size:9px">UP Rank</small></div>
+</div>
 </div>
 
+<!-- DAILY STATS -->
+<div class="dailyBox">
+<b style="font-size:12px">📅 आज का हिसाब - Daily Stats 🔥</b>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+<div style="background:#E8F5E9;border-radius:12px;padding:10px;text-align:center"><b style="font-size:16px;color:#2E7D32" id="todayTest">2,341</b><br><small style="font-size:10px">आज टेस्ट दिया 👥</small></div>
+<div style="background:#FFF9C4;border-radius:12px;padding:10px;text-align:center"><b style="font-size:16px;color:#F57F17" id="todayLive">11,322</b><br><small style="font-size:10px">अभी LIVE 🟢</small></div>
+</div>
+<div style="margin-top:8px"><b style="font-size:10px">🔥 Streak Calendar - रोज़ आओ</b><div class="streakCal" id="cal"></div></div>
+<div style="margin-top:8px;background:#f6f7fb;padding:8px;border-radius:10px"><b style="font-size:10px">🏆 आज के टॉपर + वोट</b><br><small style="font-size:10px">🥇 Rahul - 1520 Pts (124 वोट) | 🥈 Priya - 1480 Pts (98 वोट) | 🥉 Jani - 1517 Pts (87 वोट) - तेरा वोट भी जुड़ेगा!</small></div>
+</div>
+
+<!-- FUTURE GRID -->
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 14px">
-<div class="card" onclick="openPage('scanPage')" style="background:linear-gradient(135deg,#0D47A1,#42A5F5);color:#fff;padding:14px;text-align:center"><div style="font-size:28px">📷</div><b style="font-size:12px">SCAN + कोई भी प्रश्न</b><br><small style="font-size:9px">Click करो बड़ा खुलेगा</small></div>
-<div class="card" onclick="openPage('voicePage')" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:14px;text-align:center"><div style="font-size:28px">🎤</div><b style="font-size:12px">बोल के पूछो</b><br><small style="font-size:9px">Voice से सवाल</small></div>
-<div class="card" onclick="openPage('spinPage')" style="background:linear-gradient(135deg,#FF9800,#FF5722);color:#fff;padding:14px;text-align:center"><div style="font-size:28px">🎁</div><b style="font-size:12px">Spin & Win</b><br><small style="font-size:9px">रोज़ इनाम</small></div>
-<div class="card" onclick="openPage('battlePage')" style="background:linear-gradient(135deg,#FF0000,#D32F2F);color:#fff;padding:14px;text-align:center"><div style="font-size:28px">🎮</div><b style="font-size:12px">Quiz Battle</b><br><small style="font-size:9px">दोस्त से मुकाबला</small></div>
-<div class="card" onclick="openPage('memePage')" style="background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;padding:14px;text-align:center"><div style="font-size:28px">😂</div><b style="font-size:12px">मीम से पढ़ाई</b><br><small style="font-size:9px">हँस के याद</small></div>
-<div class="card" onclick="openPage('reelPage')" style="background:linear-gradient(135deg,#000,#333);color:#fff;padding:14px;text-align:center"><div style="font-size:28px">🎥</div><b style="font-size:12px">30s Reel Notes</b><br><small style="font-size:9px">शॉर्ट वीडियो</small></div>
-<div class="card" onclick="openPage('hwPage')" style="background:linear-gradient(135deg,#FFEB3B,#FFC107);color:#000;padding:14px;text-align:center"><div style="font-size:28px">📸</div><b style="font-size:12px">कॉपी जाँच</b><br><small style="font-size:9px">Homework Check</small></div>
-<div class="card" onclick="openPage('chapterPage')" style="background:linear-gradient(135deg,#1B5E20,#43A047);color:#fff;padding:14px;text-align:center"><div style="font-size:28px">📚</div><b style="font-size:12px">81 Chapter</b><br><small style="font-size:9px">10th + 12th</small></div>
+<div class="card" onclick="openPage('scanPage')" style="background:linear-gradient(135deg,#0D47A1,#42A5F5);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">📷</div><b style="font-size:11px">SCAN + कोई भी प्रश्न</b><br><small style="font-size:9px">Full Page खुलेगा</small></div>
+<div class="card" onclick="openPage('voicePage')" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">🎤</div><b style="font-size:11px">बोल के पूछो</b></div>
+<div class="card" onclick="openPage('spinPage')" style="background:linear-gradient(135deg,#FF9800,#FF5722);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">🎁</div><b style="font-size:11px">Spin & Win</b></div>
+<div class="card" onclick="openPage('battlePage')" style="background:linear-gradient(135deg,#FF0000,#D32F2F);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">🎮</div><b style="font-size:11px">Quiz Battle</b></div>
+<div class="card" onclick="openPage('memePage')" style="background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">😂</div><b style="font-size:11px">मीम से पढ़ाई</b></div>
+<div class="card" onclick="openPage('chapterPage')" style="background:linear-gradient(135deg,#1B5E20,#43A047);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">📚</div><b style="font-size:11px">81 Chapter</b></div>
 </div>
 
-<!-- PAGE 1: SCAN PAGE - SEPARATE FULL PAGE -->
-<div id="scanPage" class="page">
-<div class="pageHead"><button class="backBtn" onclick="closePage('scanPage')">←</button><b>📷 SCAN + कोई भी प्रश्न - Full Page</b></div>
-<div class="swipeHint">← Swipe करो / Back दबाओ →</div>
-<div class="scanBox">
-<b style="font-size:14px">📷 फोटो, बोलो, लिखो - पूरा उत्तर मिलेगा 🔥</b><br><small>विद्युत क्या है? प्रकाश क्या है? कोई भी</small>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
-<label style="background:#fff;color:#0D47A1;padding:12px;border-radius:12px;text-align:center;font-weight:800;cursor:pointer">📷 SCAN करो<input type="file" accept="image/*" capture="environment" style="display:none" onchange="handleScan(this)"></label>
-<label style="background:#FFEB3B;color:#000;padding:12px;border-radius:12px;text-align:center;font-weight:800;cursor:pointer">🖼️ गैलरी<input type="file" accept="image/*" style="display:none" onchange="handleScan(this)"></label>
-</div>
-<div style="display:flex;gap:6px;margin-top:10px;background:#fff;border-radius:12px;padding:6px">
-<input id="anyQ" placeholder="कोई भी प्रश्न लिखो..." style="flex:1;border:none;outline:none;font-size:13px;padding:8px;color:#000">
-<button onclick="getFullAns()" style="background:#FF0000;color:#fff;border:none;padding:10px 14px;border-radius:10px;font-weight:900">पूरा उत्तर</button>
-</div>
-<div style="display:flex;gap:6px;margin-top:8px;overflow:auto">
-<button onclick="quickQ('प्रकाश क्या है')" style="background:#FFEB3B;color:#000;border:none;padding:6px 12px;border-radius:15px;font-size:11px;font-weight:800">💡 प्रकाश क्या है</button>
-<button onclick="quickQ('विद्युत क्या है?')" style="background:#fff;color:#0D47A1;border:none;padding:6px 12px;border-radius:15px;font-size:11px">⚡ विद्युत</button>
-<button onclick="quickQ('छिन्नक आयतन')" style="background:#fff;color:#0D47A1;border:none;padding:6px 12px;border-radius:15px;font-size:11px">📐 छिन्नक</button>
-</div>
-<div id="fullResult" style="display:none;margin-top:12px">
-<div style="background:#fff;border-radius:14px;padding:10px;color:#000;display:flex;gap:10px"><img id="previewImg" style="width:70px;height:70px;object-fit:cover;border-radius:10px;display:none"><div style="flex:1"><b id="scanSubTag" style="font-size:11px;color:#0D47A1">Result - FULL</b><div id="ocrStatus" style="font-size:11px;color:#2E7D32">✅ Ready</div><div id="ocrText" style="font-size:11px;background:#f6f7fb;padding:6px;border-radius:8px;margin-top:4px"></div></div></div>
-<div id="fullAns" class="ansFull" style="font-size:14px;line-height:24px;min-height:200px"></div>
-<div style="margin-top:10px;display:flex;gap:6px"><button onclick="speakFull()" style="background:#E3F2FD;border:none;padding:8px 14px;border-radius:20px;font-size:12px">🔊 सुनो</button><button onclick="copyFull()" style="background:#FFF9C4;border:none;padding:8px 14px;border-radius:20px;font-size:12px">📋 Copy</button><button onclick="shareFull()" style="background:#25D366;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:12px">📤 Share</button></div>
-</div>
-</div>
-</div>
-
-<!-- PAGE 2: VOICE PAGE -->
-<div id="voicePage" class="page">
-<div class="pageHead"><button class="backBtn" onclick="closePage('voicePage')">←</button><b>🎤 बोल के पूछो - Voice Page</b></div>
-<div style="padding:20px;text-align:center">
-<div style="width:120px;height:120px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;margin:20px auto;display:flex;align-items:center;justify-content:center;font-size:50px;color:#fff;cursor:pointer" onclick="startVoice()">🎤</div>
-<b style="font-size:16px">माइक दबाओ और बोलो</b><br><small>Ex: प्रकाश क्या है? विद्युत क्या है?</small><br><br>
-<button onclick="startVoice()" style="background:#25D366;color:#fff;border:none;padding:14px 28px;border-radius:30px;font-weight:900;font-size:14px">🎤 बोलना शुरू करो</button>
-<div id="voiceText" style="margin-top:20px;background:#fff;padding:14px;border-radius:14px;min-height:80px;color:#000"></div>
-</div>
-</div>
-
-<!-- PAGE 3: SPIN PAGE -->
-<div id="spinPage" class="page">
-<div class="pageHead"><button class="backBtn" onclick="closePage('spinPage')">←</button><b>🎁 Spin & Win - अलग Page</b></div>
-<div style="padding:20px;text-align:center">
-<b style="font-size:16px">रोज़ घुमाओ इनाम पाओ!</b><br><small>100 Pts, FREE PDF, Notes</small>
-<div class="wheel" id="wheel"><b style="background:#fff;color:#000;padding:6px 12px;border-radius:15px">SPIN</b></div>
-<button onclick="spinNow()" style="background:linear-gradient(90deg,#FF0000,#FF9800);color:#fff;border:none;padding:14px 32px;border-radius:30px;font-weight:900;font-size:16px;margin-top:10px">🎡 अभी घुमाओ - इनाम जीतो</button>
-<div id="spinResult" style="margin-top:20px;font-weight:800;font-size:14px"></div>
-</div>
-</div>
-
-<!-- PAGE 4: BATTLE PAGE -->
-<div id="battlePage" class="page">
-<div class="pageHead"><button class="backBtn" onclick="closePage('battlePage')">←</button><b>🎮 Quiz Battle - Full Page</b></div>
+<!-- PROFILE PAGE - FULL SEPARATE PAGE -->
+<div id="profilePage" class="page">
+<div class="pageHead"><button class="backBtn" onclick="closePage('profilePage')">←</button><b>👤 Profile बनाओ - Full Page</b></div>
 <div style="padding:14px">
-<b>10 Sec में जवाब दो - दोस्त से मुकाबला!</b>
-<div id="quizQ" style="margin-top:12px;background:#fff;color:#000;padding:14px;border-radius:14px;font-size:15px;font-weight:800;min-height:60px">Start करने के लिए Battle शुरू करो दबाओ</div>
-<div id="quizOpt" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px"></div>
-<button onclick="startQuiz()" style="background:#FF0000;color:#fff;border:none;padding:12px;width:100%;border-radius:14px;font-weight:900;margin-top:14px">🎮 Battle शुरू करो</button>
-<div style="margin-top:14px;background:#FFF9C4;padding:10px;border-radius:12px"><b style="font-size:11px">🏆 Leaderboard</b><br><small>Rahul 1520 Pts | Priya 1480 | Jani 1437</small></div>
+<div style="text-align:center;margin-top:10px">
+<img id="pPic" src="https://i.pravatar.cc/150?img=5" style="width:90px;height:90px;border-radius:50%;border:4px solid #FFD600;object-fit:cover">
+<br><label style="background:#E8F5E9;color:#2E7D32;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800;cursor:pointer;margin-top:8px;display:inline-block">📷 फोटो बदलो<input type="file" id="photoIn" accept="image/*" style="display:none" onchange="changePhoto(this)"></label>
+</div>
+
+<input id="pName" class="input" placeholder="पूरा नाम - Ex: Rahul Kumar">
+<select id="pClass" class="input"><option value="">क्लास चुनो</option><option>10th UP Board</option><option>12th Science</option><option>12th Arts</option><option>12th Commerce</option><option>BSc Nursing</option></select>
+<input id="pSchool" class="input" placeholder="स्कूल / कॉलेज नाम">
+<input id="pDist" class="input" placeholder="जिला - Ex: सहारनपुर">
+<input id="pMobile" class="input" placeholder="मोबाइल (Optional)">
+
+<div style="margin-top:14px;background:#FFF9C4;padding:10px;border-radius:12px">
+<b style="font-size:11px">🔥 Streak + Points Detail</b><br>
+<small style="font-size:10px">Streak: <span id="pStreakD">8</span> दिन | Total Points: <span id="pPtsD">1517</span> | Total Test: <span id="pTestD">127</span> | Rank: #3 | आज टेस्ट: <span id="pTodayD">2,341</span> बच्चों ने दिया</small>
+<div class="streakCal" id="cal2"></div>
+</div>
+
+<button onclick="saveProfile()" style="width:100%;background:linear-gradient(90deg,#1B5E20,#2E7D32);color:#fff;border:none;padding:14px;border-radius:14px;font-weight:900;margin-top:14px;font-size:14px">✅ Profile सेव करो - +100 Pts</button>
+<button onclick="closePage('profilePage')" style="width:100%;background:#f0f0f0;border:none;padding:10px;border-radius:12px;margin-top:8px">बाद में</button>
+
+<div style="margin-top:14px;background:#fff;padding:10px;border-radius:12px"><b style="font-size:11px">📊 पुराने Future का वोट भी जुड़ेगा</b><br><small style="font-size:10px">SCAN: 432 वोट | Voice: 210 वोट | Spin: 321 वोट | Battle: 543 वोट | Meme: 298 वोट | 81Ch: 876 वोट - सब तेरे Profile में जुड़ेगा!</small></div>
 </div>
 </div>
 
-<!-- PAGE 5: MEME PAGE -->
-<div id="memePage" class="page">
-<div class="pageHead"><button class="backBtn" onclick="closePage('memePage')">←</button><b>😂 मीम से पढ़ाई - Full Page</b></div>
-<div style="padding:10px">
-<div class="memeImg">😂 <b>ओम का नियम = गर्लफ्रेंड का नखरा</b><br>जितना वोल्टेज (प्यार) दोगे उतनी करंट (रिस्पॉन्स) मिलेगी - V=IR 😂<br><br>यदि वोल्टेज कम - करंट कम - ब्रेकअप! 😭</div>
-<div class="memeImg">😂 <b>छिन्नक = बाल्टी का पेट</b><br>ऊपर बड़ा R=10, नीचे छोटा r=4 - बीच में h=15 - आयतन 2449.2 cm³ - बाल्टी भर गई! 🪣</div>
-<div class="memeImg">😂 <b>प्रकाश = इंस्टा स्टोरी</b><br>समतल दर्पण - जैसी स्टोरी वैसी दिखेगी - आभासी पर सीधी! 🤳</div>
-<button onclick="showToast('मेम','और मीम आ रहे हैं! 😂')" style="background:#9C27B0;color:#fff;border:none;padding:12px;width:100%;border-radius:14px;font-weight:800;margin-top:10px">😂 और मीम देखो</button>
-</div>
-</div>
+<!-- OTHER PAGES - SHORT -->
+<div id="scanPage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('scanPage')">←</button><b>📷 SCAN Page</b></div><div style="padding:14px"><div style="background:linear-gradient(135deg,#0D47A1,#1B5E20);color:#fff;padding:14px;border-radius:16px"><b>SCAN + कोई भी प्रश्न</b><br><small>फोटो खींचो उत्तर पाओ</small><div style="display:flex;gap:8px;margin-top:10px"><label style="background:#fff;color:#0D47A1;padding:10px;border-radius:10px;flex:1;text-align:center;font-weight:800;cursor:pointer">📷 SCAN<input type="file" accept="image/*" style="display:none" onchange="handleScan(this)"></label><input id="anyQ" placeholder="प्रश्न लिखो..." style="flex:1;border-radius:10px;border:none;padding:10px"></div><button onclick="getAns()" style="width:100%;background:#FF0000;color:#fff;border:none;padding:10px;border-radius:10px;margin-top:8px;font-weight:800">पूरा उत्तर</button></div><div id="ansBox" style="margin-top:12px;background:#fff;padding:12px;border-radius:12px;min-height:100px;color:#000"></div></div></div>
 
-<!-- PAGE 6: REEL PAGE -->
-<div id="reelPage" class="page">
-<div class="pageHead"><button class="backBtn" onclick="closePage('reelPage')">←</button><b>🎥 30s Reel Notes - Full Page</b></div>
-<div style="padding:10px">
-<div class="reel" onclick="playReel()">▶️ छिन्नक - 30 Sec में - Tap ▶️</div>
-<div class="reel" onclick="playReel()" style="background:linear-gradient(135deg,#0D47A1,#42A5F5)">▶️ प्रकाश - परावर्तन - 30 Sec ▶️</div>
-<div class="reel" onclick="playReel()" style="background:linear-gradient(135deg,#1B5E20,#43A047)">▶️ प्रकाश संश्लेषण - 30 Sec ▶️</div>
-<div class="reel" onclick="playReel()" style="background:linear-gradient(135deg,#FF0000,#FF9800)">▶️ विद्युत - Ohm - 30 Sec ▶️</div>
-</div>
-</div>
+<div id="voicePage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('voicePage')">←</button><b>🎤 Voice</b></div><div style="padding:20px;text-align:center"><div onclick="startVoice()" style="width:100px;height:100px;background:#25D366;border-radius:50%;margin:20px auto;display:flex;align-items:center;justify-content:center;font-size:40px">🎤</div><button onclick="startVoice()" style="background:#25D366;color:#fff;border:none;padding:12px 24px;border-radius:20px;font-weight:800">बोलना शुरू करो</button><div id="vText" style="background:#fff;padding:12px;border-radius:12px;margin-top:14px;min-height:60px"></div></div></div>
 
-<!-- PAGE 7: HW PAGE -->
-<div id="hwPage" class="page">
-<div class="pageHead"><button class="backBtn" onclick="closePage('hwPage')">←</button><b>📸 कॉपी जाँच - Homework Check</b></div>
-<div style="padding:20px;text-align:center">
-<b>अपनी कॉपी की फोटो खींचो - AI चेक करेगा!</b><br><br>
-<label style="background:linear-gradient(135deg,#0D47A1,#42A5F5);color:#fff;padding:14px 24px;border-radius:30px;font-weight:900;cursor:pointer">📸 कॉपी की फोटो लो<input type="file" accept="image/*" capture="environment" style="display:none" onchange="checkHWPhoto(this)"></label>
-<div id="hwResult" style="margin-top:20px;background:#fff;padding:14px;border-radius:14px;min-height:100px;color:#000;text-align:left"></div>
-</div>
-</div>
+<div id="spinPage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('spinPage')">←</button><b>🎁 Spin</b></div><div style="padding:20px;text-align:center"><div id="wheel" style="width:140px;height:140px;border-radius:50%;border:6px solid #FFD600;background:conic-gradient(#FF0000 0 60deg,#4CAF50 60deg 120deg,#2196F3 120deg 180deg,#FF9800 180deg 240deg,#9C27B0 240deg 300deg,#FFEB3B 300deg 360deg);margin:20px auto;display:flex;align-items:center;justify-content:center;transition:3s"><b style="background:#fff;padding:4px 8px;border-radius:10px;font-size:10px">SPIN</b></div><button onclick="spinNow()" style="background:linear-gradient(90deg,#FF0000,#FF9800);color:#fff;border:none;padding:12px 28px;border-radius:20px;font-weight:900">घुमाओ</button><div id="spinR" style="margin-top:12px;font-weight:800"></div></div></div>
 
-<!-- PAGE 8: CHAPTER PAGE -->
-<div id="chapterPage" class="page">
-<div class="pageHead"><button class="backBtn" onclick="closePage('chapterPage')">←</button><b>📚 81 Chapter - Full Page</b></div>
-<div style="display:flex;gap:6px;margin:10px;overflow:auto">
-<button onclick="showSub('Math')" style="background:#2E7D32;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:800">📘 गणित 15Ch</button>
-<button onclick="showSub('Science')" style="background:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:800">🔬 विज्ञान 20Ch</button>
-<button onclick="showSub('Hindi')" style="background:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:800">📖 हिंदी 12Ch</button>
-<button onclick="showSub('SST')" style="background:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:800">🌍 SST 21Ch</button>
-</div>
-<div id="list10_Math"></div><div id="list10_Science" style="display:none"></div><div id="list10_Hindi" style="display:none"></div><div id="list10_SST" style="display:none"></div><div id="list12"></div>
-<div style="display:flex;gap:6px;margin:10px"><button onclick="showCl('10')" style="flex:1;background:#FFEB3B;border:none;padding:10px;border-radius:12px;font-weight:800">📘 10th</button><button onclick="showCl('12')" style="flex:1;background:#fff;border:none;padding:10px;border-radius:12px;font-weight:800">📗 12th</button></div>
-</div>
+<div id="battlePage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('battlePage')">←</button><b>🎮 Battle</b></div><div style="padding:14px"><div id="qBox" style="background:#fff;padding:12px;border-radius:12px;font-weight:800">Battle शुरू करो दबाओ</div><div id="optBox" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px"></div><button onclick="startQuiz()" style="width:100%;background:#FF0000;color:#fff;border:none;padding:12px;border-radius:12px;margin-top:12px;font-weight:800">Battle शुरू</button></div></div>
 
-<div id="toast" class="toast"><div style="width:28px;height:28px;background:#FFEB3B;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800">✓</div><div style="flex:1"><b id="tName" style="font-size:11px">Jani</b><br><small id="tMsg" style="font-size:10px">+10 Pts</small></div></div>
-<div id="modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#00000090;z-index:300;overflow:auto;padding:10px"><div style="background:#fff;border-radius:16px;max-width:600px;margin:20px auto;overflow:hidden"><div style="padding:12px;background:#1B5E20;color:#fff;display:flex;justify-content:space-between"><b id="mTitle">HIT</b><button onclick="closeM()" style="background:#fff3;border:none;color:#fff;width:28px;height:28px;border-radius:50%">✕</button></div><div id="qList" style="padding:8px;max-height:70vh;overflow:auto"></div></div></div>
+<div id="memePage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('memePage')">←</button><b>😂 Meme</b></div><div style="padding:10px"><div style="background:#FFF9C4;padding:14px;border-radius:14px;border:2px solid #FFD600">😂 ओम = गर्लफ्रेंड नखरा - V=IR 😂</div></div></div>
+
+<div id="chapterPage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('chapterPage')">←</button><b>📚 81 Chapter</b></div><div id="chList" style="padding:10px"></div></div>
 
 <script>
-let pts=1517, lastFullAns="";
-const FULL_DB={
-"प्रकाश":{a:`✅ प्रकाश - FULL 5 अंक - बड़ा Page में
+let profile=JSON.parse(localStorage.getItem('janiProfile')||'null');
+let pts=parseInt(localStorage.getItem('pts')||'1517');
+let streak=parseInt(localStorage.getItem('streak')||'8');
+let tests=parseInt(localStorage.getItem('tests')||'127');
+let todayTests=2341;
+let photo=localStorage.getItem('photo')||"https://i.pravatar.cc/100?img=5";
 
-प्रकाश ऊर्जा रूप, वेग 3×10⁸ m/s
+function loadTop(){
+ document.getElementById('topPic').src=photo;
+ document.getElementById('topName').innerText=(profile?profile.name:"Narayan saini")+" - Jani Topper ⭐";
+ document.getElementById('topPts').innerText=pts;
+ document.getElementById('topStreak').innerText=streak;
+ document.getElementById('tTests').innerText=tests;
+ document.getElementById('tPdf').innerText=localStorage.getItem('pdf')||'43';
+ document.getElementById('todayTest').innerText=todayTests.toLocaleString();
+ // calendar
+ let cal=document.getElementById('cal'); let cal2=document.getElementById('cal2'); let h="";
+ for(let i=1;i<=28;i++){ let cls="day"; if(i<=streak) cls="day done"; if(i==streak) cls="day today"; h+=`<div class="${cls}">${i}</div>`; }
+ if(cal) cal.innerHTML=h; if(cal2) cal2.innerHTML=h;
+ if(profile){
+   document.getElementById('pName').value=profile.name;
+   document.getElementById('pClass').value=profile.cls;
+   document.getElementById('pSchool').value=profile.school;
+   document.getElementById('pDist').value=profile.dist;
+   document.getElementById('pPic').src=photo;
+   document.getElementById('pStreakD').innerText=streak;
+   document.getElementById('pPtsD').innerText=pts;
+   document.getElementById('pTestD').innerText=tests;
+   document.getElementById('pTodayD').innerText=todayTests.toLocaleString();
+ }
+}
+loadTop();
 
-परावर्तन: ∠i=∠r, एक तल में
-दर्पण: समतल आभासी सीधा, अवतल अभिसारी f=R/2, उत्तल अपसारी
-सूत्र: 1/f=1/v+1/u, m=-v/u
-अपवर्तन: n1 sin i=n2 sin r
-लेंस: 1/f=1/v-1/u
-नेत्र: कॉर्निया, लेंस, रेटिना, दोष निकट अवतल दूर उत्तल
-5 अंक Pakka - किरण आरेख जरूर बनाओ 🔥`},
-"विद्युत":{a:`✅ विद्युत - FULL 5 अंक
-
-I=Q/t (A), V=W/Q (V), R=V/I (Ω)
-Ohm: V=IR
-Rs=R1+R2, 1/Rp=1/R1+1/R2
-P=VI=I²R, H=I²Rt
-ऊष्मीय हीटर, चुंबकीय मोटर
-5 अंक Pakka 🔥`},
-"छिन्नक":{a:`✅ छिन्नक - FULL 5 अंक HIT
-V=1/3πh(R²+r²+Rr)=2449.2 cm³
-l=√(h²+(R-r)²)=16.15cm
-बाल्टी प्रश्न: R15 r5 h24 → 8142cm³
-5 अंक Pakka 🔥`}
-};
-const SYLLABUS={
-"10_Math":{"1 वास्तविक":{"1.1":[{q:"96 404 HCF",a:"HCF=4"}]},"13 पृष्ठीय HIT":{"13.3":[{q:"छिन्नक 2449.2 HIT",a:"V=2449.2cm³"}]}},
-"10_Science":{"4 विद्युत HIT":{"4.1":[{q:"विद्युत क्या है",a:"V=IR"}]},"6 जैव HIT":{"6.1":[{q:"प्रकाश क्या है",a:"परावर्तन ∠i=∠r"}]}},
-"10_Hindi":{"7 निबंध":{"7.1":[{q:"विज्ञान वरदान",a:"8 अंक"}]}},
-"10_SST":{"1 राष्ट्रवाद":{"1.1":[{q:"बिस्मार्क",a:"1871"}]}},
-"12_All":{"13 प्रायिकता":{"13.3":[{q:"Bayes 50%",a:"P=50%"}]}}
-};
-function openPage(id){ document.getElementById(id).classList.add('active'); document.body.style.overflow='hidden'; let startX=0; let page=document.getElementById(id); page.addEventListener('touchstart',e=>{startX=e.touches[0].clientX},{passive:true}); page.addEventListener('touchend',e=>{let endX=e.changedTouches[0].clientX; if(startX-endX>80) closePage(id);},{passive:true}); }
+function openPage(id){ document.getElementById(id).classList.add('active'); document.body.style.overflow='hidden';
+ let sX=0; let pg=document.getElementById(id);
+ pg.addEventListener('touchstart',e=>{sX=e.touches[0].clientX},{passive:true});
+ pg.addEventListener('touchend',e=>{let eX=e.changedTouches[0].clientX; if(sX-eX>70) closePage(id);},{passive:true});
+ if(id=='chapterPage') renderCh();
+}
 function closePage(id){ document.getElementById(id).classList.remove('active'); document.body.style.overflow='auto'; }
-function handleScan(input){ if(!input.files[0]) return; let file=input.files[0]; document.getElementById('fullResult').style.display='block'; document.getElementById('previewImg').style.display='block'; document.getElementById('previewImg').src=URL.createObjectURL(file); document.getElementById('ocrStatus').innerText="🔍 SCAN..."; Tesseract.recognize(file,'hin+eng',{logger:m=>{if(m.status=='recognizing text') document.getElementById('ocrStatus').innerText=`${Math.round(m.progress*100)}%`}}).then(({data:{text}})=>{ document.getElementById('ocrStatus').innerText="✅ हो गया!"; document.getElementById('ocrText').innerText=text; generateFullAnswer(text); }); }
-function quickQ(q){document.getElementById('anyQ').value=q; getFullAns();}
-function getFullAns(){ let q=document.getElementById('anyQ').value.trim(); if(!q){alert("प्रश्न लिखो");return;} document.getElementById('fullResult').style.display='block'; document.getElementById('ocrText').innerText=q; generateFullAnswer(q); }
-function generateFullAnswer(q){ let lower=q.toLowerCase(); let found=null; for(let k in FULL_DB) if(lower.includes(k.toLowerCase())) found=FULL_DB[k]; let ans=found?found.a:`✅ ${q} - FULL ANSWER\n\nपरिभाषा: ${q}\nमुख्य बिंदु, सूत्र, Step by Step, Diagram, महत्व\nBoard में 5 अंक Pakka - Heading, सूत्र Box, Diagram जरूर\n💎 ${q} का पूरा उत्तर FREE 🔥`; document.getElementById('fullAns').innerText=ans; lastFullAns=ans; showToast("Answer","मिल गया FREE 🔥"); }
-function startVoice(){ if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){ alert("Voice नहीं, लिखो"); return; } let rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)(); rec.lang='hi-IN'; rec.start(); document.getElementById('voiceText').innerText="🎤 सुन रहा हूँ... बोलो"; rec.onresult=e=>{ let t=e.results[0][0].transcript; document.getElementById('voiceText').innerText="✅ बोला: "+t+"\n\nअब SCAN Page में जाके उत्तर देखो"; document.getElementById('anyQ').value=t; openPage('scanPage'); getFullAns(); }; }
-function spinNow(){ let w=document.getElementById('wheel'); let deg=Math.floor(Math.random()*360)+1800; w.style.transform=`rotate(${deg}deg)`; setTimeout(()=>{ let p=["100 Pts 💎","FREE PDF 📄","Notes FREE 📝","+50 Pts"]; let pr=p[Math.floor(Math.random()*p.length)]; document.getElementById('spinResult').innerText="🎉 जीता: "+pr+"!"; showToast("Spin Win",pr+" 🎁"); },3000); }
-function startQuiz(){ let qs=["विद्युत धारा का मात्रक?","प्रकाश का वेग?","छिन्नक आयतन सूत्र?"]; let q=qs[Math.floor(Math.random()*qs.length)]; document.getElementById('quizQ').innerText="Q: "+q+" (10 Sec)"; let opts=["A) वोल्ट","B) एम्पीयर","C) ओम","D) वाट"]; let html=""; opts.forEach((o,i)=>{html+=`<button onclick="checkQuiz(${i})" style="background:#fff;color:#000;border:none;padding:10px;border-radius:10px;font-weight:700">${o}</button>`}); document.getElementById('quizOpt').innerHTML=html; }
-function checkQuiz(i){ showToast(i==1?"Win +50 Pts":"गलत!","Battle"); closePage('battlePage'); }
-function checkHWPhoto(input){ if(!input.files[0]) return; document.getElementById('hwResult').innerHTML="🔍 AI जाँच रहा है..."; setTimeout(()=>{ document.getElementById('hwResult').innerHTML="✅ जाँच पूरी!<br>✔️ 90% सही है!<br>❌ 2 छोटी गलती - सूत्र में मात्रक लिखो<br>💯 8/10 अंक मिलेंगे - शाबाश!"; },1500); }
-function playReel(){ showToast("Reel","🎥 30 Sec Reel - Coming Soon!"); }
-function speakFull(){let u=new SpeechSynthesisUtterance(lastFullAns); u.lang='hi-IN'; speechSynthesis.speak(u);}
-function copyFull(){navigator.clipboard.writeText(lastFullAns); showToast("Copy","हो गया");}
-function shareFull(){window.open("https://wa.me/?text="+encodeURIComponent(lastFullAns),"_blank");}
-function showSub(s){ document.getElementById('list10_Math').style.display=s=='Math'?'block':'none'; document.getElementById('list10_Science').style.display=s=='Science'?'block':'none'; document.getElementById('list10_Hindi').style.display=s=='Hindi'?'block':'none'; document.getElementById('list10_SST').style.display=s=='SST'?'block':'none'; render(s); }
-function render(cur="Math"){ let k="10_"+cur; let c=document.getElementById('list10_'+cur); if(!c||!SYLLABUS[k]) return; let h=""; let n=0; for(let ch in SYLLABUS[k]){n++; h+=`<div class="card"><div class="row" onclick="openCh('${k}','${ch}')"><div class="ico" style="background:#2E7D32">${n}</div><div style="flex:1"><b>${n}. ${ch} - FULL FREE</b></div></div></div>`;} c.innerHTML=h; }
-function openCh(k,ch){ let qs=SYLLABUS[k][ch][Object.keys(SYLLABUS[k][ch])[0]]; let html=""; qs.forEach((it,i)=>{html+=`<div style="background:#f8fff8;margin:8px;border-radius:12px;padding:10px;border-left:4px solid #4CAF50"><b>Q${i+1}. ${it.q}</b><div style="background:#fff;padding:8px;border-radius:8px;margin-top:6px">${it.a}</div></div>`}); document.getElementById('qList').innerHTML=html; document.getElementById('modal').style.display='block'; }
-function closeM(){document.getElementById('modal').style.display='none';}
-function showToast(n,m){document.getElementById('tName').innerText=n; document.getElementById('tMsg').innerText=m; let t=document.getElementById('toast'); t.style.transform='translateY(0)'; setTimeout(()=>{t.style.transform='translateY(200px)';},2500);}
-function showCl(c){ render(c=='10'?'Math':'Science'); }
-render();
+
+function changePhoto(inp){ if(!inp.files[0]) return; let r=new FileReader(); r.onload=e=>{ photo=e.target.result; localStorage.setItem('photo',photo); document.getElementById('pPic').src=photo; document.getElementById('topPic').src=photo; }; r.readAsDataURL(inp.files[0]); }
+
+function saveProfile(){
+ let n=document.getElementById('pName').value.trim();
+ let c=document.getElementById('pClass').value;
+ let s=document.getElementById('pSchool').value.trim();
+ let d=document.getElementById('pDist').value.trim();
+ if(!n||!c){ alert("नाम और क्लास भरो भाई!"); return; }
+ profile={name:n,cls:c,school:s,dist:d};
+ localStorage.setItem('janiProfile',JSON.stringify(profile));
+ pts+=100; streak+=1; tests+=1;
+ localStorage.setItem('pts',pts); localStorage.setItem('streak',streak); localStorage.setItem('tests',tests);
+ loadTop();
+ alert("बधाई हो "+n+"! Profile बन गया! +100 Pts! अब हर जगह तेरा नाम आएगा!");
+ closePage('profilePage');
+}
+
+function handleScan(inp){ if(!inp.files[0]) return; document.getElementById('ansBox').innerText="🔍 SCAN हो रहा है..."; Tesseract.recognize(inp.files[0],'hin+eng').then(({data:{text}})=>{ getAns(text); }); }
+function getAns(t){ let q=t||document.getElementById('anyQ').value; if(!q){ alert("प्रश्न लिखो"); return; } let ans=`✅ ${q} - FULL ANSWER 5 अंक\n\nपरिभाषा, सूत्र, Step by Step, Diagram\nBoard में 5 अंक Pakka\n\nपुराने Future वोट: SCAN 432 + Voice 210 + Spin 321 + Battle 543 = Total ${pts} Pts में जुड़ा!`; document.getElementById('ansBox').innerText=ans; tests++; todayTests++; localStorage.setItem('tests',tests); loadTop(); }
+function startVoice(){ if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){ alert("Voice नहीं"); return; } let rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)(); rec.lang='hi-IN'; rec.start(); document.getElementById('vText').innerText="🎤 सुन रहा हूँ..."; rec.onresult=e=>{ let tx=e.results[0][0].transcript; document.getElementById('vText').innerText="✅ बोला: "+tx; document.getElementById('anyQ').value=tx; openPage('scanPage'); getAns(tx); }; }
+function spinNow(){ let w=document.getElementById('wheel'); w.style.transform=`rotate(${Math.floor(Math.random()*360)+1800}deg)`; setTimeout(()=>{ document.getElementById('spinR').innerText="🎉 जीता: 100 Pts!"; pts+=20; localStorage.setItem('pts',pts); loadTop(); },3000); }
+function startQuiz(){ document.getElementById('qBox').innerText="Q: विद्युत धारा का मात्रक? 10 Sec!"; let o=["वोल्ट","एम्पीयर","ओम","वाट"]; let h=""; o.forEach((x,i)=>{h+=`<button onclick="checkQ(${i})" style="background:#fff;border:none;padding:10px;border-radius:10px;font-weight:700">${x}</button>`}); document.getElementById('optBox').innerHTML=h; }
+function checkQ(i){ if(i==1){ pts+=50; tests++; todayTests++; alert("सही! +50 Pts"); } else alert("गलत! सही एम्पीयर"); localStorage.setItem('pts',pts); localStorage.setItem('tests',tests); loadTop(); closePage('battlePage'); }
+function renderCh(){ let ch=["1. वास्तविक संख्याएँ - FULL FREE","13. पृष्ठीय आयतन 13.3 HIT - छिन्नक 2449.2","4. विद्युत HIT - Ohm V=IR","6. जैव प्रक्रम - प्रकाश संश्लेषण HIT","7. निबंध - विज्ञान वरदान 8 अंक"]; let h=""; ch.forEach((c,i)=>{h+=`<div style="background:#fff;margin:6px;padding:12px;border-radius:12px;border-left:4px solid #4CAF50"><b>${i+1}. ${c}</b><br><small>Click करो पूरा उत्तर</small></div>`}); document.getElementById('chList').innerHTML=h; }
+setInterval(()=>{ todayTests+=Math.floor(Math.random()*3)+1; document.getElementById('todayTest').innerText=todayTests.toLocaleString(); document.getElementById('pTodayD').innerText=todayTests.toLocaleString(); },2500);
 </script>
 </body>
 </html>
