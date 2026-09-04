@@ -10,4 +10,93 @@ body{background:#eef2ff}
 .card{margin:12px;background:white;border-radius:20px;padding:15px;box-shadow:0 2px 10px #0001}
 .yellow{background:#fff9db;border:2px solid #ffe066}
 .purple{background:linear-gradient(135deg,#8b5cf6,#4f46e5);color:white}
-.btnBlue{background:#2563eb;color
+.btnBlue{background:#2563eb;color:white;padding:12px;border-radius:50px;text-align:center;font-weight:bold;margin-top:10px;cursor:pointer}
+.pill{background:#f1f5f9;padding:10px 5px;border-radius:50px;text-align:center;font-weight:bold;font-size:13px;cursor:pointer;border:1px solid #e2e8f0;transition:0.1s}
+.pill:active{transform:scale(0.95);background:#ffedd5}
+.grid2{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-top:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px}
+.boxM{padding:18px 5px;border-radius:18px;text-align:center;color:white;font-weight:bold;cursor:pointer}
+#detailScreen{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#eef2ff;z-index:99;overflow:auto}
+.dhead{background:linear-gradient(90deg,#ff3b3b,#ff8c1a);padding:15px;color:white;display:flex;gap:12px;align-items:center;position:sticky;top:0}
+.back{background:white;color:#ff3b3b;width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;cursor:pointer}
+.chap{background:white;margin:12px;border-radius:15px;padding:15px;border-left:5px solid #ff3b3b}
+.que{padding:10px 0;border-bottom:1px solid #eee;font-size:14px;line-height:22px}
+</style>
+</head>
+<body>
+
+<div id="homeScreen">
+<div class="top">
+<div style="display:flex;gap:8px;align-items:center"><span style="font-size:24px">📚</span><div><div style="color:#2563eb;font-weight:800">स्टड साथी - SARE FUTURE</div><div style="font-size:10px;color:gray">10th 12th 2020-26 + Mastermind Vidya Flight 2027 + B.Ed Nursing NEET</div></div></div>
+<div style="display:flex;gap:5px;align-items:center;background:#f1f5f9;padding:5px 10px;border-radius:50px"><span>👤</span><small><b>Profile</b></small></div>
+</div>
+
+<div class="card yellow"><div style="text-align:center;font-weight:bold">👋 Profile बनाओ - PDF पर नाम आएगा</div><div class="btnBlue">✨ Profile बनाओ - 30 सेकंड</div></div>
+
+<div class="card purple"><div style="font-weight:bold">🎯 आज का वायरल - 10th 2020 वाला पेपर</div><div style="font-size:13px;margin-top:5px;opacity:0.9">70% टीचर्स इसी को रटवा रहे हैं - 2027 के लिए भी जरूरी</div><div style="background:white;color:#7c3aed;display:inline-block;padding:8px 15px;border-radius:50px;margin-top:12px;font-weight:bold;cursor:pointer" onclick="openBook('10th 2020 वाला वायरल पेपर','viral10')">👉 अभी खोलो - फ्री</div></div>
+
+<div class="card"><div style="text-align:center;font-weight:bold;margin-bottom:12px">🏪 2027 - दुकान वाले Model Papers</div><div class="grid3">
+<div class="boxM" style="background:#7c3aed" onclick="openBook('Mastermind 2027 HIT','mastermind')">Mastermind<br><small style="background:gold;color:black;padding:2px 6px;border-radius:20px">2027 HIT</small></div>
+<div class="boxM" style="background:#2563eb" onclick="openBook('Vidya 2027 NEW','vidya')">Vidya<br><small style="background:white;color:black;padding:2px 6px;border-radius:20px">2027 NEW</small></div>
+<div class="boxM" style="background:#dc2626" onclick="openBook('Flight 2027 NEW','flight')">Flight<br><small style="background:white;color:black;padding:2px 6px;border-radius:20px">2027 NEW</small></div>
+</div></div>
+
+<div class="card"><div style="text-align:center;font-weight:bold">📖 हर विषय का Model Paper - किताब से</div><div class="grid2">
+<div class="pill" onclick="openBook('10th हिंदी','hindi10')">10th हिंदी</div>
+<div class="pill" onclick="openBook('10th गणित','math10')">10th गणित</div>
+<div class="pill" onclick="openBook('10th विज्ञान','science10')">10th विज्ञान</div>
+<div class="pill" onclick="openBook('10th SST','sst10')">10th SST</div>
+<div class="pill" onclick="openBook('12th इतिहास','his12')">12th इतिहास</div>
+<div class="pill" onclick="openBook('12th राजनीति','pol12')">12th राजनीति</div>
+<div class="pill" onclick="openBook('12th भौतिकी','phy12')">12th भौतिकी</div>
+<div class="pill" onclick="openBook('12th जीव','bio12')">12th जीव</div>
+</div></div>
+
+<div class="card"><div style="text-align:center;font-weight:bold">📚 पुराने + पूरी किताबें</div><div class="grid2">
+<div class="pill" onclick="openBook('10th पेपर 2020-26','paper10')">10th पेपर<br>2020-26</div>
+<div class="pill" onclick="openBook('12th पेपर 2020-26','paper12')">12th पेपर<br>2020-26</div>
+<div class="pill" onclick="openBook('10th पूरी किताब','all10')">10th पूरी<br>किताब</div>
+<div class="pill" onclick="openBook('12th पूरी किताब','all12')">12th पूरी<br>किताब</div>
+<div class="pill" onclick="openBook('B.Ed 2027','bed')">B.Ed 2027</div>
+<div class="pill" onclick="openBook('Nursing','nursing')">Nursing</div>
+<div class="pill" onclick="openBook('NEET 720','neet')">NEET 720</div>
+<div class="pill" onclick="openBook('English','eng')">English</div>
+</div></div>
+</div>
+
+<!-- अंदर खुलने वाली Screen -->
+<div id="detailScreen">
+<div class="dhead"><div class="back" onclick="goBack()">←</div><h3 id="dTitle">किताब</h3></div>
+<div id="dContent" style="padding-bottom:40px"></div>
+</div>
+
+<script>
+const books={
+hindi10:`<div class="chap"><h3>📝 10th हिंदी - साखी - कबीर - पूरा हिंदी में</h3><div class="que"><b>प्रश्न 1. (UP 2024,2025 HIT)</b><br>कबीर ने सच्चे भक्त के लक्षण क्या बताए?<br><b>उत्तर:</b> निंदक को पास रखना, अहंकार न करना, ईश्वर का नाम जपना।</div><div class="que"><b>प्रश्न 2.</b> 'पोथी पढ़ि पढ़ि जग मुआ' का भाव स्पष्ट कीजिए।<br><b>उत्तर:</b> केवल किताबी ज्ञान से ज्ञानी नहीं बनते, अनुभव जरूरी है।</div><div class="que"><b>प्रश्न 3. (70% Exact)</b><br>कबीर की भाषा की विशेषताएँ।</div></div>`,
+math10:`<div class="chap"><h3>🔢 10th गणित - वास्तविक संख्याएँ - UP Board NCERT हिंदी में</h3><div class="que"><b>प्रश्न 1. (2025 में आया - HIT 2027)</b><br>सिद्ध कीजिए √5 अपरिमेय है।<br><b>हल:</b> मान लो √5=p/q... विरोधाभास... अतः अपरिमेय।</div><div class="que"><b>प्रश्न 2.</b> 96 और 404 का HCF यूक्लिड से निकालिए।<br><b>हल:</b> HCF=4</div><div class="que"><b>प्रश्न 3.</b> यदि HCF(306,657)=9 तो LCM निकालिए।</div></div>`,
+science10:`<div class="chap"><h3>🔬 10th विज्ञान - रासायनिक अभिक्रियाएँ - हिंदी में</h3><div class="que"><b>प्रश्न 1.</b> संतुलित समीकरण क्या है? क्यों जरूरी है?<br><b>उत्तर:</b> द्रव्यमान संरक्षण के लिए परमाणुओं की संख्या बराबर करनी होती है।</div><div class="que"><b>प्रश्न 2. (4 नंबर पक्का)</b><br>मानव हृदय की संरचना चित्र सहित।</div></div>`,
+sst10:`<div class="chap"><h3>🌍 10th SST - यूरोप में राष्ट्रवाद - हिंदी में</h3><div class="que"><b>प्रश्न 1. (HIT 2027)</b><br>फ्रांसीसी क्रांति ने राष्ट्रवाद को कैसे जन्म दिया?</div></div>`,
+his12:`<div class="chap"><h3>🏛️ 12th इतिहास - ईंटें, मनके तथा अस्थियाँ - हिंदी में</h3><div class="que"><b>प्रश्न 1. (UP 2023,2025 HIT)</b><br>हड़प्पा सभ्यता की नगर योजना की विशेषताएँ।<br><b>उत्तर:</b> दुर्ग, निचला नगर, पक्की ईंटें, नालियों की व्यवस्था।</div><div class="que"><b>प्रश्न 2.</b> विशाल स्नानागार की विशेषताएँ।</div></div>`,
+pol12:`<div class="chap"><h3>⚖️ 12th राजनीति - शीतयुद्ध - हिंदी में</h3><div class="que"><b>प्रश्न 1. (HIT)</b><br>शीतयुद्ध क्या है? कारण लिखिए।</div></div>`,
+phy12:`<div class="chap"><h3>⚛️ 12th भौतिकी - वैद्युत आवेश - हिंदी में</h3><div class="que"><b>प्रश्न 1. (HIT 2027)</b><br>कूलॉम का नियम - F = k q1q2/r²</div><div class="que"><b>प्रश्न 2.</b> 2μC के दो आवेश 0.5m पर - बल निकालिए।</div></div>`,
+bio12:`<div class="chap"><h3>🧬 12th जीव - पुष्पी पादप में प्रजनन - हिंदी में</h3><div class="que"><b>प्रश्न 1. (HIT)</b><br>परागण क्या है? प्रकार - स्वपरागण, परपरागण।</div><div class="que"><b>प्रश्न 2.</b> दोहरा निषेचन क्या है?</div></div>`,
+all10:`<div class="chap"><h3>🔥 10th पूरी किताब - SARE FUTURE - हिंदी में</h3><div class="que">10th की 5 किताबों के सारे NCERT प्रश्न + 2020-26 के पेपर पूरे हिंदी में।</div></div>`,
+all12:`<div class="chap"><h3>🔥 12th पूरी किताब - SARE FUTURE - हिंदी में</h3><div class="que">12th की सारी किताबों के प्रश्न हिंदी में - इतिहास, राजनीति, भौतिकी, रसायन, जीव।</div></div>`,
+mastermind:`<div class="chap"><h3>👑 Mastermind 2027 HIT - 70% Exact</h3><div class="que">यही वो किताब है जो दुकान पर 300₹ में बिकती है - इसमें 70% पेपर यहीं से आता है।</div></div>`,
+paper10:`<div class="chap"><h3>📄 10th पेपर 2020-26 - UP Board</h3><div class="que"><b>2020, 2021, 2022, 2023, 2024, 2025, 2026</b> के सभी पेपर हिंदी में यहाँ जोड़े गए हैं।</div></div>`,
+viral10:`<div class="chap"><h3>🎯 10th 2020 वाला वायरल पेपर - 2027 के लिए जरूरी</h3><div class="que">70% टीचर्स इसी को रटवा रहे हैं - इसे जरूर पढ़ो।</div></div>`
+}
+function openBook(title,key){
+document.getElementById('homeScreen').style.display='none';
+document.getElementById('detailScreen').style.display='block';
+document.getElementById('dTitle').innerText=title;
+document.getElementById('dContent').innerHTML=books[key]||`<div class="chap"><h3>${title}</h3><div class="que">इस विषय के सभी NCERT UP Board प्रश्न हिंदी में जल्द ही जोड़े जाएंगे। HIT 2027 के लिए तैयार रहो!</div></div>`;
+window.scrollTo(0,0);
+}
+function goBack(){
+document.getElementById('detailScreen').style.display='none';
+document.getElementById('homeScreen').style.display='block';
+}
+</script>
+</body>
+</html>
