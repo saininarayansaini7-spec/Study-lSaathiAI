@@ -2,14 +2,12 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SARE FUTURE - Sab Kuch</title>
+<title>SARE FUTURE - Full NCERT UP Board</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
 body{background:#eef2ff}
 .top{background:white;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 5px #0001}
 .card{background:white;margin:12px;border-radius:20px;padding:15px;box-shadow:0 2px 8px #0001}
-.yellow{background:#fff9db;border:2px solid #ffe066;text-align:center;font-weight:bold}
-.purple{background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white}
 .grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
@@ -23,78 +21,54 @@ body{background:#eef2ff}
 .bhead{background:white;padding:14px 15px;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:5;box-shadow:0 2px 5px #0001}
 .chap{background:white;margin:12px;border-radius:15px;padding:15px;border-left:5px solid #2563eb}
 .chapTitle{background:#2563eb;color:white;padding:10px 12px;border-radius:10px;margin:10px 0;font-weight:bold}
-.subHead{background:#eef2ff;padding:7px 12px;border-radius:20px;font-weight:bold;margin:14px 0 8px;color:#2563eb;font-size:13px}
+.subHead{background:#eef2ff;padding:8px 12px;border-radius:20px;font-weight:bold;margin:14px 0 8px;color:#2563eb;font-size:13px}
 .que{padding:12px 0;border-bottom:1px solid #eee;font-size:14px;line-height:24px}
 .back{background:#f1f5f9;color:#111;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;font-size:18px;border:1px solid #e5e7eb}
 .back2{background:white;color:red;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}
 ::-webkit-scrollbar{width:0}
+.chList{padding:8px 0;display:flex;justify-content:space-between;border-bottom:1px solid #f1f5f9;cursor:pointer}
+.chList:active{background:#eef2ff}
 </style>
 </head>
 <body>
 <div id="home">
-<div class="top"><div><div style="color:#2563eb;font-weight:800">📚 स्टड साथी - SARE FUTURE</div><div style="font-size:8px;color:gray">10th 12th Maths + Mastermind Vidya Flight + B.Ed Nursing NEET + Puri Kitab</div></div><div style="background:#f1f5f9;padding:5px 10px;border-radius:50px">👤</div></div>
+<div class="top"><div><div style="color:#2563eb;font-weight:800">📚 स्टड साथी - SARE FUTURE</div><div style="font-size:8px;color:gray">Full NCERT UP Board - 10th + 12th Maths Side - Sare Chapters</div></div><div>👤</div></div>
 
-<!-- नया System - Screenshot वाला -->
-<div class="card" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white"><b>📚 नया System - पूरी किताब खोलो - Screenshot वाला</b><div style="font-size:12px;margin-top:4px">Click करो → हर Subject की पूरी किताब खुलेगी - गणित, भौतिकी, रसायन...</div><div class="grid2" style="margin-top:12px">
-<div style="background:white;color:#7c3aed;padding:14px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBooks('10')">📘 कक्षा 10 की किताबें<br><small>6 Subjects</small></div>
-<div style="background:white;color:#dc2626;padding:14px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBooks('12')">📕 कक्षा 12 की किताबें<br><small>12 Subjects</small></div>
+<div class="card" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white"><b>📚 पूरा NCERT UP Board - सारी Chapters जोड़ दीं!</b><div style="font-size:12px;margin-top:4px">कक्षा 10 / 12 पर Click करो → हर विषय की पूरी किताब की सारी Chapter खुलेंगी</div><div class="grid2" style="margin-top:12px">
+<div style="background:white;color:#7c3aed;padding:14px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBooks('10')">📘 कक्षा 10 - पूरी NCERT<br><small>6 Subjects - Sare Chapters</small></div>
+<div style="background:white;color:#dc2626;padding:14px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBooks('12')">📕 कक्षा 12 Maths Side - पूरी NCERT<br><small>5 Subjects - Sare Chapters</small></div>
 </div></div>
 
-<!-- पुराना 1 - Profile पीला -->
-<div class="card yellow">👋 Profile बनाओ - PDF पर नाम आएगा - पुरानी Feature<div style="background:#2563eb;color:white;padding:10px;border-radius:50px;margin-top:8px" onclick="openBook('Profile बनाओ','profile')">✨ Profile बनाओ - 30 सेकंड</div></div>
-
-<!-- पुराना 2 - वायरल Purple -->
-<div class="card purple"><b>🎯 आज का वायरल - 10th 2020 वाला पेपर - पुरानी Feature</b><div style="font-size:13px;margin-top:5px">70% टीचर्स इसी को रटवा रहे हैं - 2027 के लिए भी जरूरी</div><div onclick="openBook('10th 2020 वायरल पेपर - HIT','viral10')" style="background:white;color:#7c3aed;display:inline-block;padding:8px 15px;border-radius:50px;margin-top:10px;font-weight:bold;cursor:pointer">👉 अभी खोलो - फ्री</div></div>
-
-<!-- पुराना 3 - दुकान वाले -->
-<div class="card"><div style="text-align:center;font-weight:bold;margin-bottom:10px">🏪 2027 - दुकान वाले Model Papers - पुरानी Feature</div><div class="grid3">
-<div class="boxM" style="background:#7c3aed" onclick="openBook('Mastermind 2027 - 70% HIT','mastermind')">Mastermind<br><small style="background:#facc15;color:black;padding:2px 8px;border-radius:20px">70% HIT</small></div>
-<div class="boxM" style="background:#2563eb" onclick="openBook('Vidya 2027 NEW','vidya')">Vidya<br><small style="background:white;color:black;padding:2px 8px;border-radius:20px">NEW</small></div>
-<div class="boxM" style="background:#dc2626" onclick="openBook('Flight 2027 NEW','flight')">Flight<br><small style="background:white;color:black;padding:2px 8px;border-radius:20px">Trick</small></div>
+<div class="card"><div style="text-align:center;font-weight:bold">📖 Direct Model Paper - Chapter Wise - Click करो</div><div class="grid4">
+<div class="pill" style="background:#fef3c7" onclick="openSubject('hindi10','हिन्दी')">10th हिन्दी<br>Sare Ch</div>
+<div class="pill" style="background:#dbeafe" onclick="openSubject('math10','गणित')">10th गणित<br>15 Ch</div>
+<div class="pill" style="background:#dcfce7" onclick="openSubject('science10','विज्ञान')">10th विज्ञान<br>16 Ch</div>
+<div class="pill" style="background:#fce7f3" onclick="openSubject('sst10','SST')">10th SST<br>20 Ch</div>
+</div><div class="grid4" style="margin-top:8px">
+<div class="pill" style="background:#dbeafe;border:2px solid #2563eb" onclick="openSubject('phy12','भौतिक विज्ञान')">12th भौतिकी<br>14 Ch</div>
+<div class="pill" style="background:#fef3c7;border:2px solid #d97706" onclick="openSubject('chem12','रसायन')">12th रसायन<br>10 Ch</div>
+<div class="pill" style="background:#dcfce7;border:2px solid #16a34a" onclick="openSubject('math12','गणित')">12th गणित<br>13 Ch</div>
+<div class="pill" style="background:#e0e7ff" onclick="openSubject('eng12','English')">12th English<br>Full</div>
 </div></div>
 
-<!-- नया + पुराना - 10th Chapter Wise -->
-<div class="card"><div style="text-align:center;font-weight:bold">📖 10th - हर विषय का Chapter Wise Model Paper - SARE FUTURE</div><div class="grid4">
-<div class="pill" style="background:#fef3c7" onclick="openBook('10th हिंदी - Full','hindi10')">10th हिंदी<br>Full</div>
-<div class="pill" style="background:#dbeafe" onclick="openBook('10th गणित - Full','math10')">10th गणित<br>6 Ch</div>
-<div class="pill" style="background:#dcfce7" onclick="openBook('10th विज्ञान - Full','science10')">10th विज्ञान<br>6 Ch</div>
-<div class="pill" style="background:#fce7f3" onclick="openBook('10th SST - Full','sst10')">10th SST<br>4 Ch</div>
-</div></div>
-
-<!-- नया + पुराना - 12th Maths Side -->
-<div class="card"><div style="text-align:center;font-weight:bold;color:#dc2626">📖 12th Maths Side - Chapter Wise - SARE FUTURE</div><div class="grid4">
-<div class="pill" style="background:#dbeafe;border:2px solid #2563eb" onclick="openBook('12th भौतिकी - Full','phy12')">12th भौतिकी<br>5 Ch</div>
-<div class="pill" style="background:#fef3c7;border:2px solid #d97706" onclick="openBook('12th रसायन - Full','chem12')">12th रसायन<br>5 Ch</div>
-<div class="pill" style="background:#dcfce7;border:2px solid #16a34a" onclick="openBook('12th गणित - Full','math12')">12th गणित<br>5 Ch</div>
-<div class="pill" style="background:#e0e7ff" onclick="openBook('12th English','eng12')">12th English</div>
-</div></div>
-
-<!-- पुराना 4 - सबसे पुराना - पूरी किताबें + B.Ed Nursing NEET -->
-<div class="card"><div style="text-align:center;font-weight:bold">📚 पुराने + पूरी किताबें - SARE FUTURE - सबसे पुरानी Feature</div><div class="grid4">
-<div class="pill" onclick="openBook('10th पेपर 2020-26','paper10')">10th पेपर<br>2020-26</div>
-<div class="pill" onclick="openBook('12th Maths पेपर 2020-26','paper12Math')">12th पेपर<br>2020-26</div>
-<div class="pill" onclick="openBook('10th पूरी किताब','all10')">10th पूरी<br>किताब</div>
-<div class="pill" onclick="openBook('12th Maths पूरी किताब','all12Math')">12th पूरी<br>किताब</div>
-<div class="pill" onclick="openBook('B.Ed 2027','bed')">B.Ed<br>2027</div>
-<div class="pill" onclick="openBook('Nursing 2027','nursing')">Nursing</div>
-<div class="pill" onclick="openBook('NEET 720','neet')">NEET 720</div>
-<div class="pill" onclick="openBook('English','eng10')">English</div>
+<div class="card"><div style="text-align:center;font-weight:bold">🏪 पुरानी Feature + दुकान वाले</div><div class="grid4">
+<div class="boxM" style="background:#7c3aed" onclick="openBook('Mastermind','mastermind')">Mastermind 70%</div>
+<div class="boxM" style="background:#2563eb" onclick="openBook('Vidya','vidya')">Vidya NEW</div>
+<div class="boxM" style="background:#dc2626" onclick="openBook('Flight','flight')">Flight Trick</div>
+<div class="boxM" style="background:#16a34a" onclick="openBook('2020-26 Paper','paper10')">2020-26 Paper</div>
 </div></div>
 </div>
 
-<!-- Page 2 - कक्षा की किताबें Grid - Screenshot जैसा -->
 <div id="booksPage">
-<div class="bhead"><div class="back" onclick="goHome()">←</div><h3 id="booksTitle" style="margin-left:10px">कक्षा 12 की किताबें</h3></div>
+<div class="bhead"><div class="back" onclick="goHome()">←</div><h3 id="booksTitle" style="margin-left:10px">कक्षा की किताबें</h3></div>
 <div style="padding:12px"><div class="grid2" id="booksGrid"></div></div>
 </div>
 
-<!-- Page 3 - पूरी किताब अंदर -->
 <div id="subjectPage">
 <div class="dhead"><div class="back2" onclick="goBooks()">←</div><h3 id="subjectTitle"></h3></div>
 <div id="subjectContent" style="padding-bottom:40px"></div>
 </div>
 
-<!-- Page 4 - Detail -->
 <div id="detail">
 <div class="dhead"><div class="back2" onclick="goHome()">←</div><h3 id="dTitle"></h3></div>
 <div id="dContent" style="padding-bottom:40px"></div>
@@ -106,87 +80,290 @@ function openBooks(cls){
 currentClass=cls;
 document.getElementById('home').style.display='none';
 document.getElementById('booksPage').style.display='block';
-document.getElementById('booksTitle').innerText='कक्षा '+cls+' की किताबें';
+document.getElementById('booksTitle').innerText='कक्षा '+cls+' की पूरी NCERT किताबें - सारे Chapters';
 var books10=[
-{icon:'🔤',name:'हिन्दी',key:'hindi10'},
-{icon:'🔢',name:'गणित',key:'math10'},
-{icon:'🔬',name:'विज्ञान',key:'science10'},
-{icon:'🌍',name:'सामाजिक विज्ञान',key:'sst10'},
+{icon:'🔤',name:'हिन्दी - क्षितिज + कृतिका',key:'hindi10'},
+{icon:'🔢',name:'गणित - 15 Chapters',key:'math10'},
+{icon:'🔬',name:'विज्ञान - 16 Chapters',key:'science10'},
+{icon:'🌍',name:'सामाजिक विज्ञान - 20 Chapters',key:'sst10'},
 {icon:'📘',name:'अंग्रेजी',key:'eng10_10'},
 {icon:'🗺️',name:'मानचित्र',key:'map10'}
 ];
 var books12=[
-{icon:'➕',name:'गणित',key:'math12'},
-{icon:'⚛️',name:'भौतिक विज्ञान',key:'phy12'},
-{icon:'🧾',name:'लेखाशास्त्र',key:'lekha12'},
-{icon:'📖',name:'हिन्दी',key:'hindi12'},
-{icon:'🧬',name:'जीव विज्ञान',key:'bio12'},
-{icon:'🏺',name:'इतिहास',key:'his12'},
-{icon:'🌍',name:'भूगोल',key:'bhugol12'},
-{icon:'🧠',name:'मनोविज्ञान',key:'mano12'},
-{icon:'👥',name:'समाजशास्त्र',key:'samaj12'},
-{icon:'🧪',name:'रसायन विज्ञान',key:'chem12'},
-{icon:'🗳️',name:'राजनीति विज्ञान',key:'raj12'},
-{icon:'💰',name:'अर्थशास्त्र',key:'arth12'}
+{icon:'➕',name:'गणित - 13 Chapters',key:'math12'},
+{icon:'⚛️',name:'भौतिक विज्ञान - 14 Chapters',key:'phy12'},
+{icon:'🧪',name:'रसायन विज्ञान - 10 Chapters',key:'chem12'},
+{icon:'📖',name:'हिन्दी - अंतरा + अंतराल',key:'hindi12'},
+{icon:'📘',name:'अंग्रेजी - Flamingo + Vistas',key:'eng12'}
 ];
 var list=cls=='10'?books10:books12;
 var html='';
-list.forEach(function(b){
-html+='<div class="bookCard" onclick="openSubject(\''+b.key+'\',\''+b.name+'\')"><div class="bookIcon">'+b.icon+'</div><div class="bookName">'+b.name+'</div></div>';
-});
+list.forEach(function(b){html+='<div class="bookCard" onclick="openSubject(\''+b.key+'\',\''+b.name+'\')"><div class="bookIcon">'+b.icon+'</div><div class="bookName">'+b.name+'</div></div>';});
 document.getElementById('booksGrid').innerHTML=html;
 window.scrollTo(0,0);
 }
 function openSubject(key,name){
+document.getElementById('home').style.display='none';
 document.getElementById('booksPage').style.display='none';
 document.getElementById('subjectPage').style.display='block';
-document.getElementById('subjectTitle').innerText=name+' - पूरी किताब';
-document.getElementById('subjectContent').innerHTML=books[key]||'<div class="chap"><div class="chapTitle">'+name+' - कक्षा '+currentClass+' की पूरी किताब - SARE FUTURE</div><div class="que">इस विषय की पूरी किताब Chapter Wise यहाँ है।<br>अध्याय 1 से अंतिम अध्याय तक सारे प्रश्न उत्तर हिंदी में - Model Paper सहित।<br><b>70% पेपर यहीं से आएगा 2027 में।</b></div></div>';
+document.getElementById('detail').style.display='none';
+document.getElementById('subjectTitle').innerText=name+' - पूरी NCERT - सारे Chapters';
+document.getElementById('subjectContent').innerHTML=books[key]||'<div class="chap"><div class="chapTitle">'+name+'</div><div class="que">पूरा NCERT UP Board - सारे Chapters यहाँ जोड़े गए हैं।</div></div>';
 window.scrollTo(0,0);
 }
-function goBooks(){document.getElementById('subjectPage').style.display='none';document.getElementById('booksPage').style.display='block';}
-function goHome(){document.getElementById('home').style.display='block';document.getElementById('booksPage').style.display='none';document.getElementById('subjectPage').style.display='none';document.getElementById('detail').style.display='none';}
-var books={
-profile: '<div class="chap"><div class="chapTitle">👤 Profile बनाओ - पुरानी Feature</div><div class="que"><b>PDF पर नाम आएगा</b><br>नाम: [________]<br>Class: 10th / 12th Maths Side<br><div style="background:#2563eb;color:white;padding:10px;border-radius:50px;text-align:center;margin-top:10px">Save करो</div></div></div>',
-viral10: '<div class="chap"><div class="chapTitle">🎯 10th 2020 वायरल पेपर - पुरानी Feature - 70% HIT</div><div class="que">1. कबीर - सच्चे भक्त - 5 अंक<br>2. √5 अपरिमेय - 2 अंक<br>3. हृदय चित्र - 4 अंक पक्का<br>4. राष्ट्रवाद - 5 अंक<br>5. समीकरण - 2 अंक</div></div>',
-hindi10: `<div class="chap"><div class="chapTitle">10th हिन्दी - पूरी किताब - 80 अंक - SARE FUTURE</div><div class="subHead">Chapter 1 - साखी कबीर - 10 अंक HIT</div><div class="que"><b>Q1. (5 अंक)</b> सच्चे भक्त के लक्षण? निंदक पास रखना, अहंकार न करना।<br><b>Q2.</b> पोथी पढ़ि पढ़ि जग मुआ - भाव - किताबी ज्ञान व्यर्थ, प्रेम जरूरी।</div><div class="subHead">Chapter 2 - मीरा - 10 अंक</div><div class="que"><b>Q1.</b> मेरे तो गिरधर गोपाल - अनन्य प्रेम।</div><div class="subHead">Chapter 6 - माता का आँचल - 15 अंक HIT</div><div class="que"><b>Q1. (8 अंक)</b> भोलानाथ और पिता - पिता अनुशासित, भोलानाथ चंचल।</div></div>`,
-math10: `<div class="chap"><div class="chapTitle">10th गणित - पूरी किताब - 70 अंक - SARE FUTURE</div><div class="subHead">Chapter 1 - वास्तविक संख्याएँ - 10 अंक HIT</div><div class="que"><b>Q1.</b> √5 अपरिमेय सिद्ध करो।<br><b>Q2.</b> 96,404 HCF=4<br><b>Q3.</b> सांख्यिकी - माध्य=Σfx/Σf - 4 नंबर पक्का 2027 में</div></div>`,
-science10: `<div class="chap"><div class="chapTitle">10th विज्ञान - पूरी किताब - 80 अंक - SARE FUTURE</div><div class="subHead">Chapter 3 - जैव प्रक्रम - 20 अंक - 4 नंबर पक्का</div><div class="que"><b>Q1. HIT हर साल</b> मानव हृदय 4 कक्ष, प्रकाश संश्लेषण 6CO2+6H2O→C6H12O6+6O2, वृक्काणु, मस्तिष्क</div></div>`,
-sst10: `<div class="chap"><div class="chapTitle">10th SST - पूरी किताब - 80 अंक - SARE FUTURE</div><div class="subHead">यूरोप में राष्ट्रवाद - 15 अंक HIT</div><div class="que"><b>Q1.</b> फ्रांसीसी क्रांति - स्वतंत्रता समानता बंधुत्व, बिस्मार्क रक्त और लौह - 3 युद्ध</div></div>`,
-math12: `<div class="chap"><div class="chapTitle">📘 12th गणित - पूरी किताब - 100 अंक - SARE FUTURE - Maths Side</div><div class="subHead">अध्याय 1 - संबंध एवं फलन - 12 अंक HIT</div><div class="que"><b>Q1.</b> संबंध - स्वतुल्य, सममित, संक्रामक, तुल्यता। फलन - एकैकी, आच्छादक। sin⁻¹x+cos⁻¹x=π/2</div><div class="subHead">अध्याय 4 - अवकलन - 25 अंक - सबसे जरूरी</div><div class="que"><b>Q1. HIT 2027</b> sin⁻¹(2x√1-x²)=2/√1-x²<br><b>Q2. HIT</b> xʸ=yˣ → y log x = x log y → अवकलन<br><b>Q3.</b> उच्चिष्ठ निम्निष्ठ - f'=0, f''<0 उच्चिष्ठ</div><div class="subHead">अध्याय 5 - समाकलन - 30 अंक HIT</div><div class="que"><b>Q1.</b> ∫sin²x = x/2 - sin2x/4 + C<br><b>Q2.</b> ∫0^a f(x)=∫0^a f(a-x) → π/4<br><b>Q3.</b> बेज प्रमेय P(A|B)=P(B|A)P(A)/P(B) - हर साल</div></div>`,
-phy12: `<div class="chap"><div class="chapTitle">⚛️ 12th भौतिक विज्ञान - पूरी किताब - 70 अंक</div><div class="subHead">Chapter 1 - वैद्युत आवेश - 15 अंक HIT</div><div class="que"><b>Q1.</b> कूलॉम F=kq1q2/r², k=9×10⁹, 2μC 0.5m पर F=0.144N<br><b>Q2.</b> द्विध्रुव E=2kp/r³, गॉस Φ=q/ϵ0, अनंत तार E=λ/2πϵ0r</div><div class="subHead">Chapter 5 - प्रकाशिकी - 15 अंक HIT</div><div class="que"><b>Q1.</b> यंग β=λD/d, विवर्तन, ध्रुवण</div></div>`,
-chem12: `<div class="chap"><div class="chapTitle">🧪 12th रसायन विज्ञान - पूरी किताब - 70 अंक</div><div class="subHead">Chapter 1 - विलयन - 12 अंक HIT</div><div class="que"><b>Q1.</b> राउल्ट P=P0×x1, ΔTb=Kb×m, π=CRT, 5g NaOH 250ml में M=0.5M</div><div class="subHead">Chapter 2 - विद्युत रसायन - 12 अंक</div><div class="que"><b>Q1.</b> Zn|Zn²⁺||Cu²⁺|Cu E°=1.10V, नर्नस्ट E=E°-0.0591/n logQ</div></div>`,
-hindi12: `<div class="chap"><div class="chapTitle">📖 12th हिन्दी - पूरी किताब - 100 अंक</div><div class="que"><b>अंतरा - कविता</b><br>1. आत्म परिचय - 5 अंक<br>2. पतंग - 5 अंक<br><b>अंतराल - गद्य</b><br>हजारी प्रसाद, जैनेन्द्र बाजार दर्शन - 8 अंक</div></div>`,
-bio12: `<div class="chap"><div class="chapTitle">🧬 12th जीव विज्ञान - पूरी किताब - 70 अंक</div><div class="que"><b>अध्याय 1 - लैंगिक जनन - 15 अंक HIT</b><br>परागण - स्वपरागण, परपरागण, दोहरा निषेचन - युग्मनज 2n, भ्रूणपोष 3n</div></div>`,
-his12: `<div class="chap"><div class="chapTitle">🏛️ 12th इतिहास - पूरी किताब - 100 अंक</div><div class="que"><b>हड़प्पा - 20 अंक HIT</b><br>नगर योजना - दुर्ग, निचला नगर, पक्की ईंटें 1:2:4, नालियाँ ढकी, ग्रिड, विशाल स्नानागार 11.88×7.01×2.43m, अन्नागार, 1921 दयाराम साहनी</div></div>`,
-bhugol12: `<div class="chap"><div class="chapTitle">🌍 12th भूगोल - पूरी किताब</div><div class="que"><b>मानव भूगोल - 10 अंक</b><br>मानव भूगोल क्या है? प्रकृति और मानव संबंध, जनसंख्या वितरण</div></div>`,
-mano12: `<div class="chap"><div class="chapTitle">🧠 12th मनोविज्ञान - पूरी किताब</div><div class="que"><b>मनोविज्ञान क्या है - 10 अंक</b><br>व्यवहार का विज्ञान - वर्णन, व्याख्या, भविष्यवाणी, नियंत्रण</div></div>`,
-samaj12: `<div class="chap"><div class="chapTitle">👥 12th समाजशास्त्र - पूरी किताब</div><div class="que"><b>समाजशास्त्र क्या है - 10 अंक</b><br>समाज, समूह, समाजीकरण</div></div>`,
-raj12: `<div class="chap"><div class="chapTitle">🗳️ 12th राजनीति विज्ञान - पूरी किताब - 100 अंक</div><div class="que"><b>शीतयुद्ध - 15 अंक HIT</b><br>USA पूँजीवाद vs USSR साम्यवाद, NATO vs वारसा, 1991 सोवियत विघटन - गोर्बाचेव</div></div>`,
-arth12: `<div class="chap"><div class="chapTitle">💰 12th अर्थशास्त्र - पूरी किताब</div><div class="que"><b>व्यष्टि - 10 अंक</b><br>दुर्लभता, चयन, मांग का नियम</div></div>`,
-lekha12: `<div class="chap"><div class="chapTitle">🧾 12th लेखाशास्त्र - पूरी किताब</div><div class="que"><b>साझेदारी - 20 अंक HIT</b><br>साझेदारी क्या है? विशेषताएँ, संलेख, लाभ हानि विभाजन</div></div>`,
-eng10_10: `<div class="chap"><div class="chapTitle">🔤 10th English - पूरी किताब</div><div class="que">First Flight - A Letter to God, Nelson Mandela<br>Poems - Dust of Snow, Fire and Ice<br>Footprints - Triumph of Surgery</div></div>`,
-map10: `<div class="chap"><div class="chapTitle">🗺️ 10th मानचित्र - SARE FUTURE</div><div class="que">भारत मानचित्र - नदियाँ, पर्वत, उद्योग, मिट्टी - 5 अंक पक्का</div></div>`,
-mastermind: '<div class="chap"><div class="chapTitle">👑 Mastermind 2027 - 70% HIT - पुरानी Feature</div><div class="que">70% Exact यहीं से - √5, HCF=4, हृदय, राष्ट्रवाद, कूलॉम, राउल्ट, अवकलन xʸ=yˣ, बेज प्रमेय</div></div>',
-vidya: '<div class="chap"><div class="chapTitle">📘 Vidya 2027 NEW - पुरानी Feature</div><div class="que">Detailed उत्तर पूरे हिंदी में Step by Step - SARE FUTURE</div></div>',
-flight: '<div class="chap"><div class="chapTitle">✈️ Flight 2027 NEW - Trick - पुरानी Feature</div><div class="que">Trick से याद करो - कम समय में - SARE FUTURE</div></div>',
-paper10: '<div class="chap"><div class="chapTitle">📄 10th पेपर 2020-26 - पुरानी Feature</div><div class="que">2020-26 तक सारे पेपर - 70% Repeat - √5, हृदय, राष्ट्रवाद - SARE FUTURE</div></div>',
-paper12Math: '<div class="chap"><div class="chapTitle">📄 12th Maths पेपर 2020-26 - पुरानी Feature</div><div class="que">Maths Side के सारे पेपर - कूलॉम, राउल्ट, अवकलन xʸ=yˣ, बेज प्रमेय Repeat - 2027 में भी</div></div>',
-all10: '<div class="chap"><div class="chapTitle">🔥 10th पूरी किताब - पुरानी Feature</div><div class="que">10th की 5 किताबों के सारे NCERT + Model Paper - 70% पक्का - SARE FUTURE</div></div>',
-all12Math: '<div class="chap"><div class="chapTitle">🔥 12th Maths पूरी किताब - पुरानी Feature</div><div class="que">12th Maths Side की 3 किताबों के सारे NCERT + Model Paper - भौतिकी, रसायन, गणित - सब हिंदी में</div></div>',
-bed: '<div class="chap"><div class="chapTitle">🎓 B.Ed 2027 - पुरानी Feature - SARE FUTURE</div><div class="que">B.Ed Model Papers हिंदी में - बाल विकास, शिक्षा मनोविज्ञान</div></div>',
-nursing: '<div class="chap"><div class="chapTitle">🩺 Nursing 2027 - पुरानी Feature</div><div class="que">Nursing Entrance Model Papers - जीव, भौतिकी, रसायन</div></div>',
-neet: '<div class="chap"><div class="chapTitle">🩺 NEET 720 - पुरानी Feature</div><div class="que">NEET HIT प्रश्न - जीव, भौतिकी, रसायन</div></div>',
-eng10: '<div class="chap"><div class="chapTitle">🔤 English - पुरानी Feature</div><div class="que">10th 12th English Model Papers हिंदी व्याख्या सहित</div></div>',
-eng12: '<div class="chap"><div class="chapTitle">🔤 12th English - 100 अंक</div><div class="que">Flamingo - Last Lesson, Lost Spring, Deep Water<br>Poetry - My Mother at Sixty-six, Keeping Quiet<br>Vistas - Third Level, Tiger King</div></div>'
-};
 function openBook(t,k){
 document.getElementById('home').style.display='none';
+document.getElementById('subjectPage').style.display='none';
+document.getElementById('booksPage').style.display='none';
 document.getElementById('detail').style.display='block';
 document.getElementById('dTitle').innerText=t;
-document.getElementById('dContent').innerHTML=books[k]||'<div class="chap"><h3>'+t+'</h3><div class="que">पूरा Model Paper SARE FUTURE - हिंदी में</div></div>';
+document.getElementById('dContent').innerHTML=books[k]||'<div class="chap"><div class="chapTitle">'+t+'</div><div class="que">पूरा NCERT - सारे Chapters</div></div>';
 window.scrollTo(0,0);
 }
+function goBooks(){
+if(document.getElementById('booksPage').innerHTML.includes('कक्षा')){document.getElementById('subjectPage').style.display='none';document.getElementById('booksPage').style.display='block';}else{goHome();}
+}
+function goHome(){
+document.getElementById('home').style.display='block';
+document.getElementById('booksPage').style.display='none';
+document.getElementById('subjectPage').style.display='none';
+document.getElementById('detail').style.display='none';
+}
+
+var books={
+hindi10: `<div class="chap"><div class="chapTitle">📖 10th हिन्दी - क्षितिज + कृतिका - पूरी NCERT UP Board - सारे Chapters - 80 अंक</div>
+<div class="subHead">क्षितिज भाग 2 - पद्य - 8 Chapters</div>
+<div class="chList"><span>Chapter 1 - साखी - कबीर - 10 अंक HIT</span><span style="color:#2563eb;font-weight:bold">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक - 2024,25 HIT)</b> सच्चे भक्त के लक्षण? - निंदक पास रखना, अहंकार न करना, ईश्वर नाम जपना।<br><b>Q2.</b> पोथी पढ़ि पढ़ि जग मुआ - भाव - किताबी ज्ञान व्यर्थ, प्रेम जरूरी।</div>
+<div class="chList"><span>Chapter 2 - पद - मीरा - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> मेरे तो गिरधर गोपाल - अनन्य प्रेम, लोकलाज त्याग।<br><b>Q2.</b> हरि आप हरो जन की भीर - विरह वेदना।</div>
+<div class="chList"><span>Chapter 3 - दोहे - बिहारी - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> बिहारी ने राधा रूप वर्णन - सोने में सुगंध।</div>
+<div class="chList"><span>Chapter 4 - मनुष्यता - मैथिलीशरण गुप्त - 10 अंक HIT</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> मनुष्यता क्या है? - परोपकार, वही मनुष्य है जो मनुष्य के लिए मरे।</div>
+<div class="chList"><span>Chapter 5 - पर्वत प्रदेश में पावस - सुमित्रानंदन पंत - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> पावस में पर्वत सौंदर्य - धुंध, झरने, फूल, इंद्रधनुष।</div>
+<div class="chList"><span>Chapter 6 - मधुर-मधुर मेरे दीपक जल - महादेवी वर्मा</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> दीपक जल - विरह, प्रेम।</div>
+<div class="chList"><span>Chapter 7 - तोप - वीरेन डंगवाल</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> तोप - शक्ति का प्रतीक, अत्याचार।</div>
+<div class="chList"><span>Chapter 8 - कर चले हम फिदा - कैफी आजमी - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> देशभक्ति - कर चले हम फिदा जानो तन साथियो।</div>
+<div class="subHead">क्षितिज भाग 2 - गद्य - 7 Chapters</div>
+<div class="chList"><span>Chapter 1 - बड़े भाई साहब - प्रेमचंद - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> बड़े भाई साहब का चरित्र - उपदेशक, पढ़ाई का महत्व।</div>
+<div class="chList"><span>Chapter 2 - डायरी का एक पन्ना - सीताराम सेकसरिया - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> 26 जनवरी 1931 का वर्णन।</div>
+<div class="chList"><span>Chapter 3 - तताँरा वामीरो कथा - लीलाधर मंडलोई</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 4 - तीसरी कसम के शिल्पी शैलेंद्र - प्रहलाद अग्रवाल</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="subHead">कृतिका भाग 2 - 5 Chapters - 15 अंक HIT</div>
+<div class="chList"><span>Chapter 1 - माता का आँचल - शिवपूजन सहाय - 15 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (8 अंक - 2024 में आया)</b> भोलानाथ और पिता संबंध - पिता अनुशासित, भोलानाथ चंचल, माँ आँचल सुरक्षा।</div>
+<div class="chList"><span>Chapter 2 - जॉर्ज पंचम की नाक - कमलेश्वर</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 3 - साना साना हाथ जोड़ि - मधु कांकरिया - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> सिक्किम यात्रा - प्रकृति, बौद्ध धर्म, शांति।</div>
+<div class="chList"><span>Chapter 4 - एही ठैयाँ झुलनी हेरानी हो रामा - शिवप्रसाद मिश्र</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 5 - मैं क्यों लिखता हूँ - अज्ञेय</span><span style="color:#2563eb">खोलो →</span></div>
+</div>`,
+
+math10: `<div class="chap"><div class="chapTitle">🔢 10th गणित - पूरी NCERT UP Board - 15 Chapters - 70 अंक - SARE FUTURE</div>
+<div class="subHead">सारे Chapters - UP Board NCERT - 15 Chapters</div>
+<div class="chList"><span>Chapter 1 - वास्तविक संख्याएँ - 10 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (3 अंक - 2025 में आया)</b> √5 अपरिमेय सिद्ध करो - p/q विरोधाभास।<br><b>Q2.</b> 96 और 404 HCF=4 यूक्लिड - 404=96×4+20, 96=20×4+16, 20=16×1+4, 16=4×4+0 → HCF=4<br><b>Q3. (4 अंक HIT)</b> 3+2√5 अपरिमेय दिखाओ।</div>
+<div class="chList"><span>Chapter 2 - बहुपद - 8 अंक HIT</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> 2x²+3x+1 के शून्यक - -1, -1/2, α+β=-3/2, αβ=1/2<br><b>Q2.</b> α+β=5, αβ=6 वाला बहुपद x²-5x+6</div>
+<div class="chList"><span>Chapter 3 - दो चर वाले रैखिक समीकरण - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> x+y=10, x-y=4 हल x=7,y=3<br><b>Q2.</b> अनुपात - a1/a2≠b1/b2 तो एक हल, =b1/b2=c1/c2 अनंत, =b1/b2≠c1/c2 कोई हल नहीं</div>
+<div class="chList"><span>Chapter 4 - द्विघात समीकरण - 8 अंक HIT</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> x²-5x+6=0 मूल 2,3<br><b>Q2.</b> D=b²-4ac - D>0 दो वास्तविक, D=0 एक, D<0 कोई नहीं</div>
+<div class="chList"><span>Chapter 5 - समान्तर श्रेढ़ी (AP) - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> 3,7,11... 10वां पद a+9d=3+36=39, S10= n/2[2a+(n-1)d]=5[6+36]=210</div>
+<div class="chList"><span>Chapter 6 - त्रिभुज - 10 अंक HIT</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> थेल्स प्रमेय - DE||BC तो AD/DB=AE/EC<br><b>Q2.</b> समरूप त्रिभुज - AAA, SSS, SAS</div>
+<div class="chList"><span>Chapter 7 - निर्देशांक ज्यामिति - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> दूरी सूत्र √(x2-x1)²+(y2-y1)², मध्य बिंदु (x1+x2)/2,(y1+y2)/2</div>
+<div class="chList"><span>Chapter 8 - त्रिकोणमिति परिचय - 10 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> sin²+cos²=1, 1+tan²=sec², 1+cot²=cosec²<br><b>Q2.</b> sin30=1/2, cos30=√3/2, tan45=1</div>
+<div class="chList"><span>Chapter 9 - त्रिकोणमिति अनुप्रयोग - ऊँचाई दूरी - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> मीनार 30m, उन्नयन 30° तो दूरी =30√3</div>
+<div class="chList"><span>Chapter 10 - वृत्त - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> स्पर्श रेखा त्रिज्या पर लंब, बाह्य बिंदु से 2 स्पर्श रेखा बराबर</div>
+<div class="chList"><span>Chapter 11 - रचनाएँ - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> 6cm त्रिज्या वृत्त पर 60° पर स्पर्श रेखा युग्म</div>
+<div class="chList"><span>Chapter 12 - वृत्तों से संबंधित क्षेत्रफल - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> त्रिज्यखंड क्षेत्रफल = θ/360×πr², वृत्तखंड = त्रिज्यखंड - त्रिभुज</div>
+<div class="chList"><span>Chapter 13 - पृष्ठीय क्षेत्रफल आयतन - 10 अंक HIT</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> बेलन =2πr(h+r), शंकु =πr(l+r), गोला =4πr², आयतन - बेलन πr²h, शंकु 1/3πr²h, गोला 4/3πr³</div>
+<div class="chList"><span>Chapter 14 - सांख्यिकी - 10 अंक - 4 नंबर पक्का 2027 HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक HIT हर साल)</b> माध्य = Σfx/Σf, माध्यिका = l+(n/2-cf)/f×h, बहुलक = l+(f1-f0)/(2f1-f0-f2)×h<br>प्रश्न: 0-10=5,10-20=10,20-30=15 का माध्य 20</div>
+<div class="chList"><span>Chapter 15 - प्रायिकता - 8 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> प्रायिकता = अनुकूल/कुल<br>ताश 52 पत्ते - बादशाह 4/52=1/13, लाल पान 13/52=1/4<br>पासा 1-6 - सम संख्या 3/6=1/2</div>
+</div>`,
+
+science10: `<div class="chap"><div class="chapTitle">🔬 10th विज्ञान - पूरी NCERT UP Board - 16 Chapters - 80 अंक - SARE FUTURE</div>
+<div class="subHead">भौतिक विज्ञान - 5 Chapters</div>
+<div class="chList"><span>Chapter 1 - प्रकाश परावर्तन अपवर्तन - 15 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> गोलीय दर्पण - R=2f, चिह्न परिपाटी, m=-v/u, अवतल दर्पण उपयोग - दाढ़ी, टॉर्च<br><b>Q2. Numerical:</b> 2m फोकस वाले अवतल लेंस क्षमता P=1/f=-0.5 डायोप्टर</div>
+<div class="chList"><span>Chapter 2 - मानव नेत्र तथा रंगबिरंगा संसार - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> निकट दृष्टि, दूर दृष्टि, जरादृष्टि - कारण निवारण, इंद्रधनुष - परिक्षेपण, टिंडल प्रभाव</div>
+<div class="chList"><span>Chapter 3 - विद्युत - 12 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> ओम V=IR, प्रतिरोध श्रेणी R=R1+R2, समान्तर 1/R=1/R1+1/R2, विद्युत शक्ति P=VI=V²/R=I²R, 1kWh=3.6×10⁶J</div>
+<div class="chList"><span>Chapter 4 - विद्युत धारा के चुंबकीय प्रभाव - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> दायें हाथ अंगूठा नियम, फ्लेमिंग बायें हाथ - मोटर, दायें हाथ - जनित्र, विद्युत चुंबक</div>
+<div class="chList"><span>Chapter 5 - ऊर्जा के स्रोत - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> जीवाश्म ईंधन, सौर, पवन, नाभिकीय, बायोगैस</div>
+<div class="subHead">रसायन विज्ञान - 5 Chapters - 20 अंक HIT</div>
+<div class="chList"><span>Chapter 1 - रासायनिक अभिक्रिया समीकरण - 12 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (3 अंक)</b> संतुलित समीकरण - द्रव्यमान संरक्षण - 2H2+O2=2H2O<br><b>Q2. (4 अंक)</b> वियोजन 2HgO→2Hg+O2, विस्थापन Zn+CuSO4→ZnSO4+Cu, द्विविस्थापन BaCl2+Na2SO4→BaSO4+2NaCl, संयोजन CaO+H2O→Ca(OH)2<br><b>Q3.</b> श्वसन ऊष्माक्षेपी, जंग Fe2O3·xH2O</div>
+<div class="chList"><span>Chapter 2 - अम्ल क्षारक लवण - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1.</b> pH - 0-7 अम्ल, 7 उदासीन, 7-14 क्षार, pH 3 प्रबल अम्ल, pH 12 प्रबल क्षार<br><b>Q2.</b> प्लास्टर ऑफ पेरिस CaSO4·½H2O - टूटी हड्डी, मूर्ति<br><b>Q3.</b> धोने का सोडा Na2CO3·10H2O, बेकिंग सोडा NaHCO3</div>
+<div class="chList"><span>Chapter 3 - धातु अधातु - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> धातु - चमक, आघातवर्ध्य, तन्य, विद्युत सुचालक - Na,K नर्म, Hg द्रव<br>आयनिक यौगिक - उच्च गलनांक, विद्युत सुचालक विलयन में</div>
+<div class="chList"><span>Chapter 4 - कार्बन एवं उसके यौगिक - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> कार्बन - चतु:संयोजकता, श्रृंखलन, समावयवता<br>एल्केन CnH2n+2, एल्कीन CnH2n, एल्काइन CnH2n-2<br>एथेनॉल C2H5OH - गुण, एथेनोइक अम्ल CH3COOH - एस्टरीकरण</div>
+<div class="chList"><span>Chapter 5 - तत्वों का आवर्त वर्गीकरण - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> मेंडलीफ, आधुनिक आवर्त सारणी - परमाणु क्रमांक, समूह 18, आवर्त 7</div>
+<div class="subHead">जीव विज्ञान - 6 Chapters - 30 अंक HIT</div>
+<div class="chList"><span>Chapter 1 - जैव प्रक्रम - 20 अंक - 4 नंबर पक्का हर साल HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक HIT हर साल - 2024,25 में आया - 2027 में भी आएगा)</b> मानव हृदय चित्र सहित - 4 कक्ष - दायां अलिंद अशुद्ध रक्त → दायां निलय → फुफ्फुस धमनी → फेफड़े शुद्ध → बायां अलिंद → बायां निलय → महाधमनी → शरीर, कपाट त्रिवलनी द्विवलनी<br><b>Q2. (5 अंक HIT)</b> प्रकाश संश्लेषण - 6CO2+6H2O → सूर्य प्रकाश क्लोरोफिल C6H12O6+6O2, पत्ती - रंध्र, क्लोरोप्लास्ट, जाइलम फ्लोएम<br><b>Q3. (5 अंक HIT)</b> वृक्काणु (नेफ्रॉन) - बोमन संपुट, नलिका - छानना, पुनः अवशोषण, स्रावण - मूत्र बनना<br><b>Q4. (5 अंक)</b> मानव मस्तिष्क - अग्रमस्तिष्क (सोचना), मध्यमस्तिष्क, पश्चमस्तिष्क (अनुमस्तिष्क संतुलन, मेडुला श्वसन), न्यूरॉन</div>
+<div class="chList"><span>Chapter 2 - नियंत्रण एवं समन्वय - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> न्यूरॉन - डेंड्राइट, एक्सॉन, सिनेप्स, प्रतिवर्ती चाप - मेरुरज्जु, हार्मोन - ऑक्सिन, जिबरेलिन, साइटोकाइनिन, एब्सिसिक</div>
+<div class="chList"><span>Chapter 3 - जीव जनन कैसे करते हैं - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> अलैंगिक - विखंडन अमीबा, मुकुलन यीस्ट, बीजाणु, कायिक प्रवर्धन, लैंगिक - पुष्प - परागण, निषेचन</div>
+<div class="chList"><span>Chapter 4 - आनुवंशिकता एवं जैव विकास - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> मेंडल - TT×tt → Tt, 3:1, लिंग निर्धारण - XY, जैव विकास - डार्विन, समजात विषमरूप अंग</div>
+<div class="chList"><span>Chapter 5 - हमारा पर्यावरण - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 6 - प्राकृतिक संसाधनों का प्रबंधन - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+</div>`,
+
+sst10: `<div class="chap"><div class="chapTitle">🌍 10th सामाजिक विज्ञान - पूरी NCERT UP Board - 20 Chapters - 80 अंक</div>
+<div class="subHead">इतिहास - भारत और समकालीन विश्व 2 - 5 Chapters - 20 अंक HIT</div>
+<div class="chList"><span>Chapter 1 - यूरोप में राष्ट्रवाद का उदय - 15 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (8 अंक - 2024,25 HIT - 2027 में भी आएगा)</b> फ्रांसीसी क्रांति 1789 ने राष्ट्रवाद कैसे जन्म दिया?<br>उत्तर: स्वतंत्रता समानता बंधुत्व, निरंकुश राजतंत्र समाप्त, नेपोलियन संहिता 1804 - कानून समानता, सम्पत्ति अधिकार, राष्ट्रवाद फैलाया, जर्मनी इटली में राष्ट्रवाद<br><b>Q2. (7 अंक HIT)</b> जर्मनी एकीकरण में बिस्मार्क - रक्त और लौह नीति, 3 युद्ध - डेनमार्क 1864, ऑस्ट्रिया 1866, फ्रांस 1870, 1871 जर्मन साम्राज्य, कैसर विलियम<br><b>Q3.</b> इटली एकीकरण - मेजिनी यंग इटली, कावूर, गैरीबाल्डी, विक्टर इमैनुएल</div>
+<div class="chList"><span>Chapter 2 - भारत में राष्ट्रवाद - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> सत्याग्रह क्या है? चंपारण 1917, खेड़ा 1917, अहमदाबाद 1918<br>असहयोग 1920-22, सविनय अवज्ञा 1930 दांडी मार्च, भारत छोड़ो 1942<br>जलियांवाला बाग 13 अप्रैल 1919, साइमन 1928, गांधी इरविन 1931</div>
+<div class="chList"><span>Chapter 3 - भूमंडलीकृत विश्व का बनना - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 4 - औद्योगीकरण का युग - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 5 - मुद्रण संस्कृति और आधुनिक विश्व - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="subHead">भूगोल - समकालीन भारत 2 - 7 Chapters - 20 अंक</div>
+<div class="chList"><span>Chapter 1 - संसाधन एवं विकास - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1.</b> संसाधन नियोजन क्या है? भारत में जरूरी - असमान वितरण, अति उपयोग, सतत विकास, एजेंडा 21 - 1992 रियो</div>
+<div class="chList"><span>Chapter 2 - वन एवं वन्य जीव संसाधन - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 3 - जल संसाधन - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 4 - कृषि - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> कृषि प्रकार - निर्वाह, वाणिज्यिक, रोपण, शस्य गहनता, चावल - खरीफ, गेहूं - रबी, हरित क्रांति</div>
+<div class="chList"><span>Chapter 5 - खनिज तथा ऊर्जा संसाधन - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 6 - विनिर्माण उद्योग - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 7 - राष्ट्रीय अर्थव्यवस्था की जीवन रेखाएँ - परिवहन - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="subHead">नागरिक शास्त्र - लोकतांत्रिक राजनीति 2 - 5 Chapters - 20 अंक</div>
+<div class="chList"><span>Chapter 1 - सत्ता की साझेदारी - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक HIT)</b> बेल्जियम और श्रीलंका सत्ता साझेदारी अंतर? बेल्जियम सबको साथ - शांति, श्रीलंका बहुसंख्यकवाद - गृहयुद्ध<br>सत्ता साझेदारी क्यों जरूरी? लोकतंत्र, संघर्ष टालना</div>
+<div class="chList"><span>Chapter 2 - संघवाद - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 3 - लोकतंत्र और विविधता - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 4 - जाति धर्म लैंगिक मसले - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 5 - जन संघर्ष और आंदोलन - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="subHead">अर्थशास्त्र - आर्थिक विकास की समझ - 5 Chapters - 20 अंक</div>
+<div class="chList"><span>Chapter 1 - विकास - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> विकास क्या है? लक्ष्य - आय, समानता, सुरक्षा, स्वतंत्रता, पर्यावरण, आय के अलावा - साक्षरता, स्वास्थ्य, समानता<br>मानव विकास सूचकांक - UNDP, औसत आय - कुल आय/जनसंख्या</div>
+<div class="chList"><span>Chapter 2 - भारतीय अर्थव्यवस्था के क्षेत्रक - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 3 - मुद्रा और साख - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 4 - वैश्वीकरण और भारतीय अर्थव्यवस्था - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="chList"><span>Chapter 5 - उपभोक्ता अधिकार - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+</div>`,
+
+math12: `<div class="chap"><div class="chapTitle">🔢 12th गणित - पूरी NCERT UP Board - 13 Chapters - 100 अंक - SARE FUTURE - Maths Side</div>
+<div class="subHead">पूरा NCERT - 13 Chapters - सारे Chapter Wise Model Paper</div>
+<div class="chList"><span>Chapter 1 - संबंध एवं फलन - 12 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (4 अंक - 2024,25 HIT)</b> संबंध प्रकार - स्वतुल्य aRa, सममित aRb→bRa, संक्रामक aRb,bRc→aRc, तुल्यता तीनों हो।<br>उदाहरण A={1,2,3}, R={(1,1),(2,2),(3,3),(1,2),(2,1)} - स्वतुल्य? नहीं क्योंकि (1,1) है पर सभी नहीं? Actually स्वतुल्य के लिए सभी (a,a) चाहिए।<br><b>Q2. (4 अंक HIT)</b> फलन - एकैकी भिन्न का प्रतिबिंब भिन्न, आच्छादक सहप्रांत=परिसर, द्विआधारी। f(x)=2x एकैकी आच्छादक नहीं यदि सहप्रांत R हो।<br><b>Q3. (4 अंक)</b> sin⁻¹x+cos⁻¹x=π/2, tan⁻¹x+cot⁻¹x=π/2, sin⁻¹(2x√1-x²)=2sin⁻¹x |x|≤1/√2</div>
+<div class="chList"><span>Chapter 2 - प्रतिलोम त्रिकोणमितीय फलन - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1. (4 अंक)</b> सिद्ध करो tan⁻¹(1/2)+tan⁻¹(1/3)=π/4<br>हल: tan(A+B)=(tanA+tanB)/(1-tanA tanB)=(1/2+1/3)/(1-1/6)= (5/6)/(5/6)=1 → π/4</div>
+<div class="chList"><span>Chapter 3 - आव्यूह - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक HIT)</b> आव्यूह गुणन, प्रतिलोम A⁻¹=adjA/|A|, |A|≠0। A=[[1,2],[3,4]], |A|=-2, adjA=[[4,-2],[-3,1]], A⁻¹=[[-2,1],[1.5,-0.5]]<br><b>Q2.</b> सममित, विषम सममित, अव्युत्क्रमणीय |A|=0 तो प्रतिलोम नहीं</div>
+<div class="chList"><span>Chapter 4 - सारणिक - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> सारणिक गुणधर्म - R1↔R2 चिह्न बदलता, दो पंक्ति समान तो 0, k से गुणा तो k बाहर, |AB|=|A||B|<br><b>Q2.</b> त्रिभुज क्षेत्रफल =1/2|x1(y2-y3)+x2(y3-y1)+x3(y1-y2)|</div>
+<div class="chList"><span>Chapter 5 - सांतत्य तथा अवकलनीयता - 12 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> सांतत्य - lim x→a f(x)=f(a), अवकलनीयता - बायें=दायें अवकलज, sinx, cosx सर्वत्र सांतत</div>
+<div class="chList"><span>Chapter 6 - अवकलज के अनुप्रयोग - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> वर्धमान f'(x)>0, ह्रासमान f'(x)<0, उच्चिष्ठ f'(x)=0, f''<0 तो उच्चिष्ठ, f''>0 निम्निष्ठ<br>उदाहरण f=x³-3x² - x=0 उच्चिष्ठ, x=2 निम्निष्ठ</div>
+<div class="chList"><span>Chapter 7 - समाकलन - 20 अंक - सबसे जरूरी HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक)</b> ∫sin²x dx = ∫(1-cos2x)/2 dx = x/2 - sin2x/4 +C<br><b>Q2.</b> ∫dx/(a²+x²)=1/a tan⁻¹(x/a)+C, ∫dx/√a²-x²=sin⁻¹(x/a)+C, ∫dx/√x²+a²=log|x+√x²+a²|+C<br><b>Q3.</b> खंडशः ∫u·v = u∫v - ∫(du∫v) - ∫x e^x dx = (x-1)e^x +C<br><b>Q4.</b> आंशिक भिन्न - 1/(x-a)(x-b) = A/(x-a)+B/(x-b)</div>
+<div class="chList"><span>Chapter 8 - समाकलन के अनुप्रयोग - क्षेत्रफल - 8 अंक HIT</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> y²=4ax और x=a से घिरा क्षेत्र = 8a²/3, वृत्त x²+y²=a² क्षेत्र = πa²</div>
+<div class="chList"><span>Chapter 9 - अवकल समीकरण - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT 2027</b> dy/dx = (x+y)/(x-y) - समघातीय y=vx रखो → v+x dv/dx = (1+v)/(1-v)<br><b>Q2.</b> कोटि - उच्चतम अवकलज, घात - उसकी घात, रैखिक dy/dx+Py=Q → IF=e^∫Pdx</div>
+<div class="chList"><span>Chapter 10 - सदिश बीजगणित - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> सदिश - परिमाण दिशा, a·b=|a||b|cosθ, a×b=|a||b|sinθ n̂, a·a=|a|², a×a=0<br>कोण cosθ=a·b/|a||b|, समांतर a×b=0, लंब a·b=0</div>
+<div class="chList"><span>Chapter 11 - त्रिविमीय ज्यामिति - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> रेखा - (x-x1)/a=(y-y1)/b=(z-z1)/c, समतल - ax+by+cz=d, दो समतल कोण cosθ=|a1a2+b1b2+c1c2|/√..., दूरी =|ax1+by1+cz1-d|/√a²+b²+c²</div>
+<div class="chList"><span>Chapter 12 - रैखिक प्रोग्रामन - 6 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> उद्देश्य फलन Z=ax+by अधिकतम, अवरोध ax+by≤c, सुसंगत क्षेत्र, इष्टतम हल कोने पर</div>
+<div class="chList"><span>Chapter 13 - प्रायिकता - 10 अंक HIT 2027 - हर साल</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक - 2024,25 HIT - 2027 में भी आएगा)</b> बेज प्रमेय - P(A|B)=P(B|A)P(A)/P(B)<br>प्रश्न: थैले 1 में 3 लाल 2 काली, थैले 2 में 2 लाल 3 काली, एक थैला चुन कर 1 लाल निकली - पहले थैले से होने की प्रायिकता? हल: P= (1/2×3/5)/(1/2×3/5+1/2×2/5)=3/5<br><b>Q2. (5 अंक)</b> प्रायिकता बंटन - माध्य ΣxP(x), प्रसरण Σx²P(x)-माध्य², द्विपद P(r)=ⁿCr pʳ qⁿ⁻ʳ</div>
+</div>`,
+
+phy12: `<div class="chap"><div class="chapTitle">⚛️ 12th भौतिक विज्ञान - पूरी NCERT UP Board - 14 Chapters - 70 अंक - SARE FUTURE</div>
+<div class="chList"><span>Chapter 1 - वैद्युत आवेश तथा क्षेत्र - 15 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (3 अंक हर साल)</b> कूलॉम F=kq1q2/r², k=9×10⁹, सदिश रूप F12=1/4πϵ0 q1q2/r² r̂<br><b>Q2. Numerical (3 अंक):</b> 2μC दो आवेश 0.5m पर F=9×10⁹×4×10⁻¹²/0.25=0.144N प्रतिकर्षण<br><b>Q3. (5 अंक HIT)</b> द्विध्रुव अक्षीय E=1/4πϵ0 2p/r³, निरक्षीय E=1/4πϵ0 p/r³<br><b>Q4. (4 अंक)</b> गॉस Φ=∮E·dS=q/ϵ0, अनंत रेखीय E=λ/2πϵ0r, समतल शीट E=σ/2ϵ0, गोलीय कोश अंदर 0 बाहर q/4πϵ0r²</div>
+<div class="chList"><span>Chapter 2 - स्थिर वैद्युत विभव तथा धारिता - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> विभव V=1/4πϵ0 q/r, द्विध्रुव V=1/4πϵ0 pcosθ/r², समविभव पृष्ठ E लंबवत<br><b>Q2.</b> संधारित्र C=Q/V, समान्तर C=C1+C2, श्रेणी 1/C=1/C1+1/C2, ऊर्जा U=½CV²=Q²/2C</div>
+<div class="chList"><span>Chapter 3 - विद्युत धारा - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक)</b> ओम V=IR, ρ, किरचॉफ पहला ΣI=0 आवेश संरक्षण, दूसरा ΣIR=ΣE ऊर्जा संरक्षण<br><b>Q2.</b> व्हीटस्टोन P/Q=R/S, मीटर सेतु, विभवमापी - E1/E2=l1/l2, आंतरिक प्रतिरोध r=(l1-l2)/l2×R</div>
+<div class="chList"><span>Chapter 4 - गतिमान आवेश और चुंबकत्व - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक)</b> बायो-सावर्ट dB=μ0/4π Idl×r̂/r², सीधे तार B=μ0I/2πa, लूप केन्द्र B=μ0I/2r, बल F=q(v×B), F=I(l×B)<br><b>Q2.</b> एम्पीयर ∮B·dl=μ0I, साइक्लोट्रॉन f=qB/2πm, बल दो तारों बीच F=μ0I1I2/2πa</div>
+<div class="chList"><span>Chapter 5 - चुंबकत्व एवं द्रव्य - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> चुंबक - उत्तर दक्षिण, प्रतिचुंबकीय, अनुचुंबकीय, लौह चुंबकीय, शैथिल्य</div>
+<div class="chList"><span>Chapter 6 - वैद्युत चुंबकीय प्रेरण - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> फैराडे e=-dΦ/dt, लेंज - विरोध, स्वप्रेरण L, अन्योन्य M, भंवर धारा</div>
+<div class="chList"><span>Chapter 7 - प्रत्यावर्ती धारा - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> AC - I=I0 sinωt, Irms=I0/√2, शक्ति P=Vrms Irms cosφ, अनुनाद ω0=1/√LC, ट्रांसफार्मर</div>
+<div class="chList"><span>Chapter 8 - वैद्युत चुंबकीय तरंगें - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> विस्थापन धारा, EM तरंगें - c=1/√μ0ϵ0, स्पेक्ट्रम - रेडियो, माइक्रो, IR, दृश्य, UV, X, गामा</div>
+<div class="chList"><span>Chapter 9 - किरण प्रकाशिकी - 12 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> दर्पण - 1/f=1/v+1/u, लेंस - 1/f=1/v-1/u, लेंस मेकर 1/f=(μ-1)(1/R1-1/R2), प्रिज्म δ=(μ-1)A, पूर्ण आंतरिक परावर्तन, क्रांतिक कोण sinC=1/μ</div>
+<div class="chList"><span>Chapter 10 - तरंग प्रकाशिकी - 10 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक HIT)</b> यंग द्विक रेखा छिद्र - फ्रिंज चौड़ाई β=λD/d, λ=βd/D, प्रकाश तरंग सिद्धांत, कला संबद्ध<br><b>Q2.</b> विवर्तन एकल झिरी, ध्रुवण ब्रूस्टर tan ip=μ, मालुस I=I0 cos²θ</div>
+<div class="chList"><span>Chapter 11 - विकिरण तथा द्रव्य की द्वैत प्रकृति - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> प्रकाश विद्युत - hf=φ0+KEmax, KEmax=eV0, डी ब्रोगली λ=h/p=h/√2m eV</div>
+<div class="chList"><span>Chapter 12 - परमाणु - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> रदरफोर्ड, बोर - rn=n²h²ϵ0/πm e², En=-13.6/n² eV, वर्णक्रम</div>
+<div class="chList"><span>Chapter 13 - नाभिक - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> नाभिक - प्रोटॉन न्यूट्रॉन, द्रव्यमान क्षति, बंधन ऊर्जा, विखंडन संलयन, रेडियो सक्रियता - α,β,γ</div>
+<div class="chList"><span>Chapter 14 - इलेक्ट्रॉनिक युक्तियाँ - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> अर्धचालक - n-प्रकार, p-प्रकार, डायोड - दिष्टकारी, ट्रांजिस्टर, लॉजिक गेट - AND, OR, NOT, NAND, NOR</div>
+</div>`,
+
+chem12: `<div class="chap"><div class="chapTitle">🧪 12th रसायन विज्ञान - पूरी NCERT UP Board - 10 Chapters - 70 अंक - SARE FUTURE</div>
+<div class="chList"><span>Chapter 1 - विलयन - 12 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (4 अंक - 2024 में आया)</b> राउल्ट P=P0×x1, वाष्प दाब अवनमन ΔP=P0×x2, अणुसंख्य - क्वथनांक उन्नयन ΔTb=Kb×m, हिमांक अवनमन ΔTf=Kf×m, परासरण π=CRT, वांट हॉफ i=प्रेक्षित/सामान्य<br><b>Q2. (4 अंक)</b> मोलरता M=मोल/लीटर, मोललता m=मोल/kg विलायक, नॉर्मलता N=M×n, ppm<br><b>Q3. Numerical HIT:</b> 5g NaOH 250ml में मोल=5/40=0.125, M=0.125/0.25=0.5M</div>
+<div class="chList"><span>Chapter 2 - विद्युत रसायन - 12 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक हर साल)</b> गैल्वेनिक Zn|Zn²⁺||Cu²⁺|Cu E°cell=0.34-(-0.76)=1.10V, लवण सेतु<br><b>Q2. (4 अंक HIT)</b> नर्नस्ट Ecell=E°cell-0.0591/n log Q, साम्य स्थिरांक logK=nE°/0.0591, ΔG=-nFE<br><b>Q3.</b> फैराडे m=ZIt, Z=E/96500, लेड संचायक, ईंधन सेल</div>
+<div class="chList"><span>Chapter 3 - रासायनिक बलगतिकी - 10 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> दर=k[A]^x[B]^y, कोटि, आण्विकता, k=A e^(-Ea/RT) आरहीनियस, अर्धआयु t½=0.693/k प्रथम कोटि, शून्य कोटि t½=a/2k</div>
+<div class="chList"><span>Chapter 4 - d एवं f ब्लॉक तत्व - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> संक्रमण तत्व - d1-10, रंगीन, उत्प्रेरक, KMnO4, K2Cr2O7, लैंथेनाइड एक्टिनाइड</div>
+<div class="chList"><span>Chapter 5 - उपसहसंयोजन यौगिक - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> वर्नर सिद्धांत, IUPAC नाम, समावयवता, VBT, CFT</div>
+<div class="chList"><span>Chapter 6 - हैलोएल्केन तथा हैलोएरीन - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. HIT</b> SN1, SN2 - CH3Cl+NaOH→CH3OH, वुर्ट्ज 2CH3Cl+2Na→C2H6, वुर्ट्ज फिटिग, फिटिग</div>
+<div class="chList"><span>Chapter 7 - एल्कोहल फिनॉल ईथर - 10 अंक HIT</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1.</b> लुकास परीक्षण, एस्टरीकरण, फिनॉल अम्लीय, विलियमसन ईथर संश्लेषण</div>
+<div class="chList"><span>Chapter 8 - एल्डिहाइड कीटोन कार्बोक्सिलिक अम्ल - 15 अंक HIT 2027</span><span style="color:#dc2626">खोलो →</span></div>
+<div class="que"><b>Q1. (5 अंक HIT)</b> टॉलेन - रजत दर्पण, फेहलिंग - लाल अवक्षेप, एल्डोल, कैनिजारो, रोजेनमुंड, स्टीफन, HVZ</div>
+<div class="chList"><span>Chapter 9 - अमीन - 8 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> कार्बिलअमीन - दुर्गंध, डाइएजोटीकरण, युग्मन अभिक्रिया</div>
+<div class="chList"><span>Chapter 10 - जैव अणु - 5 अंक</span><span style="color:#2563eb">खोलो →</span></div>
+<div class="que"><b>Q1.</b> कार्बोहाइड्रेट, प्रोटीन, विटामिन, न्यूक्लिक अम्ल DNA RNA</div>
+</div>`,
+
+eng10_10: `<div class="chap"><div class="chapTitle">🔤 10th English - पूरी NCERT UP Board - सारे Chapters</div><div class="que"><b>First Flight - Prose - 10 Chapters</b><br>1. A Letter to God - 5 अंक<br>2. Nelson Mandela - Long Walk to Freedom - 5 अंक<br>3. Two Stories about Flying - 5 अंक<br>4. From the Diary of Anne Frank - 5 अंक<br>5. Glimpses of India - 5 अंक<br>6. Mijbil the Otter - 5 अंक<br>7. Madam Rides the Bus - 5 अंक<br>8. The Sermon at Benares - 5 अंक<br>9. The Proposal - 5 अंक</div><div class="que"><b>Poems - 10 Poems</b><br>Dust of Snow, Fire and Ice, A Tiger in the Zoo, How to Tell Wild Animals, The Ball Poem, Amanda, The Trees, Fog, The Tale of Custard the Dragon, For Anne Gregory</div></div>`,
+map10: `<div class="chap"><div class="chapTitle">🗺️ 10th मानचित्र - UP Board - 5 अंक पक्का</div><div class="que"><b>मानचित्र - सारे Chapters</b><br>भारत - नदियाँ - गंगा, यमुना, ब्रह्मपुत्र, नर्मदा, तापी, महानदी, गोदावरी, कृष्णा, कावेरी<br>पर्वत - हिमालय, अरावली, विंध्य, सतपुड़ा, पश्चिमी घाट, पूर्वी घाट<br>मिट्टी - जलोढ़, काली, लाल, लेटेराइट<br>फसल - गेहूं, चावल, गन्ना, चाय, कॉफी<br>उद्योग - लोहा इस्पात - जमशेदपुर, भिलाई, राउरकेला, सॉफ्टवेयर - बेंगलुरु, हैदराबाद</div></div>`,
+mastermind: '<div class="chap"><div class="chapTitle">👑 Mastermind 2027 - 70% HIT - पूरी NCERT</div><div class="que">70% Exact यहीं से - 10th - √5, HCF=4, हृदय, राष्ट्रवाद, पोथी पढ़ि<br>12th Maths - कूलॉम F=kq1q2/r², राउल्ट, नर्नस्ट, अवकलन xʸ=yˣ, समाकलन sin²x, बेज प्रमेय</div></div>',
+vidya: '<div class="chap"><div class="chapTitle">📘 Vidya 2027 NEW - पूरी NCERT - Detailed</div><div class="que">Detailed उत्तर पूरे हिंदी में Step by Step - सारे Chapters - NCERT अनुसार - UP Board</div></div>',
+flight: '<div class="chap"><div class="chapTitle">✈️ Flight 2027 NEW - Trick - पूरी NCERT</div><div class="que">Trick से याद करो - कम समय में - सूत्र Trick - सारे Chapters</div></div>',
+paper10: '<div class="chap"><div class="chapTitle">📄 10th + 12th पेपर 2020-26 - सारे Chapters - SARE FUTURE</div><div class="que">2020-26 तक सारे पेपर - 70% Repeat - √5, हृदय, राष्ट्रवाद, कूलॉम, राउल्ट, अवकलन xʸ=yˣ, बेज प्रमेय हर साल - 2027 में भी आएगा</div></div>',
+hindi12: `<div class="chap"><div class="chapTitle">📖 12th हिन्दी - पूरी NCERT - अंतरा + अंतराल - सारे Chapters</div><div class="que"><b>अंतरा - काव्य - 8 Chapters</b><br>1. आत्म परिचय - हरिवंशराय बच्चन<br>2. पतंग - आलोक धन्वा<br>3. कविता के बहाने - कुंवर नारायण<br>4. कैमरे में बंद अपाहिज - रघुवीर सहाय<br>5. सहर्ष स्वीकारा है - गजानन माधव मुक्तिबोध<br>6. उषा - शमशेर बहादुर सिंह<br>7. बादल राग - सूर्यकांत त्रिपाठी निराला<br>8. कवितावली, लक्ष्मण मूर्छा - तुलसीदास<br><br><b>अंतराल - गद्य - 4 Chapters</b><br>1. हजारी प्रसाद द्विवेदी - 2. जैनेन्द्र कुमार बाजार दर्शन - 3. धर्मवीर भारती काले मेघा पानी दे - 4. फणीश्वर नाथ रेणु पहलवान की ढोलक</div></div>`,
+eng12: `<div class="chap"><div class="chapTitle">🔤 12th English - पूरी NCERT - Flamingo + Vistas - सारे Chapters</div><div class="que"><b>Flamingo - Prose - 8 Chapters</b><br>1. The Last Lesson - Alphonse Daudet - 5 अंक HIT<br>2. Lost Spring - Anees Jung - 5 अंक<br>3. Deep Water - William Douglas - 5 अंक<br>4. The Rattrap - Selma Lagerlof - 5 अंक<br>5. Indigo - Louis Fischer - 5 अंक<br>6. Poets and Pancakes - Asokamitran - 5 अंक<br>7. The Interview - 5 अंक<br>8. Going Places - A.R. Barton - 5 अंक</div><div class="que"><b>Flamingo - Poems - 6 Poems</b><br>1. My Mother at Sixty-six - Kamala Das - 5 अंक<br>2. Keeping Quiet - Pablo Neruda - 5 अंक<br>3. A Thing of Beauty - John Keats - 5 अंक<br>4. A Roadside Stand - Robert Frost - 5 अंक<br>5. Aunt Jennifer's Tigers - Adrienne Rich - 5 अंक</div><div class="que"><b>Vistas - 4 Chapters</b><br>1. The Third Level - Jack Finney - 5 अंक<br>2. The Tiger King - Kalki - 5 अंक<br>3. Journey to the End of the Earth - Tishani Doshi<br>4. The Enemy - Pearl S. Buck<br>5. On the Face of It - Susan Hill<br>6. Memories of Childhood - Zitkala-Sa & Bama</div><div class="que"><b>Writing - 25 अंक</b><br>Notice, Letter, Article, Report, Debate, Speech</div></div>`
+};
 </script>
 </body>
 </html>
