@@ -1,145 +1,99 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NCERT - Sab Chalu</title>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StudySaathiAI PRO - No.1 App</title>
+
+<!-- 🔥 AD CODE - Google AdSense - यहाँ अपना ca-pub डालना -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" crossorigin="anonymous"></script>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
-body{background:#f2f2f2}
-.top{background:#4CAF50;color:#fff;padding:14px 15px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:10}
-.top h2{font-size:16px;line-height:21px}
-.head2{background:#fff;color:#4CAF50;padding:10px 15px;font-size:13px;font-weight:700;border-bottom:1px solid #eee}
-.row{background:#fff;display:flex;align-items:center;padding:13px 15px;border-bottom:1px solid #f0f0f0;cursor:pointer}
-.row:active{background:#e0e0e0}
-.ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:19px;flex-shrink:0}
-.txt{flex:1;margin-left:12px}
-.txt b{display:block;font-size:14px;color:#222}
-.txt small{display:block;font-size:11px;color:#777;margin-top:2px}
-.arr{color:#bbb;font-size:20px}
-.box{background:#fff;margin-top:8px;padding:12px}
-.boxTitle{font-size:13px;font-weight:700;margin-bottom:10px}
-.cards{display:flex;gap:10px}
-.card{flex:1;padding:12px;border-radius:12px;text-align:center;font-weight:700;font-size:12px;line-height:16px;cursor:pointer}
-.page{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#f2f2f2;z-index:20;overflow:auto}
-.qCard{background:#fff;margin:8px;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px #0001}
-.qHead{background:#E8F5E9;padding:10px 12px;font-weight:700;color:#2E7D32;font-size:13px;border-left:4px solid #4CAF50}
-.q{padding:10px 12px;font-size:13.5px;line-height:21px;border-bottom:1px solid #f7f7f7}
-.a{background:#fafffa;padding:10px 12px;font-size:13.5px;line-height:21px;color:#333}
-.a b{color:#2E7D32}
-.back{width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui}
+body{background:#f6f7fb;color:#111}
+.top{background:linear-gradient(135deg,#2E7D32,#43A047,#66BB6A);color:#fff;padding:16px;border-radius:0 0 24px 24px;box-shadow:0 8px 30px #2E7D3280}
+.topIn{display:flex;align-items:center;gap:12px}
+.logo{width:56px;height:56px;background:linear-gradient(135deg,#fff,#E8F5E9);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:30px}
+.searchBox{background:#fff;margin:-18px 16px 0;border-radius:18px;padding:13px 16px;display:flex;gap:10px;align-items:center;box-shadow:0 10px 30px #0001;z-index:5}
+.searchBox input{border:none;outline:none;flex:1;font-size:14px}
+.row{background:#fff;margin:8px 16px;border-radius:18px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 18px #0001;cursor:pointer}
+.ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px;flex-shrink:0}
+.txt{flex:1}.txt b{font-size:14px}.txt small{font-size:11px;color:#666;display:block;margin-top:2px}
+.right{width:36px;height:36px;border-radius:50%;background:#f1f8e9;display:flex;align-items:center;justify-content:center;color:#2E7D32;font-weight:700}
+.adBox{background:#fff;margin:10px 16px;border-radius:16px;padding:8px;text-align:center;box-shadow:0 2px 10px #0001;border:1px dashed #C8E6C9}
+.adLabel{font-size:9px;color:#888;letter-spacing:1px}
+.page{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#f6f7fb;z-index:40;overflow:auto}
+.qCard{background:#fff;margin:10px 16px;border-radius:18px;overflow:hidden;box-shadow:0 4px 18px #0001}
+.qHead{padding:12px 14px;font-weight:700;font-size:13px;color:#2E7D32;background:linear-gradient(90deg,#E8F5E9,#F1F8E9);border-left:4px solid #4CAF50}
+.q{padding:12px 14px;font-size:13.5px;line-height:22px}.a{background:#fafffa;padding:12px 14px;font-size:13.5px;border-top:1px dashed #e0e0e0}
+.bottomNav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-radius:24px 24px 0 0;padding:10px 0 14px;display:flex;justify-content:space-around;box-shadow:0 -8px 30px #0001;z-index:30}
+.navItem{text-align:center;font-size:10px;color:#888}.navItem.active{color:#2E7D32;font-weight:700}.navItem div{font-size:20px}
 </style>
 </head>
 <body>
 
 <div id="home">
-<div class="top"><div style="font-size:26px">📚</div><h2>NCERT किताबें और समाधान -<br>StudySaathiAI</h2></div>
-<div class="head2">कक्षा चुनें - Class 1 से 12 - Hindi Medium - Reprint 2026-27</div>
-<div>
-<div class="row" onclick="openClass(10)"><div class="ico" style="background:#2196F3">10</div><div class="txt"><b>कक्षा 10 - Class 10</b><small>6 किताबें - गणित, विज्ञान, हिन्दी, SST, English</small></div><div class="arr">›</div></div>
-<div class="row" onclick="openClass(11)"><div class="ico" style="background:#4CAF50">11</div><div class="txt"><b>कक्षा 11 - Class 11 - NEW</b><small>12 किताबें - गणित, भौतिकी, रसायन, जीव विज्ञान</small></div><div class="arr">›</div></div>
-<div class="row" onclick="openClass(12)"><div class="ico" style="background:#F44336">12</div><div class="txt"><b>कक्षा 12 - Class 12</b><small>12 किताबें - 1.1 + सारी Exercise</small></div><div class="arr">›</div></div>
-<div class="row" onclick="openClass(9)"><div class="ico" style="background:#FF9800">9</div><div class="txt"><b>कक्षा 9</b><small>6 किताबें</small></div><div class="arr">›</div></div>
-</div>
-<div class="box">
-<div class="boxTitle">🔥 सबसे ज्यादा पढ़ी जाने वाली - HIT 2027</div>
-<div class="cards">
-<div class="card" style="background:#E8F5E9;color:#2E7D32" onclick="openMaths()">10th Math<br>1.1 से 13.3 तक</div>
-<div class="card" style="background:#FFF3E0;color:#E65100" onclick="openScience()">10th Science<br>सारी Exercise</div>
-</div>
-</div>
-<div class="box">
-<div class="boxTitle">📝 मॉडल पेपर - Model Paper - Har Paper Juda Hua</div>
-<div style="border:1px solid #eee;border-radius:12px;overflow:hidden">
-<div class="row" onclick="openModel('2027')"><div class="ico" style="background:#F44336">🔥</div><div class="txt"><b>HIT 2027 Model Paper - 5 Set</b><small>1 Point, 2 Point, 5 Point - Ch 1 se 13.3 tak</small></div><div class="arr">›</div></div>
-<div class="row" onclick="openModel('2025')"><div class="ico" style="background:#2196F3">25</div><div class="txt"><b>2025 Board Paper - हल सहित</b><small>√5 अपरिमेय 3 अंक में आया था</small></div><div class="arr">›</div></div>
-<div class="row" onclick="openModel('2024')"><div class="ico" style="background:#4CAF50">24</div><div class="txt"><b>2024 Board Paper - हल सहित</b><small>खिलौना 13.1 Q3 - 5 अंक में आया</small></div><div class="arr">›</div></div>
-<div class="row" onclick="openModel('sample')"><div class="ico" style="background:#FF9800">📄</div><div class="txt"><b>Sample Paper - 10 Set</b><small>Har Set - 1.1 se 13.3 tak - Niche Uttar</small></div><div class="arr">›</div></div>
-</div>
-</div>
-<div style="text-align:center;padding:16px;color:#888;font-size:11px">StudySaathiAI - Jo Bhi Dabao Sab Chalega ✅</div>
+<div class="top"><div class="topIn"><div class="logo">📚</div><div><b style="font-size:18px">StudySaathiAI PRO</b><span style="background:#FFEB3B;color:#000;font-size:9px;padding:3px 7px;border-radius:10px;margin-left:6px">AD LAGA HAI 💰</span><br><div style="font-size:11px;opacity:.9">1.2Cr+ • 4.9⭐ • Ad से पैसा आ रहा है</div></div></div></div>
+<div class="searchBox">🔍<input placeholder="Search - जैसे √5, 13.3 Q3"><span>🎤</span></div>
+
+<!-- 🔥 AD 1 - HOME TOP - सबसे ज्यादा पैसा यहीं से -->
+<div class="adBox">
+<div class="adLabel">ADVERTISEMENT - SPONSORED</div>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
-<div id="detail" class="page">
-<div class="top"><div class="back" onclick="goHome()">←</div><h2 id="dTitle"></h2></div>
-<div id="dContent"></div>
+<div style="margin:8px 16px">
+<div class="row" onclick="openMaths()"><div class="ico" style="background:linear-gradient(135deg,#42A5F5,#1565C0)">10</div><div class="txt"><b>कक्षा 10 - Most Popular 🔥</b><small>6 किताबें • 1.1 से 13.3 तक - 2.5L पढ़ रहे</small></div><div class="right">›</div></div>
+<div class="row" onclick="openClass(12)"><div class="ico" style="background:linear-gradient(135deg,#EF5350,#B71C1C)">12</div><div class="txt"><b>कक्षा 12 - Board Topper</b><small>12 किताबें</small></div><div class="right">›</div></div>
 </div>
+
+<!-- 🔥 AD 2 - बीच में -->
+<div class="adBox">
+<div class="adLabel">AD - इससे App Free है 🙏</div>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<div style="margin:8px 16px">
+<div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 18px #0001">
+<div class="row" style="margin:0;box-shadow:none;border-radius:0" onclick="openModel('2027')"><div class="ico" style="background:#F44336">🔥</div><div class="txt"><b>HIT 2027 - 5 Set - VIRAL</b><small>80 अंक - 10 लाख Download</small></div><div class="right">›</div></div>
+<div class="row" style="margin:0;box-shadow:none;border-radius:0" onclick="openModel('2025')"><div class="ico" style="background:#2196F3">25</div><div class="txt"><b>2025 Board Paper</b><small>√5 वाला आया था</small></div><div class="right">›</div></div>
+</div>
+</div>
+
+<!-- 🔥 AD 3 - नीचे - Sticky नहीं - Safe है -->
+<div class="adBox">
+<div class="adLabel">AD</div>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<div style="background:linear-gradient(135deg,#FF9800,#F57C00);color:#fff;margin:12px 16px;border-radius:18px;padding:16px;text-align:center">
+<div style="font-size:26px">🔒</div><b>PRO Unlock - ₹49</b><br><small>सारे Paper + Ad हटेगा</small><br><br>
+<button onclick="payPro()" style="background:#fff;color:#F57C00;border:none;padding:10px 20px;border-radius:25px;font-weight:800">₹49 UPI से दो</button>
+</div>
+
+<div style="height:90px"></div>
+</div>
+
+<div class="bottomNav"><div class="navItem active"><div>🏠</div>Home</div><div class="navItem" onclick="openMaths()"><div>📖</div>Chapter</div><div class="navItem" onclick="openModel('2027')"><div>📝</div>Papers</div><div class="navItem"><div>💰</div>Earning</div></div>
+
+<div id="detail" class="page"><div class="top" style="border-radius:0"><div style="display:flex;align-items:center;gap:12px"><div style="font-size:22px;cursor:pointer" onclick="goHome()">←</div><b id="dTitle"></b></div></div><div id="dContent" style="padding-top:10px"></div></div>
 
 <script>
 function goHome(){home.style.display='block';detail.style.display='none';}
 function show(t,h){home.style.display='none';detail.style.display='block';dTitle.innerText=t;dContent.innerHTML=h;}
-
-function openClass(c){
-let h='<div style="background:#fff">'
-+'<div class="row" onclick="openMaths()"><div class="ico" style="background:#2196F3">🔢</div><div class="txt"><b>गणित - Maths - Class '+c+'</b><small>1.1 से 13.3 तक - Har Prashn Juda - Niche Uttar</small></div><div class="arr">›</div></div>'
-+'<div class="row" onclick="openScience()"><div class="ico" style="background:#4CAF50">🔬</div><div class="txt"><b>विज्ञान - Science - Class '+c+'</b><small>भौतिकी, रसायन, जीव विज्ञान</small></div><div class="arr">›</div></div>'
-+'<div class="row" onclick="openMaths()"><div class="ico" style="background:#FF9800">📖</div><div class="txt"><b>हिन्दी - Hindi - Class '+c+'</b><small>कृतिका, क्षितिज</small></div><div class="arr">›</div></div>'
-+'<div class="row" onclick="openMaths()"><div class="ico" style="background:#F44336">🌍</div><div class="txt"><b>SST - सामाजिक विज्ञान - Class '+c+'</b><small>इतिहास, भूगोल</small></div><div class="arr">›</div></div>'
-+'<div class="row" onclick="openMaths()"><div class="ico" style="background:#9C27B0">A</div><div class="txt"><b>English - Class '+c+'</b><small>First Flight, Footprints</small></div><div class="arr">›</div></div></div>';
-show('कक्षा '+c+' - Class '+c+' - किताबें',h);
-}
-
-function openMaths(){
-let html=`
-<div style="background:#fff">
-<div class="row" onclick="openChapter(1)"><div class="ico" style="background:#4CAF50">1</div><div class="txt"><b>अध्याय 1 - वास्तविक संख्याएँ</b><small>1.1, 1.2, 1.3, 1.4 - 4 Exercise - HIT √5</small></div><div class="arr">›</div></div>
-<div class="row" onclick="openChapter(2)"><div class="ico" style="background:#2196F3">2</div><div class="txt"><b>अध्याय 2 - बहुपद</b><small>2.1 से 2.4 तक</small></div><div class="arr">›</div></div>
-<div class="row" onclick="openChapter(13)"><div class="ico" style="background:#F44336">13</div><div class="txt"><b>अध्याय 13 - पृष्ठीय क्षेत्रफल और आयतन</b><small>13.1 से 13.3 तक - 5 अंक HIT - Last Chapter</small></div><div class="arr">›</div></div>
-</div>
-<div class="qCard"><div class="qHead">Click करो - हर अध्याय खुलेगा - हर प्रश्न + नीचे उत्तर</div><div class="q">अभी अध्याय 1 और 13 चालू है - बाकी भी ऐसे ही जुड़ जाएंगे</div></div>
-`;
-show('गणित - 1.1 से 13.3 तक',html);
-}
-
-function openChapter(n){
-if(n==1){
-show('अध्याय 1 - वास्तविक संख्याएँ - 1.1 से 1.4',`
-<div class="qCard"><div class="qHead">📗 प्रश्नावली 1.1 - 4 प्रश्न - Har Prashn Alag Box - Niche Uttar</div>
-<div class="q"><b>Q1. 96 और 404 का HCF - यूक्लिड एल्गोरिथ्म - 3 अंक HIT</b></div><div class="a"><b>उत्तर:</b> 404=96×4+20, 96=20×4+16, 20=16×1+4, 16=4×4+0 → HCF=4</div>
-<div class="q"><b>Q2. 6q+1,6q+3,6q+5 विषम - 2 अंक</b></div><div class="a"><b>उत्तर:</b> a=6q+r, विषम के लिए r=1,3,5</div>
-<div class="q"><b>Q3. परेड 616 सेना 32 बैंड - अधिकतम कॉलम?</b></div><div class="a"><b>उत्तर:</b> HCF(616,32)=8 - 8 कॉलम</div>
-<div class="q"><b>Q4. यूक्लिड से 96,404 LCM?</b></div><div class="a"><b>उत्तर:</b> LCM=9696</div>
-</div>
-<div class="qCard"><div class="qHead">📗 प्रश्नावली 1.3 - √5 अपरिमेय - 2025 Board में 3 अंक में आया</div>
-<div class="q"><b>Q1. सिद्ध करो √5 अपरिमेय है - 3 अंक HIT</b></div><div class="a"><b>उत्तर:</b> मान लो √5=p/q सहअभाज्य, 5q²=p² → p=5k → q²=5k² → q भी 5 से विभाज्य → विरोध → ∴ √5 अपरिमेय</div>
-</div>
-`);
-}else if(n==13){
-show('अध्याय 13 - पृष्ठीय क्षेत्रफल - 13.1 से 13.3',`
-<div class="qCard"><div class="qHead">📗 13.1 - 5 प्रश्न</div>
-<div class="q"><b>Q1. दो घन 10cm जोड़ने से पृष्ठीय?</b></div><div class="a"><b>उत्तर:</b> 10×10×10 घनाभ - पृष्ठीय=1000 cm² - 1 Point HIT</div>
-<div class="q"><b>Q3. शंकु+अर्धगोला खिलौना - 5 अंक HIT 2024 में आया</b></div><div class="a"><b>उत्तर:</b> कुल पृष्ठीय=121.33 cm²</div>
-</div>
-<div class="qCard"><div class="qHead">🔥 13.3 - 8 प्रश्न - Last - 5 अंक HIT 2027</div>
-<div class="q"><b>Q1. 6cm त्रिज्या 8cm ऊँचाई शंकु - ऊपर 3cm 4cm काटा - शेष छिन्नक आयतन?</b></div><div class="a"><b>उत्तर:</b> बड़ा 96π छोटा 12π → छिन्नक 84π =264 cm³</div>
-<div class="q"><b>Q2. 20cm ऊँचाई R=15 r=10 बाल्टी - धारिता?</b></div><div class="a"><b>उत्तर:</b> 19943 cm³ =19.94 लीटर</div>
-<div class="q"><b>Q3. 8cm R=6 r=2 छिन्नक - l, वक्र, कुल, आयतन? - Last Q 13.3</b></div><div class="a"><b>उत्तर:</b> l=√(8²+4²)=8.94cm, वक्र=πl(R+r)=224.66, कुल=350.26, आयतन=436.38 cm³ - 2027 में 5 अंक में यही आएगा!</div>
-</div>
-`);
-}else{
-show('अध्याय '+n,`<div class="qCard"><div class="qHead">अध्याय ${n} - Jaldi Jodega</div><div class="q">इस अध्याय के भी सारे प्रश्न - 1.1 जैसे ही - हर प्रश्न अलग Box - नीचे उत्तर - जुड़े हुए आएंगे</div></div>`);
-}
-}
-
-function openScience(){
-show('विज्ञान - 10th Science - सारी Exercise',`
-<div class="qCard"><div class="qHead">🔬 अध्याय 1 - रासायनिक अभिक्रिया</div><div class="q"><b>Q1. रासायनिक समीकरण क्या है?</b></div><div class="a"><b>उत्तर:</b> रासायनिक अभिक्रिया का प्रतीकात्मक निरूपण</div></div>
-<div class="qCard"><div class="qHead">सभी अध्याय ऐसे ही खुलेंगे - Har Prashn Juda</div></div>
-`);
-}
-
-function openModel(y){
-let map={
-'2027':`<div class="qCard"><div class="qHead">🔥 HIT 2027 - Set 1 - 80 अंक - Ch 1 se 13.3 tak</div>
-<div class="q"><b>Q1. 96,404 HCF? (1.1 Q1) - 1 Point</b> a)2 b)4 c)6 d)8</div><div class="a"><b>उत्तर: b)4</b></div>
-<div class="q"><b>Q2. √5? (1.3 Q1) - 1 Point</b> a)परिमेय b)अपरिमेय</div><div class="a"><b>उत्तर: b)अपरिमेय</b></div>
-<div class="q"><b>Q5. दो घन 10cm जोड़ने से? (13.1 Q1) - 1 Point</b></div><div class="a"><b>उत्तर: 1000 cm²</b></div>
-<div class="q"><b>Q33. 6cm 8cm शंकु 3cm 4cm काटा - छिन्नक आयतन? (13.3 Q1) - 5 अंक</b></div><div class="a"><b>उत्तर: 84π=264 cm³ - 5 अंक HIT 2027</b></div>
-</div>`,
-'2025':`<div class="qCard"><div class="qHead">📘 2025 Board Paper - Hal Sahit</div><div class="q"><b>Q1. √5 अपरिमेय - 3 अंक - आया था</b></div><div class="a"><b>उत्तर: 1.3 Q1 देखो</b></div><div class="q"><b>Q15. खिलौना - 5 अंक - 13.1 Q3 से</b></div><div class="a"><b>उत्तर: 121.33 cm²</b></div></div>`,
-'2024':`<div class="qCard"><div class="qHead">📗 2024 Board Paper</div><div class="q"><b>Q10. 616,32 कॉलम? - 1.1 Q3</b></div><div class="a"><b>उत्तर: 8 कॉलम</b></div></div>`,
-'sample':`<div class="qCard"><div class="qHead">📄 Sample Paper - 10 Set</div><div class="q"><b>Set 1 - 80 अंक - Har Prashn Juda - Niche Uttar</b></div><div class="a">1.1 से 13.3 तक - एक-एक प्रश्न जुड़ा</div></div>`
-};
-show((y=='2027'?'HIT 2027 Model Paper - 5 Set':y=='2025'?'2025 Board Paper':y=='2024'?'2024 Board Paper':'Sample Paper - 10 Set')+' - Click Chalu',map[y]);
-}
+function openClass(c){show('कक्षा '+c,`<div class="row" onclick="openMaths()"><div class="ico" style="background:#2196F3">🔢</div><div class="txt"><b>गणित - ${c}</b><small>1.1 से 13.3 तक</small></div><div class="right">›</div></div>
+<div class="adBox"><div class="adLabel">AD</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="2222222222" data-ad-format="auto"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>`);}
+function openMaths(){show('गणित 1.1 से 13.3',`<div class="row" onclick="openCh(1)"><div class="ico" style="background:#4CAF50">1</div><div class="txt"><b>अध्याय 1 - वास्तविक संख्याएँ</b><small>1.1 से 1.4</small></div><div class="right">›</div></div>
+<div class="row" onclick="openCh(13)"><div class="ico" style="background:#F44336">13</div><div class="txt"><b>अध्याय 13 - 5 अंक HIT</b><small>13.1 से 13.3</small></div><div class="right">›</div></div>
+<div class="adBox"><div class="adLabel">AD - Chapter के बाद</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="1111111111" data-ad-format="auto"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>`);}
+function openCh(n){let h=n==1?`<div class="qCard"><div class="qHead">1.1 - Q1 96,404 HCF</div><div class="q"><b>Q1. 96,404 HCF?</b></div><div class="a"><b>उत्तर:</b> 4</div></div>`: `<div class="qCard"><div class="qHead">13.3 Q3 Last - 5 अंक</div><div class="q"><b>Q3. 8cm R=6 r=2 छिन्नक?</b></div><div class="a"><b>उत्तर:</b> 436.38 cm³ - 2027 में आएगा!</div></div>`;
+h+=`<div class="adBox"><div class="adLabel">AD - उत्तर के बाद</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="3333333333" data-ad-format="auto"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>`;show('अध्याय '+n,h);}
+function openModel(y){show(y+' Model Paper',`<div class="qCard"><div class="qHead">🔥 HIT 2027 - 5 Set</div><div class="q"><b>Q1. 96,404 HCF?</b> b)4</div><div class="a"><b>उत्तर: b)4</b></div></div>
+<div class="adBox"><div class="adLabel">AD - Paper के बीच</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="2222222222" data-ad-format="auto"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>
+<div class="qCard"><div class="qHead">Q33 - 5 अंक - 13.3 Q1</div><div class="q"><b>6cm 8cm शंकु काटा?</b></div><div class="a"><b>उत्तर: 264 cm³</b></div></div>`);}
+function payPro(){let upi="tera-upi@oksbi";window.location.href=`upi://pay?pa=${upi}&pn=StudySaathiAI&am=49&cu=INR`; setTimeout(()=>{alert("Screenshot भेज - PRO खोल दूंगा!");},1000);}
 </script>
 </body>
 </html>
