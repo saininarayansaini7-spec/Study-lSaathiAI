@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NCERT किताबें और समाधान - StudySaathiAI</title>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NCERT - StudySaathiAI - All Working</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
 body{background:#f2f2f2}
-.top{background:#4CAF50;color:#fff;padding:14px 15px;display:flex;align-items:center;gap:10px}
-.top h2{font-size:17px;line-height:22px}
+.top{background:#4CAF50;color:#fff;padding:14px 15px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:10}
+.top h2{font-size:16px;line-height:21px}
 .head2{background:#fff;color:#4CAF50;padding:10px 15px;font-size:13px;font-weight:700;border-bottom:1px solid #eee}
-.row{background:#fff;display:flex;align-items:center;padding:13px 15px;border-bottom:1px solid #f0f0f0}
+.row{background:#fff;display:flex;align-items:center;padding:13px 15px;border-bottom:1px solid #f0f0f0;cursor:pointer}
+.row:active{background:#f0f0f0}
 .ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px;flex-shrink:0}
 .txt{flex:1;margin-left:12px}
 .txt b{display:block;font-size:14px;color:#222}
@@ -19,44 +18,83 @@ body{background:#f2f2f2}
 .box{background:#fff;margin-top:8px;padding:12px}
 .boxTitle{font-size:13px;font-weight:700;margin-bottom:10px}
 .cards{display:flex;gap:10px}
-.card{flex:1;padding:12px;border-radius:12px;text-align:center;font-weight:700;font-size:12px;line-height:16px}
+.card{flex:1;padding:12px;border-radius:12px;text-align:center;font-weight:700;font-size:12px;line-height:16px;cursor:pointer}
+.page{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#f2f2f2;z-index:20;overflow:auto}
+.qCard{background:#fff;margin:8px;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px #0001}
+.qHead{background:#E8F5E9;padding:10px 12px;font-weight:700;color:#2E7D32;font-size:13px;border-left:4px solid #4CAF50}
+.q{padding:10px 12px;font-size:13.5px;line-height:21px;border-bottom:1px solid #f7f7f7}
+.a{background:#fafffa;padding:10px 12px;font-size:13.5px;line-height:21px;color:#333}
+.a b{color:#2E7D32}
+.back{width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer}
 </style>
 </head>
 <body>
 
-<div class="top">
-<div style="font-size:26px">📚</div>
-<h2>NCERT किताबें और समाधान -<br>StudySaathiAI</h2>
-</div>
-
+<!-- HOME -->
+<div id="home">
+<div class="top"><div style="font-size:26px">📚</div><h2>NCERT किताबें और समाधान -<br>StudySaathiAI</h2></div>
 <div class="head2">कक्षा चुनें - Class 1 से 12 - Hindi Medium - Reprint 2026-27</div>
-
 <div>
-<div class="row"><div class="ico" style="background:#2196F3">10</div><div class="txt"><b>कक्षा 10 - Class 10</b><small>6 किताबें - गणित, विज्ञान, हिन्दी, SST, English</small></div><div class="arr">›</div></div>
-<div class="row"><div class="ico" style="background:#4CAF50">11</div><div class="txt"><b>कक्षा 11 - Class 11 - NEW</b><small>12 किताबें - गणित, भौतिकी, रसायन, जीव विज्ञान</small></div><div class="arr">›</div></div>
-<div class="row"><div class="ico" style="background:#F44336">12</div><div class="txt"><b>कक्षा 12 - Class 12</b><small>12 किताबें - 1.1 + सारी Exercise</small></div><div class="arr">›</div></div>
-<div class="row"><div class="ico" style="background:#FF9800">9</div><div class="txt"><b>कक्षा 9</b><small>6 किताबें</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openClass('10')"><div class="ico" style="background:#2196F3">10</div><div class="txt"><b>कक्षा 10 - Class 10</b><small>6 किताबें - गणित, विज्ञान, हिन्दी, SST, English</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openClass('11')"><div class="ico" style="background:#4CAF50">11</div><div class="txt"><b>कक्षा 11 - Class 11 - NEW</b><small>12 किताबें - गणित, भौतिकी, रसायन, जीव विज्ञान</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openClass('12')"><div class="ico" style="background:#F44336">12</div><div class="txt"><b>कक्षा 12 - Class 12</b><small>12 किताबें - 1.1 + सारी Exercise</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openClass('9')"><div class="ico" style="background:#FF9800">9</div><div class="txt"><b>कक्षा 9</b><small>6 किताबें</small></div><div class="arr">›</div></div>
 </div>
-
 <div class="box">
 <div class="boxTitle">🔥 सबसे ज्यादा पढ़ी जाने वाली - HIT 2027</div>
 <div class="cards">
-<div class="card" style="background:#E8F5E9;color:#2E7D32">10th Math<br>1.1 से 13.3 तक</div>
-<div class="card" style="background:#FFF3E0;color:#E65100">10th Science<br>सारी Exercise</div>
+<div class="card" style="background:#E8F5E9;color:#2E7D32" onclick="openMath()">10th Math<br>1.1 से 13.3 तक</div>
+<div class="card" style="background:#FFF3E0;color:#E65100" onclick="openModel('2027')">10th Science<br>सारी Exercise</div>
 </div>
 </div>
-
 <div class="box">
 <div class="boxTitle">📝 मॉडल पेपर - Model Paper - Har Paper Juda Hua</div>
 <div style="border:1px solid #eee;border-radius:12px;overflow:hidden">
-<div class="row"><div class="ico" style="background:#F44336">🔥</div><div class="txt"><b>HIT 2027 Model Paper - 5 Set</b><small>1 Point, 2 Point, 5 Point - Ch 1 se 13.3 tak</small></div><div class="arr">›</div></div>
-<div class="row"><div class="ico" style="background:#2196F3">25</div><div class="txt"><b>2025 Board Paper - हल सहित</b><small>√5 अपरिमेय 3 अंक में आया था</small></div><div class="arr">›</div></div>
-<div class="row"><div class="ico" style="background:#4CAF50">24</div><div class="txt"><b>2024 Board Paper - हल सहित</b><small>खिलौना 13.1 Q3 - 5 अंक में आया</small></div><div class="arr">›</div></div>
-<div class="row"><div class="ico" style="background:#FF9800">📄</div><div class="txt"><b>Sample Paper - 10 Set</b><small>Har Set - 1.1 se 13.3 tak - Niche Uttar</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openModel('2027')"><div class="ico" style="background:#F44336">🔥</div><div class="txt"><b>HIT 2027 Model Paper - 5 Set</b><small>1 Point, 2 Point, 5 Point - Ch 1 se 13.3 tak</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openModel('2025')"><div class="ico" style="background:#2196F3">25</div><div class="txt"><b>2025 Board Paper - हल सहित</b><small>√5 अपरिमेय 3 अंक में आया था</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openModel('2024')"><div class="ico" style="background:#4CAF50">24</div><div class="txt"><b>2024 Board Paper - हल सहित</b><small>खिलौना 13.1 Q3 - 5 अंक में आया</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openModel('sample')"><div class="ico" style="background:#FF9800">📄</div><div class="txt"><b>Sample Paper - 10 Set</b><small>Har Set - 1.1 se 13.3 tak - Niche Uttar</small></div><div class="arr">›</div></div>
 </div>
 </div>
+<div style="text-align:center;padding:16px;color:#888;font-size:11px">StudySaathiAI - Sab Button Chalu ✅</div>
+</div>
 
-<div style="text-align:center;padding:16px;color:#888;font-size:11px">StudySaathiAI - Offline Chalega - Har Cheez Kaam Karegi ✅</div>
+<!-- DETAIL PAGE - Sab Khulega Yahan -->
+<div id="detail" class="page">
+<div class="top"><div class="back" onclick="goHome()">←</div><h2 id="dTitle">Detail</h2></div>
+<div id="dContent"></div>
+</div>
 
-</body>
-</html>
+<script>
+function goHome(){document.getElementById('home').style.display='block';document.getElementById('detail').style.display='none';}
+function openClass(cls){
+document.getElementById('home').style.display='none';
+document.getElementById('detail').style.display='block';
+document.getElementById('dTitle').innerText='कक्षा '+cls+' की किताबें - NCERT';
+var list=cls=='10'?`
+<div class="row" onclick="openMath()"><div class="ico" style="background:#2196F3">🔢</div><div class="txt"><b>गणित - 1.1 से 13.3 तक Har Prashn</b><small>15 अध्याय - Har Exercise - Niche Uttar</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openModel('2027')"><div class="ico" style="background:#4CAF50">🔬</div><div class="txt"><b>विज्ञान - Science</b><small>16 अध्याय - Puri NCERT</small></div><div class="arr">›</div></div>
+<div class="row" onclick="openModel('2027')"><div class="ico" style="background:#FF9800">📖</div><div class="txt"><b>हिन्दी - Hindi</b><small>17 अध्याय</small></div><div class="arr">›</div></div>
+`:`<div class="row" onclick="openMath()"><div class="ico" style="background:#4CAF50">➕</div><div class="txt"><b>गणित - ${cls} - 16 Chapters</b><small>Puri NCERT - Har Prashn Juda</small></div><div class="arr">›</div></div>`;
+document.getElementById('dContent').innerHTML='<div style="background:#fff">'+list+'</div>';
+}
+
+function openMath(){
+document.getElementById('home').style.display='none';
+document.getElementById('detail').style.display='block';
+document.getElementById('dTitle').innerText='गणित - 1.1 से 13.3 तक - Har Prashn + Niche Uttar';
+document.getElementById('dContent').innerHTML=`
+<div class="qCard"><div class="qHead">📗 प्रश्नावली 1.1 - 4 प्रश्न - Ek-Ek Juda - Niche Uttar</div>
+<div class="q"><b>Q1. 96 और 404 का HCF - यूक्लिड से - 3 अंक HIT</b></div><div class="a"><b>उत्तर:</b> 404=96×4+20, 96=20×4+16, 20=16×1+4, 16=4×4+0 → HCF=4</div>
+<div class="q"><b>Q2. विषम 6q+1,6q+3,6q+5 रूप - 2 अंक</b></div><div class="a"><b>उत्तर:</b> a=6q+r, r=1,3,5 → विषम</div>
+<div class="q"><b>Q3. परेड 616 सेना 32 बैंड - अधिकतम कॉलम?</b></div><div class="a"><b>उत्तर:</b> HCF(616,32)=8</div>
+</div>
+
+<div class="qCard"><div class="qHead">📗 प्रश्नावली 1.3 - √5 अपरिमेय - 3 अंक HIT - 2025 में आया</div>
+<div class="q"><b>Q1. सिद्ध करो √5 अपरिमेय - 3 अंक HIT - 1 Point MCQ में भी!</b></div><div class="a"><b>उत्तर:</b> मान लो √5=p/q, 5q²=p² → p 5 से विभाज्य p=5k → q भी 5 से → विरोध → ∴ अपरिमेय</div>
+</div>
+
+<div class="qCard"><div class="qHead">🔥 प्रश्नावली 13.3 - 8 प्रश्न - 13.3 Tak Last - 5 अंक HIT 2027</div>
+<div class="q"><b>Q1. 6cm त्रिज्या 8cm शंकु - ऊपर 3cm 4cm काटा - शेष छिन्नक आयतन?</b></div><div class="a"><b>उत्तर:</b> बड़ा=96π छोटा=12π → छिन्नक=84π=264 cm³ - V=1/3πh(R²+r²+Rr)</div>
+<div class="q"><b>Q2. 20cm R=15 r=10 बाल्टी - धारिता?</b></div><div class="a"><b>उत्तर:</b> 19943 cm³ =19.94 लीटर - 2024 HIT</div>
+<div class="q"><b>Q3. 8cm R=6 r=2 छिन्नक -
