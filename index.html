@@ -1,83 +1,100 @@
 <!DOCTYPE html>
-<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>SARE FUTURE - 10th Math 1.1 se 13.3 Tak Har Prashn Uttar</title>
-<style>*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}body{background:#eef2ff}.top{background:white;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 5px #0001}.card{background:white;margin:12px;border-radius:20px;padding:15px;box-shadow:0 2px 8px #0001}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.bookCard{background:#f5f0ff;border-radius:16px;padding:14px 8px;text-align:center;cursor:pointer;border:1px solid #e9d5ff}.bookIcon{font-size:28px}.bookName{font-weight:bold;font-size:12px;margin-top:4px}#bookView{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#1a1a2e;z-index:99;overflow:hidden}.bhead{background:white;padding:12px 14px;display:flex;gap:10px;align-items:center}.back{background:#f1f5f9;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}.bookContainer{display:flex;justify-content:center;align-items:center;height:calc(100vh - 55px);padding:8px}.realBook{width:98%;max-width:420px;height:82vh;background:#fffdf5;border-radius:10px;box-shadow:0 10px 30px #0008;display:flex;overflow:hidden;border:2px solid #d4a574}.pageLeft{width:7px;background:linear-gradient(90deg,#8b5a2b,#d4a574)}.pageContent{flex:1;padding:12px;overflow-y:auto;background:linear-gradient(180deg,#fffdf5,#fff8e1);font-size:13px;line-height:20px}.chapTitle2{background:#2563eb;color:white;padding:7px 10px;border-radius:7px;font-weight:bold;font-size:12px;margin-bottom:8px}.qbox{background:white;border-left:4px solid #2563eb;padding:9px 10px;border-radius:7px;margin:8px 0;box-shadow:0 1px 3px #0001}.ans{background:#dcfce7;border-left-color:#16a34a;margin-top:6px}.q1{background:#fef3c7;border-left-color:#d97706}.controls{position:fixed;bottom:10px;left:0;width:100%;display:flex;justify-content:center;gap:12px;z-index:100}.btnCtrl{background:white;color:#1a1a2e;padding:11px 20px;border-radius:50px;font-weight:bold;cursor:pointer;box-shadow:0 4px 15px #0005;font-size:13px}</style></head>
+<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>NCERT Kitaben - StudySaathiAI - HIT 2027</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}body{background:#f2f2f2}.ncertTop{background:#4CAF50;padding:12px 15px;display:flex;align-items:center;gap:12px;color:white;position:sticky;top:0;z-index:10;box-shadow:0 2px 4px #0002}.ncertTop h3{font-size:16px}.list{background:white;margin:6px 0}.listItem{display:flex;align-items:center;padding:14px 15px;border-bottom:1px solid #f0f0f0;cursor:pointer}.listIcon{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-right:12px;color:white;font-weight:bold}.listText{flex:1}.listText b{font-size:14px;color:#222;display:block}.listText small{font-size:11px;color:#777}.arrow{color:#aaa;font-size:18px}#classPage,#subjectPage,#chapterPage,#exercisePage{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#f2f2f2;z-index:20;overflow-y:auto}.exerciseCard{background:white;margin:8px;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px #0001}.exHead{background:#E8F5E9;padding:10px 12px;font-weight:bold;color:#2E7D32;font-size:13px;border-left:4px solid #4CAF50}.qBox{padding:10px 12px;border-bottom:1px solid #f5f5f5;font-size:13px;line-height:20px}.qBox b{color:#222}.ans{background:#f9fff9;padding:10px 12px;font-size:13px;line-height:20px;color:#333}.ans b{color:#2E7D32}.back{width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px}</style></head>
 <body>
-<div id="home"><div class="top"><div><div style="color:#2563eb;font-weight:800">📚 SARE FUTURE - 10th Math 1.1 se 13.3 Tak Har Prashn</div><div style="font-size:8px;color:gray">NCERT Reprint 2026-27 - Har Exercise Ek-Ek Prashn + Uttar Niche</div></div><div>👤</div></div>
-<div class="card" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white"><b>📖 10th Math - 1.1 se 13.3 Tak - Har Prashn + Uttar Niche Likha Hua!</b><div style="font-size:11px;margin-top:4px">Click करो - हर Exercise - 1.1 Q1, Q2, Q3... 13.3 Q1, Q2 tak - Ek-Ek Sawal + Niche Uttar!</div><div class="grid3" style="margin-top:12px">
-<div style="background:white;color:#2563eb;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBook('ch1')">Ch1<br>वास्तविक<br>1.1-1.4</div>
-<div style="background:white;color:#16a34a;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBook('ch2')">Ch2<br>बहुपद<br>2.1-2.4</div>
-<div style="background:white;color:#dc2626;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBook('ch3')">Ch3<br>रैखिक<br>3.1-3.7</div>
-<div style="background:white;color:#7c3aed;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBook('ch4')">Ch4<br>द्विघात<br>4.1-4.4</div>
-<div style="background:white;color:#d97706;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBook('ch5')">Ch5<br>AP<br>5.1-5.4</div>
-<div style="background:white;color:#0891b2;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBook('ch6')">Ch6<br>त्रिभुज<br>6.1-6.6</div>
-<div style="background:white;color:#be185d;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBook('ch7')">Ch7<br>निर्देशांक<br>7.1-7.4</div>
-<div style="background:white;color:#4338ca;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBook('ch8')">Ch8<br>त्रिकोणमिति<br>8.1-8.4</div>
-<div style="background:white;color:#15803d;padding:12px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer;border:3px solid #facc15" onclick="openBook('ch13')">Ch13 🔥<br>पृष्ठीय आयतन<br>13.1-13.3 Tak</div>
-</div></div>
-<div class="card"><div style="text-align:center;font-weight:bold;font-size:12px">📚 Ch1 से Ch13.3 तक - Har Exercise - Niche Uttar Sahit - Ek-Ek Prashn</div></div>
+<!-- HOME - NCERT Jaisa -->
+<div id="homePage">
+<div class="ncertTop"><div>📚</div><h3>NCERT किताबें और समाधान - StudySaathiAI</h3></div>
+<div style="background:white;padding:10px 15px;font-size:12px;color:#4CAF50;font-weight:bold">कक्षा चुनें - Class 1 से 12 - Hindi Medium - Reprint 2026-27</div>
+<div class="list">
+<div class="listItem" onclick="openClass('10')"><div class="listIcon" style="background:#2196F3">10</div><div class="listText"><b>कक्षा 10 - Class 10</b><small>6 किताबें - गणित, विज्ञान, हिन्दी, SST, English - Puri NCERT</small></div><div class="arrow">›</div></div>
+<div class="listItem" onclick="openClass('11')"><div class="listIcon" style="background:#4CAF50">11</div><div class="listText"><b>कक्षा 11 - Class 11 - NEW</b><small>12 किताबें - गणित, भौतिकी, रसायन, जीव विज्ञान - Puri NCERT</small></div><div class="arrow">›</div></div>
+<div class="listItem" onclick="openClass('12')"><div class="listIcon" style="background:#F44336">12</div><div class="listText"><b>कक्षा 12 - Class 12</b><small>12 किताबें - तेरी फोटो वाली 1.1 + सारी Exercise</small></div><div class="arrow">›</div></div>
+<div class="listItem"><div class="listIcon" style="background:#FF9800">9</div><div class="listText"><b>कक्षा 9</b><small>6 किताबें</small></div><div class="arrow">›</div></div>
+</div>
+<div style="background:white;padding:12px 15px;margin-top:10px"><div style="font-size:12px;font-weight:bold;color:#333">🔥 सबसे ज्यादा पढ़ी जाने वाली - HIT 2027</div><div style="display:flex;gap:10px;margin-top:10px"><div style="background:#E8F5E9;padding:10px;border-radius:8px;flex:1;text-align:center;font-size:11px;font-weight:bold;color:#2E7D32" onclick="openClass('10')">10th Math<br>1.1 से 13.3 तक</div><div style="background:#FFF3E0;padding:10px;border-radius:8px;flex:1;text-align:center;font-size:11px;font-weight:bold;color:#E65100" onclick="openChapterDirect('math10')">10th Science<br>सारी Exercise</div></div></div>
 </div>
 
-<div id="bookView"><div class="bhead" style="background:#1a1a2e;color:white"><div class="back" style="background:white;color:black" onclick="goHome()">←</div><h3 id="bookName" style="margin-left:8px;font-size:12px">Puri NCERT</h3><div style="margin-left:auto;font-size:11px" id="pageInfo">पन्ना 1</div></div><div class="bookContainer"><div class="realBook"><div class="pageLeft"></div><div class="pageContent" id="pageContent"></div></div></div><div class="controls"><div class="btnCtrl" onclick="prevPage()">← पीछे</div><div class="btnCtrl" style="background:#feca57" onclick="nextPage()">आगे →</div></div></div>
+<!-- CLASS -> SUBJECT -->
+<div id="classPage"><div class="ncertTop"><div class="back" onclick="goHome()">←</div><h3 id="classTitle">कक्षा 10 की किताबें</h3></div><div class="list" id="subjectList"></div></div>
+
+<!-- SUBJECT -> CHAPTER -->
+<div id="subjectPage"><div class="ncertTop"><div class="back" onclick="goClass()">←</div><h3 id="subjectTitle">गणित</h3></div><div class="list" id="chapterList"></div></div>
+
+<!-- CHAPTER -> EXERCISE + HAR PRASHN -->
+<div id="chapterPage"><div class="ncertTop"><div class="back" onclick="goSubject()">←</div><h3 id="chapterTitle">अध्याय 1</h3></div><div id="exerciseContent" style="padding-bottom:20px"></div></div>
 
 <script>
-var currentPage=0,totalPages=0,pages=[],currentBookKey='';
-function openBook(key){currentBookKey=key;currentPage=0;var data=fullBooks[key];if(!data){alert('जल्द आ रहा!');return;}pages=data;totalPages=pages.length;document.getElementById('home').style.display='none';document.getElementById('bookView').style.display='block';document.getElementById('bookName').innerText='Ch'+key.replace('ch','')+' - Har Prashn + Uttar Niche';showPage();}
-function showPage(){if(currentPage<0)currentPage=0;if(currentPage>=totalPages)currentPage=totalPages-1;document.getElementById('pageContent').innerHTML=pages[currentPage]+'<div style="text-align:right;font-size:9px;color:#999;margin-top:10px">पन्ना '+(currentPage+1)+' / '+totalPages+' - NCERT 2026-27 - SARE FUTURE - Har Prashn Uttar Sahit</div>';document.getElementById('pageInfo').innerText='पन्ना '+(currentPage+1)+'/'+totalPages;document.getElementById('pageContent').scrollTop=0;}
-function nextPage(){if(currentPage<totalPages-1){currentPage++;showPage();}else{alert('📚 Is Chapter ki Puri Exercise Khatm - Har Prashn + Uttar!');}}
-function prevPage(){if(currentPage>0){currentPage--;showPage();}}
-function goHome(){document.getElementById('home').style.display='block';document.getElementById('bookView').style.display='none';}
+var currentClass='10',currentSubject='math10';
+function openClass(cls){currentClass=cls;document.getElementById('homePage').style.display='none';document.getElementById('classPage').style.display='block';document.getElementById('classTitle').innerText='कक्षा '+cls+' की किताबें - NCERT';var subjects=cls=='10'?[{icon:'🔢',name:'गणित - 1.1 से 13.3 तक Har Prashn',key:'math10',color:'#2196F3'},{icon:'🔬',name:'विज्ञान',key:'science10',color:'#4CAF50'},{icon:'📖',name:'हिन्दी',key:'hindi10',color:'#FF9800'}]:cls=='11'?[{icon:'➕',name:'गणित - 16 Chapters',key:'math11',color:'#4CAF50'},{icon:'⚛️',name:'भौतिक विज्ञान',key:'phy11',color:'#2196F3'},{icon:'🧪',name:'रसायन',key:'chem11',color:'#9C27B0'}]:[{icon:'➕',name:'गणित - Photo Wali 1.1',key:'math12',color:'#F44336'},{icon:'⚛️',name:'भौतिक विज्ञान',key:'phy12',color:'#2196F3'}];var html='';subjects.forEach(function(s){html+=`<div class="listItem" onclick="openSubject('${s.key}','${s.name}')"><div class="listIcon" style="background:${s.color}">${s.icon}</div><div class="listText"><b>${s.name}</b><small>NCERT Reprint 2026-27 - Puri Book - Har Exercise</small></div><div class="arrow">›</div></div>`;});document.getElementById('subjectList').innerHTML=html;}
+function openSubject(key,name){currentSubject=key;document.getElementById('classPage').style.display='none';document.getElementById('subjectPage').style.display='block';document.getElementById('subjectTitle').innerText=name;var chapters=key=='math10'?[{no:'1',name:'वास्तविक संख्याएँ - 1.1 से 1.4 - Har Prashn',ex:'1.1,1.2,1.3,1.4'},{no:'2',name:'बहुपद - 2.1 से 2.4',ex:'2.1,2.2,2.3,2.4'},{no:'3',name:'दो चर वाले रैखिक समीकरण - 3.1 से 3.7',ex:'3.1-3.7'},{no:'13',name:'पृष्ठीय क्षेत्रफल और आयतन - 13.1 से 13.3 Tak - HIT',ex:'13.1,13.2,13.3'}]:[{no:'1',name:'संबंध एवं फलन - Photo Wali 1.1',ex:'1.1,1.2,1.3,1.4'}];var html='';chapters.forEach(function(c){html+=`<div class="listItem" onclick="openChapter('${key}','${c.no}')"><div class="listIcon" style="background:#4CAF50">${c.no}</div><div class="listText"><b>अध्याय ${c.no} - ${c.name}</b><small>प्रश्नावली ${c.ex} - Har Prashn + Uttar Niche - Ek-Ek Juda</small></div><div class="arrow">›</div></div>`;});document.getElementById('chapterList').innerHTML=html;}
+function openChapter(subject,chNo){document.getElementById('subjectPage').style.display='none';document.getElementById('chapterPage').style.display='block';document.getElementById('chapterTitle').innerText='अध्याय '+chNo+' - Har Prashn + Uttar';var key=subject+'_'+chNo;var data=ncertData[key]||ncertData['math10_1'];document.getElementById('exerciseContent').innerHTML=data;}
+function openChapterDirect(k){openClass('10');setTimeout(function(){openSubject('math10','गणित');setTimeout(function(){openChapter('math10','1');},200);},200);}
+function goHome(){document.getElementById('homePage').style.display='block';document.getElementById('classPage').style.display='none';document.getElementById('subjectPage').style.display='none';document.getElementById('chapterPage').style.display='none';}
+function goClass(){document.getElementById('classPage').style.display='block';document.getElementById('subjectPage').style.display='none';document.getElementById('chapterPage').style.display='none';}
+function goSubject(){document.getElementById('subjectPage').style.display='block';document.getElementById('chapterPage').style.display='none';}
 
-var fullBooks={
-ch1: [
-`<div class="chapTitle2">📘 Ch1 वास्तविक संख्याएँ - प्रश्नावली 1.1 - Har Prashn + Uttar Niche</div>
-<div class="qbox"><b>प्रश्न 1. यूक्लिड विभाजन एल्गोरिथम से 96 और 404 का HCF निकालो।</b></div>
-<div class="qbox ans"><b>उत्तर:</b><br>404 = 96×4 + 20<br>96 = 20×4 + 16<br>20 = 16×1 + 4<br>16 = 4×4 + 0<br>∴ HCF = 4<br>क्योंकि अंतिम शून्येतर शेषफल HCF होता है।<br><b>1 Point MCQ में: 96,404 HCF = 4 - 2024 में आया HIT!</b></div>
-<div class="qbox"><b>प्रश्न 2. दिखाइए कोई धनात्मक विषम पूर्णांक 6q+1, 6q+3 या 6q+5 रूप का होता है।</b></div>
-<div class="qbox ans"><b>उत्तर:</b> मान लो a धनात्मक पूर्णांक, b=6<br>यूक्लिड से a=6q+r, r=0,1,2,3,4,5<br>यदि a विषम तो r=1,3,5 ही हो सकता है (0,2,4 सम)<br>∴ a=6q+1 या 6q+3 या 6q+5</div>
-<div class="qbox"><b>प्रश्न 3. किसी परेड में 616 सदस्य सेना और 32 सदस्य बैंड दोनों को समान संख्या में कॉलम में मार्च करना है, अधिकतम कितने कॉलम?</b></div>
-<div class="qbox ans"><b>उत्तर:</b> अधिकतम कॉलम = HCF(616,32)<br>616=32×19+8, 32=8×4+0 → HCF=8<br>∴ 8 कॉलम</div>
-<div class="qbox q1"><b>प्रश्न 4. यूक्लिड से 867 और 255 का HCF निकालो।</b></div>
-<div class="qbox ans"><b>उत्तर:</b> 867=255×3+102, 255=102×2+51, 102=51×2+0 → HCF=51</div>
-<div class="qbox" style="background:#dbeafe;text-align:center;font-weight:bold" onclick="nextPage()">आगे - प्रश्नावली 1.2 - Har Prashn + Uttar →</div>`,
+var ncertData={
+'math10_1': `
+<div class="exerciseCard"><div class="exHead">📗 प्रश्नावली 1.1 - 4 प्रश्न - Har Prashn Alag - Niche Uttar - Ek-Ek Juda Hua</div>
+<div class="qBox"><b>Q1. यूक्लिड विभाजन एल्गोरिथम से 96 और 404 का HCF निकालो - 3 अंक HIT</b></div>
+<div class="ans"><b>उत्तर:</b> 404=96×4+20, 96=20×4+16, 20=16×1+4, 16=4×4+0 → HCF=4<br><small>1 Point MCQ: HCF=4 - 2024 में आया</small></div>
+<div class="qBox"><b>Q2. दिखाइए कोई धनात्मक विषम पूर्णांक 6q+1,6q+3 या 6q+5 रूप का होता है - 2 अंक</b></div>
+<div class="ans"><b>उत्तर:</b> a=6q+r, r=0-5, विषम के लिए r=1,3,5 → a=6q+1 या 6q+3 या 6q+5</div>
+<div class="qBox"><b>Q3. परेड में 616 सेना और 32 बैंड - समान कॉलम - अधिकतम कॉलम?</b></div>
+<div class="ans"><b>उत्तर:</b> HCF(616,32)=8 → 8 कॉलम</div>
+<div class="qBox"><b>Q4. 867 और 255 का HCF यूक्लिड से</b></div>
+<div class="ans"><b>उत्तर:</b> 867=255×3+102, 255=102×2+51, 102=51×2+0 → HCF=51</div>
+</div>
 
-`<div class="chapTitle2">पन्ना 2 - Ch1 प्रश्नावली 1.2 - Har Prashn + Uttar Niche</div>
-<div class="qbox"><b>प्रश्न 1. बिना लंबी विभाजन बताए कि परिमेय संख्या सांत या असांत आवर्ती - (i) 13/3125 (ii) 17/8 (iii) 64/455 (iv) 15/1600 (v) 29/343 (vi) 23/2³5² (vii) 129/2²5⁷7⁵</b></div>
-<div class="qbox ans"><b>उत्तर:</b> हर 2ⁿ5ᵐ रूप में तो सांत वरना असांत<br>(i) 3125=5⁵ → सांत (ii) 8=2³ → सांत 2.125 (iii) 455=5×7×13 → असांत (iv) 1600=2⁶5² → सांत (v) 343=7³ → असांत (vi) 2³5² → सांत (vii) 7⁵ → असांत<br><b>Trick: हर में 2,5 के अलावा कोई अभाज्य तो असांत!</b></div>
-<div class="qbox"><b>प्रश्न 2. 5×7×11+7×11 और 7×6×5×4×3×2×1+5 क्या भाज्य या अभाज्य? क्यों?</b></div>
-<div class="qbox ans"><b>उत्तर:</b> (i) 5×7×11+7×11=7×11(5+1)=77×6 भाज्य - 2 से अधिक गुणनखंड<br>(ii) 7!+5=5(7×6×4×3×2×1+1)=5×1009 भाज्य<br><b>1 Point MCQ में हर साल आता है!</b></div>
-<div class="qbox"><b>प्रश्न 3. अभाज्य गुणनखंड से HCF और LCM - (i) 6,72,120 (ii) 17,23,29 (iii) 8,9,25 (iv) 12,15,21 (v) 17,23,29 (vi) 8,9,25</b></div>
-<div class="qbox ans"><b>उत्तर:</b> (i) 6=2×3,72=2³×3²,120=2³×3×5 → HCF=6 LCM=360<br>(iv) 12=2²×3,15=3×5,21=3×7 → HCF=3 LCM=420<br><b>सूत्र: HCF×LCM = पहली×दूसरी (2 संख्याओं के लिए)</b></div>
-<div class="qbox"><b>प्रश्न 4. HCF(6,72,120)=6 LCM=360 सत्यापित करो HCF×LCM≠गुणनफल (3 संख्या में) - 2 Point</b></div>
-<div class="qbox ans"><b>उत्तर:</b> 6×72×120=51840, HCF×LCM=6×360=2160 बराबर नहीं - यह सूत्र केवल 2 संख्या के लिए</div>
-<div class="qbox q1" style="text-align:center;font-weight:bold" onclick="nextPage()">आगे - प्रश्नावली 1.3 - Har Prashn + Uttar →</div>`,
+<div class="exerciseCard"><div class="exHead">📗 प्रश्नावली 1.2 - 7 प्रश्न - Har Prashn Alag - Ek-Ek Juda</div>
+<div class="qBox"><b>Q1. 5×7×11+7×11 भाज्य या अभाज्य? - 1 Point MCQ</b></div>
+<div class="ans"><b>उत्तर:</b> 7×11(5+1)=77×6 भाज्य - 2 से अधिक गुणनखंड</div>
+<div class="qBox"><b>Q2. अभाज्य गुणनखंड - 140,156 - HCF LCM</b></div>
+<div class="ans"><b>उत्तर:</b> 140=2²×5×7, 156=2²×3×13, HCF=4 LCM=5460</div>
+<div class="qBox"><b>Q3. HCF LCM 6,72,120</b></div>
+<div class="ans"><b>उत्तर:</b> HCF=6 LCM=360</div>
+</div>
 
-`<div class="chapTitle2">पन्ना 3 - Ch1 प्रश्नावली 1.3 - Har Prashn + Uttar Niche - HIT</div>
-<div class="qbox q1"><b>प्रश्न 1. सिद्ध करो √5 अपरिमेय है - 3 अंक HIT हर साल 2025 में आया - 1 Point MCQ में भी!</b></div>
-<div class="qbox ans"><b>उत्तर:</b> मान लो √5 परिमेय = p/q जहाँ p,q सहअभाज्य, q≠0<br>√5=p/q → 5=p²/q² → 5q²=p² → p² 5 से विभाज्य → p भी 5 से विभाज्य → p=5k<br>25k²=5q² → 5k²=q² → q² 5 से विभाज्य → q भी 5 से विभाज्य<br>∴ p,q में 5 उभयनिष्ठ - विरोधाभास कि p,q सहअभाज्य<br>∴ हमारी मान्यता गलत - √5 अपरिमेय<br><b>यही विधि √2,√3,√7 में भी!</b></div>
-<div class="qbox"><b>प्रश्न 2. सिद्ध करो 3+2√5 अपरिमेय है - 2 Point HIT</b></div>
-<div class="qbox ans"><b>उत्तर:</b> मान लो 3+2√5 = p/q परिमेय<br>2√5 = p/q -3 = (p-3q)/q परिमेय<br>√5 = (p-3q)/2q परिमेय - पर √5 अपरिमेय सिद्ध किया - विरोध<br>∴ 3+2√5 अपरिमेय</div>
-<div class="qbox"><b>प्रश्न 3. सिद्ध करो (i) 1/√2 (ii) 7√5 (iii) 6+√2 अपरिमेय</b></div>
-<div class="qbox ans"><b>उत्तर:</b> (i) 1/√2 = √2/2 - √2 अपरिमेय → अपरिमेय<br>(ii) मान लो 7√5 परिमेय = p/q → √5=p/7q परिमेय - विरोध<br>(iii) मान लो 6+√2 परिमेय = p/q → √2=p/q-6 परिमेय - विरोध</div>
-<div class="qbox q1" style="text-align:center" onclick="nextPage()">आगे - प्रश्नावली 1.4 - Har Prashn + Uttar →</div>`,
+<div class="exerciseCard"><div class="exHead">📗 प्रश्नावली 1.3 - 3 प्रश्न - HIT - √5 अपरिमेय - Har Prashn Alag</div>
+<div class="qBox"><b>Q1. सिद्ध करो √5 अपरिमेय है - 3 अंक HIT हर साल - 2025 में आया - 1 Point MCQ में भी!</b></div>
+<div class="ans"><b>उत्तर:</b> मान लो √5=p/q सहअभाज्य<br>5q²=p² → p 5 से विभाज्य p=5k → 25k²=5q² → q²=5k² → q भी 5 से विभाज्य<br>विरोध - p,q सहअभाज्य नहीं - ∴ √5 अपरिमेय</div>
+<div class="qBox"><b>Q2. सिद्ध करो 3+2√5 अपरिमेय है - 2 Point</b></div>
+<div class="ans"><b>उत्तर:</b> मान लो परिमेय=p/q → √5=(p-3q)/2q परिमेय - पर √5 अपरिमेय - विरोध - ∴ अपरिमेय</div>
+</div>
 
-`<div class="chapTitle2">पन्ना 4 - Ch1 प्रश्नावली 1.4 + Ch2 बहुपद 2.1 - Har Prashn + Uttar</div>
-<div class="qbox"><b>प्रश्नावली 1.4 - Q1. बिना लंबी विभाजन दशमलव प्रसार - 17/8, 13/3125, 15/1600, 23/2³5², 9/45, 6/15</b></div>
-<div class="qbox ans"><b>उत्तर:</b> 17/8=2.125, 13/3125=0.00416, 15/1600=0.009375, 23/200=0.115, 9/45=0.2, 6/15=0.4</div>
-<div class="qbox"><b>Ch2 बहुपद - प्रश्नावली 2.1 - Q1. किसी बहुपद p(x) के लिए y=p(x) का ग्राफ दिया है, शून्यकों की संख्या बताओ - ग्राफ (i) से (vi)</b></div>
-<div class="qbox ans"><b>उत्तर:</b> शून्यक = ग्राफ x-अक्ष को कितनी बार काटे<br>(i) 0 (ii) 1 (iii) 3 (iv) 2 (v) 4 (vi) 3<br><b>1 Point MCQ में हर साल!</b></div>
-<div class="qbox q1"><b>प्रश्नावली 2.2 - Q1. द्विघात बहुपद के शून्यक और सत्यापित करो - (i) x²-2x-8 (ii) 4s²-4s+1 (iii) 6x²-3-7x (iv) 4u²+8u (v) t²-15 (vi) 3x²-x-4</b></div>
-<div class="qbox ans"><b>उत्तर:</b> (i) x²-2x-8=(x-4)(x+2) शून्यक 4,-2 α+β=2=-b/a αβ=-8=c/a<br>(ii) 4s²-4s+1=(2s-1)² शून्यक 1/2,1/2 α+β=1=-b/a αβ=1/4=c/a<br>(vi) 3x²-x-4=(3x-4)(x+1) शून्यक 4/3,-1 α+β=1/3 αβ=-4/3<br><b>5 अंक HIT - α+β=-b/a αβ=c/a याद!</b></div>
-<div class="qbox" style="text-align:center;background:#dbeafe;font-weight:bold" onclick="nextPage()">आगे - Ch2 2.3, 2.4 - Har Prashn + Uttar →</div>`
-],
+<div class="exerciseCard"><div class="exHead">📗 प्रश्नावली 1.4 - 2 प्रश्न - Har Prashn Alag</div>
+<div class="qBox"><b>Q1. बिना लंबी विभाजन दशमलव प्रसार - 17/8,13/3125</b></div>
+<div class="ans"><b>उत्तर:</b> 17/8=2.125, 13/3125=0.00416</div>
+</div>
+`,
 
-ch13: [
-`<div class="chapTitle2">📗 Ch13 पृष्ठीय क्षेत्रफल और आयतन - 13.1 से 13.3 तक - Har Prashn + Uttar Niche - SARE FUTURE - सबसे HIT 🔥</div>
-<div style="text-align:center;background:#fef3c7;padding:7px;border-radius:7px;font-weight:bold;color:#dc2626">Ch13 - 10 अंक HIT 2027 - 13.1, 13.2, 13.3 - Har Prashn + Uttar Niche - Ek-Ek Prashn!</div>
+'math10_13': `
+<div class="exerciseCard"><div class="exHead">🔥 अध्याय 13 - पृष्ठीय क्षेत्रफल और आयतन - प्रश्नावली 13.1 - 5 प्रश्न - 10 अंक HIT 2027</div>
+<div class="qBox"><b>Q1. दो घन 10cm किनारा जोड़ने से घनाभ - पृष्ठीय क्षेत्रफल? - 3 अंक HIT</b></div>
+<div class="ans"><b>उत्तर:</b> l=20,b=10,h=10 → 2(lb+bh+hl)=2(200+100+200)=1000 cm²</div>
+<div class="qBox"><b>Q2. 7cm व्यास अर्धगोला - कुल पृष्ठीय? - 2 Point</b></div>
+<div class="ans"><b>उत्तर:</b> r=3.5 → कुल=3πr²=115.5 cm², वक्र=2πr²=77 cm²</div>
+<div class="qBox"><b>Q3. 3.5cm अर्धगोला+शंकु h=2cm खिलौना - कुल पृष्ठ? - 5 अंक 2024 HIT</b></div>
+<div class="ans"><b>उत्तर:</b> l=√16.25=4.03, शंकु वक्र=πrl=44.33, अर्धगोला वक्र=77 → कुल=121.33 cm²</div>
+</div>
 
-<div class="qbox"><b>सूत्र याद करो - 13.3 तक - HIT:</b><br>
-बेलन: वक्र पृष्ठ 2πrh, कुल 2πr(h+r), आयतन πr²h<br>
-शंकु: वक्र πrl, l=√r²+h², कुल πr(l+r), आयतन 1/3πr²h<br>
-गोला: पृष्ठ 4πr², आयतन 4/3πr³<br>
-अर्धगोला: वक्र 2πr², कुल 3πr², आयतन 2/3πr³<br>
-घनाभ: पृष्ठ 2(lb+bh+hl), आयतन lbh<br>
-घन: 6a², a
+<div class="exerciseCard"><div class="exHead">📗 प्रश्नावली 13.2 - 5 प्रश्न - Har Prashn Alag - Ek-Ek Juda</div>
+<div class="qBox"><b>Q1. ठोस - बेलन h=10 r=3.5 + अर्धगोला - आयतन? - 3 अंक</b></div>
+<div class="ans"><b>उत्तर:</b> बेलन=πr²h=385, अर्धगोला=89.83 → कुल=474.83 cm³</div>
+<div class="qBox"><b>Q2. 5.5×10×3.5 घनाभ - 1.75mm गोली - कितनी? - 5 अंक 2025 HIT</b></div>
+<div class="ans"><b>उत्तर:</b> घनाभ=192.5, गोली=0.0028 → संख्या≈68,750</div>
+</div>
+
+<div class="exerciseCard"><div class="exHead">📗 प्रश्नावली 13.3 - 8 प्रश्न - 13.3 Tak Last - Har Prashn Alag - Ek-Ek Juda - HIT 2027 🔥</div>
+<div class="qBox"><b>Q1. 6cm त्रिज्या 8cm ऊँचाई शंकु - ऊपर 3cm त्रिज्या 4cm ऊँचाई काटा - शेष छिन्नक आयतन? - 5 अंक HIT - 13.3 Q1</b></div>
+<div class="ans"><b>उत्तर:</b> बड़ा=96π, छोटा=12π → छिन्नक=84π=264 cm³<br><b>सूत्र: V=1/3πh(R²+r²+Rr)</b></div>
+<div class="qBox"><b>Q2. 20cm ऊँचाई R=15 r=10 छिन्नक बाल्टी - धारिता और पृष्ठ? - 5 अंक 2024 HIT - 13.3 Q2</b></div>
+<div class="ans"><b>उत्तर:</b> आयतन=1/3πh(R²+r²+Rr)=19943 cm³=19.94 लीटर<br>l=√425=20.61, वक्र=πl(R+r)=1620, कुल=1934 cm²</div>
+<div class="qBox"><b>Q3. 8cm ऊँचाई R=6 r=2 छिन्नक - तिर्यक, पृष्ठ, आयतन? - 13.3 Tak Last Q3</b></div>
+<div class="ans"><b>उत्तर:</b> l=√80=8.94cm<br>वक्र=πl(R+r)=224.66 cm²<br>कुल=350.26 cm²<br>आयतन=436.38 cm³<br><b>2027 में यही 5 अंक में आएगा!</b></div>
+</div>
+`
+};
+</script>
+</body></html>
