@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SARE FUTURE - Full</title>
+<title>SARE FUTURE - Sab Kuch</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
 body{background:#eef2ff}
@@ -12,52 +12,65 @@ body{background:#eef2ff}
 .purple{background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white}
 .grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
 .pill{background:#f1f5f9;padding:11px 4px;border-radius:50px;text-align:center;font-weight:bold;font-size:12px;cursor:pointer;border:1px solid #e2e8f0}
 .boxM{padding:14px 5px;border-radius:18px;color:white;text-align:center;font-weight:bold;cursor:pointer;font-size:13px}
-#detail{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#eef2ff;z-index:99;overflow:auto}
-.dhead{background:linear-gradient(90deg,#ff3b3b,#ff8c1a);padding:15px;color:white;display:flex;gap:10px;align-items:center;position:sticky;top:0}
+.bookCard{background:#f5f0ff;border-radius:16px;padding:18px 10px;text-align:center;cursor:pointer;box-shadow:0 2px 6px #0001;border:1px solid #e9d5ff}
+.bookIcon{font-size:36px;margin-bottom:6px}
+.bookName{font-weight:bold;font-size:13px;color:#111}
+#detail,#booksPage,#subjectPage{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#eef2ff;z-index:99;overflow-y:auto}
+.dhead{background:linear-gradient(90deg,#ff3b3b,#ff8c1a);padding:15px;color:white;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:5}
+.bhead{background:white;padding:14px 15px;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:5;box-shadow:0 2px 5px #0001}
 .chap{background:white;margin:12px;border-radius:15px;padding:15px;border-left:5px solid #2563eb}
-.chapTitle{background:#2563eb;color:white;padding:8px 12px;border-radius:8px;margin:10px 0;font-weight:bold}
-.subHead{background:#eef2ff;padding:6px 10px;border-radius:20px;font-weight:bold;margin:12px 0;font-size:13px;color:#2563eb}
-.que{padding:12px 0;border-bottom:1px solid #eee;font-size:14px;line-height:23px}
-.back{background:white;color:red;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}
+.chapTitle{background:#2563eb;color:white;padding:10px 12px;border-radius:10px;margin:10px 0;font-weight:bold}
+.subHead{background:#eef2ff;padding:7px 12px;border-radius:20px;font-weight:bold;margin:14px 0 8px;color:#2563eb;font-size:13px}
+.que{padding:12px 0;border-bottom:1px solid #eee;font-size:14px;line-height:24px}
+.back{background:#f1f5f9;color:#111;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;font-size:18px;border:1px solid #e5e7eb}
+.back2{background:white;color:red;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}
+::-webkit-scrollbar{width:0}
 </style>
 </head>
 <body>
 <div id="home">
-<div class="top"><div><div style="color:#2563eb;font-weight:800">📚 स्टड साथी - SARE FUTURE</div><div style="font-size:9px;color:gray">10th 12th Maths Side + Mastermind Vidya Flight + B.Ed Nursing NEET</div></div><div style="background:#f1f5f9;padding:5px 10px;border-radius:50px">👤 Profile</div></div>
+<div class="top"><div><div style="color:#2563eb;font-weight:800">📚 स्टड साथी - SARE FUTURE</div><div style="font-size:8px;color:gray">10th 12th Maths + Mastermind Vidya Flight + B.Ed Nursing NEET + Puri Kitab</div></div><div style="background:#f1f5f9;padding:5px 10px;border-radius:50px">👤</div></div>
 
-<!-- पुरानी Feature 1 - Profile वाला पीला Card -->
-<div class="card yellow">👋 Profile बनाओ - PDF पर नाम आएगा<div style="background:#2563eb;color:white;padding:10px;border-radius:50px;margin-top:8px" onclick="openBook('Profile बनाओ','profile')">✨ Profile बनाओ - 30 सेकंड</div></div>
+<!-- नया System - Screenshot वाला -->
+<div class="card" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white"><b>📚 नया System - पूरी किताब खोलो - Screenshot वाला</b><div style="font-size:12px;margin-top:4px">Click करो → हर Subject की पूरी किताब खुलेगी - गणित, भौतिकी, रसायन...</div><div class="grid2" style="margin-top:12px">
+<div style="background:white;color:#7c3aed;padding:14px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBooks('10')">📘 कक्षा 10 की किताबें<br><small>6 Subjects</small></div>
+<div style="background:white;color:#dc2626;padding:14px;border-radius:12px;text-align:center;font-weight:bold;cursor:pointer" onclick="openBooks('12')">📕 कक्षा 12 की किताबें<br><small>12 Subjects</small></div>
+</div></div>
 
-<!-- पुरानी Feature 2 - वायरल वाला Purple Card -->
-<div class="card purple"><b>🎯 आज का वायरल - 10th 2020 वाला पेपर</b><div style="font-size:13px;margin-top:5px">70% टीचर्स इसी को रटवा रहे हैं - 2027 के लिए भी जरूरी</div><div onclick="openBook('10th 2020 वायरल पेपर - HIT','viral10')" style="background:white;color:#7c3aed;display:inline-block;padding:8px 15px;border-radius:50px;margin-top:10px;font-weight:bold;cursor:pointer">👉 अभी खोलो - फ्री</div></div>
+<!-- पुराना 1 - Profile पीला -->
+<div class="card yellow">👋 Profile बनाओ - PDF पर नाम आएगा - पुरानी Feature<div style="background:#2563eb;color:white;padding:10px;border-radius:50px;margin-top:8px" onclick="openBook('Profile बनाओ','profile')">✨ Profile बनाओ - 30 सेकंड</div></div>
 
-<!-- पुरानी Feature 3 - दुकान वाले Model Papers -->
+<!-- पुराना 2 - वायरल Purple -->
+<div class="card purple"><b>🎯 आज का वायरल - 10th 2020 वाला पेपर - पुरानी Feature</b><div style="font-size:13px;margin-top:5px">70% टीचर्स इसी को रटवा रहे हैं - 2027 के लिए भी जरूरी</div><div onclick="openBook('10th 2020 वायरल पेपर - HIT','viral10')" style="background:white;color:#7c3aed;display:inline-block;padding:8px 15px;border-radius:50px;margin-top:10px;font-weight:bold;cursor:pointer">👉 अभी खोलो - फ्री</div></div>
+
+<!-- पुराना 3 - दुकान वाले -->
 <div class="card"><div style="text-align:center;font-weight:bold;margin-bottom:10px">🏪 2027 - दुकान वाले Model Papers - पुरानी Feature</div><div class="grid3">
 <div class="boxM" style="background:#7c3aed" onclick="openBook('Mastermind 2027 - 70% HIT','mastermind')">Mastermind<br><small style="background:#facc15;color:black;padding:2px 8px;border-radius:20px">70% HIT</small></div>
 <div class="boxM" style="background:#2563eb" onclick="openBook('Vidya 2027 NEW','vidya')">Vidya<br><small style="background:white;color:black;padding:2px 8px;border-radius:20px">NEW</small></div>
 <div class="boxM" style="background:#dc2626" onclick="openBook('Flight 2027 NEW','flight')">Flight<br><small style="background:white;color:black;padding:2px 8px;border-radius:20px">Trick</small></div>
 </div></div>
 
-<!-- नई Feature - 10th Chapter Wise + पुरानी Feature भी -->
-<div class="card"><div style="text-align:center;font-weight:bold">📖 10th - हर विषय का अलग-अलग Chapter Wise Model Paper - SARE FUTURE</div><div class="grid4">
-<div class="pill" style="background:#fef3c7" onclick="openBook('10th हिंदी - Full Chapter Wise','hindi10')">10th हिंदी<br><small>4 Ch</small></div>
-<div class="pill" style="background:#dbeafe" onclick="openBook('10th गणित - Full Chapter Wise','math10')">10th गणित<br><small>6 Ch</small></div>
-<div class="pill" style="background:#dcfce7" onclick="openBook('10th विज्ञान - Full Chapter Wise','science10')">10th विज्ञान<br><small>6 Ch</small></div>
-<div class="pill" style="background:#fce7f3" onclick="openBook('10th SST - Full Chapter Wise','sst10')">10th SST<br><small>4 Ch</small></div>
+<!-- नया + पुराना - 10th Chapter Wise -->
+<div class="card"><div style="text-align:center;font-weight:bold">📖 10th - हर विषय का Chapter Wise Model Paper - SARE FUTURE</div><div class="grid4">
+<div class="pill" style="background:#fef3c7" onclick="openBook('10th हिंदी - Full','hindi10')">10th हिंदी<br>Full</div>
+<div class="pill" style="background:#dbeafe" onclick="openBook('10th गणित - Full','math10')">10th गणित<br>6 Ch</div>
+<div class="pill" style="background:#dcfce7" onclick="openBook('10th विज्ञान - Full','science10')">10th विज्ञान<br>6 Ch</div>
+<div class="pill" style="background:#fce7f3" onclick="openBook('10th SST - Full','sst10')">10th SST<br>4 Ch</div>
 </div></div>
 
-<!-- नई Feature - 12th Maths Side Chapter Wise -->
-<div class="card"><div style="text-align:center;font-weight:bold;color:#dc2626">📖 12th Maths Side - हर विषय का अलग-अलग Chapter Wise - SARE FUTURE</div><div class="grid4">
-<div class="pill" style="background:#dbeafe;border:2px solid #2563eb" onclick="openBook('12th भौतिकी - Full Chapter Wise','phy12')">12th भौतिकी<br><small>5 Ch</small></div>
-<div class="pill" style="background:#fef3c7;border:2px solid #d97706" onclick="openBook('12th रसायन - Full Chapter Wise','chem12')">12th रसायन<br><small>5 Ch</small></div>
-<div class="pill" style="background:#dcfce7;border:2px solid #16a34a" onclick="openBook('12th गणित - Full Chapter Wise','math12')">12th गणित<br><small>5 Ch</small></div>
-<div class="pill" style="background:#e0e7ff" onclick="openBook('12th English - Full','eng12')">12th English<br><small>4 Ch</small></div>
+<!-- नया + पुराना - 12th Maths Side -->
+<div class="card"><div style="text-align:center;font-weight:bold;color:#dc2626">📖 12th Maths Side - Chapter Wise - SARE FUTURE</div><div class="grid4">
+<div class="pill" style="background:#dbeafe;border:2px solid #2563eb" onclick="openBook('12th भौतिकी - Full','phy12')">12th भौतिकी<br>5 Ch</div>
+<div class="pill" style="background:#fef3c7;border:2px solid #d97706" onclick="openBook('12th रसायन - Full','chem12')">12th रसायन<br>5 Ch</div>
+<div class="pill" style="background:#dcfce7;border:2px solid #16a34a" onclick="openBook('12th गणित - Full','math12')">12th गणित<br>5 Ch</div>
+<div class="pill" style="background:#e0e7ff" onclick="openBook('12th English','eng12')">12th English</div>
 </div></div>
 
-<!-- पुरानी Feature 4 - पुराने + पूरी किताबें - SARE FUTURE -->
-<div class="card"><div style="text-align:center;font-weight:bold">📚 पुराने + पूरी किताबें - SARE FUTURE - पुरानी Feature</div><div class="grid4">
+<!-- पुराना 4 - सबसे पुराना - पूरी किताबें + B.Ed Nursing NEET -->
+<div class="card"><div style="text-align:center;font-weight:bold">📚 पुराने + पूरी किताबें - SARE FUTURE - सबसे पुरानी Feature</div><div class="grid4">
 <div class="pill" onclick="openBook('10th पेपर 2020-26','paper10')">10th पेपर<br>2020-26</div>
 <div class="pill" onclick="openBook('12th Maths पेपर 2020-26','paper12Math')">12th पेपर<br>2020-26</div>
 <div class="pill" onclick="openBook('10th पूरी किताब','all10')">10th पूरी<br>किताब</div>
@@ -65,39 +78,107 @@ body{background:#eef2ff}
 <div class="pill" onclick="openBook('B.Ed 2027','bed')">B.Ed<br>2027</div>
 <div class="pill" onclick="openBook('Nursing 2027','nursing')">Nursing</div>
 <div class="pill" onclick="openBook('NEET 720','neet')">NEET 720</div>
-<div class="pill" onclick="openBook('English Model Paper','eng10')">English</div>
+<div class="pill" onclick="openBook('English','eng10')">English</div>
 </div></div>
-
 </div>
 
+<!-- Page 2 - कक्षा की किताबें Grid - Screenshot जैसा -->
+<div id="booksPage">
+<div class="bhead"><div class="back" onclick="goHome()">←</div><h3 id="booksTitle" style="margin-left:10px">कक्षा 12 की किताबें</h3></div>
+<div style="padding:12px"><div class="grid2" id="booksGrid"></div></div>
+</div>
+
+<!-- Page 3 - पूरी किताब अंदर -->
+<div id="subjectPage">
+<div class="dhead"><div class="back2" onclick="goBooks()">←</div><h3 id="subjectTitle"></h3></div>
+<div id="subjectContent" style="padding-bottom:40px"></div>
+</div>
+
+<!-- Page 4 - Detail -->
 <div id="detail">
-<div class="dhead"><div class="back" onclick="goBack()">←</div><h3 id="dTitle"></h3></div>
+<div class="dhead"><div class="back2" onclick="goHome()">←</div><h3 id="dTitle"></h3></div>
 <div id="dContent" style="padding-bottom:40px"></div>
 </div>
 
 <script>
+var currentClass='12';
+function openBooks(cls){
+currentClass=cls;
+document.getElementById('home').style.display='none';
+document.getElementById('booksPage').style.display='block';
+document.getElementById('booksTitle').innerText='कक्षा '+cls+' की किताबें';
+var books10=[
+{icon:'🔤',name:'हिन्दी',key:'hindi10'},
+{icon:'🔢',name:'गणित',key:'math10'},
+{icon:'🔬',name:'विज्ञान',key:'science10'},
+{icon:'🌍',name:'सामाजिक विज्ञान',key:'sst10'},
+{icon:'📘',name:'अंग्रेजी',key:'eng10_10'},
+{icon:'🗺️',name:'मानचित्र',key:'map10'}
+];
+var books12=[
+{icon:'➕',name:'गणित',key:'math12'},
+{icon:'⚛️',name:'भौतिक विज्ञान',key:'phy12'},
+{icon:'🧾',name:'लेखाशास्त्र',key:'lekha12'},
+{icon:'📖',name:'हिन्दी',key:'hindi12'},
+{icon:'🧬',name:'जीव विज्ञान',key:'bio12'},
+{icon:'🏺',name:'इतिहास',key:'his12'},
+{icon:'🌍',name:'भूगोल',key:'bhugol12'},
+{icon:'🧠',name:'मनोविज्ञान',key:'mano12'},
+{icon:'👥',name:'समाजशास्त्र',key:'samaj12'},
+{icon:'🧪',name:'रसायन विज्ञान',key:'chem12'},
+{icon:'🗳️',name:'राजनीति विज्ञान',key:'raj12'},
+{icon:'💰',name:'अर्थशास्त्र',key:'arth12'}
+];
+var list=cls=='10'?books10:books12;
+var html='';
+list.forEach(function(b){
+html+='<div class="bookCard" onclick="openSubject(\''+b.key+'\',\''+b.name+'\')"><div class="bookIcon">'+b.icon+'</div><div class="bookName">'+b.name+'</div></div>';
+});
+document.getElementById('booksGrid').innerHTML=html;
+window.scrollTo(0,0);
+}
+function openSubject(key,name){
+document.getElementById('booksPage').style.display='none';
+document.getElementById('subjectPage').style.display='block';
+document.getElementById('subjectTitle').innerText=name+' - पूरी किताब';
+document.getElementById('subjectContent').innerHTML=books[key]||'<div class="chap"><div class="chapTitle">'+name+' - कक्षा '+currentClass+' की पूरी किताब - SARE FUTURE</div><div class="que">इस विषय की पूरी किताब Chapter Wise यहाँ है।<br>अध्याय 1 से अंतिम अध्याय तक सारे प्रश्न उत्तर हिंदी में - Model Paper सहित।<br><b>70% पेपर यहीं से आएगा 2027 में।</b></div></div>';
+window.scrollTo(0,0);
+}
+function goBooks(){document.getElementById('subjectPage').style.display='none';document.getElementById('booksPage').style.display='block';}
+function goHome(){document.getElementById('home').style.display='block';document.getElementById('booksPage').style.display='none';document.getElementById('subjectPage').style.display='none';document.getElementById('detail').style.display='none';}
 var books={
-profile: '<div class="chap"><div class="chapTitle">👤 Profile बनाओ - SARE FUTURE - पुरानी Feature</div><div class="que"><b>Profile क्यों बनाओ?</b><br>PDF पर तुम्हारा नाम आएगा, तुम्हारी Class (10th/12th Maths) के अनुसार Model Paper दिखेगा।<br><br>नाम: [____________]<br>Class: 10th / 12th Maths Side<br><br><div style="background:#2563eb;color:white;padding:10px;border-radius:50px;text-align:center">Save करो</div></div></div>',
-viral10: '<div class="chap"><div class="chapTitle">🎯 10th 2020 वायरल पेपर - पुरानी Feature - 70% टीचर्स इसी को रटवा रहे</div><div class="que"><b>70% पेपर यहीं से - 2027 HIT</b><br>1. कबीर - सच्चे भक्त के लक्षण - 5 अंक<br>2. √5 अपरिमेय - 2 अंक<br>3. हृदय की संरचना चित्र सहित - 4 अंक पक्का<br>4. यूरोप में राष्ट्रवाद - 5 अंक<br>5. रासायनिक समीकरण - 2 अंक</div></div>',
-hindi10: '<div class="chap"><div class="chapTitle">10th हिंदी - Full Chapter Wise - 80 अंक - SARE FUTURE</div><div class="subHead">Chapter 1 - साखी कबीर - 10 अंक HIT</div><div class="que"><b>Q1. (5 अंक)</b> सच्चे भक्त के लक्षण? उत्तर: निंदक पास रखना, अहंकार न करना।<br><b>Q2. (5 अंक)</b> पोथी पढ़ि पढ़ि जग मुआ - भाव - किताबी ज्ञान व्यर्थ, प्रेम जरूरी।</div><div class="subHead">Chapter 2 - मीरा - 10 अंक</div><div class="que"><b>Q1.</b> मेरे तो गिरधर गोपाल - अनन्य प्रेम।</div><div class="subHead">Chapter 3 - माता का आँचल - 15 अंक HIT</div><div class="que"><b>Q1. (8 अंक)</b> भोलानाथ और पिता का संबंध - पिता अनुशासित, भोलानाथ चंचल।</div></div>',
-math10: '<div class="chap"><div class="chapTitle">10th गणित - Full Chapter Wise - 70 अंक - SARE FUTURE</div><div class="subHead">Chapter 1 - वास्तविक संख्याएँ - 10 अंक HIT</div><div class="que"><b>Q1. (3 अंक)</b> √5 अपरिमेय सिद्ध करो - मान लो p/q... विरोधाभास।<br><b>Q2. (3 अंक)</b> 96,404 HCF=4 - यूक्लिड से।<br><b>Q3. (4 अंक)</b> 3+2√5 अपरिमेय दिखाओ।</div><div class="subHead">Chapter 6 - सांख्यिकी - 10 अंक - 4 नंबर पक्का 2027</div><div class="que"><b>Q1. (5 अंक)</b> माध्य=Σfx/Σf, माध्यिका, बहुलक - सूत्र + प्रश्न।</div></div>',
-science10: '<div class="chap"><div class="chapTitle">10th विज्ञान - Full Chapter Wise - 80 अंक - SARE FUTURE</div><div class="subHead">Chapter 1 - रासायनिक अभिक्रिया - 12 अंक HIT</div><div class="que"><b>Q1.</b> संतुलित समीकरण - 2H2+O2=2H2O<br><b>Q2.</b> वियोजन, विस्थापन, द्विविस्थापन।</div><div class="subHead">Chapter 3 - जैव प्रक्रम - 20 अंक - 4 नंबर पक्का</div><div class="que"><b>Q1. (5 अंक HIT)</b> मानव हृदय चित्र सहित - 4 कक्ष - 2 अलिंद, 2 निलय।<br><b>Q2. (5 अंक)</b> प्रकाश संश्लेषण 6CO2+6H2O→C6H12O6+6O2<br><b>Q3. (5 अंक)</b> वृक्काणु, मस्तिष्क।</div></div>',
-sst10: '<div class="chap"><div class="chapTitle">10th SST - Full Chapter Wise - 80 अंक</div><div class="subHead">यूरोप में राष्ट्रवाद - 15 अंक HIT</div><div class="que"><b>Q1. (8 अंक)</b> फ्रांसीसी क्रांति ने राष्ट्रवाद कैसे जन्म दिया? स्वतंत्रता, समानता, बंधुत्व।<br><b>Q2.</b> बिस्मार्क - रक्त और लौह - 3 युद्ध।</div></div>',
-phy12: '<div class="chap"><div class="chapTitle">12th भौतिकी - Maths Side - Full Chapter Wise - 70 अंक</div><div class="subHead">Chapter 1 - वैद्युत आवेश - 15 अंक HIT</div><div class="que"><b>Q1. (3 अंक)</b> कूलॉम F=kq1q2/r², k=9×10⁹<br><b>Q2. Numerical (3 अंक):</b> 2μC 0.5m पर F=0.144N<br><b>Q3. (5 अंक)</b> द्विध्रुव अक्ष पर E=2kp/r³, गॉस Φ=q/ϵ0</div><div class="subHead">Chapter 5 - प्रकाशिकी - 15 अंक HIT</div><div class="que"><b>Q1. (5 अंक)</b> यंग β=λD/d, विवर्तन, ध्रुवण।</div></div>',
-chem12: '<div class="chap"><div class="chapTitle">12th रसायन - Maths Side - Full Chapter Wise - 70 अंक</div><div class="subHead">Chapter 1 - विलयन - 12 अंक HIT</div><div class="que"><b>Q1. (4 अंक)</b> राउल्ट P=P0×x1, ΔTb=Kb×m, ΔTf=Kf×m, π=CRT<br><b>Q2. Numerical (4 अंक):</b> 5g NaOH 250ml में M=0.5M</div><div class="subHead">Chapter 2 - विद्युत रसायन - 12 अंक HIT</div><div class="que"><b>Q1. (5 अंक)</b> गैल्वेनिक Zn|Zn²⁺||Cu²⁺|Cu E°=1.10V, नर्नस्ट E=E°-0.0591/n logQ</div><div class="subHead">Chapter 4 - p-ब्लॉक - 15 अंक</div><div class="que"><b>Q1. (5 अंक)</b> NH3 हैबर, HNO3 ओस्टवाल्ड, H2SO4 संपर्क विधि।</div></div>',
-math12: '<div class="chap"><div class="chapTitle">12th गणित - Maths Side - Full Chapter Wise - 100 अंक - SARE FUTURE</div><div class="subHead">Chapter 1 - संबंध एवं फलन - 12 अंक HIT</div><div class="que"><b>Q1. (4 अंक)</b> संबंध - स्वतुल्य, सममित, संक्रामक, तुल्यता।<br><b>Q2. (4 अंक)</b> फलन - एकैकी, आच्छादक, द्विआधारी।<br><b>Q3. (4 अंक)</b> sin⁻¹x+cos⁻¹x=π/2</div><div class="subHead">Chapter 4 - अवकलन - 25 अंक - सबसे जरूरी</div><div class="que"><b>Q1. (5 अंक HIT)</b> sin⁻¹(2x√1-x²) का अवकलन = 2/√1-x²<br><b>Q2. (5 अंक HIT)</b> xʸ=yˣ तो dy/dx - log लेके अवकलन<br><b>Q3.</b> वर्धमान ह्रासमान, उच्चिष्ठ निम्निष्ठ।</div><div class="subHead">Chapter 5 - समाकलन - 30 अंक HIT</div><div class="que"><b>Q1. (5 अंक)</b> ∫sin²x = x/2 - sin2x/4 + C<br><b>Q2. (5 अंक)</b> ∫0^a f(x)=∫0^a f(a-x) गुणधर्म - ∫0^π/2 sinⁿ/(sinⁿ+cosⁿ)=π/4<br><b>Q3.</b> अवकल समीकरण dy/dx=(x+y)/(x-y)</div><div class="subHead">Chapter 6 - प्रायिकता - 10 अंक HIT</div><div class="que"><b>Q1. (5 अंक)</b> बेज प्रमेय P(A|B)=P(B|A)P(A)/P(B) - हर साल।</div></div>',
-paper10: '<div class="chap"><div class="chapTitle">📄 10th पेपर 2020-26 - पुरानी Feature - SARE FUTURE</div><div class="que">2020-26 तक सारे पेपर - 70% Repeat - √5, हृदय, राष्ट्रवाद हर साल।</div></div>',
-paper12Math: '<div class="chap"><div class="chapTitle">📄 12th Maths पेपर 2020-26 - पुरानी Feature - SARE FUTURE</div><div class="que">2020-26 तक Maths Side के सारे पेपर - कूलॉम, राउल्ट, अवकलन xʸ=yˣ, बेज प्रमेय हर साल - 2027 में भी आएगा।</div></div>',
-all10: '<div class="chap"><div class="chapTitle">🔥 10th पूरी किताब - पुरानी Feature - SARE FUTURE</div><div class="que">10th की 5 किताबों के सारे NCERT प्रश्न + Model Paper पूरे हिंदी में।</div></div>',
-all12Math: '<div class="chap"><div class="chapTitle">🔥 12th Maths पूरी किताब - पुरानी Feature - SARE FUTURE</div><div class="que">12th Maths Side की 3 किताबों के सारे NCERT प्रश्न + Model Paper - भौतिकी, रसायन, गणित - सब हिंदी में - 70% पक्का।</div></div>',
-mastermind: '<div class="chap"><div class="chapTitle">👑 Mastermind 2027 - 70% HIT - पुरानी Feature - दुकान वाली 300₹</div><div class="que"><b>70% Exact यहीं से</b><br>10th - √5, HCF=4, हृदय, राष्ट्रवाद<br>12th Maths - कूलॉम, राउल्ट, अवकलन xʸ=yˣ, बेज प्रमेय</div></div>',
-vidya: '<div class="chap"><div class="chapTitle">📘 Vidya 2027 NEW - पुरानी Feature</div><div class="que">Vidya में Detailed उत्तर पूरे हिंदी में Step by Step - 10th + 12th Maths Side।</div></div>',
-flight: '<div class="chap"><div class="chapTitle">✈️ Flight 2027 NEW - पुरानी Feature - Trick</div><div class="que">Trick से याद करो - कम समय में - सूत्र Trick।</div></div>',
-bed: '<div class="chap"><div class="chapTitle">🎓 B.Ed 2027 - पुरानी Feature - SARE FUTURE</div><div class="que">B.Ed के सभी Model Papers हिंदी में।</div></div>',
-nursing: '<div class="chap"><div class="chapTitle">🩺 Nursing 2027 - पुरानी Feature</div><div class="que">Nursing Entrance के Model Papers।</div></div>',
-neet: '<div class="chap"><div class="chapTitle">🩺 NEET 720 - पुरानी Feature - SARE FUTURE</div><div class="que">NEET के लिए जीव, भौतिकी, रसायन HIT प्रश्न।</div></div>',
-eng10: '<div class="chap"><div class="chapTitle">🔤 English - पुरानी Feature</div><div class="que">10th 12th English Model Papers हिंदी व्याख्या सहित।</div></div>',
-eng12: '<div class="chap"><div class="chapTitle">🔤 12th English - Maths Side - 100 अंक</div><div class="que"><b>Flamingo Prose - 20 अंक HIT</b><br>1. The Last Lesson - 5 अंक, 2. Lost Spring - 5 अंक, 3. Deep Water - 5 अंक<br><b>Poetry - 15 अंक</b><br>My Mother at Sixty-six, Keeping Quiet<br><b>Vistas - 20 अंक</b><br>The Third Level, Tiger King</div></div>'
+profile: '<div class="chap"><div class="chapTitle">👤 Profile बनाओ - पुरानी Feature</div><div class="que"><b>PDF पर नाम आएगा</b><br>नाम: [________]<br>Class: 10th / 12th Maths Side<br><div style="background:#2563eb;color:white;padding:10px;border-radius:50px;text-align:center;margin-top:10px">Save करो</div></div></div>',
+viral10: '<div class="chap"><div class="chapTitle">🎯 10th 2020 वायरल पेपर - पुरानी Feature - 70% HIT</div><div class="que">1. कबीर - सच्चे भक्त - 5 अंक<br>2. √5 अपरिमेय - 2 अंक<br>3. हृदय चित्र - 4 अंक पक्का<br>4. राष्ट्रवाद - 5 अंक<br>5. समीकरण - 2 अंक</div></div>',
+hindi10: `<div class="chap"><div class="chapTitle">10th हिन्दी - पूरी किताब - 80 अंक - SARE FUTURE</div><div class="subHead">Chapter 1 - साखी कबीर - 10 अंक HIT</div><div class="que"><b>Q1. (5 अंक)</b> सच्चे भक्त के लक्षण? निंदक पास रखना, अहंकार न करना।<br><b>Q2.</b> पोथी पढ़ि पढ़ि जग मुआ - भाव - किताबी ज्ञान व्यर्थ, प्रेम जरूरी।</div><div class="subHead">Chapter 2 - मीरा - 10 अंक</div><div class="que"><b>Q1.</b> मेरे तो गिरधर गोपाल - अनन्य प्रेम।</div><div class="subHead">Chapter 6 - माता का आँचल - 15 अंक HIT</div><div class="que"><b>Q1. (8 अंक)</b> भोलानाथ और पिता - पिता अनुशासित, भोलानाथ चंचल।</div></div>`,
+math10: `<div class="chap"><div class="chapTitle">10th गणित - पूरी किताब - 70 अंक - SARE FUTURE</div><div class="subHead">Chapter 1 - वास्तविक संख्याएँ - 10 अंक HIT</div><div class="que"><b>Q1.</b> √5 अपरिमेय सिद्ध करो।<br><b>Q2.</b> 96,404 HCF=4<br><b>Q3.</b> सांख्यिकी - माध्य=Σfx/Σf - 4 नंबर पक्का 2027 में</div></div>`,
+science10: `<div class="chap"><div class="chapTitle">10th विज्ञान - पूरी किताब - 80 अंक - SARE FUTURE</div><div class="subHead">Chapter 3 - जैव प्रक्रम - 20 अंक - 4 नंबर पक्का</div><div class="que"><b>Q1. HIT हर साल</b> मानव हृदय 4 कक्ष, प्रकाश संश्लेषण 6CO2+6H2O→C6H12O6+6O2, वृक्काणु, मस्तिष्क</div></div>`,
+sst10: `<div class="chap"><div class="chapTitle">10th SST - पूरी किताब - 80 अंक - SARE FUTURE</div><div class="subHead">यूरोप में राष्ट्रवाद - 15 अंक HIT</div><div class="que"><b>Q1.</b> फ्रांसीसी क्रांति - स्वतंत्रता समानता बंधुत्व, बिस्मार्क रक्त और लौह - 3 युद्ध</div></div>`,
+math12: `<div class="chap"><div class="chapTitle">📘 12th गणित - पूरी किताब - 100 अंक - SARE FUTURE - Maths Side</div><div class="subHead">अध्याय 1 - संबंध एवं फलन - 12 अंक HIT</div><div class="que"><b>Q1.</b> संबंध - स्वतुल्य, सममित, संक्रामक, तुल्यता। फलन - एकैकी, आच्छादक। sin⁻¹x+cos⁻¹x=π/2</div><div class="subHead">अध्याय 4 - अवकलन - 25 अंक - सबसे जरूरी</div><div class="que"><b>Q1. HIT 2027</b> sin⁻¹(2x√1-x²)=2/√1-x²<br><b>Q2. HIT</b> xʸ=yˣ → y log x = x log y → अवकलन<br><b>Q3.</b> उच्चिष्ठ निम्निष्ठ - f'=0, f''<0 उच्चिष्ठ</div><div class="subHead">अध्याय 5 - समाकलन - 30 अंक HIT</div><div class="que"><b>Q1.</b> ∫sin²x = x/2 - sin2x/4 + C<br><b>Q2.</b> ∫0^a f(x)=∫0^a f(a-x) → π/4<br><b>Q3.</b> बेज प्रमेय P(A|B)=P(B|A)P(A)/P(B) - हर साल</div></div>`,
+phy12: `<div class="chap"><div class="chapTitle">⚛️ 12th भौतिक विज्ञान - पूरी किताब - 70 अंक</div><div class="subHead">Chapter 1 - वैद्युत आवेश - 15 अंक HIT</div><div class="que"><b>Q1.</b> कूलॉम F=kq1q2/r², k=9×10⁹, 2μC 0.5m पर F=0.144N<br><b>Q2.</b> द्विध्रुव E=2kp/r³, गॉस Φ=q/ϵ0, अनंत तार E=λ/2πϵ0r</div><div class="subHead">Chapter 5 - प्रकाशिकी - 15 अंक HIT</div><div class="que"><b>Q1.</b> यंग β=λD/d, विवर्तन, ध्रुवण</div></div>`,
+chem12: `<div class="chap"><div class="chapTitle">🧪 12th रसायन विज्ञान - पूरी किताब - 70 अंक</div><div class="subHead">Chapter 1 - विलयन - 12 अंक HIT</div><div class="que"><b>Q1.</b> राउल्ट P=P0×x1, ΔTb=Kb×m, π=CRT, 5g NaOH 250ml में M=0.5M</div><div class="subHead">Chapter 2 - विद्युत रसायन - 12 अंक</div><div class="que"><b>Q1.</b> Zn|Zn²⁺||Cu²⁺|Cu E°=1.10V, नर्नस्ट E=E°-0.0591/n logQ</div></div>`,
+hindi12: `<div class="chap"><div class="chapTitle">📖 12th हिन्दी - पूरी किताब - 100 अंक</div><div class="que"><b>अंतरा - कविता</b><br>1. आत्म परिचय - 5 अंक<br>2. पतंग - 5 अंक<br><b>अंतराल - गद्य</b><br>हजारी प्रसाद, जैनेन्द्र बाजार दर्शन - 8 अंक</div></div>`,
+bio12: `<div class="chap"><div class="chapTitle">🧬 12th जीव विज्ञान - पूरी किताब - 70 अंक</div><div class="que"><b>अध्याय 1 - लैंगिक जनन - 15 अंक HIT</b><br>परागण - स्वपरागण, परपरागण, दोहरा निषेचन - युग्मनज 2n, भ्रूणपोष 3n</div></div>`,
+his12: `<div class="chap"><div class="chapTitle">🏛️ 12th इतिहास - पूरी किताब - 100 अंक</div><div class="que"><b>हड़प्पा - 20 अंक HIT</b><br>नगर योजना - दुर्ग, निचला नगर, पक्की ईंटें 1:2:4, नालियाँ ढकी, ग्रिड, विशाल स्नानागार 11.88×7.01×2.43m, अन्नागार, 1921 दयाराम साहनी</div></div>`,
+bhugol12: `<div class="chap"><div class="chapTitle">🌍 12th भूगोल - पूरी किताब</div><div class="que"><b>मानव भूगोल - 10 अंक</b><br>मानव भूगोल क्या है? प्रकृति और मानव संबंध, जनसंख्या वितरण</div></div>`,
+mano12: `<div class="chap"><div class="chapTitle">🧠 12th मनोविज्ञान - पूरी किताब</div><div class="que"><b>मनोविज्ञान क्या है - 10 अंक</b><br>व्यवहार का विज्ञान - वर्णन, व्याख्या, भविष्यवाणी, नियंत्रण</div></div>`,
+samaj12: `<div class="chap"><div class="chapTitle">👥 12th समाजशास्त्र - पूरी किताब</div><div class="que"><b>समाजशास्त्र क्या है - 10 अंक</b><br>समाज, समूह, समाजीकरण</div></div>`,
+raj12: `<div class="chap"><div class="chapTitle">🗳️ 12th राजनीति विज्ञान - पूरी किताब - 100 अंक</div><div class="que"><b>शीतयुद्ध - 15 अंक HIT</b><br>USA पूँजीवाद vs USSR साम्यवाद, NATO vs वारसा, 1991 सोवियत विघटन - गोर्बाचेव</div></div>`,
+arth12: `<div class="chap"><div class="chapTitle">💰 12th अर्थशास्त्र - पूरी किताब</div><div class="que"><b>व्यष्टि - 10 अंक</b><br>दुर्लभता, चयन, मांग का नियम</div></div>`,
+lekha12: `<div class="chap"><div class="chapTitle">🧾 12th लेखाशास्त्र - पूरी किताब</div><div class="que"><b>साझेदारी - 20 अंक HIT</b><br>साझेदारी क्या है? विशेषताएँ, संलेख, लाभ हानि विभाजन</div></div>`,
+eng10_10: `<div class="chap"><div class="chapTitle">🔤 10th English - पूरी किताब</div><div class="que">First Flight - A Letter to God, Nelson Mandela<br>Poems - Dust of Snow, Fire and Ice<br>Footprints - Triumph of Surgery</div></div>`,
+map10: `<div class="chap"><div class="chapTitle">🗺️ 10th मानचित्र - SARE FUTURE</div><div class="que">भारत मानचित्र - नदियाँ, पर्वत, उद्योग, मिट्टी - 5 अंक पक्का</div></div>`,
+mastermind: '<div class="chap"><div class="chapTitle">👑 Mastermind 2027 - 70% HIT - पुरानी Feature</div><div class="que">70% Exact यहीं से - √5, HCF=4, हृदय, राष्ट्रवाद, कूलॉम, राउल्ट, अवकलन xʸ=yˣ, बेज प्रमेय</div></div>',
+vidya: '<div class="chap"><div class="chapTitle">📘 Vidya 2027 NEW - पुरानी Feature</div><div class="que">Detailed उत्तर पूरे हिंदी में Step by Step - SARE FUTURE</div></div>',
+flight: '<div class="chap"><div class="chapTitle">✈️ Flight 2027 NEW - Trick - पुरानी Feature</div><div class="que">Trick से याद करो - कम समय में - SARE FUTURE</div></div>',
+paper10: '<div class="chap"><div class="chapTitle">📄 10th पेपर 2020-26 - पुरानी Feature</div><div class="que">2020-26 तक सारे पेपर - 70% Repeat - √5, हृदय, राष्ट्रवाद - SARE FUTURE</div></div>',
+paper12Math: '<div class="chap"><div class="chapTitle">📄 12th Maths पेपर 2020-26 - पुरानी Feature</div><div class="que">Maths Side के सारे पेपर - कूलॉम, राउल्ट, अवकलन xʸ=yˣ, बेज प्रमेय Repeat - 2027 में भी</div></div>',
+all10: '<div class="chap"><div class="chapTitle">🔥 10th पूरी किताब - पुरानी Feature</div><div class="que">10th की 5 किताबों के सारे NCERT + Model Paper - 70% पक्का - SARE FUTURE</div></div>',
+all12Math: '<div class="chap"><div class="chapTitle">🔥 12th Maths पूरी किताब - पुरानी Feature</div><div class="que">12th Maths Side की 3 किताबों के सारे NCERT + Model Paper - भौतिकी, रसायन, गणित - सब हिंदी में</div></div>',
+bed: '<div class="chap"><div class="chapTitle">🎓 B.Ed 2027 - पुरानी Feature - SARE FUTURE</div><div class="que">B.Ed Model Papers हिंदी में - बाल विकास, शिक्षा मनोविज्ञान</div></div>',
+nursing: '<div class="chap"><div class="chapTitle">🩺 Nursing 2027 - पुरानी Feature</div><div class="que">Nursing Entrance Model Papers - जीव, भौतिकी, रसायन</div></div>',
+neet: '<div class="chap"><div class="chapTitle">🩺 NEET 720 - पुरानी Feature</div><div class="que">NEET HIT प्रश्न - जीव, भौतिकी, रसायन</div></div>',
+eng10: '<div class="chap"><div class="chapTitle">🔤 English - पुरानी Feature</div><div class="que">10th 12th English Model Papers हिंदी व्याख्या सहित</div></div>',
+eng12: '<div class="chap"><div class="chapTitle">🔤 12th English - 100 अंक</div><div class="que">Flamingo - Last Lesson, Lost Spring, Deep Water<br>Poetry - My Mother at Sixty-six, Keeping Quiet<br>Vistas - Third Level, Tiger King</div></div>'
 };
 function openBook(t,k){
 document.getElementById('home').style.display='none';
@@ -105,10 +186,6 @@ document.getElementById('detail').style.display='block';
 document.getElementById('dTitle').innerText=t;
 document.getElementById('dContent').innerHTML=books[k]||'<div class="chap"><h3>'+t+'</h3><div class="que">पूरा Model Paper SARE FUTURE - हिंदी में</div></div>';
 window.scrollTo(0,0);
-}
-function goBack(){
-document.getElementById('detail').style.display='none';
-document.getElementById('home').style.display='block';
 }
 </script>
 </body>
