@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SARE FUTURE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>स्टड साथी - SARE FUTURE</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
 body{background:#eef2ff}
 .top{background:white;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 5px #0001}
 .card{background:white;margin:12px;border-radius:20px;padding:15px;box-shadow:0 2px 8px #0001}
-.pill{background:#f1f5f9;padding:10px 4px;border-radius:50px;text-align:center;font-weight:bold;font-size:12px;cursor:pointer;border:1px solid #e2e8f0}
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}
-.box3{padding:15px 5px;border-radius:18px;color:white;text-align:center;font-weight:bold;cursor:pointer}
-#detailScreen{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#eef2ff;z-index:99;overflow:auto}
+.yellow{background:#fff9db;border:2px solid #ffe066;text-align:center;font-weight:bold}
+.purple{background:linear-gradient(135deg,#7c3aed,#4f46e5);color:white}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.pill{background:#f1f5f9;padding:12px 4px;border-radius:50px;text-align:center;font-weight:bold;font-size:13px;cursor:pointer;border:1px solid #e2e8f0}
+.pill:active{transform:scale(0.95);background:#ffedd5}
+.boxM{padding:18px 5px;border-radius:18px;color:white;text-align:center;font-weight:bold;cursor:pointer}
+#detail{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#eef2ff;z-index:99;overflow:auto}
 .dhead{background:linear-gradient(90deg,#ff3b3b,#ff8c1a);padding:15px;color:white;display:flex;gap:10px;align-items:center;position:sticky;top:0}
 .chap{background:white;margin:12px;border-radius:15px;padding:15px;border-left:5px solid #ff3b3b}
 .que{padding:12px 0;border-bottom:1px solid #eee;font-size:14px;line-height:23px}
+.back{background:white;color:red;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}
 </style>
 </head>
 <body>
-<div id="homeScreen">
-<div class="top"><div>📚 <b style="color:#2563eb">स्टड साथी - SARE FUTURE</b><div style="font-size:9px;color:gray">10th 12th + Mastermind Vidya Flight 2027</div></div><div>👤 Profile</div></div>
 
-<div class="card"><div style="text-align:center;font-weight:bold">🏪 2027 - दुकान वाले Model Papers</div><div class="grid" style="grid-template-columns:1fr 1fr 1fr">
-<div class="box3" style="background:#7c3aed" onclick="openBook('Mastermind 2027 HIT','mastermind')">Mastermind<br><small style="background:gold;color:black;padding:2px 6px;border-radius:10px">70% HIT</small></div>
-<div class="box3" style="background:#2563eb" onclick="openBook('Vidya 2027 NEW','vidya')">Vidya<br><small style="background:white;color:black;padding:2px 6px;border-radius:10px">NEW</small></div>
-<div class="box3" style="background:#dc2626" onclick="openBook('Flight 2027 NEW','flight')">Flight<br><small style="background:white;color:black;padding:2px 6px;border-radius:10px">NEW</small></div>
+<div id="home">
+<div class="top"><div><div style="color:#2563eb;font-weight:800">📚 स्टड साथी - SARE FUTURE</div><div style="font-size:9px;color:gray">10th 12th 2020-26 + Mastermind Vidya Flight 2027 + B.Ed Nursing NEET</div></div><div style="background:#f1f5f9;padding:5px 10px;border-radius:50px">👤 Profile</div></div>
+
+<div class="card yellow">👋 Profile बनाओ - PDF पर नाम आएगा<div style="background:#2563eb;color:white;padding:10px;border-radius:50px;margin-top:8px">✨ Profile बनाओ - 30 सेकंड</div></div>
+
+<div class="card purple"><b>🎯 आज का वायरल - 10th 2020 वाला पेपर</b><div style="font-size:13px;margin-top:5px">70% टीचर्स इसी को रटवा रहे हैं - 2027 के लिए भी जरूरी</div><div onclick="openBook('10th 2020 वायरल पेपर - HIT','viral10')" style="background:white;color:#7c3aed;display:inline-block;padding:8px 15px;border-radius:50px;margin-top:10px;font-weight:bold;cursor:pointer">👉 अभी खोलो - फ्री</div></div>
+
+<div class="card"><div style="text-align:center;font-weight:bold;margin-bottom:10px">🏪 2027 - दुकान वाले Model Papers</div><div class="grid3">
+<div class="boxM" style="background:#7c3aed" onclick="openBook('Mastermind 2027 - 70% HIT','mastermind')">Mastermind<br><small style="background:#facc15;color:black;padding:2px 8px;border-radius:20px">70% HIT</small></div>
+<div class="boxM" style="background:#2563eb" onclick="openBook('Vidya 2027 NEW','vidya')">Vidya<br><small style="background:white;color:black;padding:2px 8px;border-radius:20px">NEW</small></div>
+<div class="boxM" style="background:#dc2626" onclick="openBook('Flight 2027 NEW','flight')">Flight<br><small style="background:white;color:black;padding:2px 8px;border-radius:20px">NEW</small></div>
 </div></div>
 
-<div class="card"><div style="text-align:center;font-weight:bold">📖 हर विषय का Model Paper - SARE FUTURE</div><div class="grid">
+<div class="card"><div style="text-align:center;font-weight:bold">📖 हर विषय का Model Paper - SARE FUTURE</div><div class="grid4">
 <div class="pill" onclick="openBook('10th हिंदी Model Paper','hindi10')">10th हिंदी</div>
 <div class="pill" onclick="openBook('10th गणित Model Paper','math10')">10th गणित</div>
 <div class="pill" onclick="openBook('10th विज्ञान Model Paper','science10')">10th विज्ञान</div>
@@ -37,23 +48,58 @@ body{background:#eef2ff}
 <div class="pill" onclick="openBook('12th भौतिकी Model Paper','phy12')">12th भौतिकी</div>
 <div class="pill" onclick="openBook('12th जीव Model Paper','bio12')">12th जीव</div>
 </div></div>
+
+<div class="card"><div style="text-align:center;font-weight:bold">📚 पुराने + पूरी किताबें - SARE FUTURE</div><div class="grid4">
+<div class="pill" onclick="openBook('10th पेपर 2020-26','paper10')">10th पेपर<br>2020-26</div>
+<div class="pill" onclick="openBook('12th पेपर 2020-26','paper12')">12th पेपर<br>2020-26</div>
+<div class="pill" onclick="openBook('10th पूरी किताब','all10')">10th पूरी<br>किताब</div>
+<div class="pill" onclick="openBook('12th पूरी किताब','all12')">12th पूरी<br>किताब</div>
+<div class="pill" onclick="openBook('B.Ed 2027','bed')">B.Ed<br>2027</div>
+<div class="pill" onclick="openBook('Nursing 2027','nursing')">Nursing</div>
+<div class="pill" onclick="openBook('NEET 720','neet')">NEET 720</div>
+<div class="pill" onclick="openBook('English Model Paper','eng10')">English</div>
+</div></div>
 </div>
 
-<div id="detailScreen">
-<div class="dhead"><div onclick="goBack()" style="background:white;color:red;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer">←</div><h3 id="dTitle">Model Paper</h3></div>
+<div id="detail">
+<div class="dhead"><div class="back" onclick="goBack()">←</div><h3 id="dTitle">Model Paper</h3></div>
 <div id="dContent" style="padding-bottom:30px"></div>
 </div>
 
 <script>
-var books = {
-vidya: '<div class="chap"><h3>📘 Vidya 2027 NEW - Model Paper - पूरा हिंदी में</h3><div class="que"><b>Vidya क्या है?</b><br>Vidya में हर प्रश्न का Detailed उत्तर पूरे हिंदी में मिलता है - NCERT के अनुसार।</div><div class="que"><b>Model Paper - 10th हिंदी - 80 अंक</b><br><b>1.</b> कबीर की साखी - सच्चे भक्त के लक्षण लिखिए? (5 अंक)<br><b>उत्तर:</b> निंदक को पास रखना, अहंकार त्यागना, ईश्वर भजन।<br><br><b>2.</b> मीरा के पद - मेरे तो गिरधर गोपाल का भावार्थ (5 अंक)<br><br><b>3.</b> बिहारी के दोहे - राधा के रूप का वर्णन (3 अंक)</div><div class="que"><b>Model Paper - 10th विज्ञान - 80 अंक</b><br><b>1.</b> मानव हृदय की संरचना चित्र सहित - 4 अंक पक्का<br><b>2.</b> रासायनिक समीकरण संतुलित करो - 2 अंक<br><b>3.</b> प्रकाश संश्लेषण की क्रियाविधि - 4 अंक</div><div class="que"><b>Model Paper - 12th इतिहास</b><br><b>1.</b> हड़प्पा नगर योजना - 5 अंक HIT<br><b>2.</b> मौर्य प्रशासन - 5 अंक<br><b>3.</b> 1857 की क्रांति के कारण - 8 अंक</div></div>',
-
-mastermind: '<div class="chap"><h3>👑 Mastermind 2027 - 70% Exact - Model Paper</h3><div class="que"><b>🔥 दुकान पर 300₹ वाली किताब - 70% यहीं से आता है!</b></div><div class="que"><b>10th गणित - Mastermind HIT - 70 अंक</b><br>1. √5 अपरिमेय सिद्ध करो - हर साल आया है (2 अंक)<br>2. 96 और 404 का HCF = 4 (2 अंक)<br>3. द्विघात बहुपद x2-2x-8 के शून्यक - α+β=2, αβ=-8 (3 अंक)<br>4. सांख्यिकी - माध्य, माध्यिका, बहुलक - 4 अंक पक्का 2027 में<br>5. त्रिकोणमिति - sin, cos के मान - 5 अंक</div><div class="que"><b>10th विज्ञान - Mastermind HIT</b><br>1. संतुलित समीकरण - 2 अंक<br>2. मानव हृदय, मस्तिष्क, वृक्क - 4-4 अंक<br>3. प्रकाश - दर्पण सूत्र v=2m वाले Numerical - 3 अंक</div><div class="que"><b>12th भौतिकी - Mastermind HIT</b><br>1. कूलॉम नियम F=kq1q2/r2 - 3 अंक<br>2. गॉस प्रमेय - 5 अंक<br>3. धारा का चुंबकीय प्रभाव - 5 अंक</div></div>',
-
-flight: '<div class="chap"><h3>✈️ Flight 2027 NEW - Trick + Model Paper</h3><div class="que"><b>Flight में Trick से याद करो - कम समय में ज्यादा नंबर</b></div><div class="que"><b>Trick 1 - 10th SST - यूरोप में राष्ट्रवाद - 5 अंक</b><br>फ्रांसीसी क्रांति = स्वतंत्रता+समानता+बंधुत्व<br>Trick: फ्रांस ने नारा दिया, नेपोलियन ने फैलाया, बिस्मार्क ने जर्मनी जोड़ा</div><div class="que"><b>Trick 2 - 12th राजनीति - शीतयुद्ध - 4 अंक</b><br>USA=पूँजीवाद, USSR=साम्यवाद<br>NATO (USA) vs वारसा पैक्ट (USSR)<br>Trick: शीत=ठंडा युद्ध, गोली नहीं, धमकी</div><div class="que"><b>Trick 3 - विज्ञान - pH - 2 अंक</b><br>0-7 अम्ल, 7 उदासीन, 7-14 क्षार<br>Trick: अ-उ-क्षार</div></div>',
-
-hindi10: '<div class="chap"><h3>📝 10th हिंदी - Model Paper 2027 - 80 अंक - पूरा हिंदी में</h3><div class="que"><b>खंड क - 20 अंक - साखी (कबीर)</b><br>1. सच्चे भक्त के लक्षण क्या हैं? (5 अंक)<br>उत्तर: निंदक को पास रखना, अहंकार न करना, ईश्वर का नाम जपना, सबमें ईश्वर देखना।<br><br>2. पोथी पढ़ि पढ़ि जग मुआ का भावार्थ (5 अंक)<br>उत्तर: केवल किताबी ज्ञान से ज्ञानी नहीं बनते, प्रेम और अनुभव जरूरी है।</div><div class="que"><b>खंड ख - मीरा के पद (10 अंक)</b><br>1. मेरे तो गिरधर गोपाल - मीरा का कृष्ण प्रेम - 5 अंक</div><div class="que"><b>खंड ग - कृतिका - माता का आँचल (10 अंक)</b><br>1. भोलानाथ और पिता के संबंध - 5 अंक</div></div>',
-
-math10: '<div class="chap"><h3>🔢 10th गणित - Model Paper 2027 - 70 अंक</h3><div class="que"><b>1. वास्तविक संख्याएँ - 10 अंक HIT</b><br>Q1. √5 अपरिमेय सिद्ध करो (2 अंक) - UP 2024,25 में आया, 2027 में भी आएगा<br>Q2. 96 और 404 का HCF = 4 - यूक्लिड विधि से (2 अंक)<br>Q3. दिखाओ 3+2√5 अपरिमेय है (3 अंक)</div><div class="que"><b>2. बहुपद - 8 अंक</b><br>Q1. 2x2+3x+1 के शून्यक - -1, -1/2<br>Q2. α+β, αβ निकालना</div><div class="que"><b>3. सांख्यिकी - 8 अंक - सबसे जरूरी - 2027 में 4 नंबर पक्का</b><br>माध्य, माध्यिका, बहुलक का सूत्र और प्रश्न</div></div>',
-
-science10: '<div class="chap"><h3>🔬 10th विज्ञान -
+var books={
+vidya: '<div class="chap"><h3>📘 Vidya 2027 NEW - पूरा Model Paper हिंदी में</h3><div class="que"><b>Vidya में क्या है?</b> हर प्रश्न का Detailed उत्तर पूरे हिंदी में - NCERT अनुसार। दुकान पर 280₹ की है।</div><div class="que"><b>Model Paper - 10th हिंदी - 80 अंक HIT</b><br>1. कबीर - सच्चे भक्त के लक्षण क्या हैं? (5 अंक)<br>उत्तर: निंदक को पास रखना, अहंकार त्यागना, ईश्वर भजन, सबमें ईश्वर देखना।<br>2. मीरा - मेरे तो गिरधर गोपाल - भावार्थ - अनन्य कृष्ण प्रेम (5 अंक)<br>3. माता का आँचल - भोलानाथ और पिता का संबंध (10 अंक)</div><div class="que"><b>Model Paper - 10th विज्ञान - 80 अंक</b><br>1. मानव हृदय की संरचना चित्र सहित - 4 अंक पक्का हर साल आता है<br>2. प्रकाश संश्लेषण - 6CO2+6H2O → C6H12O6+6O2 (4 अंक)<br>3. रासायनिक समीकरण संतुलित करो - 2H2+O2=2H2O (2 अंक)</div><div class="que"><b>Model Paper - 12th इतिहास - 100 अंक</b><br>1. हड़प्पा नगर योजना - 8 अंक HIT - दुर्ग, निचला नगर, पक्की ईंटें, नालियाँ, विशाल स्नानागार, अन्नागार - खोज 1921 दयाराम साहनी<br>2. मौर्य प्रशासन - कौटिल्य के अर्थशास्त्र अनुसार - 8 अंक</div></div>',
+mastermind: '<div class="chap"><h3>👑 Mastermind 2027 - 70% HIT - दुकान वाली 300₹ वाली</h3><div class="que"><b>🔥 70% पेपर यहीं से आता है - UP Board HIT 2027</b></div><div class="que"><b>10th गणित - 70 अंक - Mastermind HIT</b><br>1. √5 अपरिमेय सिद्ध करो - हर साल आया (2 अंक)<br>2. 96 और 404 का HCF=4 - यूक्लिड विधि (2 अंक)<br>3. द्विघात बहुपद x²-2x-8 के शून्यक α+β=2, αβ=-8 (3 अंक)<br>4. सांख्यिकी - माध्य, माध्यिका, बहुलक - 4 अंक पक्का 2027 में - Formula + Question<br>5. त्रिकोणमिति - sin, cos मान - 5 अंक</div><div class="que"><b>10th विज्ञान - Mastermind HIT</b><br>1. संतुलित समीकरण, 2. मानव हृदय, मस्तिष्क, वृक्क - 4-4 अंक, 3. प्रकाश Numerical</div><div class="que"><b>12th भौतिकी/जीव/इतिहास - Mastermind HIT</b><br>भौतिकी: कूलॉम F=kq1q2/r², गॉस प्रमेय<br>जीव: परागण, दोहरा निषेचन, मानव जनन<br>इतिहास: हड़प्पा, मौर्य, 1857</div></div>',
+flight: '<div class="chap"><h3>✈️ Flight 2027 NEW - Trick से याद करो - कम समय में</h3><div class="que"><b>Flight में Trick + One Liner + Map</b></div><div class="que"><b>Trick 1 - 10th SST - यूरोप में राष्ट्रवाद - 5 अंक</b><br>फ्रांसीसी क्रांति = स्वतंत्रता+समानता+बंधुत्व<br>Trick: फ्रांस ने नारा दिया, नेपोलियन ने फैलाया, बिस्मार्क ने जर्मनी जोड़ा रक्त और लौह से</div><div class="que"><b>Trick 2 - 12th राजनीति - शीतयुद्ध - 4 अंक</b><br>USA=पूँजीवाद, USSR=साम्यवाद, NATO (USA) vs वारसा पैक्ट (USSR)<br>Trick: शीत=ठंडा युद्ध, गोली नहीं, धमकी</div><div class="que"><b>Trick 3 - विज्ञान - pH - 2 अंक</b><br>0-7 अम्लीय, 7 उदासीन, 7-14 क्षारीय - Trick: अम्ल उदास क्षार</div></div>',
+hindi10: '<div class="chap"><h3>📝 10th हिंदी - Model Paper 2027 - SARE FUTURE - 80 अंक</h3><div class="que"><b>साखी (कबीर) - 10 अंक HIT 2027</b><br>Q1. सच्चे भक्त के लक्षण? (5 अंक)<br>उत्तर: निंदक को पास रखना, अहंकार न करना, ईश्वर नाम जपना।<br>Q2. पोथी पढ़ि पढ़ि जग मुआ - भावार्थ (5 अंक)<br>उत्तर: किताबी ज्ञान व्यर्थ है, प्रेम और अनुभव जरूरी है।</div><div class="que"><b>मीरा के पद - 10 अंक</b><br>मेरे तो गिरधर गोपाल दूसरो न कोई - मीरा का अनन्य कृष्ण प्रेम।</div><div class="que"><b>कृतिका - माता का आँचल - 10 अंक</b><br>भोलानाथ और उसके पिता का संबंध - पिता अनुशासित, भोलानाथ चंचल।</div></div>',
+math10: '<div class="chap"><h3>🔢 10th गणित - Model Paper 2027 - SARE FUTURE - 70 अंक - हिंदी में</h3><div class="que"><b>वास्तविक संख्याएँ - 10 अंक HIT</b><br>Q1. सिद्ध करो √5 अपरिमेय है (2 अंक) - UP 2024,25 में आया, 2027 में भी आएगा<br>हल: मान लो परिमेय है = p/q... विरोधाभास अतः अपरिमेय।<br>Q2. 96 और 404 का HCF = 4 - यूक्लिड विधि से (2 अंक)<br>Q3. दिखाओ 3+2√5 अपरिमेय है (3 अंक)</div><div class="que"><b>बहुपद - 8 अंक</b><br>Q1. 2x²+3x+1 के शून्यक - -1, -1/2<br>Q2. α+β, αβ निकालना - Formula</div><div class="que"><b>सांख्यिकी - 8 अंक - सबसे जरूरी - 2027 में 4 नंबर पक्का</b><br>माध्य = Σfx/Σf, माध्यिका, बहुलक - सूत्र और 1 प्रश्न पक्का।</div></div>',
+science10: '<div class="chap"><h3>🔬 10th विज्ञान - Model Paper 2027 - SARE FUTURE - 80 अंक</h3><div class="que"><b>रासायनिक अभिक्रियाएँ - 15 अंक HIT</b><br>Q1. संतुलित समीकरण क्या है? क्यों जरूरी है? (3 अंक)<br>उत्तर: द्रव्यमान संरक्षण के लिए परमाणु बराबर करना। 2H2+O2=2H2O<br>Q2. वियोजन, विस्थापन, द्विविस्थापन में अंतर उदाहरण सहित (5 अंक)</div><div class="que"><b>जैव प्रक्रम - 20 अंक - 4 नंबर पक्का</b><br>Q1. मानव हृदय की संरचना चित्र सहित (4 अंक) - हर साल आता है - 4 कक्ष - 2 अलिंद, 2 निलय<br>Q2. प्रकाश संश्लेषण की क्रियाविधि (4 अंक) - 6CO2+6H2O → C6H12O6+6O2 सूर्य प्रकाश<br>Q3. वृक्काणु (नेफ्रॉन) की संरचना और कार्य (4 अंक)</div><div class="que"><b>प्रकाश - 15 अंक</b><br>Q1. गोलीय दर्पण के लिए चिह्न परिपाटी<br>Q2. 2m फोकस दूरी वाले लेंस की क्षमता = 0.5 डायोप्टर</div></div>',
+sst10: '<div class="chap"><h3>🌍 10th SST - Model Paper 2027 - SARE FUTURE - 80 अंक</h3><div class="que"><b>यूरोप में राष्ट्रवाद - 10 अंक HIT 2027</b><br>Q: फ्रांसीसी क्रांति ने राष्ट्रवाद को कैसे जन्म दिया? (5 अंक)<br>उत्तर: 1789 में स्वतंत्रता, समानता, बंधुत्व के नारे, नेपोलियन के सुधारों ने राष्ट्रवाद फैलाया।<br><br>Q: जर्मनी के एकीकरण में बिस्मार्क की भूमिका (5 अंक)<br>उत्तर: रक्त और लौह की नीति, 3 युद्ध - डेनमार्क, ऑस्ट्रिया, फ्रांस।</div><div class="que"><b>सत्ता की साझेदारी, संघवाद - 10 अंक</b><br>बेल्जियम और श्रीलंका की तुलना।</div></div>',
+his12: '<div class="chap"><h3>🏛️ 12th इतिहास - Model Paper 2027 - SARE FUTURE - 100 अंक - हिंदी में</h3><div class="que"><b>ईंटें, मनके तथा अस्थियाँ - हड़प्पा सभ्यता - 20 अंक HIT</b><br>Q1. हड़प्पा नगर योजना की विशेषताएँ (8 अंक)<br>उत्तर: दो भाग - दुर्ग (ऊँचा, शासक) और निचला नगर (सामान्य लोग), पक्की ईंटें 1:2:4 अनुपात, नालियों की व्यवस्था ढकी हुई, सड़कें समकोण पर काटती हैं (ग्रिड प्रणाली), विशाल स्नानागार 11.88m x 7.01m x 2.43m, अन्नागार।<br><br>Q2. विशाल स्नानागार की विशेषताएँ (5 अंक)<br>Q3. हड़प्पा सभ्यता के पतन के कारण (5 अंक) - बाढ़, नदी मार्ग बदलना, आक्रमण।</div><div class="que"><b>राजा, किसान और नगर - मौर्य - 20 अंक</b><br>मौर्य प्रशासन - कौटिल्य के अर्थशास्त्र अनुसार - 7 अंग - राजा, अमात्य, जनपद, दुर्ग, कोष, दंड, मित्र।</div></div>',
+pol12: '<div class="chap"><h3>⚖️ 12th राजनीति - Model Paper 2027 - SARE FUTURE - 100 अंक - हिंदी में</h3><div class="que"><b>शीतयुद्ध - 15 अंक HIT</b><br>Q1. शीतयुद्ध क्या है? कारण (8 अंक)<br>उत्तर: द्वितीय विश्व युद्ध के बाद USA (पूँजीवाद) और USSR (साम्यवाद) के बीच बिना हथियारों की लड़ाई - 1945-1991। कारण - परमाणु हथियारों की दौड़, NATO (1949) vs वारसा पैक्ट (1955), विचारधारा का टकराव।<br><br>Q2. सोवियत संघ के विघटन के कारण (7 अंक)<br>उत्तर: गोर्बाचेव की ग्लासनोस्त और पेरेस्त्रोइका, आर्थिक संकट, राष्ट्रवाद, अफगान युद्ध।</div><div class="que"><b>द्विध्रुवीयता का अंत - 15 अंक</b><br>1991 में सोवियत संघ विघटन से USA एकमात्र महाशक्ति।</div></div>',
+phy12: '<div class="chap"><h3>⚛️ 12th भौतिकी - Model Paper 2027 - SARE FUTURE - 70 अंक - हिंदी में</h3><div class="que"><b>वैद्युत आवेश तथा क्षेत्र - 15 अंक HIT 2027</b><br>Q1. कूलॉम का नियम लिखो - F = k q1q2 / r², k=9×10⁹ Nm²/C² (3 अंक)<br>Q2. वैद्युत द्विध्रुव के कारण अक्षीय स्थिति में क्षेत्र - E = 1/4πϵ0 * 2p/r³ (5 अंक)<br>Q3. Numerical: 2μC के दो आवेश 0.5m दूरी पर - बल = kq1q2/r² = 9×10⁹×4×10⁻¹²/0.25 = 0.144 N (3 अंक)</div><div class="que"><b>वैद्युत धारा - 15 अंक</b><br>ओम का नियम V=IR, किरचॉफ के नियम, व्हीटस्टोन सेतु।</div></div>',
+bio12: '<div class="chap"><h3>🧬 12th जीव विज्ञान - Model Paper 2027 - SARE FUTURE - 70 अंक - हिंदी में</h3><div class="que"><b>पुष्पी पादपों में लैंगिक जनन - 15 अंक HIT</b><br>Q1. परागण क्या है? प्रकार - स्वपरागण और परपरागण, उनके लाभ-हानि (5 अंक)<br>उत्तर: परागकोष से वर्तिकाग्र तक परागकणों का पहुँचना। स्वपरागण एक ही फूल में - शुद्धता बनी रहती, पर विविधता नहीं। परपरागण दूसरे फूल में - विविधता, पर कीटों पर निर्भर।<br><br>Q2. दोहरा निषेचन क्या है? महत्व (5 अंक)<br>उत्तर: एक नर युग्मक अंड से मिलता है (युग्मनज 2n), दूसरा दो ध्रुवीय नाभिकों से (भ्रूणपोष 3n)। केवल आवृतबीजी में। महत्व - भ्रूणपोष बनता है जो भ्रूण को पोषण देता है।</div><div class="que"><b>मानव जनन - 15 अंक - 2027 में 8 अंक पक्का</b><br>Q1. मानव वृषण की संरचना और शुक्राणुजनन (5 अंक)<br>Q2. मासिक चक्र (5 अंक)</div></div>',
+paper10: '<div class="chap"><h3>📄 10th पेपर 2020-26 - SARE FUTURE - UP Board</h3><div class="que"><b>2020 से 2026 तक के सभी पेपर यहाँ हैं - 70% Repeat होते हैं।</b><br>2024 में आया - √5 अपरिमेय, हृदय की संरचना, राष्ट्रवाद - यही 2027 में भी आएगा।<br>2025 में आया - पोथी पढ़ि पढ़ि, 96,404 HCF, प्रकाश संश्लेषण।</div></div>',
+paper12: '<div class="chap"><h3>📄 12th पेपर 2020-26 - SARE FUTURE</h3><div class="que"><b>12th के सभी पुराने पेपर - इतिहास, राजनीति, भौतिकी, रसायन, जीव - सबके HIT प्रश्न।</b><br>हर साल हड़प्पा, शीतयुद्ध, कूलॉम नियम, परागण Repeat होता है।</div></div>',
+all10: '<div class="chap"><h3>🔥 10th पूरी किताब - SARE FUTURE - 70% पक्का - हिंदी में</h3><div class="que">10th की 5 किताबों के सारे NCERT प्रश्न + 2020-26 के पेपर पूरे हिंदी में।<br>ऊपर किसी भी विषय - हिंदी, गणित, विज्ञान, SST पर Click करो - पूरा Model Paper खुलेगा।</div></div>',
+all12: '<div class="chap"><h3>🔥 12th पूरी किताब - SARE FUTURE - 70% पक्का - हिंदी में</h3><div class="que">12th की सभी किताबों के प्रश्न हिंदी में - इतिहास, राजनीति, भौतिकी, रसायन, जीव - सारे Model Papers।</div></div>',
+viral10: '<div class="chap"><h3>🎯 10th 2020 वाला वायरल पेपर - 2027 के लिए जरूरी - SARE FUTURE</h3><div class="que"><b>70% टीचर्स इसी को रटवा रहे हैं - यही 2027 में आएगा</b><br>1. कबीर - सच्चे भक्त के लक्षण - 5 अंक HIT<br>2. √5 अपरिमेय सिद्ध करो - 2 अंक HIT<br>3. मानव हृदय की संरचना चित्र सहित - 4 अंक पक्का HIT<br>4. यूरोप में राष्ट्रवाद - फ्रांसीसी क्रांति - 5 अंक HIT<br>5. रासायनिक समीकरण संतुलित - 2 अंक HIT</div></div>',
+bed: '<div class="chap"><h3>🎓 B.Ed 2027 - SARE FUTURE</h3><div class="que">B.Ed के सभी Model Papers हिंदी में - बाल विकास, शिक्षा मनोविज्ञान।</div></div>',
+nursing: '<div class="chap"><h3>🩺 Nursing 2027 - SARE FUTURE</h3><div class="que">Nursing Entrance के Model Papers - जीव विज्ञान, भौतिकी, रसायन।</div></div>',
+neet: '<div class="chap"><h3>🩺 NEET 720 - SARE FUTURE</h3><div class="que">NEET के लिए जीव विज्ञान - परागण, मानव जनन, भौतिकी - कूलॉम, रसायन के HIT प्रश्न।</div></div>',
+eng10: '<div class="chap"><h3>🔤 English - Model Paper 2027 - SARE FUTURE</h3><div class="que">10th 12th English के Model Papers हिंदी व्याख्या सहित - Grammar + Literature।</div></div>'
+};
+function openBook(t,k){
+document.getElementById('home').style.display='none';
+document.getElementById('detail').style.display='block';
+document.getElementById('dTitle').innerText=t;
+document.getElementById('dContent').innerHTML=books[k]||'<div class="chap"><h3>'+t+'</h3><div class="que">इस विषय का पूरा Model Paper SARE FUTURE - पूरे हिंदी में जल्द आ रहा है। HIT 2027 के लिए तैयार रहो!</div></div>';
+window.scrollTo(0,0);
+}
+function goBack(){
+document.getElementById('detail').style.display='none';
+document.getElementById('home').style.display='block';
+}
+</script>
+</body>
+</html>
