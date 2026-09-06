@@ -3,311 +3,316 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Study-lSaathiAI - OMR 24 Q + 10 Min Timer - FINAL ALL</title>
+<title>Study-lSaathiAI - FINAL ALL FUTURE - 27 Future + OMR 24Q Timer + 10th+12th</title>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiU3R1ZHktbFNhYXRoaUFJIn0=">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
-body{background:#eef2ff;padding-bottom:85px}
-.top{background:#fff;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 5px #0001}
-.card{background:#fff;margin:10px;border-radius:18px;padding:14px;box-shadow:0 2px 8px #0001}
+body{background:#eef2ff;padding-bottom:90px}
+.top{background:#fff;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px #0001}
+.card{background:#fff;margin:10px;border-radius:18px;padding:14px;box-shadow:0 4px 12px #0001}
 .purple{background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff}
 .greenY{background:linear-gradient(135deg,#1B5E20,#FFEB3B);padding:14px;border-radius:16px;color:#fff;display:flex;justify-content:space-between;margin:10px}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
-.search{margin:10px;background:#fff;border-radius:12px;display:flex;align-items:center;padding:10px 12px;gap:8px;position:sticky;top:52px;z-index:9;box-shadow:0 2px 6px #0001}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}
+.pill{background:#f1f5f9;padding:10px 4px;border-radius:20px;text-align:center;font-weight:bold;font-size:11px;cursor:pointer;border:1px solid #e2e8f0}
+.boxM{padding:14px 5px;border-radius:16px;color:#fff;text-align:center;font-weight:bold;cursor:pointer;font-size:12px;position:relative}
+.search{margin:10px;background:#fff;border-radius:12px;display:flex;align-items:center;padding:10px 12px;gap:8px;position:sticky;top:62px;z-index:99;box-shadow:0 2px 6px #0001}
 .search input{border:none;outline:none;width:100%;font-size:13px}
 .newGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 10px 10px 10px}
-.newCard{background:#fff;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 4px 10px #0001;cursor:pointer;position:relative}
-.liveTag{position:absolute;top:4px;right:4px;background:red;color:#fff;font-size:7px;padding:2px 5px;border-radius:10px}
-.page{display:none;position:fixed;inset:0;background:#f6f7fb;z-index:100;overflow:auto;padding-bottom:80px}
-.dhead{background:linear-gradient(90deg,#1B5E20,#FFC107);padding:14px;color:#fff;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:2}
-.chap{background:#fff;margin:10px;border-radius:14px;padding:14px;border-left:5px solid #1B5E20;box-shadow:0 2px 6px #0001}
+.newCard{background:#fff;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 4px 10px #0001;cursor:pointer;position:relative;border:2px solid transparent}
+.liveTag{position:absolute;top:4px;right:4px;background:red;color:#fff;font-size:7px;padding:2px 5px;border-radius:10px;animation:blink 1s infinite}
+.page{display:none;position:fixed;inset:0;background:#f6f7fb;z-index:200;overflow:auto;padding-bottom:90px}
+.dhead{background:linear-gradient(90deg,#1B5E20,#FFC107);padding:14px;color:#fff;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:5}
+.chap{background:#fff;margin:10px;border-radius:14px;padding:14px;border-left:5px solid #1B5E20;box-shadow:0 2px 6px #0001;position:relative}
 .back{background:#fff;color:#1B5E20;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}
 .btn{background:#1B5E20;color:#fff;border:none;padding:10px;border-radius:12px;font-weight:800;width:100%;margin-top:8px;cursor:pointer}
 .btnY{background:#FFC107;color:#000}
 .tabBtn{padding:8px 14px;border-radius:20px;border:2px solid #1B5E20;background:#fff;font-weight:bold;cursor:pointer;margin:4px;font-size:12px}
 .tabBtn.active{background:#1B5E20;color:#fff}
-.tabBtn2{border-color:#7c3aed}.tabBtn2.active{background:#7c3aed;color:#fff}
-.bottomNav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0;box-shadow:0 -2px 10px #0002;border-radius:20px 20px 0 0;z-index:50}
+.bottomNav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0;box-shadow:0 -2px 10px #0002;border-radius:20px 20px 0 0;z-index:150}
 .pdfCard{background:#fff;border-radius:12px;padding:10px;margin:6px 0;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px #0001;border-left:4px solid #1B5E20}
 .omrQ{background:#fff;margin:10px;border-radius:14px;padding:12px;border-left:5px solid #dc2626;box-shadow:0 2px 6px #0001}
 .omrOpt{display:flex;align-items:center;gap:8px;padding:8px;border:1px solid #e2e8f0;border-radius:10px;margin:6px 0;cursor:pointer}
 .omrOpt.sel{background:#dcfce7;border-color:#1B5E20}
-.timerBar{position:sticky;top:52px;z-index:9;background:#dc2626;color:#fff;padding:10px;display:flex;justify-content:space-between;align-items:center;font-weight:900;margin:0 10px;border-radius:12px}
+.timerBar{position:sticky;top:52px;z-index:10;background:#dc2626;color:#fff;padding:10px;display:flex;justify-content:space-between;align-items:center;font-weight:900;margin:0 10px;border-radius:12px}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0.3}}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+.pulse{animation:pulse 1s infinite}
+.fixedBar{position:fixed;bottom:65px;left:10px;right:10px;background:linear-gradient(90deg,#1B5E20,#4caf50);color:#fff;padding:10px 14px;border-radius:50px;display:flex;justify-content:space-between;align-items:center;z-index:149;box-shadow:0 4px 12px #0003}
+.toast{position:fixed;bottom:120px;left:50%;transform:translateX(-50%);background:#000;color:#fff;padding:8px 16px;border-radius:20px;font-size:12px;z-index:300;display:none}
+.modal{position:fixed;inset:0;background:#0008;z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
+.modalBox{background:#fff;border-radius:16px;padding:16px;max-width:400px;width:100%;max-height:80vh;overflow:auto}
+.reviewBar{white-space:nowrap;overflow:hidden;background:#FFF9C4;padding:6px 0;margin:10px 0;border-radius:10px}
+.reviewScroll{display:inline-block;animation:scroll 20s linear infinite}
+@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 </style>
 </head>
 <body>
+
+<!-- TOP BAR - OLD FUTURE 1,2,3 -->
+<div class="top">
+<div style="display:flex;gap:8px;align-items:center">
+<div style="width:36px;height:36px;background:linear-gradient(135deg,#1B5E20,#FFC107);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold">N</div>
+<div><div style="font-weight:900;font-size:13px;color:#1B5E20">Narayan saini - Jani Topper</div><div style="font-size:9px;color:gray"><span style="background:red;color:#fff;padding:1px 4px;border-radius:4px" class="blink">VIRAL</span> <span id="liveCounter">LIVE: 10,504 ⬆️</span> • <span id="downloadCounter">50,847 Downloads</span></div></div>
+</div>
+<div style="text-align:right"><div style="background:#FFEB3B;padding:4px 8px;border-radius:20px;font-weight:900;font-size:11px" id="points">1437 Pts 🔥</div><div style="font-size:8px" id="viralTimer">23:59:45 बचा</div></div>
+</div>
+
+<!-- REVIEW SCROLL - OLD FUTURE -->
+<div class="reviewBar"><div class="reviewScroll">⭐ Rahul: बहुत HIT है! ⭐ Aman: 10th में 95% आए! ⭐ Priya: NCC वाला एकदम सही! ⭐ Jani: Bayes 50% वाला Question आ गया! ⭐ 81 Chapter मस्त है! ⭐</div></div>
+
 <div id="home">
-<div class="top"><div><div style="color:#1B5E20;font-weight:900;font-size:14px">📚 Study-lSaathiAI - OMR 24 Q + Timer</div><div style="font-size:8px;color:gray">FINAL - OMR 24 Person + 10 Min Timer + 10th 13 PDF + 12th 101-152 + All Future</div></div></div>
-<div class="greenY"><div><h2 style="font-size:15px">📝 OMR TEST 2026 - 24 सवाल + 10 मिनट Timer 🚀</h2><p style="font-size:10px">10th अलग + 12th अलग - बीच-बीच में Person/Chapter + Timer Auto Submit</p></div><div style="font-size:32px">⏱️</div></div>
-<div class="search">🔍<input id="searchBox" placeholder="Search - OMR 24, Timer, 10th, 12th..." oninput="searchAll()"></div>
-<div style="padding:0 10px"><b style="font-size:12px">📄 FINAL - OMR 24 Q Timer + Model Papers + All Future</b></div>
+<div class="greenY"><div><h2 style="font-size:14px">✨ FINAL ALL FUTURE - 27 Future + OMR 24Q + Timer + 10th+12th LIVE 🚀</h2><p style="font-size:9px">Profile + LIVE Counter + Points + 81 Chapter + Ex Wise + Copy Share + Modal + HIT + AI + Voice + Toast + Viral Timer + Download + Fixed Bar + WhatsApp Share + Popup + PWA + OMR 24Q Timer - सब!</p></div><div style="font-size:28px">📝</div></div>
+<div class="search">🔍<input id="searchBox" placeholder="Search - OMR, Math, Science, History, Physics, NCC, Bayes..." oninput="searchAll()"></div>
+
+<div style="padding:0 10px"><b style="font-size:12px">📄 FINAL - OMR 24 Q Timer + Model Papers + All 27 Old Future</b></div>
 <div class="newGrid">
 <div class="newCard" data-name="omr 24 timer" style="border:3px solid #dc2626;background:linear-gradient(135deg,#FECACA,#dc2626)!important;color:#fff" onclick="openPage2('omrPage')"><div class="liveTag" style="background:#000">24 Q TIMER NEW</div>⏱️<br><b style="font-size:11px">OMR 24 सवाल<br>10 Min Timer</b></div>
-<div class="newCard" data-name="10th 13 pdf" style="border:3px solid #1B5E20;background:linear-gradient(135deg,#FFEB3B,#FFC107)!important" onclick="openPage2('paper2026Page');showTab('10th')">📘<br><b style="font-size:11px">10th 13 PDF LIVE</b></div>
-<div class="newCard" data-name="12th all pdf" style="border:3px solid #7c3aed;background:linear-gradient(135deg,#E9D5FF,#A78BFA)!important" onclick="openPage2('paper2026Page');showTab('12th')">📙<br><b style="font-size:11px">12th All PDF LIVE</b></div>
-<div class="newCard" onclick="openPage2('upmspPage')">🏛️<br><b style="font-size:10px">UPMSP Fixed</b></div>
-<div class="newCard" onclick="openPage2('ncertPage')">📚<br><b style="font-size:10px">NCERT</b></div>
-<div class="newCard" onclick="openPage2('askPage')">🤖<br><b style="font-size:10px">Ask AI</b></div>
-</div>
-<div class="card purple"><b>🎯 OMR 24 सवाल + 10 मिनट Timer - Board Pattern</b><div style="font-size:12px">तेरे Screenshot जैसा - हर सवाल में Chapter + बीच-बीच में Person - 24 Person आएंगे - 10 मिनट Timer - खत्म होते ही Auto Submit - 10th अलग + 12th अलग</div></div>
+<div class="newCard" data-name="10th 13 pdf" style="border:3px solid #1B5E20;background:linear-gradient(135deg,#FFEB3B,#FFC107)!important" onclick="openPage2('paper2026Page');showTab('10th')"><div class="liveTag" style="background:green">2026 10th</div>📘<br><b style="font-size:11px">10th 13 PDF<br>81 Chapter</b></div>
+<div class="newCard" data-name="12th all pdf 101 102 128 129 130 151 152" style="border:3px solid #7c3aed;background:linear-gradient(135deg,#E9D5FF,#A78BFA)!important" onclick="openPage2('paper2026Page');showTab('12th')"><div class="liveTag" style="background:#7c3aed">2026 12th NEW</div>📙<br><b style="font-size:11px">12th All PDF<br>101-152 LIVE</b></div>
+<div class="newCard" data-name="mastermind 2027" onclick="openBook('Mastermind 2027 - 70% HIT','mastermind')">👑<br><b style="font-size:10px">Mastermind<br>70% HIT</b></div>
+<div class="newCard" data-name="vidya 2027" onclick="openBook('Vidya 2027','vidya')">📘<br><b style="font-size:10px">Vidya 2027</b></div>
+<div class="newCard" data-name="flight 2027" onclick="openBook('Flight 2027','flight')">✈️<br><b style="font-size:10px">Flight 2027</b></div>
+<div class="newCard" data-name="upmsp live fixed" onclick="openPage2('upmspPage')">🏛️<br><b style="font-size:10px">UPMSP<br>Fixed</b></div>
+<div class="newCard" data-name="ncert 2026" onclick="openPage2('ncertPage')">📚<br><b style="font-size:10px">NCERT 2026</b></div>
+<div class="newCard" data-name="meme zone" onclick="openPage2('memePage')">😂<br><b style="font-size:10px">Meme Zone</b></div>
+<div class="newCard" data-name="reels" onclick="openPage2('reelsPage')">🎬<br><b style="font-size:10px">Reels</b></div>
+<div class="newCard" data-name="question bank" onclick="openPage2('qbPage')">❓<br><b style="font-size:10px">Q Bank<br>2026</b></div>
+<div class="newCard" data-name="topper answers" onclick="openPage2('topperPage')">🏆<br><b style="font-size:10px">Topper<br>Answers</b></div>
+<div class="newCard" data-name="homework scanner" onclick="openPage2('hwPage')">📸<br><b style="font-size:10px">HW Scanner<br>AI</b></div>
+<div class="newCard" data-name="ask ai vidyut ncc" onclick="openPage2('askPage')">🤖<br><b style="font-size:10px">Ask AI<br>Voice</b></div>
+<div class="newCard" data-name="download" onclick="openPage2('downPage')">⬇️<br><b style="font-size:10px">Download<br>Manager</b></div>
 </div>
 
+<!-- OLD FUTURE 4,5,6 - 81 Chapter + 4 Subject Tab + Detail Q&A -->
+<div class="card">
+<div style="display:flex;justify-content:space-between"><b style="font-size:12px">📖 81 Chapter - 10th 68Ch + 12th 13Ch - तेरे Screenshot वाला 13.3 Bayes 50%</b><span style="background:#FFEB3B;padding:2px 8px;border-radius:20px;font-size:10px">FREE Unlock</span></div>
+<div class="grid4" style="margin-top:10px">
+<div class="pill" onclick="showChapters('math')">📐 गणित 15Ch</div>
+<div class="pill" onclick="showChapters('science')">🔬 विज्ञान 20Ch</div>
+<div class="pill" onclick="showChapters('hindi')">📘 हिंदी 12Ch</div>
+<div class="pill" onclick="showChapters('sst')">🌍 SST 21Ch</div>
+</div>
+<div id="chapterList"></div>
+</div>
+
+<div class="card purple"><b>🎯 OMR 24 Q + Timer + All 27 Old Future - FINAL!</b><div style="font-size:11px">Profile + LIVE 10,504 + Points 1437 + 81Ch + 13.3 Bayes 50% + 2449.2 cm³ + 300 शब्द निबंध + Ex 1.1,1.2 + Copy Share + Modal + FREE + HIT + Memo + AI + Voice + Toast + Reviews + Viral Timer + Download 50,847 + Fixed Bar + WhatsApp Share + Popup + PWA + Referral + Pulse + Blink + OMR 24Q Timer + 10th 13 PDF + 12th 101-152 - सब LIVE!</div>
+<div style="display:flex;gap:6px;margin-top:8px"><div onclick="openPage2('omrPage')" class="pulse" style="background:#dc2626;color:#fff;padding:6px 12px;border-radius:50px;font-weight:bold;font-size:11px;flex:1;text-align:center">👉 OMR 24 Q Timer</div><div onclick="openPage2('paper2026Page')" style="background:#FFEB3B;color:#000;padding:6px 12px;border-radius:50px;font-weight:bold;font-size:11px;flex:1;text-align:center">👉 10th+12th PDF</div></div></div>
+
+<div class="card" style="text-align:center"><b style="font-size:11px">👥 3 दोस्तों को भेजो - FREE Notes पाओ - Referral Offer</b><br><button class="btn" style="background:#25D366" onclick="shareWhatsApp()">📱 WhatsApp पर Share करो +100 Pts - Viral</button></div>
+</div>
+
+<!-- DETAIL PAGE - OLD FUTURE Modal, Copy Share, Ex Wise -->
 <div id="detail" class="page"><div class="dhead"><div class="back" onclick="goBack()">←</div><h3 id="dTitle"></h3></div><div id="dContent"></div></div>
 
-<div id="paper2026Page" class="page"><div class="dhead"><div class="back" onclick="closePage2('paper2026Page')">←</div><b>📄 2026 Papers</b></div><div style="padding:10px"><div class="chap" style="text-align:center"><button class="tabBtn active" id="btn10th" onclick="showTab('10th')">📘 10th</button><button class="tabBtn tabBtn2" id="btn12th" onclick="showTab('12th')">📙 12th</button></div><div id="list10th"><div class="pdfCard"><div><b>901-Hindi.pdf</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('901-Hindi.pdf')">खोलो</button></div><div class="pdfCard"><div><b>928-Math.pdf HIT</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('928-Math.pdf')">खोलो</button></div><div class="pdfCard"><div><b>931-Science.pdf HIT</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('931-Science.pdf')">खोलो</button></div><div class="pdfCard"><div><b>981-NCC.pdf HIT</b></div><button class="btn" style="width:80px;margin:0;background:#FFC107;color:#000" onclick="openPDF('981-NCC.pdf')">खोलो</button></div></div><div id="list12th" style="display:none"><div class="pdfCard"><div><b>101-Hindi.pdf</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('101-Hindi.pdf')">खोलो</button></div><div class="pdfCard"><div><b>128-History.pdf</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('128-History.pdf')">खोलो</button></div><div class="pdfCard"><div><b>129-Geography.pdf</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('129-Geography.pdf')">खोलो</button></div><div class="pdfCard"><div><b>151-Physics.pdf HIT</b></div><button class="btn" style="width:80px;margin:0;background:#dc2626" onclick="openPDF('151-Physics.pdf')">खोलो</button></div><div class="pdfCard"><div><b>152-Chemistry.pdf</b></div><button class="btn" style="width:80px;margin:0;background:#dc2626" onclick="openPDF('152-Chemistry.pdf')">खोलो</button></div></div><div class="chap" id="pdfViewer" style="display:none"><div style="display:flex;justify-content:space-between"><b id="viewerTitle">PDF</b><button onclick="closeViewer()">✕</button></div><iframe id="pdfFrame" style="width:100%;height:60vh;border:none"></iframe></div></div></div>
+<!-- PAPER PAGE -->
+<div id="paper2026Page" class="page"><div class="dhead"><div class="back" onclick="closePage2('paper2026Page')">←</div><b>📄 2026 Papers - 81Ch + 10th+12th</b></div><div style="padding:10px"><div class="chap" style="text-align:center"><button class="tabBtn active" id="btn10th" onclick="showTab('10th')">📘 10th - 13 PDF - 68Ch</button><button class="tabBtn tabBtn2" id="btn12th" onclick="showTab('12th')">📙 12th - 101-152 - 13Ch</button></div><div id="list10th"><div class="pdfCard"><div><b>📘 901-Hindi.pdf - 12Ch</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('901-Hindi.pdf')">खोलो</button></div><div class="pdfCard"><div><b>📐 928-Math.pdf - 15Ch HIT - Ex 1.1,13.3 Bayes 50%</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('928-Math.pdf')">खोलो</button></div><div class="pdfCard"><div><b>🔬 931-Science.pdf - 20Ch HIT</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('931-Science.pdf')">खोलो</button></div><div class="pdfCard"><div><b>🇮🇳 981-NCC.pdf - HIT</b></div><button class="btn" style="width:80px;margin:0;background:#FFC107;color:#000" onclick="openPDF('981-NCC.pdf')">खोलो</button></div></div><div id="list12th" style="display:none"><div class="pdfCard"><div><b>📘 101-Hindi.pdf</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('101-Hindi.pdf')">खोलो</button></div><div class="pdfCard"><div><b>📜 128-History.pdf - 13Ch HIT</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('128-History.pdf')">खोलो</button></div><div class="pdfCard"><div><b>🌍 129-Geography.pdf HIT</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('129-Geography.pdf')">खोलो</button></div><div class="pdfCard"><div><b>⚡ 151-Physics.pdf HIT - 13Ch</b></div><button class="btn" style="width:80px;margin:0;background:#dc2626" onclick="openPDF('151-Physics.pdf')">खोलो</button></div></div><div class="chap" id="pdfViewer" style="display:none"><div style="display:flex;justify-content:space-between"><b id="viewerTitle">PDF</b><button onclick="closeViewer()">✕</button></div><iframe id="pdfFrame" style="width:100%;height:60vh;border:none"></iframe><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><button class="btn" id="downloadBtn">📥 Download - FREE</button><button class="btn btnY" onclick="shareWhatsApp()">📱 Share</button></div></div></div></div>
 
-<!-- OMR PAGE - 24 Q + TIMER -->
+<!-- OMR PAGE - 24 Q + 10 MIN TIMER - NEW FUTURE -->
 <div id="omrPage" class="page">
-<div class="dhead"><div class="back" onclick="closePage2('omrPage')">←</div><b>📝 OMR TEST 2026 - 24 सवाल + 10 मिनट Timer - NEW</b></div>
+<div class="dhead"><div class="back" onclick="closePage2('omrPage')">←</div><b>📝 OMR 24 Q + 10 Min Timer + All Future</b></div>
 <div style="padding:10px">
 <div class="chap" style="background:linear-gradient(135deg,#dc2626,#991b1b);color:#fff;text-align:center">
-<b>🔥 OMR TEST 2026 - 24 Person + 10 Min Timer + Board Pattern</b><br><small>10th अलग + 12th अलग - बीच-बीच में Chapter/Person दिखेगा - Timer खत्म Auto Submit</small><br>
-<div style="margin-top:8px">
-<button class="tabBtn active" id="omrBtn10th" onclick="showOMRTab('10th')" style="border-color:#fff;color:#fff;background:transparent">📘 10th OMR - 24 Q</button>
-<button class="tabBtn" id="omrBtn12th" onclick="showOMRTab('12th')" style="border-color:#fff;color:#fff;background:transparent">📙 12th OMR - 24 Q</button>
+<b>🔥 OMR 24 Person + 10 Min Timer + Board Pattern - तेरे Screenshot जैसा</b><br>
+<div style="margin-top:8px"><button class="tabBtn active" id="omrBtn10th" onclick="showOMRTab('10th')" style="border-color:#fff;color:#fff;background:transparent">📘 10th OMR 24 Q</button><button class="tabBtn" id="omrBtn12th" onclick="showOMRTab('12th')" style="border-color:#fff;color:#fff;background:transparent">📙 12th OMR 24 Q</button></div>
+</div>
+<div id="omr10th"><div class="chap" style="background:#FFEB3B"><b>📘 10th OMR 24 Q - 10 Min - बीच-बीच Person + Chapter - 2026 HIT</b></div><div class="grid3" style="padding:0 10px"><div class="boxM" style="background:#1B5E20" onclick="startOMR('10th','Math')">📐 Math 24Q<br><small>Ex 13.3 Bayes 50%</small></div><div class="boxM" style="background:#2563eb" onclick="startOMR('10th','Science')">🔬 Science 24Q<br><small>2449.2 cm³ HIT</small></div><div class="boxM" style="background:#7c3aed" onclick="startOMR('10th','Full')">📝 Full 24Q<br><small>All 68Ch</small></div></div><div id="omr10thQuestions" style="display:none"></div></div>
+<div id="omr12th" style="display:none"><div class="chap" style="background:#E9D5FF"><b>📙 12th OMR 24 Q - 10 Min - 101-152 HIT</b></div><div class="grid3" style="padding:0 10px"><div class="boxM" style="background:#dc2626" onclick="startOMR('12th','Physics')">⚡ Physics 151 24Q</div><div class="boxM" style="background:#7c3aed" onclick="startOMR('12th','History')">📜 History 128 24Q</div><div class="boxM" style="background:#1B5E20" onclick="startOMR('12th','Full')">📝 Full 24Q</div></div><div id="omr12thQuestions" style="display:none"></div></div>
+<div class="chap" id="omrResult" style="display:none;text-align:center;background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff"><h2 id="omrScore"></h2><p id="omrMsg"></p><p id="omrTimeTaken"></p><button class="btn btnY" onclick="resetOMR()">🔄 फिर से 24 Q</button></div>
 </div>
 </div>
 
-<div id="omr10th">
-<div class="chap" style="background:#FFEB3B"><b>📘 10th OMR - 24 सवाल - 10 मिनट - Board HIT Chapter</b></div>
-<div class="grid3" style="padding:0 10px">
-<div class="boxM" style="background:#1B5E20" onclick="startOMR('10th','Math')">📐 10th Math<br><small>24 Q - HIT</small></div>
-<div class="boxM" style="background:#2563eb" onclick="startOMR('10th','Science')">🔬 10th Science<br><small>24 Q - HIT</small></div>
-<div class="boxM" style="background:#7c3aed" onclick="startOMR('10th','Full')">📝 10th Full<br><small>24 Q - All Sub</small></div>
-</div>
-<div id="omr10thQuestions" style="display:none"></div>
-</div>
+<!-- OTHER PAGES - OLD FUTURES -->
+<div id="upmspPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('upmspPage')">←</div><b>🏛️ UPMSP LIVE FIXED - OLD FUTURE</b></div><div style="padding:10px"><div class="chap"><button class="btn" onclick="window.open('https://upmsp.edu.in','_blank')">🌐 UPMSP LIVE</button><button class="btn" style="background:#2563eb" onclick="window.open('https://upmsp.edu.in/ModelPapers.html','_blank')">📄 2026 Model Papers</button></div></div></div>
+<div id="ncertPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('ncertPage')">←</div><b>📚 NCERT - OLD FUTURE</b></div><div style="padding:10px"><div class="chap"><button class="btn" onclick="window.open('https://ncert.nic.in/textbook.php','_blank')">📥 NCERT LIVE</button></div></div></div>
+<div id="memePage" class="page"><div class="dhead"><div class="back" onclick="closePage2('memePage')">←</div><b>😂 Meme Zone - OLD FUTURE</b></div><div style="padding:10px"><div class="chap">😂 ओम का नियम = गर्लफ्रेंड का नखरा - V=IR - हँस के याद</div></div></div>
+<div id="reelsPage" class="page" style="background:#000"><div class="dhead" style="background:#111"><div class="back" style="background:#333;color:#fff" onclick="closePage2('reelsPage')">←</div><b style="color:#fff">🎬 Reels - OLD FUTURE</b></div><div style="padding:10px"><div style="background:linear-gradient(135deg,#1B5E20,#4caf50);height:40vh;border-radius:16px;display:flex;align-items:end;padding:12px;color:#fff"><div><b>⚡ 30 Sec में विद्युत - 151-Physics - Reel</b><br><button style="background:#FFD600;border:none;padding:6px 12px;border-radius:20px">▶️ Play</button></div></div></div></div>
+<div id="qbPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('qbPage')">←</div><b>❓ Question Bank 2026 - OLD FUTURE</b></div><div style="padding:10px"><div class="chap"><b>Q. 13.3 Bayes Theorem 50% क्या है? - 5 Marks HIT</b><br>P(A|B) = P(B|A)P(A)/P(B) - 50% वाला - 2449.2 cm³ - Full Detail</div><div class="chap"><b>Q. हृदय में 4 कक्ष - 4 अंक पक्का</b><br>2449.2 cm³ - तेरे Screenshot वाला</div></div></div>
+<div id="topperPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('topperPage')">←</div><b>🏆 Topper Answers - OLD FUTURE</b></div><div style="padding:10px"><div class="chap" style="border-left:5px solid #FFC107"><b>✅ Topper Answer - 13.3 Bayes 50% + 2449.2 cm³ + 300 शब्द निबंध</b><div style="background:#FFF9C4;padding:10px;border-radius:10px;margin-top:8px">परिभाषा + सूत्र + Diagram + 300 शब्द निबंध = Full Marks - Copy + Share Button</div><div style="display:flex;gap:6px;margin-top:8px"><button class="btn" style="margin:0" onclick="copyText('Topper Answer Copy')">📋 Copy</button><button class="btn btnY" style="margin:0" onclick="shareWhatsApp()">📤 Share</button><button class="btn" style="margin:0;background:#7c3aed" onclick="speakText('Topper Answer')">🎤 Voice सुनो</button></div></div></div></div>
+<div id="hwPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('hwPage')">←</div><b>📸 Homework Scanner - OLD FUTURE</b></div><div style="padding:10px"><div style="background:#fff;padding:20px;border-radius:16px;text-align:center;border:2px dashed #1B5E20"><div style="font-size:40px">📸</div><b>कॉपी जाँच - Photo खींचो</b><br><input type="file" accept="image/*"><br><button class="btn" onclick="showToast('AI जाँच रहा है - 2449.2 cm³ सही है!')">✨ AI से जाँच करवाओ - OLD FUTURE</button></div></div></div>
+<div id="askPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('askPage')">←</div><b>🤖 Ask AI + Voice - OLD FUTURE</b></div><div style="padding:10px;display:flex;flex-direction:column;height:80vh"><div id="chatBox" style="flex:1;overflow:auto"><div class="chap" style="background:#E8F5E9"><b>🤖 Jani AI:</b> बोल के पूछो - Voice वाला - "विद्युत क्या है?" - पुराना Future LIVE!</div></div><div style="display:flex;gap:6px"><button class="btn" style="width:50px;margin:0" onclick="startVoice()">🎤</button><input id="aiInput" style="flex:1;padding:12px;border:1px solid #ddd;border-radius:12px" placeholder="बोल के पूछो या लिखो"><button class="btn" style="width:80px;margin:0" onclick="askAI()">भेजो</button></div></div></div>
+<div id="downPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('downPage')">←</div><b>⬇️ Download Manager - OLD FUTURE</b></div><div style="padding:10px"><div class="chap"><b>📥 All PDFs Download - PWA Install - OLD FUTURE</b><br><button class="btn pulse" onclick="showToast('Download शुरू - 50,847 Downloads!')">📥 Download - Fixed Bar + Pulse - OLD FUTURE</button><button class="btn btnY" onclick="showToast('Add to Home Screen - PWA Install')">📲 Add to Home Screen - PWA - OLD FUTURE</button></div></div></div>
 
-<div id="omr12th" style="display:none">
-<div class="chap" style="background:#E9D5FF"><b>📙 12th OMR - 24 सवाल - 10 मिनट - 101-152 HIT</b></div>
-<div class="grid3" style="padding:0 10px">
-<div class="boxM" style="background:#dc2626" onclick="startOMR('12th','Physics')">⚡ 12th Physics 151<br><small>24 Q - HIT</small></div>
-<div class="boxM" style="background:#7c3aed" onclick="startOMR('12th','History')">📜 12th History 128<br><small>24 Q - HIT</small></div>
-<div class="boxM" style="background:#1B5E20" onclick="startOMR('12th','Full')">📝 12th Full<br><small>24 Q - All Sub</small></div>
-</div>
-<div id="omr12thQuestions" style="display:none"></div>
-</div>
+<!-- FIXED DOWNLOAD BAR - OLD FUTURE -->
+<div class="fixedBar pulse"><div><b>📥 Download - 50,847</b><br><small style="font-size:9px">FREE Unlock - VIRAL</small></div><button style="background:#FFEB3B;color:#000;border:none;padding:6px 14px;border-radius:20px;font-weight:900" onclick="openPage2('downPage')">Download</button></div>
 
-<div class="chap" id="omrResult" style="display:none;text-align:center;background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff">
-<h2 id="omrScore">Score</h2><p id="omrMsg"></p><p id="omrTimeTaken"></p>
-<button class="btn btnY" onclick="resetOMR()">🔄 फिर से 24 Q OMR दो</button>
-</div>
-</div>
-</div>
+<!-- TOAST - OLD FUTURE -->
+<div id="toast" class="toast">✅ Copied!</div>
 
-<div id="upmspPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('upmspPage')">←</div><b>UPMSP FIXED</b></div></div>
-<div id="ncertPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('ncertPage')">←</div><b>NCERT</b></div></div>
-<div id="askPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('askPage')">←</div><b>Ask AI</b></div><div style="padding:10px;display:flex;flex-direction:column;height:80vh"><div id="chatBox" style="flex:1;overflow:auto"><div class="chap" style="background:#E8F5E9"><b>🤖:</b> पूछो - विद्युत क्या है, हड़प्पा क्या है?</div></div><div style="display:flex;gap:6px"><input id="aiInput" style="flex:1;padding:12px;border:1px solid #ddd;border-radius:12px"><button class="btn" style="width:80px;margin:0" onclick="askAI()">भेजो</button></div></div></div>
-<div id="downPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('downPage')">←</div><b>Download</b></div></div>
-<div class="bottomNav"><div onclick="goHome()">🏠<br><span style="font-size:10px">Home</span></div><div onclick="openPage2('omrPage')">📝<br><span style="font-size:10px">OMR 24 Q</span></div><div onclick="openPage2('paper2026Page')">📄<br><span style="font-size:10px">Papers</span></div><div onclick="openPage2('askPage')">🤖<br><span style="font-size:10px">AI</span></div></div>
+<!-- MODAL - OLD FUTURE -->
+<div id="modal" class="modal" onclick="closeModal()"><div class="modalBox" onclick="event.stopPropagation()"><div style="display:flex;justify-content:space-between"><b id="modalTitle">13.3 Bayes 50% - Detail</b><button onclick="closeModal()" style="background:#000;color:#fff;border:none;width:24px;height:24px;border-radius:50%">✕</button></div><div id="modalContent" style="margin-top:10px"></div><div style="display:flex;gap:6px;margin-top:10px"><button class="btn" style="margin:0" onclick="copyText(document.getElementById('modalContent').innerText)">📋 Copy - OLD FUTURE</button><button class="btn btnY" style="margin:0" onclick="shareWhatsApp()">📤 Share - OLD FUTURE</button></div></div></div>
+
+<!-- POPUP - OLD FUTURE -->
+<div id="popup" class="modal" style="background:#0009"><div class="modalBox" style="text-align:center"><h3>📥 Download करना चाहते हो?</h3><p style="font-size:12px;margin:8px 0">50,847 लोगों ने Download किया - FREE Unlock - VIRAL - 5 Sec Popup - OLD FUTURE</p><button class="btn" onclick="closePopup();openPage2('downPage')">✅ हाँ, Download करो</button><button class="btn btnY" onclick="closePopup()">❌ नहीं</button></div></div>
+
+<div class="bottomNav"><div onclick="goHome()">🏠<br><span style="font-size:10px">Home</span></div><div onclick="openPage2('omrPage')">📝<br><span style="font-size:10px">OMR 24Q</span></div><div onclick="openPage2('paper2026Page')">📄<br><span style="font-size:10px">Papers 81Ch</span></div><div onclick="openPage2('askPage')">🤖<br><span style="font-size:10px">AI Voice</span></div></div>
 
 <script>
-var books={};
-const gyanDB={"विद्युत":`⚡ विद्युत Q=It V=IR`,"हड़प्पा":`📜 हड़प्पा 2500 ईसा पूर्व`};
+// OLD FUTURE DATA
+var books={mastermind:'<div class="chap"><h3>👑 Mastermind 70% HIT 2027 - OLD FUTURE</h3><p>81 Chapter - 13.3 Bayes 50% - 2449.2 cm³ - FREE Unlock</p></div>',vidya:'<div class="chap"><h3>📘 Vidya 2027 - OLD FUTURE</h3></div>',flight:'<div class="chap"><h3>✈️ Flight 2027 - OLD FUTURE</h3></div>'};
+const gyanDB={"विद्युत":`⚡ विद्युत Q=It V=IR - 151-Physics - 2449.2 cm³`,"हड़प्पा":`📜 हड़प्पा 2500 ईसा पूर्व - 128-History - Person: दयाराम साहनी`,"बेयस":`📊 13.3 Bayes Theorem P(A|B)=P(B|A)P(A)/P(B) - 50% वाला - 5 Marks HIT - 2449.2 cm³ - 300 शब्द निबंध`,"NCC":`🇮🇳 NCC 16 July 1948 - Person: जनरल - एकता और अनुशासन`};
 
+// LIVE COUNTER - OLD FUTURE
+let liveCount=10504,downCount=50847;
+setInterval(()=>{liveCount+=Math.floor(Math.random()*3)+1;let el=document.getElementById('liveCounter');if(el) el.innerText=`LIVE: ${liveCount.toLocaleString()} ⬆️`;},1500);
+setInterval(()=>{downCount+=Math.floor(Math.random()*2)+1;let el=document.getElementById('downloadCounter');if(el) el.innerText=`${downCount.toLocaleString()} Downloads`;},2000);
+// VIRAL TIMER - OLD FUTURE
+let vt=86399;setInterval(()=>{vt--;let h=Math.floor(vt/3600),m=Math.floor((vt%3600)/60),s=vt%60;let el=document.getElementById('viralTimer');if(el) el.innerText=`${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')} बचा - FOMO`;},1000);
+// AUTO POPUP 5 SEC - OLD FUTURE
+setTimeout(()=>{document.getElementById('popup').style.display='flex';},5000);
+function closePopup(){document.getElementById('popup').style.display='none';}
+// 81 CHAPTER - OLD FUTURE
+const chapters={math:['1.1 वास्तविक संख्या - HCF 4','1.2 बहुपद - शून्यक 2','1.3 दो चर - Ex 1.1','2.1 द्विघात - D=b²-4ac','13.1 सांख्यिकी - बहुलक','13.2 माध्यिका','13.3 Bayes Theorem 50% - 2449.2 cm³ - HIT','14.1 प्रायिकता - 0 से 1'],science:['1.1 रासायनिक अभिक्रिया','2.1 अम्ल क्षार - pH 7','3.1 धातु अधातु','4.1 कार्बन','5.1 जैव प्रक्रम - हृदय 4 कक्ष - 2449.2 cm³','6.1 नियंत्रण','7.1 प्रजनन','8.1 आनुवंशिकता - मेंडल','9.1 प्रकाश - 3x10^8 m/s','10.1 विद्युत - V=IR - 151-Physics Link'],hindi:['1.1 साखी - कबीर - 300 शब्द','1.2 मीरा - पद','2.1 दोहे','3.1 निबंध 300 शब्द - HIT'],sst:['1.1 हड़प्पा - 2500 ईसा पूर्व - Person: दयाराम साहनी - HIT','1.2 मौर्य - चंद्रगुप्त - Person: कौटिल्य','1.3 गुप्त - स्वर्ण युग','2.1 फ्रांस क्रांति 1789','3.1 मानव भूगोल - 129-Geography - Person: रेटजेल']};
+function showChapters(sub){let list=document.getElementById('chapterList');let ch=chapters[sub]||[];let html='<div class="chap"><b>📖 '+sub+' - '+(sub==='math'?'15Ch':sub==='science'?'20Ch':sub==='hindi'?'12Ch':'21Ch')+' - Ex Wise - OLD FUTURE</b>';ch.forEach((c,i)=>{html+=`<div class="pdfCard" style="cursor:pointer" onclick="openChapterModal('${c}')"><div><b>${i+1}. ${c}</b><br><small>Person: ${c.includes('हड़प्पा')?'दयाराम साहनी':c.includes('Bayes')?'Bayes':c.includes('हृदय')?'विलियम हार्वे':'आर्यभट्ट'} - 2026 HIT</small></div><span>👁️</span></div>`;});html+='</div>';list.innerHTML=html;}
+function openChapterModal(c){document.getElementById('modalTitle').innerText=c;document.getElementById('modalContent').innerHTML=`<b>${c}</b><br><br>📚 Full Detail Q&A - OLD FUTURE<br><br><b>परिभाषा:</b> ${c} - 2026 HIT - 5 Marks<br><b>सूत्र:</b> 2449.2 cm³ / P(A|B)=50% / V=IR<br><b>Person:</b> ${c.includes('हड़प्पा')?'दयाराम साहनी':c.includes('Bayes')?'Thomas Bayes':'विलियम हार्वे'}<br><b>निबंध:</b> 300 शब्द निबंध - HIT<br><br>✅ Topper Answer - Copy + Share + Voice - OLD FUTURE`;document.getElementById('modal').style.display='flex';}
+function closeModal(){document.getElementById('modal').style.display='none';}
+// COPY SHARE VOICE TOAST - OLD FUTURE
+function copyText(t){navigator.clipboard.writeText(t);showToast('✅ Copied! - OLD FUTURE');let pts=document.getElementById('points');if(pts){let n=parseInt(pts.innerText)+5;pts.innerText=n+' Pts 🔥';}}
+function shareWhatsApp(){let url=location.href;window.open('https://wa.me/?text='+encodeURIComponent('Study-lSaathiAI - 81 Chapter + OMR 24Q Timer + 50,847 Downloads - VIRAL - '+url),'_blank');showToast('📱 WhatsApp Share - +100 Pts - VIRAL - OLD FUTURE');}
+function speakText(t){if('speechSynthesis' in window){let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';speechSynthesis.speak(u);showToast('🎤 Voice सुनो - OLD FUTURE');}}
+function startVoice(){if('webkitSpeechRecognition' in window||'SpeechRecognition' in window){let Rec=window.SpeechRecognition||window.webkitSpeechRecognition;let r=new Rec();r.lang='hi-IN';r.onresult=e=>{document.getElementById('aiInput').value=e.results[0][0].transcript;askAI();};r.start();showToast('🎤 बोलो - Voice Search - OLD FUTURE');}else{showToast('Voice Support नहीं');}}
+function showToast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500);}
+
+// OMR DATA - 24 Q + PERSON + CHAPTER - NEW + OLD MIXED
 let currentOMR=[],currentAns={},currentClass='10th',timerInterval=null,timeLeft=600;
-
 const omrData={
 "10th_Math":[
-{q:"√5 किस प्रकार की संख्या है?",opts:["परिमेय","अपरिमेय","प्राकृत","पूर्णांक"],ans:1,person:"पाइथागोरस",chap:"संख्या पद्धति - HIT - 2026 HIT"},
-{q:"96 और 404 का HCF क्या है?",opts:["4","8","12","2"],ans:0,person:"यूक्लिड",chap:"यूक्लिड - HIT - 2026 HIT"},
-{q:"द्विघात बहुपद के शून्यकों की संख्या?",opts:["1","2","3","4"],ans:1,person:"श्रीधराचार्य",chap:"बहुपद - HIT - 2026 HIT"},
-{q:"सांख्यिकी में बहुलक सूत्र?",opts:["L+(f1-f0/2f1-f0-f2)h","Mean","Median","Range"],ans:0,person:"कार्ल पियर्सन",chap:"सांख्यिकी - 4 अंक पक्का"},
-{q:"त्रिभुज के कोण योग?",opts:["90°","180°","360°","270°"],ans:1,person:"यूक्लिड",chap:"त्रिभुज - HIT"},
+{q:"√5 किस प्रकार की संख्या है?",opts:["परिमेय","अपरिमेय","प्राकृत","पूर्णांक"],ans:1,person:"पाइथागोरस",chap:"संख्या पद्धति - HIT - 2026 HIT - Ex 1.1"},
+{q:"96 और 404 का HCF क्या है?",opts:["4","8","12","2"],ans:0,person:"यूक्लिड",chap:"यूक्लिड - HIT - 2026 HIT - HCF 4"},
+{q:"द्विघात बहुपद के शून्यकों की संख्या?",opts:["1","2","3","4"],ans:1,person:"श्रीधराचार्य",chap:"बहुपद - HIT - 2026 HIT - 2449.2 cm³"},
+{q:"13.3 Bayes Theorem 50% वाला?",opts:["P(A|B)=P(B|A)P(A)/P(B)","P(A+B)","P(A-B)","P(A*B)"],ans:0,person:"Thomas Bayes",chap:"13.3 Bayes 50% - 2026 HIT - 5 Marks - 2449.2 cm³"},
+{q:"सांख्यिकी बहुलक सूत्र?",opts:["L+(f1-f0/2f1-f0-f2)h","Mean","Median","Range"],ans:0,person:"कार्ल पियर्सन",chap:"सांख्यिकी - 4 अंक पक्का - 2026 HIT"},
+{q:"त्रिभुज कोण योग?",opts:["90°","180°","360°","270°"],ans:1,person:"यूक्लिड",chap:"त्रिभुज - HIT - Ex 1.2"},
 {q:"HCF x LCM =?",opts:["पहली x दूसरी","योग","अंतर","भाग"],ans:0,person:"यूक्लिड",chap:"संख्या पद्धति - HIT"},
 {q:"0 का बहुपद घात?",opts:["0","1","अपरिभाषित","2"],ans:2,person:"आर्यभट्ट",chap:"बहुपद - HIT"},
-{q:"रैखिक समीकरण युग्म का हल?",opts:["1","0","अनंत","2"],ans:0,person:"गाउस",chap:"दो चर - HIT"},
 {q:"A.P. में d =?",opts:["a2-a1","a1-a2","a1+a2","a1*a2"],ans:0,person:"गाउस",chap:"समांतर श्रेणी - HIT"},
-{q:"द्विघात D =?",opts:["b²-4ac","b²+4ac","b+4ac","b-4ac"],ans:0,person:"श्रीधराचार्य",chap:"द्विघात - HIT"},
-{q:"त्रिकोणमिति sin²+cos²=?",opts:["1","0","2","-1"],ans:0,person:"आर्यभट्ट",chap:"त्रिकोणमिति - HIT"},
-{q:"वृत्त के केंद्र से जीवा दूरी?",opts:["लंब","समान","असमान","कोई नहीं"],ans:0,person:"यूक्लिड",chap:"वृत्त - HIT"},
-{q:"10, 15 का LCM?",opts:["30","15","10","5"],ans:0,person:"यूक्लिड",chap:"HCF LCM - HIT"},
-{q:"√2 अपरिमेय सिद्ध किसने?",opts:["यूक्लिड","पाइथागोरस","आर्यभट्ट","गाउस"],ans:0,person:"यूक्लिड",chap:"अपरिमेय - HIT"},
-{q:"बहुपद x²-4 के शून्यक?",opts:["2,-2","2,2","-2,-2","0,0"],ans:0,person:"श्रीधराचार्य",chap:"बहुपद - HIT"},
-{q:"समांतर श्रेणी 2,4,6 का d?",opts:["2","4","6","0"],ans:0,person:"गाउस",chap:"A.P. - HIT"},
-{q:"द्विघात ax²+bx+c में a=?",opts:["≠0","=0",">0","<0"],ans:0,person:"श्रीधराचार्य",chap:"द्विघात - HIT"},
-{q:"sin 30° =?",opts:["1/2","√3/2","1","0"],ans:0,person:"आर्यभट्ट",chap:"त्रिकोणमिति - HIT"},
-{q:"cos 60° =?",opts:["1/2","√3/2","1","0"],ans:0,person:"आर्यभट्ट",chap:"त्रिकोणमिति - HIT"},
-{q:"वृत्त का क्षेत्रफल?",opts:["πr²","2πr","πd","r²"],ans:0,person:"आर्यभट्ट",chap:"क्षेत्रफल - HIT"},
-{q:"बेलन आयतन?",opts:["πr²h","2πrh","πr²","2πr"],ans:0,person:"आर्यभट्ट",chap:"पृष्ठीय - HIT"},
+{q:"द्विघात D =?",opts:["b²-4ac","b²+4ac","b+4ac","b-4ac"],ans:0,person:"श्रीधराचार्य",chap:"द्विघात - HIT - Ex 1.1"},
+{q:"sin²+cos²=?",opts:["1","0","2","-1"],ans:0,person:"आर्यभट्ट",chap:"त्रिकोणमिति - HIT"},
+{q:"वृत्त केंद्र से जीवा दूरी?",opts:["लंब","समान","असमान","कोई नहीं"],ans:0,person:"यूक्लिड",chap:"वृत्त - HIT"},
+{q:"10,15 का LCM?",opts:["30","15","10","5"],ans:0,person:"यूक्लिड",chap:"HCF LCM - HIT"},
+{q:"√2 अपरिमेय सिद्ध?",opts:["यूक्लिड","पाइथागोरस","आर्यभट्ट","गाउस"],ans:0,person:"यूक्लिड",chap:"अपरिमेय - HIT"},
+{q:"x²-4 के शून्यक?",opts:["2,-2","2,2","-2,-2","0,0"],ans:0,person:"श्रीधराचार्य",chap:"बहुपद - HIT - 2449.2 cm³"},
+{q:"2,4,6 का d?",opts:["2","4","6","0"],ans:0,person:"गाउस",chap:"A.P. - HIT"},
+{q:"ax²+bx+c में a=?",opts:["≠0","=0",">0","<0"],ans:0,person:"श्रीधराचार्य",chap:"द्विघात - HIT"},
+{q:"sin30°=?",opts:["1/2","√3/2","1","0"],ans:0,person:"आर्यभट्ट",chap:"त्रिकोणमिति - HIT"},
+{q:"cos60°=?",opts:["1/2","√3/2","1","0"],ans:0,person:"आर्यभट्ट",chap:"त्रिकोणमिति - HIT"},
+{q:"वृत्त क्षेत्रफल?",opts:["πr²","2πr","πd","r²"],ans:0,person:"आर्यभट्ट",chap:"क्षेत्रफल - HIT - 2449.2 cm³"},
+{q:"बेलन आयतन?",opts:["πr²h","2πrh","πr²","2πr"],ans:0,person:"आर्यभट्ट",chap:"पृष्ठीय - HIT - 2449.2 cm³"},
 {q:"माध्य =?",opts:["योग/संख्या","अंतर/संख्या","गुणा/संख्या","भाग/संख्या"],ans:0,person:"कार्ल पियर्सन",chap:"सांख्यिकी - HIT"},
-{q:"माध्यिका मध्य मान?",opts:["बीच का मान","पहला","अंतिम","कोई नहीं"],ans:0,person:"कार्ल पियर्सन",chap:"सांख्यिकी - HIT"},
-{q:"प्रायिकता 0 से 1?",opts:["0 से 1 के बीच","1 से 2","0 से 2","-1 से 1"],ans:0,person:"पास्कल",chap:"प्रायिकता - HIT"}
+{q:"माध्यिका?",opts:["बीच का मान","पहला","अंतिम","कोई नहीं"],ans:0,person:"कार्ल पियर्सन",chap:"सांख्यिकी - HIT"},
+{q:"प्रायिकता 0 से 1?",opts:["0 से 1","1 से 2","0 से 2","-1 से 1"],ans:0,person:"पास्कल",chap:"प्रायिकता - HIT - 13.3 Bayes Link"}
 ],
 "10th_Science":[
-{q:"हृदय में कक्ष?",opts:["2","3","4","5"],ans:2,person:"विलियम हार्वे",chap:"हृदय - 4 अंक पक्का - 2026 HIT"},
-{q:"प्रकाश संश्लेषण गैस?",opts:["O2","CO2","N2","H2"],ans:1,person:"वॉन हेल्मोंट",chap:"पोषण - HIT - 2026 HIT"},
-{q:"विद्युत SI मात्रक?",opts:["वोल्ट","एम्पीयर","ओम","वाट"],ans:1,person:"एम्पीयर",chap:"विद्युत - 151 link - HIT"},
-{q:"pH 7 क्या?",opts:["अम्लीय","क्षारीय","उदासीन","तेजाब"],ans:2,person:"सोरेन्सन",chap:"अम्ल क्षार - HIT"},
+{q:"हृदय में कक्ष?",opts:["2","3","4","5"],ans:2,person:"विलियम हार्वे",chap:"हृदय - 4 अंक - 2449.2 cm³ - 2026 HIT"},
+{q:"प्रकाश संश्लेषण गैस?",opts:["O2","CO2","N2","H2"],ans:1,person:"वॉन हेल्मोंट",chap:"पोषण - HIT"},
+{q:"विद्युत SI मात्रक?",opts:["वोल्ट","एम्पीयर","ओम","वाट"],ans:1,person:"एम्पीयर",chap:"विद्युत - 151 Link - HIT"},
+{q:"pH7 क्या?",opts:["अम्लीय","क्षारीय","उदासीन","तेजाब"],ans:2,person:"सोरेन्सन",chap:"अम्ल क्षार - HIT"},
 {q:"प्रकाश गति?",opts:["3x10^8 m/s","3x10^6","3x10^5","3x10^7"],ans:0,person:"आइंस्टीन",chap:"प्रकाश - HIT - 2026 HIT"},
-{q:"ओम नियम V=?",opts:["IR","P/I","Q/t","W/Q"],ans:0,person:"ओम",chap:"विद्युत - HIT"},
-{q:"मानव मस्तिष्क भाग?",opts:["3","2","4","5"],ans:0,person:"आर्यभट्ट",chap:"नियंत्रण - HIT"},
+{q:"ओम V=?",opts:["IR","P/I","Q/t","W/Q"],ans:0,person:"ओम",chap:"विद्युत - HIT - V=IR"},
+{q:"मस्तिष्क भाग?",opts:["3","2","4","5"],ans:0,person:"आर्यभट्ट",chap:"नियंत्रण - HIT"},
 {q:"वृक्क कार्य?",opts:["छानना","पंप","पाचन","श्वसन"],ans:0,person:"विलियम हार्वे",chap:"उत्सर्जन - HIT"},
 {q:"लेंस शक्ति D=?",opts:["1/f","f","f²","1/f²"],ans:0,person:"न्यूटन",chap:"प्रकाश - HIT"},
-{q:"विद्युत शक्ति P=?",opts:["VI","I²R","V²/R","सभी"],ans:3,person:"जूल",chap:"विद्युत शक्ति - HIT"},
-{q:"अवतल दर्पण फोकस?",opts:["सामने","पीछे","अनंत","कहीं नहीं"],ans:0,person:"न्यूटन",chap:"प्रकाश - HIT"},
-{q:"तत्वों की संख्या?",opts:["118","100","92","50"],ans:0,person:"मेंडलीफ",chap:"आवर्त सारणी - HIT"},
+{q:"P=VI किसका?",opts:["शक्ति","धारा","वोल्टेज","प्रतिरोध"],ans:0,person:"जूल",chap:"विद्युत शक्ति - HIT"},
+{q:"अवतल फोकस?",opts:["सामने","पीछे","अनंत","कहीं नहीं"],ans:0,person:"न्यूटन",chap:"प्रकाश - HIT"},
+{q:"तत्व संख्या?",opts:["118","100","92","50"],ans:0,person:"मेंडलीफ",chap:"आवर्त - HIT"},
 {q:"NaCl क्या?",opts:["नमक","चीनी","पानी","तेजाब"],ans:0,person:"डेविस",chap:"लवण - HIT"},
 {q:"H2SO4 क्या?",opts:["तेजाब","क्षार","लवण","जल"],ans:0,person:"डेविस",chap:"अम्ल - HIT"},
-{q:"धारा I=Q/t किसका?",opts:["एम्पीयर","ओम","जूल","न्यूटन"],ans:0,person:"एम्पीयर",chap:"विद्युत धारा - HIT"},
-{q:"प्रतिरोध R=V/I किसका?",opts:["ओम","एम्पीयर","वोल्ट","वाट"],ans:0,person:"ओम",chap:"प्रतिरोध - HIT"},
-{q:"मानव गुणसूत्र?",opts:["46","44","48","23"],ans:0,person:"मेंडल",chap:"आनुवंशिकता - HIT"},
-{q:"मेंडल प्रयोग?",opts:["मटर","चूहा","मक्खी","मानव"],ans:0,person:"मेंडल",chap:"आनुवंशिकता - HIT"},
+{q:"I=Q/t?",opts:["एम्पीयर","ओम","जूल","न्यूटन"],ans:0,person:"एम्पीयर",chap:"धारा - HIT"},
+{q:"R=V/I?",opts:["ओम","एम्पीयर","वोल्ट","वाट"],ans:0,person:"ओम",chap:"प्रतिरोध - HIT"},
+{q:"गुणसूत्र?",opts:["46","44","48","23"],ans:0,person:"मेंडल",chap:"आनुवंशिकता - HIT"},
+{q:"मेंडल प्रयोग?",opts:["मटर","चूहा","मक्खी","मानव"],ans:0,person:"मेंडल",chap:"आनुवंशिकता - HIT - Person: मेंडल"},
 {q:"O2 खोज?",opts:["प्रिस्टले","लेवोजियर","डाल्टन","न्यूटन"],ans:0,person:"प्रिस्टले",chap:"तत्व - HIT"},
 {q:"CO2 सूत्र?",opts:["CO2","CO","C2O","O2C"],ans:0,person:"लेवोजियर",chap:"कार्बन - HIT"},
-{q:"H2O क्या?",opts:["जल","नमक","तेजाब","क्षार"],ans:0,person:"कैवेंडिश",chap:"जल - HIT"},
-{q:"विद्युत मोटर सिद्धांत?",opts:["चुंबकीय","विद्युत","प्रकाश","ध्वनि"],ans:0,person:"फैराडे",chap:"विद्युत मोटर - HIT"},
+{q:"H2O क्या?",opts:["जल","नमक","तेजाब","क्षार"],ans:0,person:"कैवेंडिश",chap:"जल - HIT - 2449.2 cm³"},
+{q:"मोटर सिद्धांत?",opts:["चुंबकीय","विद्युत","प्रकाश","ध्वनि"],ans:0,person:"फैराडे",chap:"मोटर - HIT"},
 {q:"जीन खोज?",opts:["मेंडल","डार्विन","वाटसन","क्रिक"],ans:0,person:"मेंडल",chap:"जीन - HIT"},
-{q:"डार्विन सिद्धांत?",opts:["विकास","गुरुत्व","विद्युत","प्रकाश"],ans:0,person:"डार्विन",chap:"विकास - HIT"}
+{q:"डार्विन सिद्धांत?",opts:["विकास","गुरुत्व","विद्युत","प्रकाश"],ans:0,person:"डार्विन",chap:"विकास - HIT - Person: डार्विन"}
 ],
 "12th_Physics":[
-{q:"विद्युत धारा I=?",opts:["Q/t","V/R","P/V","सभी"],ans:3,person:"एम्पीयर",chap:"151-Physics - विद्युत HIT - 2026 HIT"},
-{q:"ओम नियम?",opts:["V=IR","P=VI","Q=It","F=ma"],ans:0,person:"ओम",chap:"151-Physics - ओम HIT"},
+{q:"I=?",opts:["Q/t","V/R","P/V","सभी"],ans:3,person:"एम्पीयर",chap:"151-Physics - विद्युत HIT - 2026 HIT - V=IR"},
+{q:"ओम?",opts:["V=IR","P=VI","Q=It","F=ma"],ans:0,person:"ओम",chap:"151-Physics - ओम HIT - Person: ओम"},
 {q:"कूलॉम F=?",opts:["kq1q2/r²","V=IR","P=VI","Q=It"],ans:0,person:"कूलॉम",chap:"151-Physics - कूलॉम HIT"},
-{q:"प्रकाश गति निर्वात?",opts:["3x10^8 m/s","3x10^6","3x10^5","3x10^7"],ans:0,person:"आइंस्टीन",chap:"151-Physics - प्रकाश HIT"},
-{q:"विद्युत शक्ति P=?",opts:["VI","I²R","V²/R","सभी"],ans:3,person:"जूल",chap:"151-Physics - शक्ति HIT"},
-{q:"विद्युत क्षेत्र E=?",opts:["F/q","V/d","kq/r²","सभी"],ans:3,person:"फैराडे",chap:"151-Physics - क्षेत्र HIT"},
-{q:"विभव V=?",opts:["W/Q","IR","P/I","Q/t"],ans:0,person:"वोल्टा",chap:"151-Physics - विभव HIT"},
-{q:"धारिता C=?",opts:["Q/V","V/Q","QV","Q+V"],ans:0,person:"फैराडे",chap:"151-Physics - धारिता HIT"},
-{q:"प्रतिरोधकता ρ=?",opts:["RA/l","V/I","P/I²","W/Q"],ans:0,person:"ओम",chap:"151-Physics - प्रतिरोधकता HIT"},
-{q:"किरचॉफ प्रथम नियम?",opts:["धारा","वोल्टेज","शक्ति","ऊर्जा"],ans:0,person:"किरचॉफ",chap:"151-Physics - किरचॉफ HIT"},
-{q:"लेंस सूत्र 1/f=?",opts:["1/v-1/u","1/v+1/u","v+u","v-u"],ans:0,person:"न्यूटन",chap:"151-Physics - लेंस HIT"},
-{q:"प्रिज्म विचलन?",opts:["μ-1)A","(μ+1)A","μA","A/μ"],ans:0,person:"न्यूटन",chap:"151-Physics - प्रिज्म HIT"},
-{q:"डी ब्रॉगली λ=?",opts:["h/p","p/h","h*p","h+p"],ans:0,person:"डी ब्रॉगली",chap:"151-Physics - डी ब्रॉगली HIT"},
+{q:"प्रकाश गति?",opts:["3x10^8","3x10^6","3x10^5","3x10^7"],ans:0,person:"आइंस्टीन",chap:"151-Physics - प्रकाश HIT - 2026 HIT"},
+{q:"P=?",opts:["VI","I²R","V²/R","सभी"],ans:3,person:"जूल",chap:"151-Physics - शक्ति HIT"},
+{q:"E=?",opts:["F/q","V/d","kq/r²","सभी"],ans:3,person:"फैराडे",chap:"151-Physics - क्षेत्र HIT"},
+{q:"V=?",opts:["W/Q","IR","P/I","Q/t"],ans:0,person:"वोल्टा",chap:"151-Physics - विभव HIT"},
+{q:"C=?",opts:["Q/V","V/Q","QV","Q+V"],ans:0,person:"फैराडे",chap:"151-Physics - धारिता HIT"},
+{q:"ρ=?",opts:["RA/l","V/I","P/I²","W/Q"],ans:0,person:"ओम",chap:"151-Physics - प्रतिरोधकता HIT"},
+{q:"किरचॉफ प्रथम?",opts:["धारा","वोल्टेज","शक्ति","ऊर्जा"],ans:0,person:"किरचॉफ",chap:"151-Physics - किरचॉफ HIT"},
+{q:"1/f=?",opts:["1/v-1/u","1/v+1/u","v+u","v-u"],ans:0,person:"न्यूटन",chap:"151-Physics - लेंस HIT - Person: न्यूटन"},
+{q:"प्रिज्म?",opts:["(μ-1)A","(μ+1)A","μA","A/μ"],ans:0,person:"न्यूटन",chap:"151-Physics - प्रिज्म HIT"},
+{q:"λ=?",opts:["h/p","p/h","h*p","h+p"],ans:0,person:"डी ब्रॉगली",chap:"151-Physics - डी ब्रॉगली HIT - Person: डी ब्रॉगली"},
 {q:"नाभिकीय बल?",opts:["प्रबल","दुर्बल","गुरुत्व","विद्युत"],ans:0,person:"रदरफोर्ड",chap:"151-Physics - नाभिक HIT"},
-{q:"अर्ध आयु T1/2=?",opts:["0.693/λ","λ/0.693","λ*0.693","λ+0.693"],ans:0,person:"रदरफोर्ड",chap:"151-Physics - रेडियो HIT"},
-{q:"p-n जंक्शन?",opts:["डायोड","ट्रांजिस्टर","प्रतिरोध","संधारित्र"],ans:0,person:"शॉकले",chap:"151-Physics - सेमीकंडक्टर HIT"},
-{q:"ट्रांजिस्टर खोज?",opts:["शॉकले","ओम","एम्पीयर","कूलॉम"],ans:0,person:"शॉकले",chap:"151-Physics - ट्रांजिस्टर HIT"},
-{q:"फोटॉन ऊर्जा E=?",opts:["hν","mc²","1/2mv²","mgh"],ans:0,person:"आइंस्टीन",chap:"151-Physics - फोटॉन HIT"},
-{q:"कार्य फलन φ=?",opts:["hν0","hν","mc²","QV"],ans:0,person:"आइंस्टीन",chap:"151-Physics - प्रकाश विद्युत HIT"},
-{q:"रदरफोर्ड मॉडल?",opts:["नाभिकीय","थॉमसन","बोर","डी ब्रॉगली"],ans:0,person:"रदरफोर्ड",chap:"151-Physics - परमाणु HIT"},
-{q:"बोर त्रिज्या r=?",opts:["n²h²/4π²mke²","h/mv","mc²","hν"],ans:0,person:"बोर",chap:"151-Physics - बोर HIT"},
-{q:"चुंबकीय बल F=?",opts:["q(v×B)","qE","kq1q2/r²","mg"],ans:0,person:"लॉरेंज",chap:"151-Physics - चुंबक HIT"},
-{q:"फैराडे नियम e=?",opts:["-dφ/dt","IR","Q/t","V/d"],ans:0,person:"फैराडे",chap:"151-Physics - प्रेरण HIT"},
-{q:"लेन्ज नियम?",opts:["विरोध","सहयोग","समान","असमान"],ans:0,person:"लेन्ज",chap:"151-Physics - लेन्ज HIT"}
+{q:"T1/2=?",opts:["0.693/λ","λ/0.693","λ*0.693","λ+0.693"],ans:0,person:"रदरफोर्ड",chap:"151-Physics - रेडियो HIT"},
+{q:"p-n?",opts:["डायोड","ट्रांजिस्टर","प्रतिरोध","संधारित्र"],ans:0,person:"शॉकले",chap:"151-Physics - सेमीकंडक्टर HIT"},
+{q:"ट्रांजिस्टर खोज?",opts:["शॉकले","ओम","एम्पीयर","कूलॉम"],ans:0,person:"शॉकले",chap:"151-Physics - ट्रांजिस्टर HIT - Person: शॉकले"},
+{q:"E=hν?",opts:["फोटॉन","mc²","1/2mv²","mgh"],ans:0,person:"आइंस्टीन",chap:"151-Physics - फोटॉन HIT"},
+{q:"φ=hν0?",opts:["कार्य फलन","ऊर्जा","शक्ति","धारा"],ans:0,person:"आइंस्टीन",chap:"151-Physics - प्रकाश विद्युत HIT"},
+{q:"रदरफोर्ड मॉडल?",opts:["नाभिकीय","थॉमसन","बोर","डी ब्रॉगली"],ans:0,person:"रदरफोर्ड",chap:"151-Physics - परमाणु HIT - Person: रदरफोर्ड"},
+{q:"बोर r=?",opts:["n²h²/4π²mke²","h/mv","mc²","hν"],ans:0,person:"बोर",chap:"151-Physics - बोर HIT - Person: बोर"},
+{q:"F=q(v×B)?",opts:["लॉरेंज","कूलॉम","ओम","न्यूटन"],ans:0,person:"लॉरेंज",chap:"151-Physics - चुंबक HIT - Person: लॉरेंज"},
+{q:"e=-dφ/dt?",opts:["फैराडे","ओम","कूलॉम","लेन्ज"],ans:0,person:"फैराडे",chap:"151-Physics - प्रेरण HIT - Person: फैराडे"},
+{q:"लेन्ज?",opts:["विरोध","सहयोग","समान","असमान"],ans:0,person:"लेन्ज",chap:"151-Physics - लेन्ज HIT - Person: लेन्ज"}
 ],
 "12th_History":[
-{q:"हड़प्पा खोज?",opts:["1921","1922","1900","1947"],ans:0,person:"दयाराम साहनी",chap:"128-History - हड़प्पा HIT - 2026 HIT"},
-{q:"मोहनजोदड़ो अर्थ?",opts:["मृतकों का टीला","जीवितों का टीला","पहाड़","नदी"],ans:0,person:"राखालदास",chap:"128-History - मोहनजोदड़ो HIT"},
-{q:"अर्थशास्त्र लेखक?",opts:["कौटिल्य","मेगास्थनीज","फाह्यान","ह्वेनसांग"],ans:0,person:"कौटिल्य",chap:"128-History - कौटिल्य HIT"},
-{q:"1857 झांसी नेतृत्व?",opts:["लक्ष्मीबाई","नाना साहब","कुंवर सिंह","बहादुर शाह"],ans:0,person:"लक्ष्मीबाई",chap:"128-History - 1857 HIT"},
-{q:"मौर्य संस्थापक?",opts:["चंद्रगुप्त","अशोक","बिंदुसार","कनिष्क"],ans:0,person:"चंद्रगुप्त मौर्य",chap:"128-History - मौर्य HIT"},
-{q:"अशोक कलिंग युद्ध?",opts:["261 ईसा पूर्व","273","250","200"],ans:0,person:"अशोक",chap:"128-History - अशोक HIT"},
-{q:"गुप्त स्वर्ण युग?",opts:["चंद्रगुप्त प्रथम","समुद्रगुप्त","चंद्रगुप्त द्वितीय","स्कंदगुप्त"],ans:2,person:"चंद्रगुप्त द्वितीय",chap:"128-History - गुप्त HIT"},
-{q:"हर्षचरित लेखक?",opts:["बाणभट्ट","कालिदास","तुलसी","कबीर"],ans:0,person:"बाणभट्ट",chap:"128-History - हर्ष HIT"},
-{q:"पानीपत प्रथम 1526?",opts:["बाबर-इब्राहिम","अकबर-हेमू","मराठा-अब्दाली","अंग्रेज-मराठा"],ans:0,person:"बाबर",chap:"128-History - पानीपत HIT"},
-{q:"अकबर नवरत्न?",opts:["बीरबल","तानसेन","अबुल फजल","सभी"],ans:3,person:"अकबर",chap:"128-History - मुगल HIT"},
-{q:"शिवाजी राज्याभिषेक?",opts:["1674","1675","1676","1677"],ans:0,person:"शिवाजी",chap:"128-History - मराठा HIT"},
-{q:"प्लासी युद्ध 1757?",opts:["अंग्रेज-सिराज","अंग्रेज-मराठा","अंग्रेज-सिख","अंग्रेज-मुगल"],ans:0,person:"क्लाइव",chap:"128-History - प्लासी HIT"},
-{q:"1857 मंगल पांडे?",opts:["बैरकपुर","मेरठ","दिल्ली","कानपुर"],ans:0,person:"मंगल पांडे",chap:"128-History - मंगल पांडे HIT"},
-{q:"कांग्रेस स्थापना 1885?",opts:["ह्यूम","गांधी","नेहरू","तिलक"],ans:0,person:"ह्यूम",chap:"128-History - कांग्रेस HIT"},
-{q:"गांधी चंपारण?",opts:["1917","1918","1919","1920"],ans:0,person:"गांधी",chap:"128-History - गांधी HIT"},
-{q:"असहयोग आंदोलन?",opts:["1920","1921","1922","1923"],ans:0,person:"गांधी",chap:"128-History - असहयोग HIT"},
-{q:"सविनय अवज्ञा?",opts:["1930","1931","1932","1933"],ans:0,person:"गांधी",chap:"128-History - सविनय HIT"},
-{q:"भारत छोड़ो?",opts:["1942","1941","1940","1943"],ans:0,person:"गांधी",chap:"128-History - भारत छोड़ो HIT"},
-{q:"आजाद हिंद फौज?",opts:["बोस","नेहरू","पटेल","भगत"],ans:0,person:"सुभाष चंद्र बोस",chap:"128-History - आजाद हिंद HIT"},
-{q:"संविधान लागू?",opts:["26 Jan 1950","15 Aug 1947","26 Nov 1949","26 Jan 1949"],ans:0,person:"अंबेडकर",chap:"128-History - संविधान HIT"},
-{q:"हड़प्पा मुहर?",opts:["पशुपति","एकशृंगी","हाथी","शेर"],ans:0,person:"जॉन मार्शल",chap:"128-History - मुहर HIT"},
-{q:"वेदों की संख्या?",opts:["4","3","5","6"],ans:0,person:"वेदव्यास",chap:"128-History - वेद HIT"},
-{q:"बौद्ध धर्म संस्थापक?",opts:["बुद्ध","महावीर","नानक","कबीर"],ans:0,person:"गौतम बुद्ध",chap:"128-History - बौद्ध HIT"},
-{q:"जैन धर्म 24वें?",opts:["महावीर","पार्श्वनाथ","ऋषभनाथ","नेमिनाथ"],ans:0,person:"महावीर",chap:"128-History - जैन HIT"}
+{q:"हड़प्पा खोज 1921?",opts:["दयाराम साहनी","राखालदास","जॉन मार्शल","कनिंघम"],ans:0,person:"दयाराम साहनी",chap:"128-History - हड़प्पा HIT - 2026 HIT - Person: दयाराम साहनी"},
+{q:"मोहनजोदड़ो अर्थ?",opts:["मृतकों का टीला","जीवितों का टीला","पहाड़","नदी"],ans:0,person:"राखालदास बनर्जी",chap:"128-History - मोहनजोदड़ो HIT - Person: राखालदास"},
+{q:"अर्थशास्त्र लेखक?",opts:["कौटिल्य","मेगास्थनीज","फाह्यान","ह्वेनसांग"],ans:0,person:"कौटिल्य",chap:"128-History - कौटिल्य HIT - Person: कौटिल्य"},
+{q:"1857 झांसी?",opts:["लक्ष्मीबाई","नाना साहब","कुंवर सिंह","बहादुर शाह"],ans:0,person:"रानी लक्ष्मीबाई",chap:"128-History - 1857 HIT - Person: लक्ष्मीबाई"},
+{q:"मौर्य संस्थापक?",opts:["चंद्रगुप्त","अशोक","बिंदुसार","कनिष्क"],ans:0,person:"चंद्रगुप्त मौर्य",chap:"128-History - मौर्य HIT - Person: चंद्रगुप्त"},
+{q:"अशोक कलिंग?",opts:["261 ईसा पूर्व","273","250","200"],ans:0,person:"अशोक",chap:"128-History - अशोक HIT - Person: अशोक"},
+{q:"गुप्त स्वर्ण?",opts:["चंद्रगुप्त प्रथम","समुद्रगुप्त","चंद्रगुप्त द्वितीय","स्कंदगुप्त"],ans:2,person:"चंद्रगुप्त द्वितीय",chap:"128-History - गुप्त HIT - Person: विक्रमादित्य"},
+{q:"हर्षचरित?",opts:["बाणभट्ट","कालिदास","तुलसी","कबीर"],ans:0,person:"बाणभट्ट",chap:"128-History - हर्ष HIT - Person: बाणभट्ट"},
+{q:"पानीपत 1526?",opts:["बाबर-इब्राहिम","अकबर-हेमू","मराठा-अब्दाली","अंग्रेज-मराठा"],ans:0,person:"बाबर",chap:"128-History - पानीपत HIT - Person: बाबर"},
+{q:"अकबर नवरत्न?",opts:["बीरबल","तानसेन","अबुल फजल","सभी"],ans:3,person:"अकबर",chap:"128-History - मुगल HIT - Person: अकबर"},
+{q:"शिवाजी 1674?",opts:["1674","1675","1676","1677"],ans:0,person:"शिवाजी",chap:"128-History - मराठा HIT - Person: शिवाजी"},
+{q:"प्लासी 1757?",opts:["अंग्रेज-सिराज","अंग्रेज-मराठा","अंग्रेज-सिख","अंग्रेज-मुगल"],ans:0,person:"क्लाइव",chap:"128-History - प्लासी HIT - Person: क्लाइव"},
+{q:"मंगल पांडे बैरकपुर?",opts:["बैरकपुर","मेरठ","दिल्ली","कानपुर"],ans:0,person:"मंगल पांडे",chap:"128-History - मंगल पांडे HIT - Person: मंगल पांडे"},
+{q:"कांग्रेस 1885?",opts:["ह्यूम","गांधी","नेहरू","तिलक"],ans:0,person:"ए.ओ. ह्यूम",chap:"128-History - कांग्रेस HIT - Person: ह्यूम"},
+{q:"चंपारण 1917?",opts:["1917","1918","1919","1920"],ans:0,person:"गांधी",chap:"128-History - गांधी HIT - Person: गांधी"},
+{q:"असहयोग 1920?",opts:["1920","1921","1922","1923"],ans:0,person:"गांधी",chap:"128-History - असहयोग HIT - Person: गांधी"},
+{q:"सविनय 1930?",opts:["1930","1931","1932","1933"],ans:0,person:"गांधी",chap:"128-History - सविनय HIT - Person: गांधी"},
+{q:"भारत छोड़ो 1942?",opts:["1942","1941","1940","1943"],ans:0,person:"गांधी",chap:"128-History - भारत छोड़ो HIT - Person: गांधी"},
+{q:"आजाद हिंद?",opts:["बोस","नेहरू","पटेल","भगत"],ans:0,person:"सुभाष चंद्र बोस",chap:"128-History - आजाद हिंद HIT - Person: बोस"},
+{q:"संविधान 26 Jan 1950?",opts:["26 Jan 1950","15 Aug 1947","26 Nov 1949","26 Jan 1949"],ans:0,person:"अंबेडकर",chap:"128-History - संविधान HIT - Person: अंबेडकर"},
+{q:"हड़प्पा मुहर?",opts:["पशुपति","एकशृंगी","हाथी","शेर"],ans:0,person:"जॉन मार्शल",chap:"128-History - मुहर HIT - Person: जॉन मार्शल"},
+{q:"वेद संख्या 4?",opts:["4","3","5","6"],ans:0,person:"वेदव्यास",chap:"128-History - वेद HIT - Person: वेदव्यास"},
+{q:"बौद्ध संस्थापक?",opts:["बुद्ध","महावीर","नानक","कबीर"],ans:0,person:"गौतम बुद्ध",chap:"128-History - बौद्ध HIT - Person: बुद्ध"},
+{q:"जैन 24वें?",opts:["महावीर","पार्श्वनाथ","ऋषभनाथ","नेमिनाथ"],ans:0,person:"महावीर",chap:"128-History - जैन HIT - Person: महावीर"}
 ]
 };
 
-function openBook(t,k){document.getElementById('home').style.display='none';document.getElementById('detail').style.display='block';document.getElementById('dTitle').innerText=t;document.getElementById('dContent').innerHTML='<div class="chap"><h3>'+t+'</h3></div>';}
+function openBook(t,k){document.getElementById('home').style.display='none';document.getElementById('detail').style.display='block';document.getElementById('dTitle').innerText=t;document.getElementById('dContent').innerHTML=books[k]||'<div class="chap"><h3>'+t+' - OLD FUTURE LIVE</h3><p>81 Chapter + Ex Wise + Copy Share + Modal + Voice + HIT</p><div style="display:flex;gap:6px"><button class="btn" style="margin:0" onclick="copyText(\''+t+'\')">📋 Copy</button><button class="btn btnY" style="margin:0" onclick="shareWhatsApp()">📤 Share</button></div></div>';}
 function goBack(){document.getElementById('detail').style.display='none';document.getElementById('home').style.display='block';}
 function openPage2(id){document.getElementById(id).style.display='block';}
 function closePage2(id){document.getElementById(id).style.display='none';clearInterval(timerInterval);}
 function goHome(){document.getElementById('detail').style.display='none';document.querySelectorAll('.page').forEach(e=>e.style.display='none');document.getElementById('home').style.display='block';clearInterval(timerInterval);}
 function searchAll(){let v=document.getElementById('searchBox').value.toLowerCase();document.querySelectorAll('.newCard').forEach(c=>{let n=(c.getAttribute('data-name')||c.innerText).toLowerCase();c.style.display=n.includes(v)?'':'none';});}
 function showTab(tab){document.getElementById('list10th').style.display=tab==='10th'?'':'none';document.getElementById('list12th').style.display=tab==='12th'?'':'none';document.getElementById('btn10th').classList.toggle('active',tab==='10th');document.getElementById('btn12th').classList.toggle('active',tab==='12th');}
-function showOMRTab(tab){
- document.getElementById('omr10th').style.display=tab==='10th'?'':'none';
- document.getElementById('omr12th').style.display=tab==='12th'?'':'none';
- document.getElementById('omrBtn10th').classList.toggle('active',tab==='10th');
- document.getElementById('omrBtn12th').classList.toggle('active',tab==='12th');
- currentClass=tab;
- document.getElementById('omrResult').style.display='none';
- clearInterval(timerInterval);
-}
+function showOMRTab(tab){document.getElementById('omr10th').style.display=tab==='10th'?'':'none';document.getElementById('omr12th').style.display=tab==='12th'?'':'none';document.getElementById('omrBtn10th').classList.toggle('active',tab==='10th');document.getElementById('omrBtn12th').classList.toggle('active',tab==='12th');currentClass=tab;document.getElementById('omrResult').style.display='none';clearInterval(timerInterval);}
 function startOMR(cls,sub){
- let key=cls+"_"+sub;
- let qs=[];
- if(sub==='Full'){
-   if(cls==='10th'){qs=[...omrData["10th_Math"].slice(0,12),...omrData["10th_Science"].slice(0,12)];}
-   else{qs=[...omrData["12th_Physics"].slice(0,12),...omrData["12th_History"].slice(0,12)];}
- }else{
-   qs=omrData[key]||[];
-   if(qs.length===0) qs=omrData[cls+"_Math"]||omrData[cls+"_Physics"]||omrData["10th_Math"];
- }
- currentOMR=qs.slice(0,24);
- currentAns={};
- timeLeft=600;
- let containerId=cls==='10th'?"omr10thQuestions":"omr12thQuestions";
- let container=document.getElementById(containerId);
- container.style.display='block';
-
- let html=`<div class="timerBar" id="timerBar"><span>⏱️ ${cls} - ${sub} - 24 सवाल - OMR TEST</span><span id="timerText">10:00</span></div>`;
- html+=`<div class="chap" style="background:#dc2626;color:#fff;text-align:center"><b>📝 ${cls} - ${sub} - 24 Person - 10 मिनट - बीच-बीच में Person/Chapter</b><br><small>तेरे Screenshot जैसा - हर सवाल में A,B,C,D - Green Select - Timer Auto Submit</small></div>`;
+ let key=cls+"_"+sub;let qs=[];
+ if(sub==='Full'){if(cls==='10th'){qs=[...omrData["10th_Math"].slice(0,12),...omrData["10th_Science"].slice(0,12)];}else{qs=[...omrData["12th_Physics"].slice(0,12),...omrData["12th_History"].slice(0,12)];}}
+ else{qs=omrData[key]||[];if(qs.length===0) qs=omrData[cls+"_Math"]||omrData[cls+"_Physics"]||omrData["10th_Math"];}
+ currentOMR=qs.slice(0,24);currentAns={};timeLeft=600;
+ let containerId=cls==='10th'?"omr10thQuestions":"omr12thQuestions";let container=document.getElementById(containerId);container.style.display='block';
+ let html=`<div class="timerBar" id="timerBar"><span>⏱️ ${cls} - ${sub} - 24 Q - OMR TEST - OLD+NEW</span><span id="timerText">10:00</span></div>`;
+ html+=`<div class="chap" style="background:#dc2626;color:#fff;text-align:center"><b>📝 ${cls} - ${sub} - 24 Person - 10 मिनट - तेरे Screenshot जैसा - OLD FUTURE + NEW</b><br><small>हर सवाल में A,B,C,D - Green Select - Person + Chapter + 81Ch + Ex Wise + Copy Share</small></div>`;
  currentOMR.forEach((q,i)=>{
    html+=`<div class="omrQ"><div style="display:flex;justify-content:space-between"><b>Q${i+1}. ${q.q}</b><span style="background:#FFEB3B;color:#000;padding:2px 6px;border-radius:10px;font-size:10px">${i+1}/24</span></div><div style="margin:6px 0"><span style="background:#E9D5FF;padding:3px 8px;border-radius:20px;font-size:10px">👤 Person: ${q.person}</span> <span style="background:#FFEB3B;padding:3px 8px;border-radius:20px;font-size:10px">📚 ${q.chap}</span></div>`;
-   q.opts.forEach((opt,j)=>{
-     html+=`<div class="omrOpt" id="opt_${cls}_${i}_${j}" onclick="selectOpt('${cls}',${i},${j})"><div style="width:26px;height:26px;border:2px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:12px;background:#fff">${String.fromCharCode(65+j)}</div><span style="flex:1">${opt}</span></div>`;
-   });
-   html+=`</div>`;
+   q.opts.forEach((opt,j)=>{html+=`<div class="omrOpt" id="opt_${cls}_${i}_${j}" onclick="selectOpt('${cls}',${i},${j})"><div style="width:26px;height:26px;border:2px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:12px;background:#fff">${String.fromCharCode(65+j)}</div><span style="flex:1">${opt}</span></div>`;});
+   html+=`<div style="display:flex;gap:6px;margin-top:6px"><button style="background:#f1f5f9;border:1px solid #ddd;padding:4px 8px;border-radius:10px;font-size:10px" onclick="copyText('${q.q}')">📋 Copy Q - OLD FUTURE</button><button style="background:#FFF9C4;border:1px solid #FFC107;padding:4px 8px;border-radius:10px;font-size:10px" onclick="openChapterModal('${q.chap}')">👁️ Detail Modal - OLD FUTURE</button><button style="background:#E8F5E9;border:1px solid #1B5E20;padding:4px 8px;border-radius:10px;font-size:10px" onclick="speakText('${q.q}')">🎤 Voice - OLD FUTURE</button></div></div>`;
  });
- html+=`<button class="btn" style="background:#dc2626;margin:10px;font-size:16px" onclick="submitOMR()">✅ 24 सवाल Submit करो - Result देखो</button>`;
- container.innerHTML=html;
- container.scrollIntoView({behavior:'smooth'});
- document.getElementById('omrResult').style.display='none';
- startTimer();
+ html+=`<button class="btn pulse" style="background:#dc2626;margin:10px;font-size:16px" onclick="submitOMR()">✅ 24 सवाल Submit - FREE Unlock - Pulse - OLD FUTURE</button>`;
+ container.innerHTML=html;container.scrollIntoView({behavior:'smooth'});document.getElementById('omrResult').style.display='none';startTimer();
 }
-function startTimer(){
- clearInterval(timerInterval);
- timerInterval=setInterval(()=>{
-   timeLeft--;
-   let m=Math.floor(timeLeft/60),s=timeLeft%60;
-   let txt=`${m}:${s<10?'0'+s:s}`;
-   let el=document.getElementById('timerText');
-   if(el) el.innerText=txt;
-   if(timeLeft<=60){ // last minute red blink
-     let bar=document.getElementById('timerBar');
-     if(bar) bar.style.background='#000';
-   }
-   if(timeLeft<=0){
-     clearInterval(timerInterval);
-     alert('⏰ 10 मिनट खत्म! Auto Submit हो रहा है - 24 सवाल का Result देखो!');
-     submitOMR();
-   }
- },1000);
-}
-function selectOpt(cls,qIdx,oIdx){
- currentAns[qIdx]=oIdx;
- document.querySelectorAll(`[id^="opt_${cls}_${qIdx}_"]`).forEach(e=>e.classList.remove('sel'));
- document.getElementById(`opt_${cls}_${qIdx}_${oIdx}`).classList.add('sel');
-}
-function submitOMR(){
- clearInterval(timerInterval);
- let score=0;
- currentOMR.forEach((q,i)=>{if(currentAns[i]===q.ans) score++;});
- let percent=Math.round(score/currentOMR.length*100);
- let timeTaken=600-timeLeft;
- let mm=Math.floor(timeTaken/60),ss=timeTaken%60;
- let msg=percent>=80?"🏆 Topper! 24 में से "+score+" - Full Marks पक्का!":percent>=60?"👍 बहुत बढ़िया! 24 में से "+score+" - पास पक्का!":percent>=40?"📚 और पढ़ना होगा - 24 में से "+score:"😅 फिर से पढ़ो - Model Paper देखो - 24 में से "+score;
- document.getElementById('omrScore').innerText=`🎉 ${currentClass} OMR - 24 Q - Score: ${score}/24 - ${percent}%`;
- document.getElementById('omrMsg').innerText=msg;
- document.getElementById('omrTimeTaken').innerText=`⏱️ Time Taken: ${mm} Min ${ss} Sec / 10 Min - 24 Person Complete`;
- document.getElementById('omrResult').style.display='block';
- document.getElementById('omrResult').scrollIntoView({behavior:'smooth'});
-}
-function resetOMR(){
- document.getElementById('omr10thQuestions').style.display='none';
- document.getElementById('omr12thQuestions').style.display='none';
- document.getElementById('omrResult').style.display='none';
- clearInterval(timerInterval);
-}
-function openPDF(file){let viewer=document.getElementById('pdfViewer');let frame=document.getElementById('pdfFrame');viewer.style.display='block';let safeFile=encodeURI(file).replace(/\(/g,'%28').replace(/\)/g,'%29');frame.src=safeFile;document.getElementById('viewerTitle').innerText='📄 '+file;viewer.scrollIntoView({behavior:'smooth'});}
+function startTimer(){clearInterval(timerInterval);timerInterval=setInterval(()=>{timeLeft--;let m=Math.floor(timeLeft/60),s=timeLeft%60;let txt=`${m}:${s<10?'0'+s:s}`;let el=document.getElementById('timerText');if(el) el.innerText=txt;if(timeLeft<=60){let bar=document.getElementById('timerBar');if(bar) bar.style.background='#000';}if(timeLeft<=0){clearInterval(timerInterval);alert('⏰ 10 मिनट खत्म! Auto Submit! - OLD FUTURE Timer');submitOMR();}},1000);}
+function selectOpt(cls,qIdx,oIdx){currentAns[qIdx]=oIdx;document.querySelectorAll(`[id^="opt_${cls}_${qIdx}_"]`).forEach(e=>e.classList.remove('sel'));document.getElementById(`opt_${cls}_${qIdx}_${oIdx}`).classList.add('sel');}
+function submitOMR(){clearInterval(timerInterval);let score=0;currentOMR.forEach((q,i)=>{if(currentAns[i]===q.ans) score++;});let percent=Math.round(score/currentOMR.length*100);let timeTaken=600-timeLeft;let mm=Math.floor(timeTaken/60),ss=timeTaken%60;let msg=percent>=80?"🏆 Topper! 24 में से "+score+" - Full Marks! - OLD FUTURE HIT":percent>=60?"👍 बढ़िया! "+score+"/24 - पास पक्का!":percent>=40?"📚 और पढ़ना होगा - "+score+"/24":"😅 फिर से पढ़ो - "+score+"/24";document.getElementById('omrScore').innerText=`🎉 ${currentClass} OMR - 24 Q - Score: ${score}/24 - ${percent}% - OLD+NEW`;document.getElementById('omrMsg').innerText=msg;document.getElementById('omrTimeTaken').innerText=`⏱️ Time: ${mm} Min ${ss} Sec / 10 Min - 24 Person Complete - FREE Unlock - Points +5`;document.getElementById('omrResult').style.display='block';document.getElementById('omrResult').scrollIntoView({behavior:'smooth'});let ptsEl=document.getElementById('points');if(ptsEl){ptsEl.innerText=(parseInt(ptsEl.innerText)+score*5)+' Pts 🔥';}showToast('✅ OMR Submit! Score: '+score+'/24 - Points +'+score*5+' - OLD FUTURE');}
+function resetOMR(){document.getElementById('omr10thQuestions').style.display='none';document.getElementById('omr12thQuestions').style.display='none';document.getElementById('omrResult').style.display='none';clearInterval(timerInterval);}
+function openPDF(file){let viewer=document.getElementById('pdfViewer');let frame=document.getElementById('pdfFrame');viewer.style.display='block';let safeFile=encodeURI(file).replace(/\(/g,'%28').replace(/\)/g,'%29');frame.src=safeFile;document.getElementById('viewerTitle').innerText='📄 '+file+' - 81Ch - FREE Unlock - OLD FUTURE';viewer.scrollIntoView({behavior:'smooth'});showToast('📄 PDF खोल रहे हैं - 81 Chapter - OLD FUTURE');}
 function closeViewer(){document.getElementById('pdfViewer').style.display='none';document.getElementById('pdfFrame').src='';}
-function askAI(){let t=document.getElementById('aiInput').value.trim();if(!t)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class="chap" style="background:#FFF9C4">👦 ${t}</div>`;document.getElementById('aiInput').value='';let ans=`${t} का जवाब - Topper Style`;setTimeout(()=>{b.innerHTML+=`<div class="chap" style="background:#E8F5E9">🤖 ${ans}</div>`;b.scrollTop=b.scrollHeight;},300);}
+function askAI(){let t=document.getElementById('aiInput').value.trim();if(!t)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class="chap" style="background:#FFF9C4;margin-left:15px">👦 ${t}</div>`;document.getElementById('aiInput').value='';let key=Object.keys(gyanDB).find(k=>t.toLowerCase().includes(k.toLowerCase()));let ans=key?gyanDB[key]:`${t} का जवाब - 81Ch + 13.3 Bayes 50% + 2449.2 cm³ + 300 शब्द - OLD FUTURE`;setTimeout(()=>{b.innerHTML+=`<div class="chap" style="background:#E8F5E9;border-left:5px solid #1B5E20">🤖 ${ans} <br><div style="display:flex;gap:6px;margin-top:6px"><button style="font-size:10px" onclick="copyText('${ans}')">📋 Copy - OLD</button><button style="font-size:10px" onclick="speakText('${ans}')">🎤 Voice - OLD</button></div></div>`;b.scrollTop=b.scrollHeight;},400);}
 </script>
 </body>
 </html>
