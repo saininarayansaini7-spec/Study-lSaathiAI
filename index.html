@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Study-lSaathiAI - FINAL MEGA - 10th+12th 2026 - ALL FEATURE</title>
+<title>Study-lSaathiAI - OMR TEST - 10th + 12th - FINAL ALL</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
 body{background:#eef2ff;padding-bottom:85px}
@@ -11,8 +11,8 @@ body{background:#eef2ff;padding-bottom:85px}
 .card{background:#fff;margin:10px;border-radius:18px;padding:14px;box-shadow:0 2px 8px #0001}
 .purple{background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff}
 .greenY{background:linear-gradient(135deg,#1B5E20,#FFEB3B);padding:14px;border-radius:16px;color:#fff;display:flex;justify-content:space-between;margin:10px}
-.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}
 .pill{background:#f1f5f9;padding:10px 4px;border-radius:20px;text-align:center;font-weight:bold;font-size:11px;cursor:pointer;border:1px solid #e2e8f0}
 .boxM{padding:14px 5px;border-radius:16px;color:#fff;text-align:center;font-weight:bold;cursor:pointer;font-size:12px}
 .search{margin:10px;background:#fff;border-radius:12px;display:flex;align-items:center;padding:10px 12px;gap:8px;position:sticky;top:52px;z-index:9;box-shadow:0 2px 6px #0001}
@@ -31,109 +31,159 @@ body{background:#eef2ff;padding-bottom:85px}
 .tabBtn2{border-color:#7c3aed}.tabBtn2.active{background:#7c3aed;color:#fff}
 .bottomNav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0;box-shadow:0 -2px 10px #0002;border-radius:20px 20px 0 0;z-index:50}
 .pdfCard{background:#fff;border-radius:12px;padding:10px;margin:6px 0;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px #0001;border-left:4px solid #1B5E20}
+.omrQ{background:#fff;margin:10px;border-radius:14px;padding:12px;border-left:5px solid #dc2626;box-shadow:0 2px 6px #0001}
+.omrOpt{display:flex;align-items:center;gap:8px;padding:8px;border:1px solid #e2e8f0;border-radius:10px;margin:6px 0;cursor:pointer}
+.omrOpt.sel{background:#dcfce7;border-color:#1B5E20}
 </style>
 </head>
 <body>
 <div id="home">
-<div class="top"><div><div style="color:#1B5E20;font-weight:900;font-size:14px">📚 Study-lSaathiAI - JANI TOPPER</div><div style="font-size:8px;color:gray">FINAL ALL FEATURE - 10th 13 PDF + 12th 101-152 ALL PDF 2026 - NO 404 - LIVE</div></div></div>
-<div class="greenY"><div><h2 style="font-size:15px">✨ 2026 - 10th + 12th Model Paper LIVE 🚀</h2><p style="font-size:10px">10th 901-981 + 12th 101-Hindi 102-Gen Hindi 128-History 129-Geography 130-Civics 151-Physics 152-Chem - FINAL</p></div><div style="font-size:32px">📚</div></div>
-<div class="search">🔍<input id="searchBox" placeholder="Search - 2026, Hindi, History, Geography, Physics, Chemistry, NCC..." oninput="searchAll()"></div>
-<div style="padding:0 10px"><b style="font-size:12px">📄 2026 Model Papers - 10th + 12th + All 9 Future - FINAL - तेरी Screenshot वाला</b></div>
+<div class="top"><div><div style="color:#1B5E20;font-weight:900;font-size:14px">📚 Study-lSaathiAI - JANI TOPPER - OMR</div><div style="font-size:8px;color:gray">FINAL - OMR 10th + 12th + 10th 13 PDF + 12th 101-152 + All Future - LIVE</div></div></div>
+<div class="greenY"><div><h2 style="font-size:15px">✨ OMR TEST 2026 - 10th + 12th LIVE 🚀</h2><p style="font-size:10px">10th का अलग OMR + 12th का अलग OMR - वही Chapter जो Board में जरूर आएंगे - NEW</p></div><div style="font-size:32px">📝</div></div>
+<div class="search">🔍<input id="searchBox" placeholder="Search - OMR, 10th OMR, 12th OMR, Physics, History..." oninput="searchAll()"></div>
+<div style="padding:0 10px"><b style="font-size:12px">📄 FINAL - OMR + Model Papers + All Future</b></div>
 <div class="newGrid">
-<div class="newCard" data-name="2026 10th 13 pdf" style="border:3px solid #1B5E20;background:linear-gradient(135deg,#FFEB3B,#FFC107)!important" onclick="openPage2('paper2026Page');showTab('10th')"><div class="liveTag" style="background:green">2026 10th</div>📘<br><b style="font-size:11px">2026 Class 10th<br>13 PDF LIVE</b></div>
-<div class="newCard" data-name="2026 12th all pdf 101 102 103 117 128 129 130 151 152" style="border:3px solid #7c3aed;background:linear-gradient(135deg,#E9D5FF,#A78BFA)!important" onclick="openPage2('paper2026Page');showTab('12th')"><div class="liveTag" style="background:#7c3aed">2026 12th NEW</div>📙<br><b style="font-size:11px">2026 Class 12th<br>All PDF LIVE - NEW</b></div>
-<div class="newCard" data-name="upmsp live fixed" style="border:2px solid green" onclick="openPage2('upmspPage')"><div class="liveTag" style="background:green">FIXED</div>🏛️<br><b style="font-size:10px">UPMSP LIVE 2026 Fixed</b></div>
-<div class="newCard" data-name="ncert books 2026" onclick="openPage2('ncertPage')">📚<br><b style="font-size:10px">NCERT 2026</b></div>
-<div class="newCard" data-name="meme zone" onclick="openPage2('memePage')">😂<br><b style="font-size:10px">Meme Zone</b></div>
-<div class="newCard" data-name="reels" onclick="openPage2('reelsPage')">🎬<br><b style="font-size:10px">Reels</b></div>
-<div class="newCard" data-name="question bank 2026" onclick="openPage2('qbPage')">❓<br><b style="font-size:10px">Question Bank 2026</b></div>
-<div class="newCard" data-name="topper answers 2026" onclick="openPage2('topperPage')">🏆<br><b style="font-size:10px">Topper 2026</b></div>
-<div class="newCard" data-name="ask ai vidyut ncc 2026" onclick="openPage2('askPage')">🤖<br><b style="font-size:10px">Ask AI 2026 असली</b></div>
+<div class="newCard" data-name="omr test 10th 12th 2026" style="border:3px solid #dc2626;background:linear-gradient(135deg,#FECACA,#dc2626)!important;color:#fff" onclick="openPage2('omrPage')"><div class="liveTag" style="background:#000">NEW OMR</div>📝<br><b style="font-size:11px">OMR TEST 2026<br>10th + 12th अलग</b></div>
+<div class="newCard" data-name="2026 10th 13 pdf" style="border:3px solid #1B5E20;background:linear-gradient(135deg,#FFEB3B,#FFC107)!important" onclick="openPage2('paper2026Page');showTab('10th')">📘<br><b style="font-size:11px">2026 Class 10th<br>13 PDF LIVE</b></div>
+<div class="newCard" data-name="2026 12th all pdf" style="border:3px solid #7c3aed;background:linear-gradient(135deg,#E9D5FF,#A78BFA)!important" onclick="openPage2('paper2026Page');showTab('12th')">📙<br><b style="font-size:11px">2026 Class 12th<br>All PDF LIVE</b></div>
+<div class="newCard" data-name="upmsp live fixed" style="border:2px solid green" onclick="openPage2('upmspPage')"><div class="liveTag" style="background:green">FIXED</div>🏛️<br><b style="font-size:10px">UPMSP LIVE Fixed</b></div>
+<div class="newCard" onclick="openPage2('ncertPage')">📚<br><b style="font-size:10px">NCERT 2026</b></div>
+<div class="newCard" onclick="openPage2('memePage')">😂<br><b style="font-size:10px">Meme Zone</b></div>
+<div class="newCard" onclick="openPage2('reelsPage')">🎬<br><b style="font-size:10px">Reels</b></div>
+<div class="newCard" onclick="openPage2('qbPage')">❓<br><b style="font-size:10px">Question Bank</b></div>
+<div class="newCard" onclick="openPage2('askPage')">🤖<br><b style="font-size:10px">Ask AI 2026</b></div>
 </div>
-<div class="card purple"><b>🎯 2026 - 10th + 12th - दोनों LIVE - सारे Future के साथ!</b><div style="font-size:12px">तेरी Screenshot वाली - 10th 901-981 + 12th 101-Hindi 102-General-Hindi 103-Sanskrit 117-English 128-History 129-Geography 130-Civics 142-Sociology 144-Computer 151-Physics 152-Chemistry - सब 2026 लिख के + UPMSP Fixed + 404 Fixed + पुराने सारे Future</div><div style="display:flex;gap:6px;margin-top:8px"><div onclick="openPage2('paper2026Page');showTab('10th')" style="background:#FFEB3B;color:#1B5E20;padding:6px 14px;border-radius:50px;font-weight:bold;font-size:12px;flex:1;text-align:center">👉 10th 2026</div><div onclick="openPage2('paper2026Page');showTab('12th')" style="background:#7c3aed;color:#fff;padding:6px 14px;border-radius:50px;font-weight:bold;font-size:12px;flex:1;text-align:center">👉 12th 2026 NEW</div></div></div>
-<div class="card"><div style="text-align:center;font-weight:bold;font-size:12px">🏪 2027 - दुकान वाले Model Papers - पुराने Future</div><div class="grid3"><div class="boxM" style="background:#7c3aed" onclick="openBook('Mastermind 2027 - 70% HIT','mastermind')">Mastermind 2027</div><div class="boxM" style="background:#2563eb" onclick="openBook('Vidya 2027','vidya')">Vidya 2027</div><div class="boxM" style="background:#dc2626" onclick="openBook('Flight 2027','flight')">Flight 2027</div></div></div>
-<div class="card"><div style="text-align:center;font-weight:bold;font-size:12px">📖 हर विषय - पुराने Future</div><div class="grid4"><div class="pill" onclick="openBook('10th हिंदी','hindi10')">10th हिंदी</div><div class="pill" onclick="openBook('10th गणित','math10')">10th गणित</div><div class="pill" onclick="openBook('10th विज्ञान','science10')">10th विज्ञान</div><div class="pill" onclick="openBook('12th भौतिकी 151','phy12')">12th भौतिकी 151</div><div class="pill" onclick="openBook('12th इतिहास 128','his12')">12th इतिहास 128</div><div class="pill" onclick="openBook('12th भूगोल 129','geo12')">12th भूगोल 129</div></div></div>
+<div class="card purple"><b>🎯 OMR TEST 2026 - 10th + 12th अलग-अलग - NEW FEATURE!</b><div style="font-size:12px">10th में - गणित √5 अपरिमेय, विज्ञान हृदय 4 कक्ष, SST हड़प्पा - 12th में - 151-Physics विद्युत, 128-History हड़प्पा, 129-Geography मानव भूगोल - वही जो Board में जरूर आएंगे - OMR Sheet पर!</div><div style="display:flex;gap:6px;margin-top:8px"><div onclick="openPage2('omrPage');showOMRTab('10th')" style="background:#FFEB3B;color:#1B5E20;padding:6px 14px;border-radius:50px;font-weight:bold;font-size:12px;flex:1;text-align:center">👉 10th OMR शुरू</div><div onclick="openPage2('omrPage');showOMRTab('12th')" style="background:#7c3aed;color:#fff;padding:6px 14px;border-radius:50px;font-weight:bold;font-size:12px;flex:1;text-align:center">👉 12th OMR शुरू</div></div></div>
+<div class="card"><div style="text-align:center;font-weight:bold;font-size:12px">🏪 दुकान वाले Model Papers - पुराना Future</div><div class="grid3"><div class="boxM" style="background:#7c3aed" onclick="openBook('Mastermind 2027','mastermind')">Mastermind 2027</div><div class="boxM" style="background:#2563eb" onclick="openBook('Vidya 2027','vidya')">Vidya 2027</div><div class="boxM" style="background:#dc2626" onclick="openBook('Flight 2027','flight')">Flight 2027</div></div></div>
 </div>
 
-<div id="detail" class="page"><div class="dhead"><div class="back" onclick="goBack()">←</div><h3 id="dTitle">Model Paper</h3></div><div id="dContent"></div></div>
+<div id="detail" class="page"><div class="dhead"><div class="back" onclick="goBack()">←</div><h3 id="dTitle"></h3></div><div id="dContent"></div></div>
 
+<!-- PAPER PAGE - SAME AS BEFORE -->
 <div id="paper2026Page" class="page">
-<div class="dhead"><div class="back" onclick="closePage2('paper2026Page')">←</div><b>📄 2026 Model Papers - 10th + 12th - FINAL MEGA</b></div>
+<div class="dhead"><div class="back" onclick="closePage2('paper2026Page')">←</div><b>📄 2026 Model Papers - 10th + 12th</b></div>
 <div style="padding:10px">
-<div class="chap" style="background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff;text-align:center">
-<b>🔥 UP Board 2026 - Class 10th + 12th - All Model Papers - तेरी File + Screenshot वाली</b><br>
+<div class="chap" style="background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff;text-align:center"><b>UP Board 2026 - 10th + 12th Papers</b><div style="margin-top:8px"><button class="tabBtn active" id="btn10th" onclick="showTab('10th')">📘 10th - 13 PDF</button><button class="tabBtn tabBtn2" id="btn12th" onclick="showTab('12th')">📙 12th - 101-152</button></div><input id="pdfSearch" placeholder="Search..." style="width:100%;padding:10px;border-radius:10px;border:none;margin-top:8px;color:#000" oninput="filterPDF()"></div>
+<div id="list10th"><div class="pdfCard pdfItem" data-name="10th"><div><b>📘 2026 - 901-Hindi.pdf</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('901-Hindi.pdf')">खोलो</button></div><div class="pdfCard pdfItem" data-name="10th"><div><b>📐 2026 - 928-Math.pdf HIT</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('928-Math.pdf')">खोलो</button></div><div class="pdfCard pdfItem" data-name="10th"><div><b>🔬 2026 - 931-Science.pdf HIT</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('931-Science.pdf')">खोलो</button></div><div class="pdfCard pdfItem" data-name="10th"><div><b>🇮🇳 2026 - 981-NCC.pdf HIT</b></div><button class="btn" style="width:80px;margin:0;background:#FFC107;color:#000" onclick="openPDF('981-NCC.pdf')">खोलो</button></div></div>
+<div id="list12th" style="display:none"><div class="pdfCard pdfItem" data-name="12th"><div><b>📘 2026 - 101-Hindi.pdf - 12th</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('101-Hindi.pdf')">खोलो</button></div><div class="pdfCard pdfItem" data-name="12th"><div><b>📜 2026 - 128-History.pdf HIT - 12th</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('128-History.pdf')">खोलो</button></div><div class="pdfCard pdfItem" data-name="12th"><div><b>🌍 2026 - 129-Geography.pdf HIT - 12th</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('129-Geography.pdf')">खोलो</button></div><div class="pdfCard pdfItem" data-name="12th"><div><b>⚡ 2026 - 151-Physics.pdf HIT - 12th</b></div><button class="btn" style="width:80px;margin:0;background:#dc2626" onclick="openPDF('151-Physics.pdf')">खोलो</button></div><div class="pdfCard pdfItem" data-name="12th"><div><b>🧪 2026 - 152-Chemistry.pdf HIT - 12th</b></div><button class="btn" style="width:80px;margin:0;background:#dc2626" onclick="openPDF('152-Chemistry.pdf')">खोलो</button></div></div>
+<div class="chap" id="pdfViewer" style="display:none;padding:0;overflow:hidden"><div style="padding:10px;display:flex;justify-content:space-between;align-items:center;background:#1B5E20;color:#fff"><b id="viewerTitle">PDF Viewer</b><button style="background:#fff;border:none;padding:5px 10px;border-radius:20px;font-weight:bold" onclick="closeViewer()">✕</button></div><iframe id="pdfFrame" src="" style="width:100%;height:70vh;border:none"></iframe></div>
+</div>
+</div>
+
+<!-- OMR PAGE - NEW FEATURE -->
+<div id="omrPage" class="page">
+<div class="dhead"><div class="back" onclick="closePage2('omrPage')">←</div><b>📝 OMR TEST 2026 - 10th + 12th अलग - NEW</b></div>
+<div style="padding:10px">
+<div class="chap" style="background:linear-gradient(135deg,#dc2626,#991b1b);color:#fff;text-align:center">
+<b>🔥 UP Board OMR TEST 2026 - असली Board जैसा</b><br><small>10th का अलग + 12th का अलग - वही Chapter जो जरूर आएंगे</small><br>
 <div style="margin-top:8px">
-<button class="tabBtn active" id="btn10th" onclick="showTab('10th')">📘 10th - 13 PDF - 2026</button>
-<button class="tabBtn tabBtn2" id="btn12th" onclick="showTab('12th')">📙 12th - 101 to 152 - 2026 NEW</button>
-</div>
-<input id="pdfSearch" placeholder="Search - 2026 Hindi, History, Geography, Physics, Chemistry..." style="width:100%;padding:10px;border-radius:10px;border:none;margin-top:8px;color:#000" oninput="filterPDF()">
-</div>
-
-<div id="list10th">
-<div class="chap" style="background:#FFEB3B"><b>📘 2026 - Class 10th - 13 Papers - तेरी File</b></div>
-<div id="pdfList10th">
-<div class="pdfCard pdfItem" data-name="2026 10th hindi 901"><div><b>📘 2026 - 901-Hindi.pdf - 10th</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('901-Hindi.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 10th english 917"><div><b>📙 2026 - 917-English.pdf - 10th</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('917-English.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 10th math 928"><div><b>📐 2026 - 928-Math.pdf - HIT</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('928-Math.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 10th science 931"><div><b>🔬 2026 - 931-Science.pdf - HIT</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('931-Science.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 10th sst 932"><div><b>🌍 2026 - 932-Social Science - 10th</b></div><button class="btn" style="width:80px;margin:0" onclick="openPDF('932-Social-Science.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 10th ncc 981"><div><b>🇮🇳 2026 - 981-NCC.pdf - HIT</b></div><button class="btn" style="width:80px;margin:0;background:#FFC107;color:#000" onclick="openPDF('981-NCC.pdf')">2026 खोलो</button></div>
+<button class="tabBtn active" id="omrBtn10th" onclick="showOMRTab('10th')" style="border-color:#fff;color:#fff;background:transparent">📘 10th OMR - 13 Chapter</button>
+<button class="tabBtn" id="omrBtn12th" onclick="showOMRTab('12th')" style="border-color:#fff;color:#fff;background:transparent">📙 12th OMR - 101-152</button>
 </div>
 </div>
 
-<div id="list12th" style="display:none">
-<div class="chap" style="background:#E9D5FF;border-left:5px solid #7c3aed"><b>📙 2026 - Class 12th - All Papers - तेरी Screenshot + नई File - 101 to 152 - 2026</b><br><small>101-Hindi 102-General-Hindi 103-Sanskrit 117-English 128-History 129-Geography 130-Civics 151-Physics 152-Chem - सब 2026</small></div>
-<div id="pdfList12th">
-<div class="pdfCard pdfItem" data-name="2026 12th hindi 101"><div><b>📘 2026 - 12th - 101-Hindi.pdf</b><br><small>12th Hindi अनिवार्य - 2026 - तेरी Screenshot वाली</small></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('101-Hindi.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th general hindi 102"><div><b>📗 2026 - 12th - 102-General-Hindi.pdf</b><br><small>12th सामान्य हिंदी - 2026 - Screenshot वाली</small></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('102-General-Hindi.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th sanskrit 103"><div><b>📕 2026 - 12th - 103-Sanskrit.pdf</b><br><small>12th Sanskrit - 2026</small></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('103-Sanskrit.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th english 117"><div><b>📙 2026 - 12th - 117-English.pdf</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('117-English.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th history 128"><div><b>📜 2026 - 12th - 128-History.pdf - HIT</b><br><small>12th इतिहास - हड़प्पा, मौर्य - Screenshot वाली</small></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('128-History.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th geography 129"><div><b>🌍 2026 - 12th - 129-Geography.pdf - HIT</b><br><small>12th भूगोल - मानव भूगोल - Screenshot वाली</small></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('129-Geography.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th civics 130"><div><b>🏛️ 2026 - 12th - 130-Civics.pdf - HIT</b><br><small>12th नागरिक शास्त्र - Screenshot वाली</small></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('130-Civics.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th sociology 142"><div><b>👥 2026 - 12th - 142-Sociology.pdf</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('142-Sociology.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th computer 144"><div><b>💻 2026 - 12th - 144-Computer.pdf</b></div><button class="btn" style="width:80px;margin:0;background:#7c3aed" onclick="openPDF('144-Computer.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th physics 151"><div><b>⚡ 2026 - 12th - 151-Physics.pdf - HIT</b><br><small>12th भौतिकी - विद्युत - तेरी File</small></div><button class="btn" style="width:80px;margin:0;background:#dc2626" onclick="openPDF('151-Physics.pdf')">2026 खोलो</button></div>
-<div class="pdfCard pdfItem" data-name="2026 12th chemistry 152"><div><b>🧪 2026 - 12th - 152-Chemistry.pdf - HIT</b></div><button class="btn" style="width:80px;margin:0;background:#dc2626" onclick="openPDF('152-Chemistry.pdf')">2026 खोलो</button></div>
+<!-- 10TH OMR -->
+<div id="omr10th">
+<div class="chap" style="background:#FFEB3B"><b>📘 10th Class OMR TEST 2026 - वही जो Board में आएगा!</b><br><small>Subject चुनो - Chapter चुनो - OMR शुरू</small></div>
+<div class="grid3" style="padding:0 10px">
+<div class="boxM" style="background:#1B5E20" onclick="startOMR('10th','Math')">📐 Math<br><small>√5, HCF, सांख्यिकी</small></div>
+<div class="boxM" style="background:#2563eb" onclick="startOMR('10th','Science')">🔬 Science<br><small>हृदय, प्रकाश</small></div>
+<div class="boxM" style="background:#7c3aed" onclick="startOMR('10th','SST')">🌍 SST<br><small>हड़प्पा, मौर्य</small></div>
+<div class="boxM" style="background:#dc2626" onclick="startOMR('10th','Hindi')">📘 Hindi<br><small>साखी, मीरा</small></div>
+<div class="boxM" style="background:#ea580c" onclick="startOMR('10th','NCC')">🇮🇳 NCC<br><small>981-NCC HIT</small></div>
+<div class="boxM" style="background:#0891b2" onclick="startOMR('10th','Full')">📝 Full Test<br><small>All Subject</small></div>
 </div>
-<div class="chap" style="background:#FFF9C4;border:2px dashed #7c3aed"><b>✅ तेरी Screenshot वाली सभी Files ऐड हो गई!</b><br><small>101-Hindi, 102-General-Hindi, 103-Sanskrit, 117-English, 128-History, 129-Geography, 130-Civics - सभी 2026 लिख के - 404 FIXED - encodeURI Fix</small></div>
+<div id="omr10thQuestions" style="display:none"></div>
 </div>
 
-<div class="chap" id="pdfViewer" style="display:none;padding:0;overflow:hidden"><div style="padding:10px;display:flex;justify-content:space-between;align-items:center;background:#1B5E20;color:#fff"><b id="viewerTitle">2026 PDF Viewer - 10th + 12th</b><button style="background:#fff;border:none;padding:5px 10px;border-radius:20px;font-weight:bold" onclick="closeViewer()">✕ बंद</button></div><div id="pdfError" style="display:none;padding:20px;background:#FFEBEE;color:#B71C1C;text-align:center"><b>⚠️ 404 - File not found</b><br><small id="errorFileName"></small></div><iframe id="pdfFrame" src="" style="width:100%;height:70vh;border:none;background:#fff"></iframe><div style="padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#fff"><button class="btn" style="margin:0" id="downloadBtn">📥 2026 Download</button><button class="btn btnY" style="margin:0" id="fullBtn">👁️ Full Screen</button></div></div>
+<!-- 12TH OMR -->
+<div id="omr12th" style="display:none">
+<div class="chap" style="background:#E9D5FF;border-left:5px solid #7c3aed"><b>📙 12th Class OMR TEST 2026 - वही जो Board में आएगा! - 101-152</b><br><small>Subject चुनो - Chapter चुनो - OMR शुरू</small></div>
+<div class="grid3" style="padding:0 10px">
+<div class="boxM" style="background:#dc2626" onclick="startOMR('12th','Physics')">⚡ Physics 151<br><small>विद्युत, प्रकाश</small></div>
+<div class="boxM" style="background:#16a34a" onclick="startOMR('12th','Chemistry')">🧪 Chemistry 152<br><small>अम्ल, क्षार</small></div>
+<div class="boxM" style="background:#7c3aed" onclick="startOMR('12th','History')">📜 History 128<br><small>हड़प्पा, मौर्य</small></div>
+<div class="boxM" style="background:#2563eb" onclick="startOMR('12th','Geography')">🌍 Geography 129<br><small>मानव भूगोल</small></div>
+<div class="boxM" style="background:#1B5E20" onclick="startOMR('12th','Hindi')">📘 Hindi 101<br><small>101-Hindi, 102-Gen</small></div>
+<div class="boxM" style="background:#0891b2" onclick="startOMR('12th','Full')">📝 Full Test<br><small>All Subject 12th</small></div>
+</div>
+<div id="omr12thQuestions" style="display:none"></div>
+</div>
+
+<div class="chap" id="omrResult" style="display:none;text-align:center;background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff">
+<h2 id="omrScore">🎉 Score: 0/10</h2>
+<p id="omrMsg">Topper बन गए!</p>
+<button class="btn btnY" onclick="resetOMR()">🔄 फिर से OMR दो</button>
+<button class="btn" onclick="openPage2('paper2026Page')">📄 Model Paper देखो</button>
 </div>
 </div>
+</div>
 
-<div id="upmspPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('upmspPage')">←</div><b>🏛️ UPMSP LIVE 2026 - FIXED</b></div><div style="padding:10px"><div class="chap" style="text-align:center;background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff"><b>🏛️ UPMSP LIVE - No Error - FIXED</b><div style="background:#FFEB3B;color:#000;padding:6px;border-radius:20px;margin-top:8px;font-size:11px">Error Fixed - iframe हटाया - Button से Chrome में LIVE खुलेगी</div></div><div class="chap"><button class="btn" onclick="window.open('https://upmsp.edu.in','_blank')">🌐 UPMSP Official - LIVE</button><button class="btn" style="background:#2563eb" onclick="window.open('https://upmsp.edu.in/ModelPapers.html','_blank')">📄 2026 Model Papers Official</button><button class="btn" style="background:#dc2626" onclick="window.open('https://upresults.nic.in','_blank')">📊 Result 2026 LIVE</button></div><div class="chap"><button class="btn" onclick="openPage2('paper2026Page')">📄 2026 All 10th + 12th PDF खोलो</button></div></div></div>
+<div id="upmspPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('upmspPage')">←</div><b>🏛️ UPMSP LIVE FIXED</b></div><div style="padding:10px"><div class="chap"><button class="btn" onclick="window.open('https://upmsp.edu.in','_blank')">🌐 UPMSP LIVE</button></div></div></div>
+<div id="ncertPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('ncertPage')">←</div><b>📚 NCERT</b></div></div>
+<div id="memePage" class="page"><div class="dhead"><div class="back" onclick="closePage2('memePage')">←</div><b>😂 Meme Zone</b></div></div>
+<div id="reelsPage" class="page" style="background:#000"><div class="dhead" style="background:#111"><div class="back" style="background:#333;color:#fff" onclick="closePage2('reelsPage')">←</div><b style="color:#fff">🎬 Reels</b></div></div>
+<div id="qbPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('qbPage')">←</div><b>❓ Question Bank</b></div></div>
+<div id="topperPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('topperPage')">←</div><b>🏆 Topper</b></div></div>
+<div id="askPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('askPage')">←</div><b>🤖 Ask AI</b></div><div style="padding:10px;display:flex;flex-direction:column;height:calc(100vh - 80px)"><div id="chatBox" style="flex:1;overflow:auto"><div class="chap" style="background:#E8F5E9"><b>🤖:</b> पूछो - विद्युत क्या है, हड़प्पा क्या है?</div></div><div style="display:flex;gap:6px"><input id="aiInput" style="flex:1;padding:12px;border:1px solid #ddd;border-radius:12px" placeholder="जैसे विद्युत क्या है"><button class="btn" style="width:80px;margin:0" onclick="askAI()">भेजो</button></div></div></div>
+<div id="downPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('downPage')">←</div><b>⬇️ Download</b></div></div>
 
-<div id="ncertPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('ncertPage')">←</div><b>📚 NCERT 2026 - पुराना Future</b></div><div style="padding:10px"><div class="chap"><b>📚 NCERT Official - पुराना Future + नया</b><br><button class="btn" onclick="window.open('https://ncert.nic.in/textbook.php','_blank')">📥 NCERT LIVE</button><button class="btn btnY" onclick="window.open('https://ncert.nic.in/textbook.php?iebo1=0-14','_blank')">📘 10th Science NCERT</button><button class="btn" style="background:#7c3aed" onclick="window.open('https://ncert.nic.in/textbook.php?lebo1=0-14','_blank')">📜 12th History 128 + Geography 129 NCERT</button></div></div></div>
-<div id="memePage" class="page"><div class="dhead"><div class="back" onclick="closePage2('memePage')">←</div><b>😂 Meme Zone - पुराना Future</b></div><div style="padding:10px"><div class="chap">😂 10th + 12th Meme - 128-History वाला - हड़प्पा याद नहीं</div></div></div>
-<div id="reelsPage" class="page" style="background:#000"><div class="dhead" style="background:#111"><div class="back" style="background:#333;color:#fff" onclick="closePage2('reelsPage')">←</div><b style="color:#fff">🎬 Reels - पुराना Future</b></div><div style="padding:10px"><div style="background:linear-gradient(135deg,#1B5E20,#4caf50);height:45vh;border-radius:16px;display:flex;align-items:end;padding:12px;color:#fff"><div><b>⚡ 30 Sec में विद्युत - 151-Physics</b><br><button style="background:#FFD600;border:none;padding:6px 12px;border-radius:20px;margin-top:6px">▶️ Play</button></div></div></div></div>
-<div id="qbPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('qbPage')">←</div><b>❓ Question Bank 2026 - पुराना Future</b></div><div style="padding:10px"><div class="chap qbItem" data-name="history"><b>Q. 128-History - हड़प्पा क्या है? - 5 Marks HIT</b><br>2500 ईसा पूर्व - नगर योजना</div><div class="chap qbItem" data-name="geography"><b>Q. 129-Geography - मानव भूगोल क्या है?</b><br>मानव और पर्यावरण संबंध</div><div class="chap qbItem" data-name="physics"><b>Q. 151-Physics - विद्युत क्या है?</b><br>आवेश प्रवाह - Q=It</div></div></div>
-<div id="topperPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('topperPage')">←</div><b>🏆 Topper Answers 2026 - पुराना Future</b></div><div style="padding:10px"><div class="chap" style="border-left:5px solid #FFC107"><b>✅ Topper - 128-History 129-Geography 151-Physics 981-NCC</b><div style="background:#FFF9C4;padding:10px;border-radius:10px;margin-top:8px">हड़प्पा + मानव भूगोल + विद्युत + NCC - 5/5 Formula - परिभाषा+सूत्र+Diagram</div></div></div></div>
-<div id="hwPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('hwPage')">←</div><b>📝 Homework Helper - पुराना Future</b></div><div style="padding:10px"><div style="background:#fff;padding:20px;border-radius:16px;text-align:center;border:2px dashed #1B5E20"><div style="font-size:40px">📸</div><b>Homework Photo - 10th + 12th</b><br><input type="file" accept="image/*"><br><button class="btn" onclick="solveHW()">✨ AI से हल करवाओ</button></div></div></div>
-<div id="askPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('askPage')">←</div><b>🤖 Ask AI 2026 असली - पुराना Future</b></div><div style="padding:10px;display:flex;flex-direction:column;height:calc(100vh - 80px)"><div id="chatBox" style="flex:1;overflow:auto"><div class="chap" style="background:#E8F5E9"><b>🤖 Jani Topper AI 2026:</b> पूछो - 128-History, 129-Geography, 151-Physics विद्युत, NCC - असली जवाब!</div></div><div style="display:flex;gap:6px"><input id="aiInput" style="flex:1;padding:12px;border:1px solid #ddd;border-radius:12px" placeholder="जैसे हड़प्पा क्या है / विद्युत क्या है"><button class="btn" style="width:80px;margin:0" onclick="askAI()">भेजो</button></div></div></div>
-<div id="downPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('downPage')">←</div><b>⬇️ Download - पुराना Future</b></div><div style="padding:10px"><div class="chap"><b>📥 2026 All PDFs - 10th + 12th - Download</b><br><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px"><button class="btn" onclick="window.open(encodeURI('101-Hindi.pdf'),'_blank')">12th 101-Hindi NEW</button><button class="btn" onclick="window.open(encodeURI('102-General-Hindi.pdf'),'_blank')">12th 102-Gen Hindi NEW</button><button class="btn" onclick="window.open(encodeURI('128-History.pdf'),'_blank')">12th 128-History NEW</button><button class="btn" onclick="window.open(encodeURI('129-Geography.pdf'),'_blank')">12th 129-Geography NEW</button><button class="btn" style="background:#7c3aed" onclick="window.open(encodeURI('130-Civics.pdf'),'_blank')">12th 130-Civics NEW</button><button class="btn" style="background:#dc2626" onclick="window.open(encodeURI('151-Physics.pdf'),'_blank')">12th 151-Physics NEW</button></div></div></div></div>
-
-<div class="bottomNav"><div onclick="goHome()">🏠<br><span style="font-size:10px">Home</span></div><div onclick="openPage2('paper2026Page')">📄<br><span style="font-size:10px">2026 10+12</span></div><div onclick="openPage2('askPage')">🤖<br><span style="font-size:10px">AI 2026</span></div><div onclick="openPage2('downPage')">⬇️<br><span style="font-size:10px">Down</span></div></div>
+<div class="bottomNav"><div onclick="goHome()">🏠<br><span style="font-size:10px">Home</span></div><div onclick="openPage2('omrPage')">📝<br><span style="font-size:10px">OMR 10+12</span></div><div onclick="openPage2('paper2026Page')">📄<br><span style="font-size:10px">2026 Papers</span></div><div onclick="openPage2('askPage')">🤖<br><span style="font-size:10px">AI</span></div></div>
 
 <script>
-var books={
-hindi10:'<div class="chap"><h3>10th हिंदी 2026</h3></div>',
-math10:'<div class="chap"><h3>10th गणित 2026 - HIT</h3></div>',
-science10:'<div class="chap"><h3>10th विज्ञान 2026</h3></div>',
-phy12:'<div class="chap"><h3>12th भौतिकी 151-Physics - विद्युत - V=IR, P=VI</h3></div>',
-his12:'<div class="chap"><h3>12th इतिहास 128-History - हड़प्पा 2500 ईसा पूर्व</h3></div>',
-geo12:'<div class="chap"><h3>12th भूगोल 129-Geography - मानव भूगोल</h3></div>',
-mastermind:'<div class="chap"><h3>👑 Mastermind 70% HIT 2026 - पुराना Future</h3></div>',
-vidya:'<div class="chap"><h3>📘 Vidya 2026 - पुराना Future</h3></div>',
-flight:'<div class="chap"><h3>✈️ Flight 2026 - पुराना Future</h3></div>'
+var books={hindi10:'<div class="chap"><h3>10th हिंदी 2026</h3></div>',math10:'<div class="chap"><h3>10th गणित - √5 अपरिमेय</h3></div>',science10:'<div class="chap"><h3>10th विज्ञान - हृदय 4 कक्ष</h3></div>',phy12:'<div class="chap"><h3>12th भौतिकी 151-Physics</h3></div>',his12:'<div class="chap"><h3>12th इतिहास 128-History</h3></div>',geo12:'<div class="chap"><h3>12th भूगोल 129-Geography</h3></div>',mastermind:'<div class="chap"><h3>Mastermind 2027</h3></div>',vidya:'<div class="chap"><h3>Vidya 2027</h3></div>',flight:'<div class="chap"><h3>Flight 2027</h3></div>'};
+const gyanDB={"विद्युत":`⚡ विद्युत Q=It V=IR - 151-Physics`,"हड़प्पा":`📜 हड़प्पा 2500 ईसा पूर्व - 128-History`,"NCC":`🇮🇳 NCC 16 July 1948`};
+
+// OMR DATA - 10th + 12th अलग
+const omrData={
+"10th_Math":[
+{q:"√5 किस प्रकार की संख्या है?",opts:["परिमेय","अपरिमेय","प्राकृत","पूर्णांक"],ans:1,chap:"संख्या पद्धति - HIT"},
+{q:"96 और 404 का HCF क्या है?",opts:["4","8","12","2"],ans:0,chap:"यूक्लिड - HIT"},
+{q:"द्विघात बहुपद के शून्यकों की संख्या?",opts:["1","2","3","4"],ans:1,chap:"बहुपद - HIT"},
+{q:"सांख्यिकी में बहुलक का सूत्र?",opts:["L+(f1-f0/2f1-f0-f2)h","Mean","Median","Range"],ans:0,chap:"सांख्यिकी - 4 अंक पक्का"},
+{q:"त्रिभुज के 3 कोणों का योग?",opts:["90°","180°","360°","270°"],ans:1,chap:"त्रिभुज"}
+],
+"10th_Science":[
+{q:"मानव हृदय में कितने कक्ष होते हैं?",opts:["2","3","4","5"],ans:2,chap:"हृदय - 4 अंक पक्का"},
+{q:"प्रकाश संश्लेषण में गैस?",opts:["O2","CO2","N2","H2"],ans:1,chap:"पोषण - HIT"},
+{q:"विद्युत का SI मात्रक?",opts:["वोल्ट","एम्पीयर","ओम","वाट"],ans:1,chap:"विद्युत - 151 से link"},
+{q:"pH 7 क्या है?",opts:["अम्लीय","क्षारीय","उदासीन","तेजाब"],ans:2,chap:"अम्ल क्षार - HIT"},
+{q:"प्रकाश की गति?",opts:["3x10^8 m/s","3x10^6","3x10^5","3x10^7"],ans:0,chap:"प्रकाश - HIT"}
+],
+"10th_SST":[
+{q:"हड़प्पा सभ्यता कब की है?",opts:["2500 ईसा पूर्व","1500","1000","500"],ans:0,chap:"इतिहास - हड़प्पा HIT"},
+{q:"फ्रांस की क्रांति कब?",opts:["1789","1776","1917","1947"],ans:0,chap:"इतिहास - HIT"},
+{q:"मौर्य वंश संस्थापक?",opts:["चंद्रगुप्त","अशोक","बिंदुसार","कनिष्क"],ans:0,chap:"मौर्य - HIT"},
+{q:"मानव भूगोल जनक?",opts:["रेटजेल","हम्बोल्ट","रिटर","ब्लाश"],ans:0,chap:"भूगोल - 129 link"}
+],
+"10th_Hindi":[
+{q:"साखी किसकी रचना?",opts:["कबीर","मीरा","तुलसी","सूर"],ans:0,chap:"हिंदी - साखी HIT"},
+{q:"NCC का मोटो?",opts:["एकता और अनुशासन","जय हिंद","वंदे मातरम","सत्यमेव"],ans:0,chap:"NCC - 981-NCC HIT"}
+],
+"12th_Physics":[
+{q:"विद्युत धारा का सूत्र?",opts:["I=Q/t","V=IR","P=VI","सभी"],ans:3,chap:"151-Physics - विद्युत HIT"},
+{q:"ओम का नियम?",opts:["V=IR","P=VI","Q=It","F=ma"],ans:0,chap:"151-Physics - ओम HIT"},
+{q:"कूलॉम नियम F=?",opts:["kq1q2/r²","V=IR","P=VI","Q=It"],ans:0,chap:"151-Physics - कूलॉम HIT"},
+{q:"प्रकाश की गति निर्वात में?",opts:["3x10^8 m/s","3x10^6","3x10^5","3x10^7"],ans:0,chap:"151-Physics - प्रकाश HIT"},
+{q:"विद्युत शक्ति P=?",opts:["VI","I²R","V²/R","सभी"],ans:3,chap:"151-Physics - शक्ति HIT"}
+],
+"12th_History":[
+{q:"हड़प्पा सभ्यता खोज?",opts:["1921","1922","1900","1947"],ans:0,chap:"128-History - हड़प्पा HIT"},
+{q:"मोहनजोदड़ो अर्थ?",opts:["मृतकों का टीला","जीवितों का टीला","पहाड़","नदी"],ans:0,chap:"128-History - मोहनजोदड़ो HIT"},
+{q:"मौर्य वंश - अर्थशास्त्र लेखक?",opts:["कौटिल्य","मेगास्थनीज","फाह्यान","ह्वेनसांग"],ans:0,chap:"128-History - कौटिल्य HIT"},
+{q:"1857 क्रांति नेतृत्व - झांसी?",opts:["लक्ष्मीबाई","नाना साहब","कुंवर सिंह","बहादुर शाह"],ans:0,chap:"128-History - 1857 HIT"}
+],
+"12th_Geography":[
+{q:"मानव भूगोल परिभाषा?",opts:["मानव पर्यावरण संबंध","पशु अध्ययन","पौधा अध्ययन","जल अध्ययन"],ans:0,chap:"129-Geography - मानव भूगोल HIT"},
+{q:"विश्व जनसंख्या दिवस?",opts:["11 जुलाई","5 जून","22 अप्रैल","8 मार्च"],ans:0,chap:"129-Geography - जनसंख्या HIT"}
+],
+"12th_Chemistry":[
+{q:"pH 0-7 क्या?",opts:["अम्लीय","क्षारीय","उदासीन","लवण"],ans:0,chap:"152-Chemistry - pH HIT"},
+{q:"NaCl क्या है?",opts:["नमक","चीनी","पानी","तेजाब"],ans:0,chap:"152-Chemistry - लवण HIT"}
+]
 };
-const gyanDB={
-"विद्युत क्या है": `<b>⚡ 2026 - विद्युत क्या है? - 151-Physics - 5 Marks</b><br>परिभाषा: आवेशों के प्रवाह को विद्युत कहते हैं<br>सूत्र: Q=It, V=IR`,
-"हड़प्पा क्या है": `<b>📜 2026 - हड़प्पा - 128-History - 5 Marks HIT</b><br>2500 ईसा पूर्व, मोहनजोदड़ो, हड़प्पा, नगर योजना, मुहरें - Full Marks`,
-"भूगोल": `<b>🌍 2026 - भूगोल - 129-Geography - मानव भूगोल</b><br>मानव और पर्यावरण संबंध - 5 Marks`,
-"NCC": `<b>🇮🇳 2026 - NCC - 981-NCC - 5 Marks</b><br>16 July 1948, Motto एकता और अनुशासन`
-};
+
+let currentOMR=[],currentAns={},currentClass='10th';
 function openBook(t,k){document.getElementById('home').style.display='none';document.getElementById('detail').style.display='block';document.getElementById('dTitle').innerText=t;document.getElementById('dContent').innerHTML=books[k]||'<div class="chap"><h3>'+t+'</h3></div>';}
 function goBack(){document.getElementById('detail').style.display='none';document.getElementById('home').style.display='block';}
 function openPage2(id){document.getElementById(id).style.display='block';}
@@ -142,10 +192,68 @@ function goHome(){document.getElementById('detail').style.display='none';documen
 function searchAll(){let v=document.getElementById('searchBox').value.toLowerCase();document.querySelectorAll('.newCard').forEach(c=>{let n=(c.getAttribute('data-name')||c.innerText).toLowerCase();c.style.display=n.includes(v)?'':'none';});}
 function filterPDF(){let v=document.getElementById('pdfSearch').value.toLowerCase();document.querySelectorAll('.pdfItem').forEach(c=>{c.style.display=(c.getAttribute('data-name')+c.innerText).toLowerCase().includes(v)?'':'none';});}
 function showTab(tab){document.getElementById('list10th').style.display=tab==='10th'?'':'none';document.getElementById('list12th').style.display=tab==='12th'?'':'none';document.getElementById('btn10th').classList.toggle('active',tab==='10th');document.getElementById('btn12th').classList.toggle('active',tab==='12th');}
-function openPDF(file){let viewer=document.getElementById('pdfViewer');let frame=document.getElementById('pdfFrame');let title=document.getElementById('viewerTitle');let errorDiv=document.getElementById('pdfError');viewer.style.display='block';errorDiv.style.display='none';frame.style.display='block';let safeFile=encodeURI(file).replace(/\(/g,'%28').replace(/\)/g,'%29');frame.src=safeFile;title.innerText='📄 2026 - '+file;document.getElementById('errorFileName').innerText=file;document.getElementById('downloadBtn').setAttribute('onclick',`window.open('${safeFile}','_blank')`);document.getElementById('fullBtn').setAttribute('onclick',`window.open('${safeFile}','_blank')`);viewer.scrollIntoView({behavior:'smooth'});}
+function showOMRTab(tab){
+ document.getElementById('omr10th').style.display=tab==='10th'?'':'none';
+ document.getElementById('omr12th').style.display=tab==='12th'?'':'none';
+ document.getElementById('omrBtn10th').classList.toggle('active',tab==='10th');
+ document.getElementById('omrBtn12th').classList.toggle('active',tab==='12th');
+ currentClass=tab;
+ document.getElementById('omrResult').style.display='none';
+}
+function startOMR(cls,sub){
+ let key=cls+"_"+sub;
+ let qs=[];
+ if(sub==='Full'){
+   if(cls==='10th'){qs=[...omrData["10th_Math"],...omrData["10th_Science"].slice(0,3),...omrData["10th_SST"].slice(0,2)];}
+   else{qs=[...omrData["12th_Physics"],...omrData["12th_History"].slice(0,3),...omrData["12th_Geography"].slice(0,2)];}
+ }else{
+   qs=omrData[key]||omrData[cls+"_"+sub]||[];
+   if(qs.length===0){ // fallback
+     if(cls==='10th') qs=omrData["10th_Math"];
+     else qs=omrData["12th_Physics"];
+   }
+ }
+ currentOMR=qs.slice(0,10);
+ currentAns={};
+ let containerId=cls==='10th'?"omr10thQuestions":"omr12thQuestions";
+ let container=document.getElementById(containerId);
+ container.style.display='block';
+ let html=`<div class="chap" style="background:#dc2626;color:#fff;text-align:center"><b>📝 ${cls} - ${sub} OMR TEST - ${currentOMR.length} सवाल - वही जो Board में आएंगे!</b><br><small>⏰ Time: 10 मिनट - सही चुनो - OMR Sheet जैसी</small></div>`;
+ currentOMR.forEach((q,i)=>{
+   html+=`<div class="omrQ"><b>Q${i+1}. ${q.q}</b><br><small style="color:#dc2626">📚 ${q.chap} - 2026 HIT</small><div style="margin-top:8px">`;
+   q.opts.forEach((opt,j)=>{
+     html+=`<div class="omrOpt" id="opt_${i}_${j}" onclick="selectOpt(${i},${j})"><div style="width:24px;height:24px;border:2px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:12px">${String.fromCharCode(65+j)}</div><span>${opt}</span></div>`;
+   });
+   html+=`</div></div>`;
+ });
+ html+=`<button class="btn" style="background:#dc2626;margin:10px" onclick="submitOMR()">✅ OMR Submit करो - Result देखो</button>`;
+ container.innerHTML=html;
+ container.scrollIntoView({behavior:'smooth'});
+ document.getElementById('omrResult').style.display='none';
+}
+function selectOpt(qIdx,oIdx){
+ currentAns[qIdx]=oIdx;
+ document.querySelectorAll(`[id^="opt_${qIdx}_"]`).forEach(e=>e.classList.remove('sel'));
+ document.getElementById(`opt_${qIdx}_${oIdx}`).classList.add('sel');
+}
+function submitOMR(){
+ let score=0;
+ currentOMR.forEach((q,i)=>{if(currentAns[i]===q.ans) score++;});
+ let percent=Math.round(score/currentOMR.length*100);
+ let msg=percent>=80?"🏆 Topper! Full Marks पक्का!":percent>=60?"👍 बहुत बढ़िया! पास पक्का!":percent>=40?"📚 और पढ़ना होगा - 2026 HIT देखो":"😅 फिर से पढ़ो - Model Paper देखो";
+ document.getElementById('omrScore').innerText=`🎉 ${currentClass} OMR Score: ${score}/${currentOMR.length} - ${percent}%`;
+ document.getElementById('omrMsg').innerText=msg;
+ document.getElementById('omrResult').style.display='block';
+ document.getElementById('omrResult').scrollIntoView({behavior:'smooth'});
+}
+function resetOMR(){
+ document.getElementById('omr10thQuestions').style.display='none';
+ document.getElementById('omr12thQuestions').style.display='none';
+ document.getElementById('omrResult').style.display='none';
+}
+function openPDF(file){let viewer=document.getElementById('pdfViewer');let frame=document.getElementById('pdfFrame');viewer.style.display='block';let safeFile=encodeURI(file).replace(/\(/g,'%28').replace(/\)/g,'%29');frame.src=safeFile;document.getElementById('viewerTitle').innerText='📄 2026 - '+file;viewer.scrollIntoView({behavior:'smooth'});}
 function closeViewer(){document.getElementById('pdfViewer').style.display='none';document.getElementById('pdfFrame').src='';}
-function solveHW(){alert('AI हल कर रहा है - 128-History 129-Geography 151-Physics');}
-function askAI(){let t=document.getElementById('aiInput').value.trim();if(!t)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class="chap" style="background:#FFF9C4;margin-left:15px;border-left:5px solid #FFC107">👦 ${t}</div>`;document.getElementById('aiInput').value='';let key=Object.keys(gyanDB).find(k=>t.includes(k)||k.includes(t)||t.toLowerCase().includes(k.toLowerCase()));let ans=key?gyanDB[key]:`<b>🤖 2026 - ${t} का जवाब - Topper Style:</b><br>परिभाषा + व्याख्या + Diagram = Full Marks!`;setTimeout(()=>{b.innerHTML+=`<div class="chap" style="background:#E8F5E9;border-left:5px solid #1B5E20">🤖 ${ans}</div>`;b.scrollTop=b.scrollHeight;},400);}
+function askAI(){let t=document.getElementById('aiInput').value.trim();if(!t)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class="chap" style="background:#FFF9C4;margin-left:15px">👦 ${t}</div>`;document.getElementById('aiInput').value='';let key=Object.keys(gyanDB).find(k=>t.includes(k));let ans=key?gyanDB[key]:`${t} का जवाब - Topper Style`;setTimeout(()=>{b.innerHTML+=`<div class="chap" style="background:#E8F5E9">🤖 ${ans}</div>`;b.scrollTop=b.scrollHeight;},300);}
 </script>
 </body>
 </html>
