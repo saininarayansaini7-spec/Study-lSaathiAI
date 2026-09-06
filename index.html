@@ -1,152 +1,132 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jani Topper - UP Board FINAL</title>
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiSmFuaSBUb3BwZXIiLCJzaG9ydF9uYW1lIjoiSmFuaSIsInN0YXJ0X3VybCI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMUY1RTIwIiwidGhlbWVfY29sb3IiOiIjMUY1RTIwIn0=">
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study-lSaathiAI - JANI TOPPER - MEGA FINAL</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI'}body{background:#f6f7fb;padding-bottom:115px}
-.bar{background:linear-gradient(90deg,#FF0000,#FFD600);color:#fff;padding:10px 12px;font-weight:900;font-size:12px;display:flex;justify-content:space-between;position:sticky;top:0;z-index:1000}
-.card{background:#fff;margin:8px 14px;border-radius:16px;box-shadow:0 6px 16px #0001;overflow:hidden;cursor:pointer}
-.card:active{transform:scale(.97)}
-.page{position:fixed;top:0;left:0;width:100%;height:100%;background:#f6f7fb;z-index:2000;transform:translateX(100%);transition:.35s;overflow:auto;padding-bottom:115px}.page.active{transform:translateX(0)}
-.pageHead{position:sticky;top:0;background:linear-gradient(90deg,#1B5E20,#2E7D32);color:#fff;padding:12px;display:flex;gap:10px;align-items:center;z-index:10}
-.backBtn{background:#fff3;border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px}
-.profileCard{background:linear-gradient(135deg,#1B5E20,#43A047);color:#fff;margin:10px 14px;border-radius:20px;padding:14px;border:2px solid #FFD600}
-.ansFull{background:#fff;color:#000;padding:14px;border-radius:12px;margin-top:10px;line-height:24px;font-size:14px;white-space:pre-wrap;border-left:5px solid #4CAF50;box-shadow:0 4px 12px #0001;min-height:150px}
-.dailyBox{background:#fff;margin:8px 14px;border-radius:16px;padding:12px;box-shadow:0 4px 12px #0001}
-.streakCal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:8px}
-.day{width:100%;aspect-ratio:1;background:#f0f0f0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}.day.done{background:#4CAF50;color:#fff}.day.today{background:#FFD600;color:#000;border:2px solid #1B5E20}
-.wheel{width:150px;height:150px;border-radius:50%;border:8px solid #FFD600;background:conic-gradient(#FF0000 0 60deg,#4CAF50 60deg 120deg,#2196F3 120deg 180deg,#FF9800 180deg 240deg,#9C27B0 240deg 300deg,#FFEB3B 300deg 360deg);display:flex;align-items:center;justify-content:center;transition:transform 3s;margin:20px auto}
-.toast{position:fixed;bottom:125px;left:10px;right:10px;background:#1B5E20;color:#fff;padding:10px;border-radius:12px;z-index:9999;transform:translateY(200px);transition:.4s;display:flex;gap:8px;align-items:center}
-.viralBar{display:flex;gap:6px;padding:8px;background:#fff;position:fixed;bottom:0;left:0;right:0;z-index:9999;box-shadow:0 -4px 12px #0002}
-.input{width:100%;background:#f6f7fb;border:2px solid #e0e0e0;border-radius:12px;padding:12px;font-size:13px;margin-top:8px;outline:none}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
-#installBanner{display:none;position:fixed;bottom:70px;left:10px;right:10px;background:linear-gradient(90deg,#111,#333);color:#fff;padding:12px;border-radius:14px;z-index:9998;border:2px solid #FFD600}
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+body{background:#eef2ff;padding-bottom:70px}
+.top{background:#fff;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 5px #0001}
+.card{background:#fff;margin:10px;border-radius:18px;padding:14px;box-shadow:0 2px 8px #0001}
+.yellow{background:#fff9db;border:2px solid #ffe066;text-align:center;font-weight:bold}
+.purple{background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff}
+.greenY{background:linear-gradient(135deg,#1B5E20,#FFEB3B);padding:14px;border-radius:16px;color:#fff;display:flex;justify-content:space-between;margin:10px}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.pill{background:#f1f5f9;padding:10px 4px;border-radius:20px;text-align:center;font-weight:bold;font-size:11px;cursor:pointer;border:1px solid #e2e8f0;line-height:1.2}
+.boxM{padding:14px 5px;border-radius:16px;color:#fff;text-align:center;font-weight:bold;cursor:pointer;font-size:12px}
+.search{margin:10px;background:#fff;border-radius:12px;display:flex;align-items:center;padding:10px 12px;gap:8px}
+.search input{border:none;outline:none;width:100%;font-size:13px}
+.newGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 10px 10px 10px}
+.newCard{background:#fff;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 4px 10px #0001;cursor:pointer;position:relative}
+.newCard:nth-child(odd){background:linear-gradient(135deg,#E8F5E9,#A5D6A7)}
+.newCard:nth-child(even){background:linear-gradient(135deg,#FFF9C4,#FFE082)}
+.liveTag{position:absolute;top:4px;right:4px;background:red;color:#fff;font-size:7px;padding:2px 5px;border-radius:10px;animation:pulse 1s infinite}
+@keyframes pulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}
+#detail{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#f6f7fb;z-index:99;overflow:auto;padding-bottom:70px}
+.dhead{background:linear-gradient(90deg,#1B5E20,#FFC107);padding:14px;color:#fff;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:2}
+.chap{background:#fff;margin:10px;border-radius:14px;padding:14px;border-left:5px solid #1B5E20}
+.que{padding:10px 0;border-bottom:1px solid #eee;font-size:13px;line-height:22px}
+.back{background:#fff;color:#1B5E20;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}
+.btn{background:#1B5E20;color:#fff;border:none;padding:10px;border-radius:12px;font-weight:800;width:100%;margin-top:8px;cursor:pointer}
+.btnY{background:#FFC107;color:#000}
+.bottomNav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0;box-shadow:0 -2px 10px #0002;border-radius:20px 20px 0 0;z-index:50}
 </style>
 </head>
 <body>
-<div class="bar"><span>🔥 FINAL 40+ FUTURE - ALL IN ONE 🔥</span><span id="liveTop" style="background:#000;color:#FFD600;padding:4px 10px;border-radius:10px">LIVE: 11,322</span></div>
 
-<div class="profileCard" onclick="openPage('profilePage')">
-<div style="display:flex;gap:12px;align-items:center"><img id="topPic" src="https://i.pravatar.cc/100?img=5" style="width:52px;height:52px;border-radius:50%;border:3px solid #FFD600"><div style="flex:1"><b id="topName">Narayan saini - Jani Topper ⭐</b><br><small><span id="topPts">1517</span> Pts | 🔥 Streak: <span id="topStreak">8</span> दिन | Board 86 दिन</small></div><div style="background:#FFEB3B;color:#000;padding:6px 10px;border-radius:20px;font-size:10px;font-weight:900">👤</div></div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px"><div style="background:#fff2;border-radius:12px;padding:8px;text-align:center"><b id="tTests">127</b><br><small style="font-size:9px">Test</small></div><div style="background:#fff2;border-radius:12px;padding:8px;text-align:center"><b>43</b><br><small style="font-size:9px">PDF</small></div><div style="background:#fff2;border-radius:12px;padding:8px;text-align:center"><b>#3</b><br><small style="font-size:9px">Rank</small></div></div>
+<div id="home">
+<div class="top"><div><div style="color:#1B5E20;font-weight:900;font-size:14px">📚 Study-lSaathiAI - JANI TOPPER</div><div style="font-size:8px;color:gray">10th 12th 2020-26 + Mastermind Vidya Flight + 9 NEW Future + UPMSP LIVE</div></div><div style="background:#f1f5f9;padding:5px 10px;border-radius:50px;font-size:11px">👤 Profile</div></div>
+
+<div class="greenY"><div><h2 style="font-size:15px">✨ Learn Smarter with AI 🚀</h2><p style="font-size:10px;margin-top:3px">Your personal companion for UP Board & NCERT</p></div><div style="font-size:32px">🤖</div></div>
+
+<div class="search">🔍<input id="searchBox" placeholder="Search - जैसे Light, इतिहास, NCERT..." onkeyup="searchAll()"></div>
+
+<div style="padding:0 10px"><b style="font-size:12px">🔥 NEW - AI Wale 9 Future - HIT</b></div>
+<div class="newGrid">
+<div class="newCard" onclick="openPage2('ncertPage')"><div style="font-size:24px">📚</div><b style="font-size:10px">NCERT Books</b></div>
+<div class="newCard" style="border:2px solid red" onclick="openPage2('upmspPage')"><div class="liveTag">LIVE</div><div style="font-size:24px">🏛️</div><b style="font-size:10px">UPMSP Official Live</b></div>
+<div class="newCard" onclick="openPage2('memePage')"><div style="font-size:24px">😂</div><b style="font-size:10px">Meme Zone</b></div>
+<div class="newCard" onclick="openPage2('reelsPage')"><div style="font-size:24px">🎬</div><b style="font-size:10px">Reels</b></div>
+<div class="newCard" onclick="openPage2('qbPage')"><div style="font-size:24px">❓</div><b style="font-size:10px">Question Bank</b></div>
+<div class="newCard" onclick="openPage2('topperPage')"><div style="font-size:24px">🏆</div><b style="font-size:10px">Topper Answers</b></div>
+<div class="newCard" onclick="openPage2('hwPage')"><div style="font-size:24px">📝</div><b style="font-size:10px">Homework Helper</b></div>
+<div class="newCard" onclick="openPage2('askPage')"><div style="font-size:24px">🤖</div><b style="font-size:10px">Ask AI</b></div>
+<div class="newCard" onclick="openPage2('downPage')"><div style="font-size:24px">⬇️</div><b style="font-size:10px">Download</b></div>
 </div>
 
-<div class="dailyBox">
-<b style="font-size:12px">📅 आज का हिसाब + Streak + Vote</b>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"><div style="background:#E8F5E9;border-radius:12px;padding:10px;text-align:center"><b id="todayTest">2,341</b><br><small style="font-size:10px">आज टेस्ट 👥</small></div><div style="background:#FFF9C4;border-radius:12px;padding:10px;text-align:center"><b id="todayLive">11,322</b><br><small style="font-size:10px">LIVE 🟢</small></div></div>
-<div style="margin-top:8px"><b style="font-size:10px">🔥 Streak Calendar 28 दिन</b><div class="streakCal" id="cal"></div></div>
+<div class="card yellow">👋 Profile बनाओ - PDF पर नाम आएगा<div style="background:#1B5E20;color:#fff;padding:8px;border-radius:50px;margin-top:8px;font-size:12px">✨ Profile बनाओ - 30 सेकंड</div></div>
+
+<div class="card purple"><b>🎯 आज का वायरल - 10th 2020 वाला पेपर</b><div style="font-size:12px;margin-top:4px">70% टीचर्स इसी को रटवा रहे हैं - 2027 के लिए भी जरूरी</div><div onclick="openBook('10th 2020 वायरल पेपर - HIT','viral10')" style="background:#FFEB3B;color:#1B5E20;display:inline-block;padding:6px 14px;border-radius:50px;margin-top:8px;font-weight:bold;cursor:pointer;font-size:12px">👉 अभी खोलो - फ्री</div></div>
+
+<div class="card"><div style="text-align:center;font-weight:bold;font-size:12px">🏪 2027 - दुकान वाले Model Papers</div><div class="grid3">
+<div class="boxM" style="background:#7c3aed" onclick="openBook('Mastermind 2027 - 70% HIT','mastermind')">Mastermind<br><small style="background:#facc15;color:#000;padding:2px 6px;border-radius:20px;font-size:9px">70% HIT</small></div>
+<div class="boxM" style="background:#2563eb" onclick="openBook('Vidya 2027 NEW','vidya')">Vidya<br><small style="background:#fff;color:#000;padding:2px 6px;border-radius:20px;font-size:9px">NEW</small></div>
+<div class="boxM" style="background:#dc2626" onclick="openBook('Flight 2027 NEW','flight')">Flight<br><small style="background:#fff;color:#000;padding:2px 6px;border-radius:20px;font-size:9px">NEW</small></div>
+</div></div>
+
+<div class="card"><div style="text-align:center;font-weight:bold;font-size:12px">📖 हर विषय का Model Paper - पुराने वाले</div><div class="grid4">
+<div class="pill" onclick="openBook('10th हिंदी','hindi10')">10th हिंदी</div>
+<div class="pill" onclick="openBook('10th गणित','math10')">10th गणित</div>
+<div class="pill" onclick="openBook('10th विज्ञान','science10')">10th विज्ञान</div>
+<div class="pill" onclick="openBook('10th SST','sst10')">10th SST</div>
+<div class="pill" onclick="openBook('12th इतिहास','his12')">12th इतिहास</div>
+<div class="pill" onclick="openBook('12th राजनीति','pol12')">12th राजनीति</div>
+<div class="pill" onclick="openBook('12th भौतिकी','phy12')">12th भौतिकी</div>
+<div class="pill" onclick="openBook('12th जीव','bio12')">12th जीव</div>
+</div></div>
+
+<div class="card"><div style="text-align:center;font-weight:bold;font-size:12px">📚 पुराने + पूरी किताबें - NAS वाले</div><div class="grid4">
+<div class="pill" onclick="openBook('10th पेपर 2020-26','paper10')">10th पेपर<br>2020-26</div>
+<div class="pill" onclick="openBook('12th पेपर 2020-26','paper12')">12th पेपर<br>2020-26</div>
+<div class="pill" onclick="openBook('10th पूरी किताब','all10')">10th पूरी<br>किताब</div>
+<div class="pill" onclick="openBook('12th पूरी किताब','all12')">12th पूरी<br>किताब</div>
+<div class="pill" onclick="openBook('B.Ed','bed')">B.Ed 2027</div>
+<div class="pill" onclick="openBook('Nursing','nursing')">Nursing</div>
+<div class="pill" onclick="openBook('NEET','neet')">NEET 720</div>
+<div class="pill" onclick="openBook('English','eng10')">English</div>
+</div></div>
 </div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 14px">
-<div class="card" onclick="openPage('scanPage')" style="background:linear-gradient(135deg,#0D47A1,#42A5F5);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">📷</div><b style="font-size:11px">SCAN + कोई भी प्रश्न</b></div>
-<div class="card" onclick="openPage('chapterPage')" style="background:linear-gradient(135deg,#1B5E20,#43A047);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">📚</div><b style="font-size:11px">पूरा सिलेबस 10th+12th</b></div>
-<div class="card" onclick="openPage('voicePage')" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">🎤</div><b style="font-size:11px">बोल के पूछो</b></div>
-<div class="card" onclick="openPage('spinPage')" style="background:linear-gradient(135deg,#FF9800,#FF5722);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">🎁</div><b style="font-size:11px">Spin & Win</b></div>
-<div class="card" onclick="openPage('battlePage')" style="background:linear-gradient(135deg,#FF0000,#D32F2F);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">🎮</div><b style="font-size:11px">Quiz Battle</b></div>
-<div class="card" onclick="openPage('memePage')" style="background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">😂</div><b style="font-size:11px">मीम से पढ़ाई</b></div>
-<div class="card" onclick="openPage('reelPage')" style="background:linear-gradient(135deg,#000,#333);color:#fff;padding:14px;text-align:center"><div style="font-size:26px">🎥</div><b style="font-size:11px">30s Reel</b></div>
-<div class="card" onclick="openPage('hwPage')" style="background:linear-gradient(135deg,#FFEB3B,#FFC107);color:#000;padding:14px;text-align:center"><div style="font-size:26px">📸</div><b style="font-size:11px">कॉपी जाँच</b></div>
-</div>
+<div id="detail"><div class="dhead"><div class="back" onclick="goBack()">←</div><h3 id="dTitle" style="font-size:14px">Model Paper</h3></div><div id="dContent"></div></div>
 
-<div id="scanPage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('scanPage')">←</button><b>📷 कोई भी प्रश्न</b></div><div style="padding:12px"><div style="background:linear-gradient(135deg,#0D47A1,#1B5E20);color:#fff;padding:14px;border-radius:18px;border:3px solid #FFD600"><b>फोटो, लिखो, बोलो - कोई भी प्रश्न</b><div style="display:flex;gap:6px;margin-top:10px"><label style="background:#fff;color:#0D47A1;padding:12px;border-radius:12px;text-align:center;font-weight:800;flex:1">📷 SCAN<input type="file" accept="image/*" capture="environment" style="display:none" onchange="handleScan(this)"></label><label style="background:#FFEB3B;color:#000;padding:12px;border-radius:12px;text-align:center;font-weight:800;flex:1">🖼️ गैलरी<input type="file" accept="image/*" style="display:none" onchange="handleScan(this)"></label></div><div style="display:flex;gap:6px;margin-top:10px;background:#fff;border-radius:12px;padding:6px"><input id="anyQ" placeholder="कोई भी प्रश्न..." style="flex:1;border:none;outline:none;padding:8px;color:#000"><button onclick="getUniversalAns()" style="background:#FF0000;color:#fff;border:none;padding:10px 14px;border-radius:10px;font-weight:900">उत्तर</button></div></div><div id="fullResult" style="display:none;margin-top:12px"><div style="background:#fff;border-radius:14px;padding:10px;display:flex;gap:10px"><img id="previewImg" style="width:70px;height:70px;border-radius:10px;display:none"><div style="flex:1"><b id="scanSubTag" style="font-size:11px;color:#0D47A1">Result</b><div id="ocrStatus" style="font-size:11px;color:#2E7D32">✅ Ready</div><div id="ocrText" style="font-size:11px;background:#f6f7fb;padding:6px;border-radius:8px;margin-top:4px"></div></div></div><div id="fullAns" class="ansFull"></div><div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap"><button onclick="speakFull()" style="background:#E3F2FD;border:none;padding:8px 14px;border-radius:20px;font-size:12px">🔊 सुनो</button><button onclick="copyFull()" style="background:#FFF9C4;border:none;padding:8px 14px;border-radius:20px;font-size:12px">📋 Copy</button><button onclick="shareFull()" style="background:#25D366;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:12px">📤 Share</button><button onclick="downloadAns()" style="background:#FF0000;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:12px">📥 PDF</button></div></div></div></div>
+<div id="upmspPage" style="display:none;position:fixed;inset:0;background:#f6f7fb;z-index:99;overflow:auto"><div class="dhead"><div class="back" onclick="closePage2('upmspPage')">←</div><b>🏛️ UPMSP Official LIVE</b></div><div style="padding:10px"><div class="chap"><b>upmsp.edu.in LIVE</b><br><iframe src="https://upmsp.edu.in" style="width:100%;height:500px;border:none;border-radius:12px"></iframe><button class="btn" onclick="window.open('https://upmsp.edu.in','_blank')">🌐 Official खोलो</button><button class="btn btnY" onclick="window.open('https://upresults.nic.in','_blank')">📊 Result देखो</button></div></div></div>
+<div id="ncertPage" style="display:none;position:fixed;inset:0;background:#f6f7fb;z-index:99;overflow:auto"><div class="dhead"><div class="back" onclick="closePage2('ncertPage')">←</div><b>📚 NCERT</b></div><div style="padding:10px"><div class="chap"><button class="btn" onclick="window.open('https://ncert.nic.in/textbook.php','_blank')">📥 NCERT खोलो</button></div></div></div>
+<div id="askPage" style="display:none;position:fixed;inset:0;background:#f6f7fb;z-index:99;overflow:auto"><div class="dhead"><div class="back" onclick="closePage2('askPage')">←</div><b>🤖 Ask AI</b></div><div style="padding:10px"><div id="chatBox"><div class="chap">🤖 नमस्ते! पूछो!</div></div><input id="aiInput" style="width:70%;padding:10px;border-radius:10px;border:1px solid #ccc" placeholder="सवाल लिखो"><button class="btn" style="width:28%;display:inline-block" onclick="askAI()">भेजो</button></div></div>
 
-<div id="chapterPage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('chapterPage')">←</button><b>📚 पूरा सिलेबस</b></div><div style="padding:10px"><div style="display:flex;gap:6px;margin-bottom:10px"><button id="btn10" onclick="showClass('10')" style="flex:1;background:#FFEB3B;border:none;padding:10px;border-radius:12px;font-weight:800">📘 10th</button><button id="btn12" onclick="showClass('12')" style="flex:1;background:#fff;border:none;padding:10px;border-radius:12px;font-weight:800">📗 12th</button></div><div id="class10"><div id="list10"></div></div><div id="class12" style="display:none"><div id="list12"></div></div></div></div>
-
-<div id="profilePage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('profilePage')">←</button><b>👤 Profile</b></div><div style="padding:14px"><div style="text-align:center"><img id="pPic" src="https://i.pravatar.cc/150?img=5" style="width:90px;height:90px;border-radius:50%;border:4px solid #FFD600"><br><label style="background:#E8F5E9;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800;display:inline-block;margin-top:8px">📷 फोटो बदलो<input type="file" accept="image/*" style="display:none" onchange="changePhoto(this)"></label></div><input id="pName" class="input" placeholder="नाम"><div style="margin-top:10px;background:#FFF9C4;padding:10px;border-radius:12px"><small>Streak: <span id="pStreakD">8</span> | Pts: <span id="pPtsD">1517</span></small><div class="streakCal" id="cal2"></div></div><button onclick="saveProfile()" style="width:100%;background:#1B5E20;color:#fff;border:none;padding:14px;border-radius:14px;font-weight:900;margin-top:14px">Save +100 Pts</button></div></div>
-<div id="voicePage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('voicePage')">←</button><b>🎤 Voice</b></div><div style="padding:20px;text-align:center"><div onclick="startVoice()" style="width:110px;height:110px;background:#25D366;border-radius:50%;margin:20px auto;display:flex;align-items:center;justify-content:center;font-size:50px;color:#fff">🎤</div><button onclick="startVoice()" style="background:#25D366;color:#fff;border:none;padding:14px 28px;border-radius:30px;font-weight:900">बोलो</button><div id="vText" style="margin-top:20px;background:#fff;padding:14px;border-radius:14px;min-height:80px;color:#000"></div></div></div>
-<div id="spinPage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('spinPage')">←</button><b>🎁 Spin</b></div><div style="padding:20px;text-align:center"><div class="wheel" id="wheel"><b style="background:#fff;padding:6px 12px;border-radius:15px;font-size:11px">SPIN</b></div><button onclick="spinNow()" style="background:linear-gradient(90deg,#FF0000,#FF9800);color:#fff;border:none;padding:14px 32px;border-radius:30px;font-weight:900">घुमाओ</button><div id="spinResult" style="margin-top:20px;font-weight:800"></div></div></div>
-<div id="battlePage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('battlePage')">←</button><b>🎮 Battle</b></div><div style="padding:14px"><div id="qBox" style="background:#fff;padding:14px;border-radius:14px;font-weight:800;min-height:60px;color:#000">Battle शुरू करो</div><div id="optBox" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px"></div><button onclick="startQuiz()" style="background:#FF0000;color:#fff;border:none;padding:12px;width:100%;border-radius:14px;font-weight:900;margin-top:14px">Battle शुरू</button></div></div>
-<div id="memePage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('memePage')">←</button><b>😂 Meme</b></div><div style="padding:10px"><div style="background:#FFF9C4;padding:14px;border-radius:16px;margin:10px;border:3px solid #FFD600">😂 ओम = V=IR</div><div style="background:#FFF9C4;padding:14px;border-radius:16px;margin:10px;border:3px solid #FFD600">😂 छिन्नक = 2449.2</div></div></div>
-<div id="reelPage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('reelPage')">←</button><b>🎥 Reel</b></div><div style="padding:10px"><div style="height:140px;background:#000;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;margin:10px" onclick="playReel('छिन्नक')">▶️ छिन्नक - 30 Sec</div></div></div>
-<div id="hwPage" class="page"><div class="pageHead"><button class="backBtn" onclick="closePage('hwPage')">←</button><b>📸 कॉपी जाँच</b></div><div style="padding:20px;text-align:center"><label style="background:#0D47A1;color:#fff;padding:14px 24px;border-radius:30px;font-weight:900">📸 फोटो लो<input type="file" accept="image/*" style="display:none" onchange="checkHWPhoto(this)"></label><div id="hwResult" style="margin-top:20px;background:#fff;padding:14px;border-radius:14px;min-height:100px;color:#000"></div></div></div>
-
-<div id="toast" class="toast"><div style="width:28px;height:28px;background:#FFEB3B;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800">✓</div><div style="flex:1"><b id="tName" style="font-size:11px">Jani</b><br><small id="tMsg" style="font-size:10px">+10 Pts</small></div></div>
-
-<div id="installBanner">
-  <div style="display:flex;gap:10px;align-items:center">
-    <div style="width:40px;height:40px;background:#FFD600;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">📱</div>
-    <div style="flex:1"><b style="font-size:12px">App Install करो - एकदम Free!</b><br><small style="font-size:10px">होम स्क्रीन पर आएगा</small></div>
-    <button onclick="downloadApp()" style="background:#FFD600;color:#000;border:none;padding:8px 14px;border-radius:20px;font-weight:900;font-size:12px">Install</button>
-    <button onclick="document.getElementById('installBanner').style.display='none'" style="background:#fff3;color:#fff;border:none;width:24px;height:24px;border-radius:50%">✕</button>
-  </div>
-</div>
-
-<div class="viralBar">
-  <button onclick="shareFull()" style="flex:1;background:#25D366;color:#fff;border:none;padding:12px;border-radius:25px;font-weight:900;font-size:13px">📤 Share</button>
-  <button id="downloadBtn" onclick="downloadApp()" style="flex:1;background:linear-gradient(90deg,#FF0000,#FFD600);color:#fff;border:none;padding:12px;border-radius:25px;font-weight:900;font-size:13px;animation:pulse 1.5s infinite">📥 App Download</button>
-  <button onclick="openPage('chapterPage')" style="flex:1;background:#1B5E20;color:#fff;border:none;padding:12px;border-radius:25px;font-weight:900;font-size:13px">📚 सिलेबस</button>
-</div>
+<div class="bottomNav"><div onclick="goHome()">🏠<br><span style="font-size:10px">Home</span></div><div onclick="openPage2('ncertPage')">📚<br><span style="font-size:10px">Learn</span></div><div onclick="openPage2('askPage')">🤖<br><span style="font-size:10px">AI</span></div><div onclick="openPage2('downPage')">⬇️<br><span style="font-size:10px">Down</span></div></div>
 
 <script>
-let pts=1517,streak=8,tests=127,todayTests=2341,photo=localStorage.getItem('photo')||"https://i.pravatar.cc/100?img=5",profile=JSON.parse(localStorage.getItem('janiProfile')||'null'),lastAns="",deferredPrompt=null;
-const ALL_10=["वास्तविक संख्याएँ - यूक्लिड, HCF, √2 अपरिमेय HIT","बहुपद - शून्यक α+β HIT","दो चर रैखिक समीकरण","द्विघात समीकरण","समांतर श्रेढ़ी","त्रिभुज - थेल्स","निर्देशांक ज्यामिति","त्रिकोणमिति परिचय","त्रिकोणमिति अनुप्रयोग","वृत्त","रचनाएँ","वृत्तों से क्षेत्रफल","पृष्ठीय आयतन - छिन्नक 2449.2 HIT","सांख्यिकी","प्रायिकता","रासायनिक अभिक्रिया","अम्ल क्षारक","धातु अधातु","जैव प्रक्रम - प्रकाश संश्लेषण HIT","प्रकाश परावर्तन","विद्युत - V=IR HIT","गाय पर निबंध HIT 8 अंक","ताजमहल HIT 8 अंक"];
-const ALL_12=["संबंध फलन","आव्यूह","सारणिक","अवकलज","समाकलन","प्रायिकता Bayes HIT","विद्युत आवेश HIT","प्रकाशिकी","जैव प्रौद्योगिकी"];
-function loadTop(){document.getElementById('topPic').src=photo;document.getElementById('topName').innerText=(profile?profile.name:"Narayan saini")+" - Jani Topper ⭐";document.getElementById('topPts').innerText=pts;document.getElementById('topStreak').innerText=streak;document.getElementById('tTests').innerText=tests;let h="";for(let i=1;i<=28;i++){let c="day";if(i<=streak)c="day done";if(i==streak)c="day today";h+=`<div class="${c}">${i}</div>`;}document.getElementById('cal').innerHTML=h;let c2=document.getElementById('cal2');if(c2)c2.innerHTML=h;}
-loadTop();
-function openPage(id){document.getElementById(id).classList.add('active');document.body.style.overflow='hidden';if(id=='chapterPage')renderAll();}
-function closePage(id){document.getElementById(id).classList.remove('active');document.body.style.overflow='auto';}
-function showClass(c){document.getElementById('class10').style.display=c=='10'?'block':'none';document.getElementById('class12').style.display=c=='12'?'block':'none';document.getElementById('btn10').style.background=c=='10'?'#FFEB3B':'#fff';document.getElementById('btn12').style.background=c=='12'?'#FFEB3B':'#fff';}
-function openChapterQ(ch){
-  closePage('chapterPage');
-  setTimeout(()=>{
-    document.getElementById('anyQ').value=ch;
-    document.getElementById('fullResult').style.display='block';
-    document.getElementById('ocrText').innerText=ch;
-    document.getElementById('scanSubTag').innerText=ch+" - FULL";
-    document.getElementById('previewImg').style.display='none';
-    document.getElementById('ocrStatus').innerText="✅ Ready";
-    openPage('scanPage');
-    setTimeout(()=>{getUniversalAns(ch);},350);
-  },200);
-}
-function renderAll(){
-  let h10="";ALL_10.forEach((ch,i)=>{let s=ch.replace(/'/g,"");h10+=`<div class="card" onclick="openChapterQ('${s}')"><div style="padding:12px;display:flex;gap:10px;align-items:center"><div style="width:36px;height:36px;background:#2E7D32;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800">${i+1}</div><div style="flex:1"><b style="font-size:12px">${ch}</b><br><small style="font-size:10px;color:#666">NCERT पूरा उत्तर - Tap OPEN</small></div><div style="background:#FFEB3B;padding:8px 12px;border-radius:20px;font-size:11px;font-weight:900;border:2px solid #000">OPEN</div></div></div>`;});
-  document.getElementById('list10').innerHTML=h10;
-  let h12="";ALL_12.forEach((ch,i)=>{let s=ch.replace(/'/g,"");h12+=`<div class="card" onclick="openChapterQ('${s}')"><div style="padding:12px;display:flex;gap:10px;align-items:center"><div style="width:36px;height:36px;background:#0D47A1;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800">${i+1}</div><div style="flex:1"><b style="font-size:12px">${ch}</b></div><div style="background:#FFEB3B;padding:8px 12px;border-radius:20px;font-size:11px;font-weight:900;border:2px solid #000">OPEN</div></div></div>`;});
-  document.getElementById('list12').innerHTML=h12;
-}
-function handleScan(input){if(!input.files[0])return;document.getElementById('fullResult').style.display='block';document.getElementById('previewImg').style.display='block';document.getElementById('previewImg').src=URL.createObjectURL(input.files[0]);document.getElementById('ocrStatus').innerText="🔍 पढ़ रहा हूँ...";Tesseract.recognize(input.files[0],'hin+eng',{logger:m=>{if(m.status=='recognizing text')document.getElementById('ocrStatus').innerText=Math.round(m.progress*100)+"%";}}).then(({data:{text}})=>{document.getElementById('ocrStatus').innerText="✅ हो गया!";document.getElementById('ocrText').innerText=text;getUniversalAns(text);});}
-function getUniversalAns(c){let q=c||document.getElementById('anyQ').value.trim();if(!q){alert("प्रश्न लिखो!");return;}document.getElementById('fullResult').style.display='block';document.getElementById('ocrText').innerText=q;document.getElementById('scanSubTag').innerText=q.substring(0,40)+" - FULL";let l=q.toLowerCase();let a="";if(l.includes("वास्तविक"))a=`✅ वास्तविक संख्याएँ - FULL 5 अंक\nयूक्लिड विभाजन a=bq+r\nHCF 96,404=4\n√2 अपरिमेय सिद्ध\n5 अंक Pakka`;else if(l.includes("छिन्नक"))a=`✅ छिन्नक - HIT 5 अंक\nV=1/3 πh(R²+r²+Rr)\nR10 r4 h15=2449.2 cm³\nl=16.15 cm\nबाल्टी 8142 cm³\n5 अंक Pakka`;else if(l.includes("प्रकाश संश्लेषण"))a=`✅ प्रकाश संश्लेषण - HIT 5 अंक\n6CO2+6H2O->C6H12O6+6O2\n3 चरण\n5 अंक Pakka`;else if(l.includes("गाय"))a=`✅ गाय पर निबंध - 8 अंक\nप्रस्तावना, रूप, लाभ, धार्मिक, उपसंहार\n8 अंक Pakka`;else if(l.includes("ताजमहल"))a=`✅ ताजमहल - 8 अंक\nआगरा, शाहजहाँ, संगमरमर, प्रेम प्रतीक\n8 अंक Pakka`;else a=`✅ ${q} - FULL ANSWER 5 अंक\n\nप्रश्न: ${q}\nपरिभाषा + प्रकार + सूत्र V=IR\nStep by Step + Diagram\n5 अंक Pakka 🔥`;document.getElementById('fullAns').innerText=a;lastAns=a;tests++;todayTests++;loadTop();showToast("Answer","मिल गया FREE 🔥");}
-function changePhoto(inp){if(!inp.files[0])return;let r=new FileReader();r.onload=e=>{photo=e.target.result;localStorage.setItem('photo',photo);document.getElementById('pPic').src=photo;document.getElementById('topPic').src=photo;};r.readAsDataURL(inp.files[0]);}
-function saveProfile(){let n=document.getElementById('pName').value.trim()||"Narayan saini";profile={name:n};localStorage.setItem('janiProfile',JSON.stringify(profile));pts+=100;loadTop();showToast(n,"+100 Pts");closePage('profilePage');}
-function speakFull(){let u=new SpeechSynthesisUtterance(lastAns);u.lang='hi-IN';speechSynthesis.speak(u);}
-function copyFull(){navigator.clipboard.writeText(lastAns);showToast("Copy","हो गया");}
-function shareFull(){window.open("https://wa.me/?text="+encodeURIComponent(lastAns+"\n\nApp: https://saininarayansaini7-spec.github.io/Study-lSaathiAI/"),"_blank");}
-function downloadAns(){let b=new Blob([lastAns],{type:"text/plain"});let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="Jani_Answer.txt";a.click();showToast("Download","PDF हो गया 📥");}
-function startVoice(){let r=new (window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.start();document.getElementById('vText').innerText="🎤 सुन रहा हूँ...";r.onresult=e=>{let t=e.results[0][0].transcript;document.getElementById('vText').innerText="✅ "+t;document.getElementById('anyQ').value=t;openPage('scanPage');getUniversalAns(t);};}
-function spinNow(){let w=document.getElementById('wheel');w.style.transform=`rotate(${Math.floor(Math.random()*360)+1800}deg)`;setTimeout(()=>{document.getElementById('spinResult').innerText="🎉 100 Pts!";pts+=20;loadTop();showToast("Spin","100 Pts");},3000);}
-function startQuiz(){document.getElementById('qBox').innerText="Q: विद्युत धारा का मात्रक?";let o=["वोल्ट","एम्पीयर","ओम","वाट"];let h="";o.forEach((x,i)=>{h+=`<button onclick="checkQ(${i})" style="background:#fff;border:none;padding:10px;border-radius:10px;font-weight:700">${x}</button>`});document.getElementById('optBox').innerHTML=h;}
-function checkQ(i){if(i==1){pts+=50;showToast("सही!","+50");}else showToast("गलत!","एम्पीयर");loadTop();closePage('battlePage');}
-function checkHWPhoto(inp){document.getElementById('hwResult').innerHTML="🔍 AI जाँच...";setTimeout(()=>{document.getElementById('hwResult').innerHTML="✅ 90% सही! 8/10 अंक!";},1500);}
-function playReel(t){showToast("Reel",t+" 30 Sec");}
-function showToast(n,m){document.getElementById('tName').innerText=n;document.getElementById('tMsg').innerText=m;let t=document.getElementById('toast');t.style.transform='translateY(0)';setTimeout(()=>{t.style.transform='translateY(200px)';},2500);}
-
-// 📥 DOWNLOAD - NO ALERT - CLEAN
-window.addEventListener('beforeinstallprompt',(e)=>{
-  e.preventDefault();
-  deferredPrompt=e;
-  document.getElementById('installBanner').style.display='block';
-  document.getElementById('downloadBtn').innerText="📥 Install App 🔥";
-  document.getElementById('downloadBtn').style.background="linear-gradient(90deg,#00C853,#009624)";
-});
-function downloadApp(){
-  if(deferredPrompt){
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((c)=>{
-      if(c.outcome==='accepted'){showToast("Install","हो गया! होम स्क्रीन देखो 📱");document.getElementById('installBanner').style.display='none';}
-      deferredPrompt=null;
-    });
-  }else{
-    document.getElementById('installBanner').style.display='block';
-    showToast("Install","नीचे Install बटन दबाओ 📥 - फिर ऊपर 3 बिंदु (⋮) से Install करो");
-  }
-}
-setTimeout(()=>{document.getElementById('installBanner').style.display='block';},3000);
-setInterval(()=>{document.getElementById('todayTest').innerText=(todayTests+2).toLocaleString();todayTests+=2;},3000);
-renderAll();loadTop();
+var books={
+hindi10:'<div class="chap"><h3>10th हिंदी 80 अंक</h3><div class="que">साखी - सच्चे भक्त लक्षण - निंदक पास रखना (5 अंक)<br>मीरा - गिरधर गोपाल - अनन्य प्रेम (5 अंक)<br>माता का आँचल - भोलानाथ पिता संबंध (10 अंक)</div></div>',
+math10:'<div class="chap"><h3>10th गणित 70 अंक - HIT</h3><div class="que">√5 अपरिमेय (2 अंक) - हर साल<br>96,404 HCF=4 यूक्लिड विधि (2 अंक)<br>सांख्यिकी माध्य/माध्यिका/बहुलक - 4 अंक पक्का 2027</div></div>',
+science10:'<div class="chap"><h3>10th विज्ञान 80 अंक</h3><div class="que">मानव हृदय 4 कक्ष चित्र सहित - 4 अंक पक्का<br>प्रकाश संश्लेषण 6CO2+6H2O→C6H12O6+6O2<br>रासायनिक समीकरण संतुलित 2H2+O2=2H2O</div></div>',
+sst10:'<div class="chap"><h3>10th SST 80 अंक</h3><div class="que">यूरोप राष्ट्रवाद - फ्रांसीसी क्रांति 1789 स्वतंत्रता समानता बंधुत्व<br>जर्मनी एकीकरण बिस्मार्क रक्त लौह नीति</div></div>',
+his12:'<div class="chap"><h3>12th इतिहास 100 अंक</h3><div class="que">हड़प्पा नगर योजना - दुर्ग+निचला नगर, पक्की ईंट 1:2:4, नाली ढकी, ग्रिड प्रणाली, स्नानागार 11.88m, अन्नागार<br>मौर्य प्रशासन - अर्थशास्त्र</div></div>',
+pol12:'<div class="chap"><h3>12th राजनीति 100 अंक</h3><div class="que">शीतयुद्ध USA पूंजीवाद vs USSR साम्यवाद 1945-91<br>NATO vs वारसा पैक्ट<br>सोवियत विघटन 1991</div></div>',
+phy12:'<div class="chap"><h3>12th भौतिकी 70 अंक</h3><div class="que">कूलॉम F=kq1q2/r² k=9e9<br>द्विध्रुव क्षेत्र E=1/4πϵ0 *2p/r³<br>ओम V=IR</div></div>',
+bio12:'<div class="chap"><h3>12th जीव 70 अंक</h3><div class="que">परागण स्वपरागण vs परपरागण<br>दोहरा निषेचन युग्मनज 2n + भ्रूणपोष 3n<br>मानव जनन वृषण शुक्राणुजनन</div></div>',
+paper10:'<div class="chap"><h3>10th पेपर 2020-26</h3><div class="que">2020-26 सारे पेपर - 70% Repeat होते हैं</div></div>',
+paper12:'<div class="chap"><h3>12th पेपर 2020-26</h3><div class="que">12th पुराने पेपर HIT</div></div>',
+all10:'<div class="chap"><h3>10th पूरी किताब</h3><div class="que">5 किताबें सारे प्रश्न हिंदी में</div></div>',
+all12:'<div class="chap"><h3>12th पूरी किताब</h3><div class="que">सभी किताबें हिंदी में</div></div>',
+viral10:'<div class="chap"><h3>🎯 10th 2020 वायरल - 2027 जरूरी</h3><div class="que">70% टीचर रटवा रहे<br>1 कबीर 5 अंक<br>2 √5 अपरिमेय 2 अंक<br>3 हृदय 4 अंक<br>4 राष्ट्रवाद 5 अंक</div></div>',
+mastermind:'<div class="chap"><h3>👑 Mastermind 70% HIT - 300₹ वाली</h3><div class="que">गणित √5, HCF=4, सांख्यिकी 4 अंक पक्का<br>विज्ञान हृदय मस्तिष्क<br>इतिहास हड़प्पा मौर्य 1857</div></div>',
+vidya:'<div class="chap"><h3>📘 Vidya NEW</h3><div class="que">हर प्रश्न Detailed हिंदी में - 280₹ वाली</div></div>',
+flight:'<div class="chap"><h3>✈️ Flight NEW Trick</h3><div class="que">Trick से याद - फ्रांस नारा नेपोलियन फैलाया बिस्मार्क जोड़ा<br>pH 0-7 अम्ल 7 उदासीन 7-14 क्षार</div></div>',
+bed:'<div class="chap"><h3>B.Ed 2027</h3><div class="que">B.Ed Model Paper</div></div>',
+nursing:'<div class="chap"><h3>Nursing 2027</h3><div class="que">Nursing Model Paper</div></div>',
+neet:'<div class="chap"><h3>NEET 720</h3><div class="que">NEET जीव भौतिकी रसायन HIT</div></div>',
+eng10:'<div class="chap"><h3>English 2027</h3><div class="que">English Model Paper हिंदी व्याख्या सहित</div></div>'
+};
+function openBook(t,k){document.getElementById('home').style.display='none';document.getElementById('detail').style.display='block';document.getElementById('dTitle').innerText=t;document.getElementById('dContent').innerHTML=books[k]||'<div class="chap"><h3>'+t+'</h3></div>';window.scrollTo(0,0);}
+function goBack(){document.getElementById('detail').style.display='none';document.getElementById('home').style.display='block';}
+function openPage2(id){document.getElementById(id).style.display='block'}
+function closePage2(id){document.getElementById(id).style.display='none'}
+function goHome(){document.getElementById('detail').style.display='none';document.querySelectorAll('[id$="Page"]').forEach(e=>e.style.display='none');document.getElementById('home').style.display='block';}
+function searchAll(){let v=document.getElementById('searchBox').value.toLowerCase();document.querySelectorAll('.pill,.boxM,.newCard').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(v)?'':'none'})}
+function askAI(){let t=document.getElementById('aiInput').value;if(!t)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class="chap" style="background:#FFF9C4">👦 ${t}</div>`;document.getElementById('aiInput').value='';setTimeout(()=>{b.innerHTML+=`<div class="chap" style="background:#E8F5E9">🤖 ${t} का जवाब: परिभाषा + कारण + उदाहरण + Diagram - Full Marks!</div>`},500)}
 </script>
 </body>
 </html>
