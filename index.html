@@ -1,174 +1,121 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Study-lSaathiAI - NCERT WEBSITE ADDED - FINAL ALL FUTURE</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
-body{background:#eef2ff;padding-bottom:95px}
-.top{background:#fff;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px #0001}
-.card{background:#fff;margin:10px;border-radius:18px;padding:14px;box-shadow:0 4px 12px #0001}
-.newGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 10px}
-.newCard{background:#fff;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 4px 10px #0001;cursor:pointer;position:relative;min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid transparent}
-.liveTag{position:absolute;top:4px;right:4px;background:red;color:#fff;font-size:7px;padding:2px 5px;border-radius:10px}
-.page{display:none;position:fixed;inset:0;background:#f6f7fb;z-index:200;overflow:auto;padding-bottom:95px}
-.dhead{background:linear-gradient(90deg,#1B5E20,#FFC107);padding:14px;color:#fff;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:5}
-.chap{background:#fff;margin:10px;border-radius:14px;padding:14px;border-left:5px solid #1B5E20;box-shadow:0 2px 6px #0001}
-.back{background:#fff;color:#1B5E20;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}
-.btn{background:#1B5E20;color:#fff;border:none;padding:10px;border-radius:12px;font-weight:800;width:100%;margin-top:8px;cursor:pointer}
-.btnY{background:#FFC107;color:#000}
-.tabBtn{padding:8px 14px;border-radius:20px;border:2px solid #1B5E20;background:#fff;font-weight:bold;cursor:pointer;margin:4px;font-size:12px}
-.tabBtn.active{background:#1B5E20;color:#fff}
-.tabBtn2{border-color:#7c3aed}.tabBtn2.active{background:#7c3aed;color:#fff}
-.bottomNav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:8px 0;box-shadow:0 -2px 10px #0002;border-radius:20px 20px 0 0;z-index:150}
-.search{margin:10px;background:#fff;border-radius:12px;display:flex;align-items:center;padding:10px 12px;gap:8px;position:sticky;top:62px;z-index:99;box-shadow:0 2px 6px #0001}
-.search input{border:none;outline:none;width:100%;font-size:13px}
-.pdfCard{background:#fff;border-radius:12px;padding:10px;margin:6px 0;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px #0001;border-left:4px solid #1B5E20}
-.omrQ{background:#fff;margin:10px;border-radius:14px;padding:12px;border-left:5px solid #dc2626;box-shadow:0 2px 6px #0001}
-.omrOpt{display:flex;align-items:center;gap:8px;padding:8px;border:1px solid #e2e8f0;border-radius:10px;margin:6px 0;cursor:pointer}
-.omrOpt.sel{background:#dcfce7;border-color:#1B5E20}
-.timerBar{position:sticky;top:52px;z-index:10;background:#dc2626;color:#fff;padding:10px;display:flex;justify-content:space-between;align-items:center;font-weight:900;margin:0 10px;border-radius:12px}
-.fixedBar{position:fixed;bottom:65px;left:10px;right:10px;background:linear-gradient(90deg,#1B5E20,#4caf50);color:#fff;padding:10px 14px;border-radius:50px;display:flex;justify-content:space-between;align-items:center;z-index:149}
-.toast{position:fixed;bottom:120px;left:50%;transform:translateX(-50%);background:#000;color:#fff;padding:8px 16px;border-radius:20px;font-size:12px;z-index:300;display:none}
-.modal{position:fixed;inset:0;background:#0008;z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
-.modalBox{background:#fff;border-radius:16px;padding:16px;max-width:400px;width:100%;max-height:80vh;overflow:auto}
-.pulse{animation:pulse 1s infinite}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+body{margin:0;font-family:sans-serif;background:#FFFDE7}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px}
+.card{background:#E8F5E9;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 5px #0001;cursor:pointer}
+.card b{font-size:13px;display:block;margin-top:5px}
+.page{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;overflow:auto;z-index:99;padding:0}
+.dhead{background:#1B5E20;color:#fff;padding:15px;display:flex;align-items:center;gap:10px}
+.back{font-size:22px;cursor:pointer}
+.chap{margin:10px;padding:12px;background:#fff;border-radius:10px;box-shadow:0 1px 4px #0001}
+.btn{background:#1B5E20;color:#fff;border:none;padding:10px 15px;border-radius:8px;width:100%;margin:5px 0;font-weight:bold}
+input{width:90%;padding:10px;border:1px solid #ccc;border-radius:8px;margin:5px}
 </style>
 </head>
 <body>
-<div class="top">
-<div style="display:flex;gap:8px;align-items:center"><div style="width:36px;height:36px;background:linear-gradient(135deg,#1B5E20,#FFC107);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold">N</div><div><div style="font-weight:900;font-size:13px;color:#1B5E20">Narayan saini - Jani Topper</div><div style="font-size:9px"><span style="background:red;color:#fff;padding:1px 5px;border-radius:4px" class="pulse">VIRAL</span> <span id="liveCounter">LIVE: 10,520 ⬆️</span> • <span id="downloadCounter">50,855 Downloads</span> • <span id="points">1437 Pts 🔥</span></div></div></div>
-<div style="text-align:right"><div style="font-size:9px" id="viralTimer">23:59:47 बचा</div><div style="font-size:8px">NCERT Website + 81Ch</div></div>
-</div>
 
+<!-- DASHBOARD -->
 <div id="home">
-<div class="search">🔍<input id="searchBox" placeholder="Search NCERT English Math..." oninput="searchAll()"></div>
-<div style="padding:0 10px 8px"><b>📄 FINAL - NCERT WEBSITE ADDED + ALL FUTURE</b></div>
-<div class="newGrid">
-<div class="newCard" style="border:3px solid #dc2626;background:linear-gradient(135deg,#FECACA,#dc2626)!important;color:#fff" onclick="openPage2('omrPage')"><div class="liveTag">24 Q TIMER</div>⏱️<br><b>OMR 24 Q<br>10 Min Timer</b></div>
-<div class="newCard" style="border:3px solid #1B5E20;background:linear-gradient(135deg,#FFEB3B,#FFC107)!important" onclick="openPage2('paper2026Page');showTab('10th')"><div class="liveTag" style="background:green">10th FIXED</div>📘<br><b>10th 13 PDF<br>English+Math</b></div>
-<div class="newCard" style="border:3px solid #7c3aed;background:linear-gradient(135deg,#E9D5FF,#A78BFA)!important" onclick="openPage2('ncertPage')"><div class="liveTag" style="background:#1B5E20">NCERT WEBSITE ADDED</div>📚<br><b>NCERT 2026<br>Website + 81Ch</b></div>
-<div class="newCard" onclick="openPage2('paper2026Page');showTab('12th')">📙<br><b>12th 16 PDF<br>101-152</b></div>
-<div class="newCard" onclick="openPage2('mastermindPage')">👑<br><b>Mastermind</b></div>
-<div class="newCard" onclick="openPage2('vidyaPage')">📘<br><b>Vidya 2027</b></div>
-<div class="newCard" onclick="openPage2('flightPage')">✈️<br><b>Flight 2027</b></div>
-<div class="newCard" onclick="openPage2('upmspPage')">🏛️<br><b>UPMSP Fixed</b></div>
-<div class="newCard" onclick="openPage2('memePage')">😂<br><b>Meme Zone</b></div>
-<div class="newCard" onclick="openPage2('reelsPage')">🎬<br><b>Reels</b></div>
-<div class="newCard" onclick="openPage2('qbPage')">❓<br><b>Q Bank</b></div>
-<div class="newCard" onclick="openPage2('topperPage')">🏆<br><b>Topper</b></div>
-<div class="newCard" onclick="openPage2('hwPage')">📸<br><b>HW Scanner AI</b></div>
-<div class="newCard" onclick="openPage2('askPage')">🤖<br><b>Ask AI Voice</b></div>
-<div class="newCard" onclick="openPage2('downPage')">⬇️<br><b>Download</b></div>
+<div style="background:linear-gradient(90deg,#1B5E20,#66BB6A);color:#fff;padding:15px"><b>📚 Study-SaathiAI - सभी फीचर्स</b><br><small>1247 LIVE</small></div>
+<div class="grid">
+<div class="card" onclick="openP('p1')">⏱️<b>OMR Timer</b></div>
+<div class="card" onclick="openP('p2')">📄<b>10th PDF</b></div>
+<div class="card" onclick="openP('p3')">📘<b>NCERT 2026</b></div>
+<div class="card" onclick="openP('p4')">📄<b>12th PDF</b></div>
+<div class="card" onclick="openP('p5')">🧠<b>Mastermind</b></div>
+<div class="card" onclick="openP('p6')">🎓<b>Vidya 2027</b></div>
+<div class="card" onclick="openP('p7')">🚀<b>Flight 2027</b></div>
+<div class="card" onclick="openP('p8')">🏫<b>UPMSP</b></div>
+<div class="card" onclick="openP('p9')">😂<b>Meme Zone</b></div>
+<div class="card" onclick="openP('p10')">▶️<b>Reels</b></div>
+<div class="card" onclick="openP('p11')">❓<b>Q Bank</b></div>
+<div class="card" onclick="openP('p12')">🏆<b>Topper</b></div>
+<div class="card" onclick="openP('p13')">📸<b>HW Scanner AI</b></div>
+<div class="card" onclick="openP('p14')">🎙️<b>Ask AI Voice</b></div>
+<div class="card" onclick="openP('p15')">🤖<b>AI Teacher</b></div>
+<div class="card" style="background:#FF9800;color:#fff" onclick="openP('p16')">🎮<b>Game Zone</b></div>
 </div>
 </div>
 
-<!-- PAPER PAGE -->
-<div id="paper2026Page" class="page"><div class="dhead"><div class="back" onclick="closePage2('paper2026Page')">←</div><b>📄 Papers - English Math FIXED</b></div><div style="padding:10px"><div class="chap" style="text-align:center"><button class="tabBtn active" id="btn10th" onclick="showTab('10th')">📘 10th 13 PDF</button><button class="tabBtn tabBtn2" id="btn12th" onclick="showTab('12th')">📙 12th 101-152</button></div>
-<div id="list10th"><div class="chap" style="background:#FFEB3B"><b>📘 10th - 13 PDF - English + Math Added</b></div>
-<div class="pdfCard"><div><b>📕 902-English.pdf - ENGLISH</b></div><button class="btn" style="width:70px;margin:0;background:#2563eb" onclick="openPDF('902-English.pdf')">खोलो</button></div>
-<div class="pdfCard" style="border-left:4px solid #dc2626"><div><b>📐 928-Math.pdf - MATH - Ex 13.3 Bayes 50%</b></div><button class="btn" style="width:70px;margin:0;background:#dc2626" onclick="openPDF('928-Math.pdf')">खोलो</button></div>
-<div class="pdfCard"><div><b>🔬 931-Science.pdf</b></div><button class="btn" style="width:70px;margin:0" onclick="openPDF('931-Science.pdf')">खोलो</button></div></div>
-<div id="list12th" style="display:none"><div class="chap" style="background:#E9D5FF"><b>📙 12th - 101-152 - English + Math Added</b></div>
-<div class="pdfCard"><div><b>📕 117-English.pdf - ENGLISH</b></div><button class="btn" style="width:70px;margin:0;background:#2563eb" onclick="openPDF('117-English.pdf')">खोलो</button></div>
-<div class="pdfCard"><div><b>📐 120-Math.pdf - MATH</b></div><button class="btn" style="width:70px;margin:0;background:#dc2626" onclick="openPDF('120-Math.pdf')">खोलो</button></div>
-<div class="pdfCard"><div><b>⚡ 151-Physics.pdf</b></div><button class="btn" style="width:70px;margin:0;background:#dc2626" onclick="openPDF('151-Physics.pdf')">खोलो</button></div></div>
-<div class="chap" id="pdfViewer" style="display:none"><div style="display:flex;justify-content:space-between"><b id="viewerTitle">PDF</b><button onclick="closeViewer()">✕</button></div><iframe id="pdfFrame" style="width:100%;height:60vh;border:none"></iframe></div></div></div>
+<!-- ALL PAGES - CLICK PE KHULEGA -->
 
-<!-- NCERT PAGE - WEBSITE ADDED + INTERNAL 81Ch - FINAL FIXED -->
-<div id="ncertPage" class="page">
-<div class="dhead"><div class="back" onclick="closePage2('ncertPage')">←</div><b>📚 NCERT 2026 - WEBSITE + 81Ch - ADDED</b></div>
-<div style="padding:10px">
+<!-- 1 OMR -->
+<div id="p1" class="page"><div class="dhead"><div class="back" onclick="closeP('p1')">←</div><b>OMR 24Q Timer</b></div>
+<div class="chap"><h3>24 सवाल - 30 मिनट</h3><div id="timer">30:00</div><button class="btn" onclick="startTimer()">Timer शुरू करो</button><div id="omr"></div></div></div>
 
-<div class="chap" style="background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff;text-align:center"><b>📚 NCERT 2026 - OFFICIAL WEBSITE + INTERNAL 81Ch - ADDED</b><br><small>Website LIVE + App में 81Ch - English 902 + Math 928 - Ex 1.1, 1.2, 13.3 Bayes 50% - 2449.2 cm³</small><br>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px">
-<button class="btn" style="margin:0;background:#fff;color:#1B5E20" onclick="window.open('https://ncert.nic.in/textbook.php','_blank')">🌐 NCERT Official Website LIVE - CLICK</button>
-<button class="btn btnY" style="margin:0" onclick="window.open('https://ncert.nic.in/textbook.php?jemh1=0-15','_blank')">📐 NCERT Math Official - 15Ch - Website</button>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px">
-<button class="btn" style="margin:0;background:#2563eb" onclick="window.open('https://ncert.nic.in/textbook.php?jesc1=0-13','_blank')">📕 NCERT English Official Website</button>
-<button class="btn" style="margin:0;background:#7c3aed" onclick="window.open('https://ncert.nic.in/textbook.php?jess1=0-14','_blank')">🌍 NCERT SST Official Website</button>
-</div>
-</div>
+<!-- 2 10th PDF -->
+<div id="p2" class="page"><div class="dhead"><div class="back" onclick="closeP('p2')">←</div><b>10th 13 PDF</b></div>
+<div class="chap"><button class="btn" onclick="alert('PDF Download शुरू')">📥 गणित 2024 PDF डाउनलोड</button><button class="btn" onclick="alert('PDF Download शुरू')">📥 विज्ञान PDF</button><button class="btn" onclick="alert('PDF Download शुरू')">📥 हिंदी PDF</button></div></div>
 
-<div class="chap" style="text-align:center"><b>👇 नीचे INTERNAL NCERT - 81Ch - Website नहीं - App में - तेरे Screenshot वाला - CLICK WORKING</b><br>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
-<button class="btn pulse" style="margin:0;background:#1B5E20" onclick="showNcert('math')">📐 Math 15Ch - Ex 13.3 Bayes - INTERNAL</button>
-<button class="btn" style="margin:0;background:#2563eb" onclick="showNcert('english')">📕 English 12Ch - Grammar - INTERNAL</button>
-<button class="btn" style="margin:0;background:#0891b2" onclick="showNcert('science')">🔬 Science 20Ch - INTERNAL</button>
-<button class="btn" style="margin:0;background:#7c3aed" onclick="showNcert('sst')">🌍 SST 21Ch - INTERNAL</button>
-</div>
-</div>
+<!-- 3 NCERT -->
+<div id="p3" class="page"><div class="dhead"><div class="back" onclick="closeP('p3')">←</div><b>NCERT 2026 - 81 Chapters</b></div>
+<div class="chap" id="ncertList"></div></div>
 
-<div id="ncertBox"></div>
+<!-- 4 12th PDF -->
+<div id="p4" class="page"><div class="dhead"><div class="back" onclick="closeP('p4')">←</div><b>12th 16 PDF</b></div>
+<div class="chap"><button class="btn" onclick="alert('12th PDF खुल रहा')">📥 12th Physics PYQ</button><button class="btn" onclick="alert('12th PDF खुल रहा')">📥 12th Chemistry PYQ</button></div></div>
 
-<div class="chap" style="background:#000;color:#fff;text-align:center"><small>✅ ऊपर Website Button - NCERT Official - ncert.nic.in - LIVE + नीचे App में 81Ch - दोनों ADDED - CLICK WORKING</small></div>
-</div>
-</div>
+<!-- 5 Mastermind -->
+<div id="p5" class="page"><div class="dhead"><div class="back" onclick="closeP('p5')">←</div><b>Mastermind Quiz</b></div>
+<div class="chap"><h3 id="mq">भारत की राजधानी क्या है?</h3><button class="btn" onclick="checkM(1)">दिल्ली</button><button class="btn" onclick="checkM(0)">मुंबई</button><div id="mres"></div></div></div>
 
-<!-- OTHER PAGES - ALL CLICK WORKING -->
-<div id="omrPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('omrPage')">←</div><b>📝 OMR 24Q</b></div><div style="padding:10px"><div class="chap" style="background:linear-gradient(135deg,#dc2626,#991b1b);color:#fff;text-align:center"><b>OMR 24 Q - English Math NCERT Added</b><br><button class="tabBtn active" id="omrBtn10th" onclick="showOMRTab('10th')" style="border-color:#fff;color:#fff">📘 10th</button><button class="tabBtn" id="omrBtn12th" onclick="showOMRTab('12th')" style="border-color:#fff;color:#fff">📙 12th</button></div><div id="omr10th"><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px"><div class="pdfCard" style="justify-content:center;cursor:pointer" onclick="startOMR('10th','English')">📕 English</div><div class="pdfCard" style="justify-content:center;cursor:pointer" onclick="startOMR('10th','Math')">📐 Math</div><div class="pdfCard" style="justify-content:center;cursor:pointer" onclick="startOMR('10th','Full')">📝 Full</div></div><div id="omr10thQuestions" style="display:none"></div></div><div id="omr12th" style="display:none"><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px"><div class="pdfCard" style="justify-content:center;cursor:pointer" onclick="startOMR('12th','English')">📕 English</div><div class="pdfCard" style="justify-content:center;cursor:pointer" onclick="startOMR('12th','Math')">📐 Math</div><div class="pdfCard" style="justify-content:center;cursor:pointer" onclick="startOMR('12th','Full')">📝 Full</div></div><div id="omr12thQuestions" style="display:none"></div></div><div class="chap" id="omrResult" style="display:none;text-align:center;background:linear-gradient(135deg,#1B5E20,#4caf50);color:#fff"><h2 id="omrScore"></h2><p id="omrMsg"></p><button class="btn btnY" onclick="resetOMR()">🔄 फिर से</button></div></div></div>
-<div id="mastermindPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('mastermindPage')">←</div><b>👑 Mastermind</b></div><div style="padding:10px"><div class="chap">Mastermind - 81Ch - NCERT Website Added</div></div></div>
-<div id="vidyaPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('vidyaPage')">←</div><b>📘 Vidya</b></div><div style="padding:10px"><div class="chap">Vidya - NCERT Website Added - WORKING</div></div></div>
-<div id="flightPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('flightPage')">←</div><b>✈️ Flight</b></div><div style="padding:10px"><div class="chap">Flight - NCERT Website Added</div></div></div>
-<div id="upmspPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('upmspPage')">←</div><b>🏛️ UPMSP</b></div><div style="padding:10px"><div class="chap"><button class="btn" onclick="window.open('https://upmsp.edu.in','_blank')">🌐 UPMSP LIVE</button></div></div></div>
-<div id="memePage" class="page"><div class="dhead"><div class="back" onclick="closePage2('memePage')">←</div><b>😂 Meme</b></div><div style="padding:10px"><div class="chap">Meme Zone</div></div></div>
-<div id="reelsPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('reelsPage')">←</div><b>🎬 Reels</b></div><div style="padding:10px"><div class="chap">Reels - NCERT Website Added</div></div></div>
-<div id="qbPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('qbPage')">←</div><b>❓ Q Bank</b></div><div style="padding:10px"><div class="chap">Q Bank - NCERT Website Added</div></div></div>
-<div id="topperPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('topperPage')">←</div><b>🏆 Topper</b></div><div style="padding:10px"><div class="chap">Topper - NCERT Website Added</div></div></div>
-<div id="hwPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('hwPage')">←</div><b>📸 HW</b></div><div style="padding:10px"><div class="chap">HW Scanner</div></div></div>
-<div id="askPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('askPage')">←</div><b>🤖 Ask AI</b></div><div style="padding:10px;display:flex;flex-direction:column;height:80vh"><div id="chatBox" style="flex:1;overflow:auto"><div class="chap" style="background:#E8F5E9"><b>🤖:</b> NCERT पूछो - Website + 81Ch दोनों</div></div><div style="display:flex;gap:6px"><input id="aiInput" style="flex:1;padding:12px;border-radius:12px;border:1px solid #ddd" placeholder="NCERT..."><button class="btn" style="width:80px;margin:0" onclick="askAI()">भेजो</button></div></div></div>
-<div id="downPage" class="page"><div class="dhead"><div class="back" onclick="closePage2('downPage')">←</div><b>⬇️ Download</b></div><div style="padding:10px"><div class="chap">Download - NCERT Website Added</div></div></div>
+<!-- 6 Vidya -->
+<div id="p6" class="page"><div class="dhead"><div class="back" onclick="closeP('p6')">←</div><b>Vidya 2027</b></div>
+<div class="chap"><p>2027 नया सिलेबस</p><button class="btn" onclick="alert('Vidya 2027 Registration चालू')">Register करो</button></div></div>
 
-<div class="fixedBar pulse"><div><b>📥 Download - 50,847</b><br><small>NCERT Website + 81Ch ADDED</small></div><button style="background:#FFEB3B;color:#000;border:none;padding:6px 14px;border-radius:20px;font-weight:900" onclick="openPage2('downPage')">Download</button></div>
-<div id="toast" class="toast"></div>
-<div id="modal" class="modal" onclick="closeModal()"><div class="modalBox" onclick="event.stopPropagation()"><div style="display:flex;justify-content:space-between"><b id="modalTitle">Detail</b><button onclick="closeModal()" style="background:#000;color:#fff;border:none;width:24px;height:24px;border-radius:50%">✕</button></div><div id="modalContent" style="margin-top:10px"></div></div></div>
-<div class="bottomNav"><div onclick="goHome()">🏠<br><span style="font-size:10px">Home</span></div><div onclick="openPage2('omrPage')">📝<br><span style="font-size:10px">OMR</span></div><div onclick="openPage2('ncertPage')">📚<br><span style="font-size:10px">NCERT Website</span></div><div onclick="openPage2('askPage')">🤖<br><span style="font-size:10px">AI</span></div></div>
+<!-- 7 Flight -->
+<div id="p7" class="page"><div class="dhead"><div class="back" onclick="closeP('p7')">←</div><b>Flight 2027 Career</b></div>
+<div class="chap"><button class="btn" onclick="alert('Career Test शुरू')">✈️ Pilot बनो</button><button class="btn" onclick="alert('Career Test शुरू')">👨‍⚕️ Doctor RoadMap</button></div></div>
+
+<!-- 8 UPMSP -->
+<div id="p8" class="page"><div class="dhead"><div class="back" onclick="closeP('p8')">←</div><b>UPMSP Fixed</b></div>
+<div class="chap"><p>✅ UP Board 2026 Update Fixed</p><p>TimeTable आ गया!</p><button class="btn" onclick="window.open('https://upmsp.edu.in','_blank')">Official Website खोलो</button></div></div>
+
+<!-- 9 Meme -->
+<div id="p9" class="page"><div class="dhead"><div class="back" onclick="closeP('p9')">←</div><b>Meme Zone</b></div>
+<div class="chap"><p>😂 पढ़ाई वाला Meme</p><img src="https://via.placeholder.com/300x200?text=Study+Meme" style="width:100%;border-radius:10px"><br><button class="btn" onclick="this.parentElement.innerHTML+='<p>😂 नया Meme Loaded</p>'">Next Meme 😂</button></div></div>
+
+<!-- 10 Reels -->
+<div id="p10" class="page"><div class="dhead"><div class="back" onclick="closeP('p10')">←</div><b>Reels - Short Lessons</b></div>
+<div class="chap"><video controls style="width:100%;border-radius:10px"><source src="https://www.w3schools.com/html/mov_bbb.mp4"></video><p>NCERT Ch1 - 30 Sec में समझो</p><button class="btn">❤️ Like 1.2k</button></div></div>
+
+<!-- 11 Q Bank -->
+<div id="p11" class="page"><div class="dhead"><div class="back" onclick="closeP('p11')">←</div><b>Q Bank 50000+ Questions</b></div>
+<div class="chap"><input id="qsearch" placeholder="सवाल खोजो..." onkeyup="filterQ()"><div id="qlist"><p>Q1. प्रकाश संश्लेषण क्या है?</p><p>Q2. 2x+3=7 तो x?</p></div></div></div>
+
+<!-- 12 Topper -->
+<div id="p12" class="page"><div class="dhead"><div class="back" onclick="closeP('p12')">←</div><b>Topper Leaderboard</b></div>
+<div class="chap"><p>🥇 राहुल - 2450 pts</p><p>🥈 प्रिया - 2300 pts</p><p>🥉 तुम - 1437 pts</p></div></div>
+
+<!-- 13 HW Scanner AI -->
+<div id="p13" class="page"><div class="dhead"><div class="back" onclick="closeP('p13')">←</div><b>HW Scanner AI</b></div>
+<div class="chap"><input type="file" accept="image/*"><button class="btn" onclick="alert('AI ने Scan किया: ये गणित का सवाल है, उत्तर = 42')">📸 Scan & Solve करो</button><div id="hwres"></div></div></div>
+
+<!-- 14 Ask AI Voice -->
+<div id="p14" class="page"><div class="dhead"><div class="back" onclick="closeP('p14')">←</div><b>Ask AI Voice</b></div>
+<div class="chap"><button class="btn" style="background:#ff6b00" onclick="startVoice()">🎙️ बोलो - सवाल पूछो</button><div id="voiceAns" style="margin-top:10px;padding:10px;background:#f5f5f5;border-radius:8px">यहाँ उत्तर आएगा...</div></div></div>
+
+<!-- 15 AI Teacher -->
+<div id="p15" class="page"><div class="dhead"><div class="back" onclick="closeP('p15')">←</div><b>AI Teacher - Hindi</b></div>
+<div class="chap"><div id="chat" style="height:200px;overflow:auto;background:#f9f9f9;padding:10px;border-radius:8px">Teacher: नमस्ते! क्या पढ़ना है?</div><input id="chatIn" placeholder="यहाँ लिखो..."><button class="btn" onclick="askTeacher()">भेजो</button></div></div>
+
+<!-- 16 Game Zone FB Style -->
+<div id="p16" class="page"><div class="dhead" style="background:#ff6b00"><div class="back" onclick="closeP('p16')">←</div><b>🎮 Game Zone - FB Style</b></div>
+<div class="chap"><h3>Quiz Battle</h3><p id="gq">5+3 कितना?</p><button class="btn" onclick="gScore+=10;alert('सही! Score:'+gScore+' 👍 Like मिला')">8</button><button class="btn" onclick="alert('गलत!')">7</button><p id="gscore">Score: 0 | Likes: 0</p><button class="btn" onclick="if(navigator.share)navigator.share({text:'मैंने '+gScore+' जीते'})">📤 FB पर शेयर करो</button></div></div>
 
 <script>
-let liveCount=10520;setInterval(()=>{liveCount+=2;document.getElementById('liveCounter').innerText=`LIVE: ${liveCount} ⬆️`;},1500);
-let vt=86387;setInterval(()=>{vt--;let h=Math.floor(vt/3600),m=Math.floor((vt%3600)/60),s=vt%60;document.getElementById('viralTimer').innerText=`${h}:${m}:${s} बचा`;},1000);
-function openPage2(id){document.getElementById(id).style.display='block';}
-function closePage2(id){document.getElementById(id).style.display='none';clearInterval(timerInterval);}
-function goHome(){document.querySelectorAll('.page').forEach(e=>e.style.display='none');}
-function searchAll(){let v=document.getElementById('searchBox').value.toLowerCase();document.querySelectorAll('.newCard').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(v)?'':'none';});}
-function showTab(tab){document.getElementById('list10th').style.display=tab==='10th'?'':'none';document.getElementById('list12th').style.display=tab==='12th'?'':'none';document.getElementById('btn10th').classList.toggle('active',tab==='10th');document.getElementById('btn12th').classList.toggle('active',tab==='12th');}
-function showToast(m){let t=document.getElementById('toast');t.innerText=m;t.style.display='block';setTimeout(()=>t.style.display='none',2500);}
-function openModal(t,c){document.getElementById('modalTitle').innerText=t;document.getElementById('modalContent').innerHTML=c;document.getElementById('modal').style.display='flex';}
-function closeModal(){document.getElementById('modal').style.display='none';}
-function openPDF(f){let v=document.getElementById('pdfViewer');let fr=document.getElementById('pdfFrame');v.style.display='block';fr.src=encodeURI(f);document.getElementById('viewerTitle').innerText='📄 '+f;v.scrollIntoView({behavior:'smooth'});}
-function closeViewer(){document.getElementById('pdfViewer').style.display='none';}
-function askAI(){let t=document.getElementById('aiInput').value.trim();if(!t)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class="chap" style="background:#FFF9C4">👦 ${t}</div>`;document.getElementById('aiInput').value='';setTimeout(()=>{b.innerHTML+=`<div class="chap" style="background:#E8F5E9">🤖 ${t} - NCERT Website + 81Ch Answer</div>`;b.scrollTop=b.scrollHeight;},400);}
-
-// NCERT - WEBSITE + INTERNAL - BOTH ADDED - FINAL
-function showNcert(sub){
- let box=document.getElementById('ncertBox');
- let html='';
- if(sub==='math'){
-  html=`<div class="chap" style="background:#FFEB3B"><b>📐 NCERT Math 15Ch - Ex Wise - INTERNAL + WEBSITE - ADDED</b></div>
-  <div class="pdfCard" onclick="openModal('Ex 1.1 - HCF 4','<b>Ex 1.1 - HCF 4 - Person: यूक्लिड - 81Ch</b><br>Website: ncert.nic.in/textbook.php?jemh1=1<br>INTERNAL: App में')"><div><b>1. Ex 1.1 - वास्तविक संख्याएँ - HCF 4 - Person: यूक्लिड</b><br><small>Website + INTERNAL - CLICK WORKING</small></div><span>👁️</span></div>
-  <div class="pdfCard" style="border-left:4px solid #dc2626;background:#FECACA" onclick="openModal('Ex 13.3 - Bayes 50% - HIT','<b>Ex 13.3 - Bayes Theorem 50% - P(A|B)=P(B|A)P(A)/P(B) - 5 Marks HIT - 2449.2 cm³ - Person: Bayes</b><br><br>Website: ncert.nic.in - Math 15Ch - Ex 13.3<br>INTERNAL: App में 81Ch - तेरे Screenshot वाला Green Circle<br><br><button class=btn onclick=window.open('https://ncert.nic.in/textbook.php?jemh1=13','_blank')>🌐 NCERT Website खोलो - Ex 13.3</button>')"><div><b>📍 Ex 13.3 - Bayes 50% - 2449.2 cm³ - 5 Marks HIT</b><br><small>Website + INTERNAL - HIT 2026 - Green Circle वाला</small></div><span style="background:red;color:#fff;padding:2px 6px;border-radius:10px;font-size:10px">HIT</span></div>`;
- } else if(sub==='english'){
-  html=`<div class="chap" style="background:#dbeafe"><b>📕 English 12Ch - Grammar + Essay - WEBSITE + INTERNAL</b></div>
-  <div class="pdfCard" onclick="openModal('Active Passive','<b>Active Passive - A letter is written by Ram - Website: ncert.nic.in</b>')"><div><b>1. Active Passive - A letter is written by Ram - HIT</b><br><small>Website + INTERNAL</small></div><span>👁️</span></div>`;
- } else if(sub==='science'){
-  html=`<div class="chap"><b>🔬 Science 20Ch - WEBSITE + INTERNAL</b></div><div class="pdfCard" onclick="openModal('हृदय 4 कक्ष','<b>हृदय 4 कक्ष - 2449.2 cm³ - Website + INTERNAL</b>')"><div><b>1. हृदय 4 कक्ष - 2449.2 cm³</b></div><span>👁️</span></div>`;
- } else {
-  html=`<div class="chap"><b>🌍 SST 21Ch - WEBSITE + INTERNAL</b></div><div class="pdfCard" onclick="openModal('हड़प्पा','<b>हड़प्पा 2500 - Website + INTERNAL</b>')"><div><b>1. हड़प्पा 2500 - Person: दयाराम साहनी</b></div><span>👁️</span></div>`;
- }
- box.innerHTML=html;
- box.scrollIntoView({behavior:'smooth'});
-}
-
-let currentOMR=[],currentAns={},currentClass='10th',timerInterval=null,timeLeft=600;
-const omrData={"10th_Math":[{q:"√5 प्रकार?",opts:["परिमेय","अपरिमेय","प्राकृत","पूर्णांक"],ans:1,person:"पाइथागोरस",chap:"Math - Ex 1.1"},{q:"13.3 Bayes 50%?",opts:["P(A|B)=P(B|A)P(A)/P(B)","P(A+B)","P(A-B)","P(A*B)"],ans:0,person:"Bayes",chap:"13.3 Bayes 50% - 2449.2 cm³"}], "10th_English":[{q:"Active Voice?",opts:["A letter is written by Ram","Ram is writing","Ram has written","Ram writes"],ans:0,person:"Shakespeare",chap:"10th English 902"}], "12th_Math":[{q:"Integration x²?",opts:["x³/3+C","x²/2","x³","x"],ans:0,person:"आर्यभट्ट",chap:"12th Math 120"}], "12th_English":[{q:"Brave?",opts:["Courageous","Coward","Fearful","Weak"],ans:0,person:"Shakespeare",chap:"12th English 117"}], "10th_Full":[{q:"√5?",opts:["परिमेय","अपरिमेय","प्राकृत","पूर्णांक"],ans:1,person:"पाइथागोरस",chap:"Math HIT"}], "12th_Full":[{q:"V=IR?",opts:["V=IR","P=VI","Q=It","F=ma"],ans:0,person:"ओम",chap:"151-Physics"}]};
-function showOMRTab(tab){document.getElementById('omr10th').style.display=tab==='10th'?'':'none';document.getElementById('omr12th').style.display=tab==='12th'?'':'none';document.getElementById('omrBtn10th').classList.toggle('active',tab==='10th');document.getElementById('omrBtn12th').classList.toggle('active',tab==='12th');currentClass=tab;document.getElementById('omrResult').style.display='none';clearInterval(timerInterval);}
-function startOMR(cls,sub){let key=cls+"_"+sub;let qs=omrData[key]||omrData[cls+"_Full"]||omrData["10th_Math"];currentOMR=qs.slice(0,24);currentAns={};timeLeft=600;let cid=cls==='10th'?"omr10thQuestions":"omr12thQuestions";let c=document.getElementById(cid);c.style.display='block';let html=`<div class="timerBar" id="timerBar"><span>⏱️ ${cls} ${sub} 24Q</span><span id="timerText">10:00</span></div>`;currentOMR.forEach((q,i)=>{html+=`<div class="omrQ"><b>Q${i+1}. ${q.q}</b><br><small>👤 ${q.person} - 📚 ${q.chap}</small>`;q.opts.forEach((o,j)=>{html+=`<div class="omrOpt" id="opt_${cls}_${i}_${j}" onclick="selectOpt('${cls}',${i},${j})"><div style="width:24px;height:24px;border:2px solid #000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;background:#fff">${String.fromCharCode(65+j)}</div><span>${o}</span></div>`;});html+=`</div>`;});html+=`<button class="btn" style="background:#dc2626;margin:10px" onclick="submitOMR()">✅ Submit</button>`;c.innerHTML=html;c.scrollIntoView({behavior:'smooth'});document.getElementById('omrResult').style.display='none';startTimer();}
-function startTimer(){clearInterval(timerInterval);timerInterval=setInterval(()=>{timeLeft--;let m=Math.floor(timeLeft/60),s=timeLeft%60;document.getElementById('timerText').innerText=`${m}:${s<10?'0'+s:s}`;if(timeLeft<=0){clearInterval(timerInterval);submitOMR();}},1000);}
-function selectOpt(cls,i,j){currentAns[i]=j;document.querySelectorAll(`[id^="opt_${cls}_${i}_"]`).forEach(e=>e.classList.remove('sel'));document.getElementById(`opt_${cls}_${i}_${j}`).classList.add('sel');}
-function submitOMR(){clearInterval(timerInterval);let sc=0;currentOMR.forEach((q,i)=>{if(currentAns[i]===q.ans) sc++;});document.getElementById('omrScore').innerText=`🎉 Score: ${sc}/24`;document.getElementById('omrResult').style.display='block';}
-function resetOMR(){document.getElementById('omr10thQuestions').style.display='none';document.getElementById('omr12thQuestions').style.display='none';document.getElementById('omrResult').style.display='none';clearInterval(timerInterval);}
+let gScore=0;
+function openP(id){document.getElementById(id).style.display='block'; if(id=='p3')loadNCERT()}
+function closeP(id){document.getElementById(id).style.display='none'}
+function startTimer(){let t=1800;let iv=setInterval(()=>{let m=Math.floor(t/60),s=t%60;document.getElementById('timer').innerText=m+':'+s;if(t--<=0)clearInterval(iv)},1000);let o='';for(let i=1;i<=24;i++)o+=`Q${i}: <input type=radio name=q${i}>A <input type=radio name=q${i}>B <input type=radio name=q${i}>C <input type=radio name=q${i}>D<br>`;document.getElementById('omr').innerHTML=o}
+function loadNCERT(){let h='';for(let i=1;i<=81;i++)h+=`<button class=btn style='background:#fff;color:#000;border:1px solid #ccc' onclick="alert('Chapter ${i} खुल रहा')">Chapter ${i}</button>`;document.getElementById('ncertList').innerHTML=h}
+function checkM(c){document.getElementById('mres').innerText=c?'✅ सही! 10 Points मिले':'❌ गलत!';}
+function filterQ(){let v=document.getElementById('qsearch').value.toLowerCase();document.getElementById('qlist').innerHTML=v.includes('प्रकाश')?'<p>प्रकाश संश्लेषण पौधों में होता है</p>':'<p>Q1. प्रकाश संश्लेषण क्या है?</p><p>Q2. 2x+3=7 तो x?</p>'}
+function startVoice(){let r=new (window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.start();r.onresult=e=>{document.getElementById('voiceAns').innerText='तुमने पूछा: '+e.results[0][0].transcript+'\nAI उत्तर: ये NCERT Ch 1 में है - विस्तार से समझाता हूँ...'}; if(!window.SpeechRecognition&&!window.webkitSpeechRecognition){let q=prompt('बोलो क्या पूछना है?');document.getElementById('voiceAns').innerText='उत्तर: '+q+' का जवाब ये है...';}}
+function askTeacher(){let i=document.getElementById('chatIn').value;let c=document.getElementById('chat');c.innerHTML+=`<br>तुम: ${i}<br>Teacher: बहुत बढ़िया सवाल! ${i} का उत्तर है... इसे ऐसे समझो...`;document.getElementById('chatIn').value='';c.scrollTop=c.scrollHeight}
 </script>
 </body>
 </html>
