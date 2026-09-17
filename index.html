@@ -1,75 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kisan 3D Pro</title>
-<style>body{margin:0;overflow:hidden;background:#000;font-family:Arial} #ui{position:absolute;top:0;left:0;right:0;background:rgba(0,0,0,0.7);color:#fff;padding:10px;display:flex;justify-content:space-around;font-weight:900;z-index:10} #controls{position:absolute;bottom:10px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:10}.row{display:flex;gap:10px}.btn{background:#FFC107;border:3px solid #000;width:70px;height:70px;border-radius:15px;font-size:30px;font-weight:900}.tool{background:#fff;padding:8px 14px;border-radius:20px;border:0;font-weight:900}.tool.on{background:#FF5722;color:#fff} #top{position:absolute;top:50px;left:0;right:0;text-align:center;z-index:10;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}</style>
-<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Tractor Rush - Kheti Edition</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#000;overflow:hidden;font-family:Arial;color:#fff;touch-action:none}
+#top{position:absolute;top:0;left:0;right:0;height:55px;background:linear-gradient(90deg,#1a0033,#4a0080);display:flex;justify-content:space-between;align-items:center;padding:0 10px;z-index:10;border-bottom:2px solid #ff00ff}
+.stat{background:rgba(0,0,0,0.6);padding:6px 12px;border-radius:20px;font-weight:900;font-size:14px;display:flex;align-items:center;gap:5px;border:1px solid #00ffff}
+#center{position:absolute;top:65px;left:50%;transform:translateX(-50%);background:#000;padding:6px 20px;border-radius:10px;font-weight:900;font-size:18px;z-index:10;border:2px solid #fff}
+canvas{display:block;width:100vw;height:100vh}
+#controls{position:absolute;bottom:85px;left:0;right:0;display:flex;justify-content:space-between;padding:0 20px;z-index:10}
+.arrow{width:80px;height:80px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #fff;backdrop-filter:blur(5px)}
+#bottom{position:absolute;bottom:0;left:0;right:0;height:75px;background:#0a0a2a;display:flex;justify-content:space-around;align-items:center;z-index:10;border-top:2px solid #ff00ff}
+.bbtn{width:70px;text-align:center;font-size:10px;font-weight:900}.bbtn div{font-size:30px}.on{color:#00ff00;transform:scale(1.1)}
+#swipeHint{position:absolute;bottom:180px;left:50%;transform:translateX(-50%);background:rgba(255,0,255,0.8);padding:10px 20px;border-radius:20px;font-weight:900;animation:blink 1s infinite;z-index:10}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.5}}
+</style>
 </head>
 <body>
-<div id="ui"><div>💰 <span id="coin">500</span></div><div>🌾 <span id="stock">0</span></div><div>⛽ <span id="fuel">100</span>%</div></div>
 <div id="top">
-<button class="tool on" id="hal" onclick="setTool('hal')">🚜 HAL</button>
-<button class="tool" onclick="setTool('dhaan')">🌾 DHAAN</button>
-<button class="tool" onclick="setTool('ganna')">🎋 GANNA</button>
-<button class="tool" onclick="setTool('pani')">💧 PANI</button>
-<button class="tool" onclick="setTool('kaat')">✂️ KAAT</button>
+<div class="stat">⚡ <span id="lvl">1</span> | 🛡️ <span id="shield">2</span></div>
+<div class="stat">💰 <span id="coin">7787</span></div>
 </div>
+<div id="center">LEVEL <span id="level">199</span> - KHETI RUSH</div>
+<canvas id="c"></canvas>
+<div id="swipeHint">👆 SWIPE KARO TRACTOR CHALANE KE LIYE</div>
 <div id="controls">
-<div class="row"><button class="btn" ontouchstart="move(0,1)">⬆️</button></div>
-<div class="row"><button class="btn" ontouchstart="move(-1,0)">⬅️</button><button class="btn" ontouchstart="move(1,0)">➡️</button></div>
-<div class="row"><button class="btn" ontouchstart="move(0,-1)">⬇️</button></div>
-<div class="row"><button class="tool" style="background:#4CAF50;color:#fff" onclick="sell()">🚛 MANDI BECHO</button><button class="tool" style="background:#2196F3;color:#fff" onclick="fuel=100;upd()">⛽ DIESEL</button></div>
+<div class="arrow" id="left">«</div>
+<div class="arrow" id="right">»</div>
 </div>
-<script type="module">
-import * as THREE from 'three';
-let scene=new THREE.Scene(); scene.background=new THREE.Color(0x87CEEB);
-let camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.1,1000);
-let renderer=new THREE.WebGLRenderer({antialias:true}); renderer.setSize(innerWidth,innerHeight); document.body.appendChild(renderer.domElement);
-let light=new THREE.DirectionalLight(0xffffff,1); light.position.set(10,20,10); scene.add(light); scene.add(new THREE.AmbientLight(0xffffff,0.6));
+<div id="bottom">
+<div class="bbtn on" onclick="setTool('hal')"><div>🚜</div>GARAGE<br>HAL</div>
+<div class="bbtn" onclick="setTool('beej')"><div>🌱</div>SEASON<br>BEEJ</div>
+<div class="bbtn" onclick="setTool('pani')"><div>💧</div>STORE<br>PANI</div>
+<div class="bbtn" onclick="setTool('kaat')"><div>✂️</div>CHALLENGE<br>KAAT</div>
+</div>
 
-let groundMat=new THREE.MeshLambertMaterial({color:0x8D6E63});
-let tilledMat=new THREE.MeshLambertMaterial({color:0x5D4037});
-let ground=[]; let farm=[];
-for(let x=-5;x<=5;x++){ farm[x]=[];
- for(let z=-5;z<=5;z++){
-  let geo=new THREE.BoxGeometry(1.9,0.2,1.9);
-  let mesh=new THREE.Mesh(geo,groundMat.clone()); mesh.position.set(x*2,0,z*2); scene.add(mesh);
-  ground.push(mesh); farm[x][z]={mesh:mesh,t:0,g:0,crop:'',tm:0,plant:null};
+<script>
+let canvas=document.getElementById('c'),ctx=canvas.getContext('2d');
+canvas.width=innerWidth; canvas.height=innerHeight;
+let coin=7787,level=1,tool='hal',tractorX=0,speed=8,lanes=[-120,-40,40,120],lane=1,khet=[],score=0;
+let tractorImg="🚜";
+function setTool(t){tool=t;document.querySelectorAll('.bbtn').forEach(b=>b.classList.remove('on'));event.currentTarget.classList.add('on'); tractorImg=t=='hal'?'🚜':t=='beej'?'🚜🌱':t=='pani'?'🚜💧':'🚜✂️';}
+
+// Khet generate
+for(let i=0;i<30;i++){khet.push({z:i*150+300, x: lanes[Math.floor(Math.random()*4)], type: Math.random()>0.6?'ready':'kacha', done:false});}
+
+function drawRoad(){
+ ctx.fillStyle="#4a0080"; ctx.fillRect(0,0,canvas.width,canvas.height);
+ // perspective road
+ let cx=canvas.width/2;
+ for(let i=0;i<canvas.height;i+=20){
+  let persp = i/canvas.height;
+  let w = 200 + persp*800;
+  ctx.fillStyle=i%40<20?"#8a00ff":"#6a00cc";
+  ctx.fillRect(cx-w/2, i, w, 20);
+  // side green
+  ctx.fillStyle="#0a4a0a"; ctx.fillRect(0,i,cx-w/2,20); ctx.fillRect(cx+w/2,i,cx-w/2,20);
  }
+ // center line
+ ctx.strokeStyle="#ff00aa"; ctx.lineWidth=4; ctx.setLineDash([30,30]); ctx.beginPath(); ctx.moveTo(cx,0); ctx.lineTo(cx,canvas.height); ctx.stroke(); ctx.setLineDash([]);
 }
 
-let tractorGroup=new THREE.Group(); scene.add(tractorGroup);
-let body=new THREE.Mesh(new THREE.BoxGeometry(1.2,0.8,1.8), new THREE.MeshLambertMaterial({color:0x2E7D32})); body.position.y=0.8; tractorGroup.add(body);
-let cabin=new THREE.Mesh(new THREE.BoxGeometry(0.9,0.7,0.7), new THREE.MeshLambertMaterial({color:0x1565C0})); cabin.position.set(0,1.4,-0.3); tractorGroup.add(cabin);
-let wheelGeo=new THREE.CylinderGeometry(0.3,0.3,0.2,12); wheelGeo.rotateZ(Math.PI/2);
-let w1=new THREE.Mesh(wheelGeo,new THREE.MeshLambertMaterial({color:0x111111})); w1.position.set(-0.7,0.3,0.6); tractorGroup.add(w1);
-let w2=w1.clone(); w2.position.set(0.7,0.3,0.6); tractorGroup.add(w2);
-let w3=new THREE.Mesh(new THREE.CylinderGeometry(0.4,0.4,0.3,12).rotateZ(Math.PI/2),new THREE.MeshLambertMaterial({color:0x111111})); w3.position.set(-0.7,0.3,-0.6); tractorGroup.add(w3);
-let w4=w3.clone(); w4.position.set(0.7,0.3,-0.6); tractorGroup.add(w4);
-
-let tx=0,tz=0; let tool='hal'; let coin=500,stock=0,fuel=100;
-window.setTool=(t)=>{tool=t; document.querySelectorAll('.tool').forEach(b=>b.classList.remove('on')); event.target.classList.add('on');}
-window.upd=()=>{document.getElementById('coin').innerText=coin; document.getElementById('stock').innerText=stock; document.getElementById('fuel').innerText=Math.floor(fuel);}
-window.sell=()=>{if(stock==0)return alert("Fasal kaato pehle!"); coin+=stock*40; alert(stock+" bori bechi ₹"+stock*40); stock=0; upd();}
-
-window.move=(dx,dz)=>{
- if(fuel<=0)return alert("Diesel khatam!");
- tx=Math.max(-5,Math.min(5,tx+dx)); tz=Math.max(-5,Math.min(5,tz+dz));
- tractorGroup.position.set(tx*2,0.3,tz*2);
- fuel-=0.8;
- let f=farm[tx][tz];
- if(tool=='hal'){f.t=1; f.mesh.material.color.set(0x3E2723);}
- if((tool=='dhaan'||tool=='ganna')&&f.t==1&&f.g==0&&coin>=10){f.g=1;f.crop=tool;coin-=10; let p=new THREE.Mesh(new THREE.SphereGeometry(0.2,6,6),new THREE.MeshLambertMaterial({color:0x33691E})); p.position.set(tx*2,0.5,tz*2); scene.add(p); f.plant=p;}
- if(tool=='pani'&&f.g>0&&f.g<3){f.tm++; if(f.tm>1){f.g++; f.tm=0; if(f.plant){f.plant.scale.multiplyScalar(1.8); f.plant.material.color.set(f.crop=='ganna'?0x1B5E20:0x9CCC65);}}}
- if(tool=='kaat'&&f.g==3){f.g=0;f.t=0;f.mesh.material.color.set(0x8D6E63); scene.remove(f.plant); f.plant=null; stock++; coin+=10;}
- upd();
+function draw(){
+ drawRoad();
+ let cx=canvas.width/2;
+ // draw khet patches coming towards you
+ khet.forEach(k=>{
+  k.z-=speed; if(k.z<-100){k.z=3000; k.x=lanes[Math.floor(Math.random()*4)]; k.done=false; k.type=Math.random()>0.5?'ready':'kacha';}
+  let scale=1000/(k.z+200); let y=canvas.height - k.z/8; if(y<60||y>canvas.height-100) return;
+  let x=cx + k.x*scale;
+  if(!k.done){
+   if(k.type=='kacha'){ctx.font=(20*scale)+"px serif"; ctx.fillText("🟫",x,y);}
+   else{ctx.font=(30*scale)+"px serif"; ctx.fillText(tool=='hal'?"🟫":tool=='beej'?"🌱":tool=='pani'?"🌾":"🌾",x,y);}
+  }
+  // collision
+  if(Math.abs(k.z)<120 && Math.abs(k.x - tractorX)<60 &&!k.done){
+   if(tool=='hal'&&k.type=='kacha'){k.done=true; coin+=10; score++;}
+   if(tool=='beej'&&k.type=='kacha'){k.done=true; coin+=20; score++;}
+   if(tool=='pani'&&k.type=='ready'){k.done=true; coin+=30; score++;}
+   if(tool=='kaat'&&k.type=='ready'){k.done=true; coin+=50; score++;}
+   document.getElementById('coin').innerText=coin;
+   if(score>10){level++; score=0; speed+=1; document.getElementById('level').innerText=level;}
+  }
+ });
+ // tractor
+ let tx=cx+tractorX; let ty=canvas.height-140;
+ ctx.font="70px serif"; ctx.fillText("🚜",tx-35,ty);
+ ctx.fillStyle="#ff00ff"; ctx.shadowBlur=20; ctx.shadowColor="#ff00ff"; ctx.fillRect(tx-30,ty+10,60,8); ctx.shadowBlur=0;
+ requestAnimationFrame(draw);
 }
+draw();
 
-camera.position.set(0,10,10); camera.lookAt(0,0,0);
-function animate(){requestAnimationFrame(animate); camera.position.x=tractorGroup.position.x; camera.position.z=tractorGroup.position.z+10; camera.lookAt(tractorGroup.position); renderer.render(scene,camera);}
-animate(); upd();
-window.addEventListener('keydown',e=>{if(e.key=='ArrowLeft')move(-1,0);if(e.key=='ArrowRight')move(1,0);if(e.key=='ArrowUp')move(0,-1);if(e.key=='ArrowDown')move(0,1);});
+// controls
+let startX=0; canvas.addEventListener('touchstart',e=>{startX=e.touches[0].clientX; document.getElementById('swipeHint').style.display='none';});
+canvas.addEventListener('touchmove',e=>{
+ let dx=e.touches[0].clientX-startX; if(Math.abs(dx)>30){ if(dx>0&&lane<3){lane++; tractorX=lanes[lane];} if(dx<0&&lane>0){lane--; tractorX=lanes[lane];} startX=e.touches[0].clientX; }
+});
+document.getElementById('left').onclick=()=>{if(lane>0){lane--; tractorX=lanes[lane];}};
+document.getElementById('right').onclick=()=>{if(lane<3){lane++; tractorX=lanes[lane];}};
+window.addEventListener('keydown',e=>{if(e.key=='ArrowLeft'&&lane>0){lane--; tractorX=lanes[lane];} if(e.key=='ArrowRight'&&lane<3){lane++; tractorX=lanes[lane];}});
+function setTool(t){tool=t; document.querySelectorAll('.bbtn').forEach(b=>b.classList.remove('on')); event.currentTarget.classList.add('on');}
 </script>
 </body>
 </html>
