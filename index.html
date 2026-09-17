@@ -1,121 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kisan Simulator - Jo Chahe Karo</title>
 <style>
-body{margin:0;font-family:sans-serif;background:#FFFDE7}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px}
-.card{background:#E8F5E9;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 5px #0001;cursor:pointer}
-.card b{font-size:13px;display:block;margin-top:5px}
-.page{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;overflow:auto;z-index:99;padding:0}
-.dhead{background:#1B5E20;color:#fff;padding:15px;display:flex;align-items:center;gap:10px}
-.back{font-size:22px;cursor:pointer}
-.chap{margin:10px;padding:12px;background:#fff;border-radius:10px;box-shadow:0 1px 4px #0001}
-.btn{background:#1B5E20;color:#fff;border:none;padding:10px 15px;border-radius:8px;width:100%;margin:5px 0;font-weight:bold}
-input{width:90%;padding:10px;border:1px solid #ccc;border-radius:8px;margin:5px}
+*{box-sizing:border-box}body{margin:0;background:#1B5E20;color:#fff;font-family:Arial;text-align:center}
+.top{background:#FFEB3B;color:#000;padding:10px;font-weight:900;font-size:18px}
+.main{width:98%;max-width:500px;margin:auto}
+.stats{display:flex;justify-content:space-around;background:#000;padding:8px;border-radius:10px;margin:5px 0}
+.box{background:#fff;color:#000;border-radius:12px;padding:8px;margin:5px 0}
+canvas{width:100%;background:#6D4C41;border-radius:10px;border:3px solid #3E2723}
+.btn{padding:8px 12px;margin:3px;border:none;border-radius:15px;font-weight:800}
+.tool{background:#4CAF50;color:#fff}.tool.active{background:#FF5722}
+.tbtn{background:#FFC107;padding:10px 20px;border-radius:20px;font-size:20px}
+#cmd{width:80%;padding:10px;border-radius:20px;border:2px solid #4CAF50}
 </style>
 </head>
 <body>
-
-<!-- DASHBOARD -->
-<div id="home">
-<div style="background:linear-gradient(90deg,#1B5E20,#66BB6A);color:#fff;padding:15px"><b>📚 Study-SaathiAI - सभी फीचर्स</b><br><small>1247 LIVE</small></div>
-<div class="grid">
-<div class="card" onclick="openP('p1')">⏱️<b>OMR Timer</b></div>
-<div class="card" onclick="openP('p2')">📄<b>10th PDF</b></div>
-<div class="card" onclick="openP('p3')">📘<b>NCERT 2026</b></div>
-<div class="card" onclick="openP('p4')">📄<b>12th PDF</b></div>
-<div class="card" onclick="openP('p5')">🧠<b>Mastermind</b></div>
-<div class="card" onclick="openP('p6')">🎓<b>Vidya 2027</b></div>
-<div class="card" onclick="openP('p7')">🚀<b>Flight 2027</b></div>
-<div class="card" onclick="openP('p8')">🏫<b>UPMSP</b></div>
-<div class="card" onclick="openP('p9')">😂<b>Meme Zone</b></div>
-<div class="card" onclick="openP('p10')">▶️<b>Reels</b></div>
-<div class="card" onclick="openP('p11')">❓<b>Q Bank</b></div>
-<div class="card" onclick="openP('p12')">🏆<b>Topper</b></div>
-<div class="card" onclick="openP('p13')">📸<b>HW Scanner AI</b></div>
-<div class="card" onclick="openP('p14')">🎙️<b>Ask AI Voice</b></div>
-<div class="card" onclick="openP('p15')">🤖<b>AI Teacher</b></div>
-<div class="card" style="background:#FF9800;color:#fff" onclick="openP('p16')">🎮<b>Game Zone</b></div>
-</div>
+<div class="top">🚜 KISAN SIMULATOR - JO CHAHE KARO 🌾</div>
+<div class="main">
+<div class="stats">
+<div>💰<span id="coin">100</span></div><div>🌾<span id="stock">0</span></div><div>⛽<span id="fuel">100</span></div><div>📍<span id="mode">HAL</span></div>
 </div>
 
-<!-- ALL PAGES - CLICK PE KHULEGA -->
+<div class="box">
+<button class="btn tool active" onclick="setTool('hal',this)">🚜 HAL</button>
+<button class="btn tool" onclick="setTool('dhaan',this)">🌾 DHAAN</button>
+<button class="btn tool" onclick="setTool('ganna',this)">🎋 GANNA</button>
+<button class="btn tool" onclick="setTool('gehu',this)">🌿 GEHU</button>
+<button class="btn tool" onclick="setTool('pani',this)">💧 PANI</button>
+<button class="btn tool" onclick="setTool('kaat',this)">✂️ KAAT</button>
+</div>
 
-<!-- 1 OMR -->
-<div id="p1" class="page"><div class="dhead"><div class="back" onclick="closeP('p1')">←</div><b>OMR 24Q Timer</b></div>
-<div class="chap"><h3>24 सवाल - 30 मिनट</h3><div id="timer">30:00</div><button class="btn" onclick="startTimer()">Timer शुरू करो</button><div id="omr"></div></div></div>
+<canvas id="c" width="400" height="400"></canvas>
 
-<!-- 2 10th PDF -->
-<div id="p2" class="page"><div class="dhead"><div class="back" onclick="closeP('p2')">←</div><b>10th 13 PDF</b></div>
-<div class="chap"><button class="btn" onclick="alert('PDF Download शुरू')">📥 गणित 2024 PDF डाउनलोड</button><button class="btn" onclick="alert('PDF Download शुरू')">📥 विज्ञान PDF</button><button class="btn" onclick="alert('PDF Download शुरू')">📥 हिंदी PDF</button></div></div>
+<div class="box">
+<button class="tbtn" onclick="move(-1,0)">⬅️</button>
+<button class="tbtn" onclick="move(0,-1)">⬆️</button>
+<button class="tbtn" onclick="move(0,1)">⬇️</button>
+<button class="tbtn" onclick="move(1,0)">➡️</button>
+<br><br>
+<input id="cmd" placeholder="Type karo: dhaan lagao, ganna lagao, pani do, kaat lo">
+<button class="btn tool" onclick="runCmd()">▶️ KARO</button>
+</div>
 
-<!-- 3 NCERT -->
-<div id="p3" class="page"><div class="dhead"><div class="back" onclick="closeP('p3')">←</div><b>NCERT 2026 - 81 Chapters</b></div>
-<div class="chap" id="ncertList"></div></div>
-
-<!-- 4 12th PDF -->
-<div id="p4" class="page"><div class="dhead"><div class="back" onclick="closeP('p4')">←</div><b>12th 16 PDF</b></div>
-<div class="chap"><button class="btn" onclick="alert('12th PDF खुल रहा')">📥 12th Physics PYQ</button><button class="btn" onclick="alert('12th PDF खुल रहा')">📥 12th Chemistry PYQ</button></div></div>
-
-<!-- 5 Mastermind -->
-<div id="p5" class="page"><div class="dhead"><div class="back" onclick="closeP('p5')">←</div><b>Mastermind Quiz</b></div>
-<div class="chap"><h3 id="mq">भारत की राजधानी क्या है?</h3><button class="btn" onclick="checkM(1)">दिल्ली</button><button class="btn" onclick="checkM(0)">मुंबई</button><div id="mres"></div></div></div>
-
-<!-- 6 Vidya -->
-<div id="p6" class="page"><div class="dhead"><div class="back" onclick="closeP('p6')">←</div><b>Vidya 2027</b></div>
-<div class="chap"><p>2027 नया सिलेबस</p><button class="btn" onclick="alert('Vidya 2027 Registration चालू')">Register करो</button></div></div>
-
-<!-- 7 Flight -->
-<div id="p7" class="page"><div class="dhead"><div class="back" onclick="closeP('p7')">←</div><b>Flight 2027 Career</b></div>
-<div class="chap"><button class="btn" onclick="alert('Career Test शुरू')">✈️ Pilot बनो</button><button class="btn" onclick="alert('Career Test शुरू')">👨‍⚕️ Doctor RoadMap</button></div></div>
-
-<!-- 8 UPMSP -->
-<div id="p8" class="page"><div class="dhead"><div class="back" onclick="closeP('p8')">←</div><b>UPMSP Fixed</b></div>
-<div class="chap"><p>✅ UP Board 2026 Update Fixed</p><p>TimeTable आ गया!</p><button class="btn" onclick="window.open('https://upmsp.edu.in','_blank')">Official Website खोलो</button></div></div>
-
-<!-- 9 Meme -->
-<div id="p9" class="page"><div class="dhead"><div class="back" onclick="closeP('p9')">←</div><b>Meme Zone</b></div>
-<div class="chap"><p>😂 पढ़ाई वाला Meme</p><img src="https://via.placeholder.com/300x200?text=Study+Meme" style="width:100%;border-radius:10px"><br><button class="btn" onclick="this.parentElement.innerHTML+='<p>😂 नया Meme Loaded</p>'">Next Meme 😂</button></div></div>
-
-<!-- 10 Reels -->
-<div id="p10" class="page"><div class="dhead"><div class="back" onclick="closeP('p10')">←</div><b>Reels - Short Lessons</b></div>
-<div class="chap"><video controls style="width:100%;border-radius:10px"><source src="https://www.w3schools.com/html/mov_bbb.mp4"></video><p>NCERT Ch1 - 30 Sec में समझो</p><button class="btn">❤️ Like 1.2k</button></div></div>
-
-<!-- 11 Q Bank -->
-<div id="p11" class="page"><div class="dhead"><div class="back" onclick="closeP('p11')">←</div><b>Q Bank 50000+ Questions</b></div>
-<div class="chap"><input id="qsearch" placeholder="सवाल खोजो..." onkeyup="filterQ()"><div id="qlist"><p>Q1. प्रकाश संश्लेषण क्या है?</p><p>Q2. 2x+3=7 तो x?</p></div></div></div>
-
-<!-- 12 Topper -->
-<div id="p12" class="page"><div class="dhead"><div class="back" onclick="closeP('p12')">←</div><b>Topper Leaderboard</b></div>
-<div class="chap"><p>🥇 राहुल - 2450 pts</p><p>🥈 प्रिया - 2300 pts</p><p>🥉 तुम - 1437 pts</p></div></div>
-
-<!-- 13 HW Scanner AI -->
-<div id="p13" class="page"><div class="dhead"><div class="back" onclick="closeP('p13')">←</div><b>HW Scanner AI</b></div>
-<div class="chap"><input type="file" accept="image/*"><button class="btn" onclick="alert('AI ने Scan किया: ये गणित का सवाल है, उत्तर = 42')">📸 Scan & Solve करो</button><div id="hwres"></div></div></div>
-
-<!-- 14 Ask AI Voice -->
-<div id="p14" class="page"><div class="dhead"><div class="back" onclick="closeP('p14')">←</div><b>Ask AI Voice</b></div>
-<div class="chap"><button class="btn" style="background:#ff6b00" onclick="startVoice()">🎙️ बोलो - सवाल पूछो</button><div id="voiceAns" style="margin-top:10px;padding:10px;background:#f5f5f5;border-radius:8px">यहाँ उत्तर आएगा...</div></div></div>
-
-<!-- 15 AI Teacher -->
-<div id="p15" class="page"><div class="dhead"><div class="back" onclick="closeP('p15')">←</div><b>AI Teacher - Hindi</b></div>
-<div class="chap"><div id="chat" style="height:200px;overflow:auto;background:#f9f9f9;padding:10px;border-radius:8px">Teacher: नमस्ते! क्या पढ़ना है?</div><input id="chatIn" placeholder="यहाँ लिखो..."><button class="btn" onclick="askTeacher()">भेजो</button></div></div>
-
-<!-- 16 Game Zone FB Style -->
-<div id="p16" class="page"><div class="dhead" style="background:#ff6b00"><div class="back" onclick="closeP('p16')">←</div><b>🎮 Game Zone - FB Style</b></div>
-<div class="chap"><h3>Quiz Battle</h3><p id="gq">5+3 कितना?</p><button class="btn" onclick="gScore+=10;alert('सही! Score:'+gScore+' 👍 Like मिला')">8</button><button class="btn" onclick="alert('गलत!')">7</button><p id="gscore">Score: 0 | Likes: 0</p><button class="btn" onclick="if(navigator.share)navigator.share({text:'मैंने '+gScore+' जीते'})">📤 FB पर शेयर करो</button></div></div>
+<div class="box" style="font-size:12px;text-align:left">
+<b>Kaise Khele:</b><br>
+1. HAL select karke khet joto (bhura hoga)<br>
+2. DHAAN/GANNA/GEHU select karke beej lagao<br>
+3. PANI do, fasal badhegi<br>
+4. KAAT ke paise kamao<br>
+5. Neeche likh ke bhi khel sakte ho: <i>"ganna lagao"</i>, <i>"pani do"</i>, <i>"sab kaat lo"</i>
+</div>
+</div>
 
 <script>
-let gScore=0;
-function openP(id){document.getElementById(id).style.display='block'; if(id=='p3')loadNCERT()}
-function closeP(id){document.getElementById(id).style.display='none'}
-function startTimer(){let t=1800;let iv=setInterval(()=>{let m=Math.floor(t/60),s=t%60;document.getElementById('timer').innerText=m+':'+s;if(t--<=0)clearInterval(iv)},1000);let o='';for(let i=1;i<=24;i++)o+=`Q${i}: <input type=radio name=q${i}>A <input type=radio name=q${i}>B <input type=radio name=q${i}>C <input type=radio name=q${i}>D<br>`;document.getElementById('omr').innerHTML=o}
-function loadNCERT(){let h='';for(let i=1;i<=81;i++)h+=`<button class=btn style='background:#fff;color:#000;border:1px solid #ccc' onclick="alert('Chapter ${i} खुल रहा')">Chapter ${i}</button>`;document.getElementById('ncertList').innerHTML=h}
-function checkM(c){document.getElementById('mres').innerText=c?'✅ सही! 10 Points मिले':'❌ गलत!';}
-function filterQ(){let v=document.getElementById('qsearch').value.toLowerCase();document.getElementById('qlist').innerHTML=v.includes('प्रकाश')?'<p>प्रकाश संश्लेषण पौधों में होता है</p>':'<p>Q1. प्रकाश संश्लेषण क्या है?</p><p>Q2. 2x+3=7 तो x?</p>'}
-function startVoice(){let r=new (window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.start();r.onresult=e=>{document.getElementById('voiceAns').innerText='तुमने पूछा: '+e.results[0][0].transcript+'\nAI उत्तर: ये NCERT Ch 1 में है - विस्तार से समझाता हूँ...'}; if(!window.SpeechRecognition&&!window.webkitSpeechRecognition){let q=prompt('बोलो क्या पूछना है?');document.getElementById('voiceAns').innerText='उत्तर: '+q+' का जवाब ये है...';}}
-function askTeacher(){let i=document.getElementById('chatIn').value;let c=document.getElementById('chat');c.innerHTML+=`<br>तुम: ${i}<br>Teacher: बहुत बढ़िया सवाल! ${i} का उत्तर है... इसे ऐसे समझो...`;document.getElementById('chatIn').value='';c.scrollTop=c.scrollHeight}
+let cv=document.getElementById('c'),ctx=cv.getContext('2d'),grid=10,size=40,tool='hal',coin=100,stock=0,fuel=100;
+let px=4,py=4;
+let farm=[]; for(let y=0;y<grid;y++){farm[y]=[]; for(let x=0;x<grid;x++) farm[y][x]={t:0,g:0};} // t:0 khali,1 jota, g:0 nahi,1 beej,2 chota,3 bada
+
+function setTool(t,el){tool=t; document.getElementById('mode').innerText=t.toUpperCase(); document.querySelectorAll('.tool').forEach(b=>b.classList.remove('active')); if(el) el.classList.add('active');}
+
+function draw(){
+ctx.clearRect(0,0,400,400);
+for(let y=0;y<grid;y++) for(let x=0;x<grid;x++){
+let f=farm[y][x],bx=x*size,by=y*size;
+if(f.t==0) ctx.fillStyle="#8D6E63"; else ctx.fillStyle="#5D4037";
+ctx.fillRect(bx+1,by+1,size-2,size-2);
+if(f.g==1){ctx.fillStyle="#8BC34A"; ctx.beginPath(); ctx.arc(bx+20,by+20,5,0,6.28); ctx.fill();}
+if(f.g==2){ctx.font="20px Arial"; ctx.fillText("🌱",bx+8,by+28);}
+if(f.g==3){
+if(f.crop=='dhaan') ctx.fillText("🌾",bx+6,by+30);
+if(f.crop=='ganna') ctx.fillText("🎋",bx+6,by+30);
+if(f.crop=='gehu') ctx.fillText("🌿",bx+6,by+30);
+}
+}
+// player tractor
+ctx.font="26px Arial"; ctx.fillText("🚜",px*size+4,py*size+28);
+}
+
+function action(){
+let f=farm[py][px];
+if(tool=='hal'){ if(fuel>0){f.t=1; fuel-=1; }}
+if(tool=='dhaan'||tool=='ganna'||tool=='gehu'){ if(f.t==1 && f.g==0 && coin>=5){f.g=1; f.crop=tool; f.timer=0; coin-=5; }}
+if(tool=='pani'){ if(f.g>0 && f.g<3){f.timer=(f.timer||0)+1; if(f.timer>2){f.g++; f.timer=0;}} fuel-=0.5;}
+if(tool=='kaat'){ if(f.g==3){f.g=0; f.t=0; stock+=1; coin+=20; }}
+update();
+}
+
+function move(dx,dy){
+px=Math.max(0,Math.min(grid-1,px+dx)); py=Math.max(0,Math.min(grid-1,py+dy)); action(); draw();
+}
+
+function runCmd(){
+let v=document.getElementById('cmd').value.toLowerCase();
+if(v.includes('dhaan')||v.includes('dhan')) setTool('dhaan');
+if(v.includes('ganna')) setTool('ganna');
+if(v.includes('gehu')||v.includes('gahu')) setTool('gehu');
+if(v.includes('hal')||v.includes('jot')) setTool('hal');
+if(v.includes('pani')) setTool('pani');
+if(v.includes('kaat')||v.includes('kato')) setTool('kaat');
+if(v.includes('sab')){ // sab kaat lo, sab me pani do
+for(let y=0;y<grid;y++) for(let x=0;x<grid;x++){ let f=farm[y][x]; if(v.includes('kaat')&&f.g==3){f.g=0; f.t=0; coin+=20; stock++;} if(v.includes('pani')&&f.g>0&&f.g<3){f.g++;} }
+}
+action(); draw(); document.getElementById('cmd').value='';
+}
+
+function update(){
+document.getElementById('coin').innerText=coin;
+document.getElementById('stock').innerText=stock;
+document.getElementById('fuel').innerText=Math.floor(fuel);
+if(fuel<=0){alert("Diesel khatam! Mandi me fasal becho!"); fuel=100;}
+}
+
+setInterval(()=>{ // auto growth
+for(let y=0;y<grid;y++) for(let x=0;x<grid;x++){ let f=farm[y][x]; if(f.g==1||f.g==2){ if(Math.random()>0.7){ f.timer=(f.timer||0)+0.1; if(f.timer>5){ if(f.g<3) f.g++; f.timer=0; } } } } draw();
+},1000);
+
+draw();
 </script>
 </body>
 </html>
